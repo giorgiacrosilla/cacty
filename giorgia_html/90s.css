@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@font-face {
+    font-family: coolvetica;
+    src: url("coolvetica rg.otf");
+}
+body {
+    cursor: url(https://ani.cursors-4u.net/symbols/sym-8/sym752.cur), auto !important;
+    overflow: auto;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: fuchsia; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: fuchsia; 
+  }
+
+.navbar-custom {
+    background-color: lightgreen;
+}
+/*NAVBAR*/
+.title {
+    border: 2px solid black;
+    box-shadow: 5px 5px;
+    background-color: rgb(245, 226, 15);
+    border-style: static;
+    border-radius: 20px;
+    width: 200px;
+    height: 80px;
+    z-index: 1;
+    margin-left: 1vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* prepare the selectors to add a stroke to */
+.stroke-single,
+.stroke-double {
+    position: relative;
+    background: transparent;
+    z-index: 0;
+    color: fuchsia;
+    font-size: 45px;
+    font-family: 'Lobster', cursive;
+    
+}
+
+/* add a single stroke */
+.stroke-single:before,
+.stroke-double:before {
+    content: attr(title);
+    position: absolute;
+    -webkit-text-stroke: 0.2em white;
+    left: 0;
+    z-index: -1;
+}
+
+/* add a double stroke */
+.stroke-double:after {
+    content: attr(title);
+    position: absolute;
+    -webkit-text-stroke: 0.25em black;
+    left: 0;
+    z-index: -2;
+}
+
+
+/*MAIN_BODY*/
+
+.main_container {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr;
+    grid-template-areas:
+        "nav nav"
+        "sidebar main";
+    font-family: coolvetica;
+}
+
+nav {
+    grid-area: nav;
+}
+
+#sidebar {
+    background-color: aquamarine;
+    grid-area: sidebar;
+}
+
+main {
+    overflow: auto;
+    grid-area: main;
+    text-align: center;
+    padding-top: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+main h2 {
+    color: rgb(106, 106, 232);
+    text-transform: uppercase;
+}
+
+p {
+    text-align: justify;
+}
+.maiuscoletto {
+    font-variant: small-caps;
+}
+.text {
+    padding: 3% 3% 3% 3%;
+    background-color: white;
+    column-count: 3;
+    column-gap: 3%;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+
+.text p::first-letter {
+    color: fuchsia;
+    float: left;
+    font-weight: bold;
+    font-size: 4rem;
+    margin: 0 .1em 0 0;
+    line-height: 0.75;
+}
+
+.frontier {
+    border-color: red;
+    border-style: solid;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.ghost {
+    border-radius: 10px 10px 10px 10px;
+    background-color: pink;
+}
+
+img {
+    width: 15vw;
+    height: auto;
+    border-style: solid;
+    border-color: blueviolet;
+    border-width: 10px;
+}
+
+figcaption {
+    font-size: 0.8em;
+    font-style: italic;
+}
+
+.n1700 {
+    background-color: red;
+}
+
+.n1800 {
+    background-color: yellow;
+}
+
+.n1900 {
+    background-color: fuchsia;
+}
+
+.footnotes p::first-letter,
+.poetry p::first-letter {
+    color: black;
+    float: none;
+    font-weight: normal;
+    font-size: 1rem;
+    margin: 0 0 0 0;
+}
+
+@media only screen and (max-width: 550px) {
+    body {
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 80% 10%;
+    }
+
+    .main_container {
+        grid-template-columns: 100%;
+        grid-template-rows: 20% 80%;
+    }
+}
