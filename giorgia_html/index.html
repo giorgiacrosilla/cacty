@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="future.css">
+  <title></title>
+</head>
+
+<body>
+
+
+  <div class="eyes">
+    <div class="eye">
+      <div class="pupilla"></div>
+    </div>
+  </div>
+
+  <div id="rectangle">
+    <p></p>
+  </div>
+  <div id="button">
+    <button onclick="website()">Go to website</button>
+  </div>
+
+  <script>
+    var pupilla = document.getElementsByClassName("pupilla");
+    document.onmousemove = function () {
+      var x = event.clientX * 100 / window.innerWidth + "%";
+      var y = event.clientY * 100 / window.innerHeight + "%";
+      //event.clientX => get the horizontal coordinate of the mouse
+      //event.clientY => get the Vertical coordinate of the mouse
+      //window.innerWidth => get the browser width
+      //window.innerHeight => get the browser height
+
+      for (var i = 0; i < 2; i++) {
+        pupilla[i].style.left = x;
+        pupilla[i].style.top = y;
+        pupilla[i].style.transform = "translate(-" + x + ",-" + y + ")";
+      }
+    }
+    let person = prompt("Please enter your name");
+
+    if (person != null) {
+      document.getElementById("rectangle").innerHTML =
+        person + ", " + "we are watching you";
+    }
+    function website() {
+      window.open("mainpage.html");
+    }
+  </script>
+
+</body>
+
+</html>

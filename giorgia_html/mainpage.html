@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="future.css">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+                <div class="title">
+                    <div class="rectangle"></div>
+                    <div class="circle"></div>
+                    <a class="navbar-brand" href="#">
+                        <h1 class="stroke-double" title="secretmag">secretmag
+                        </h1>
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Themes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Documentation</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown link
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <section class="uno">
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+            <div class="wrapper">
+                <div class="glitcheffect">
+                <h1>Welcome to secretmag!</h1></div>
+                <p>The only place where you can get to know more about the secret organizations.</p>
+            </div>
+            <div class="separator t"></div>
+        </section>
+        <section class="due">
+            <div class="content">
+            </div>
+        </section>
+        <div class="separator left"></div>
+        <section class="diagonal">
+            <div class="content">
+                <h1>We're deciding which article you're going to read!</h1>
+                <p>Click the button to read about the history of the new world</p>
+                <button id="generateButton">Random Article</button>
+                <p id="result"></p>
+            </div>
+        </section>
+        <div class="separator"></div>
+        <section class="due">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <img class="card-img-top"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Emblem_of_the_Ku_Klux_Klan.svg/668px-Emblem_of_the_Ku_Klux_Klan.svg.png"
+                                alt="kkk logo">
+                            <div class="card-body">
+                                <p class="card-text">Read the articles about the KKK!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <img class="card-img-top"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Square_compasses.svg/1200px-Square_compasses.svg.png"
+                                alt="Masonry logo">
+                            <div class="card-body">
+                                <p class="card-text">Read more about the Masonry!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="card">
+                            <img class="card-img-top"
+                                src="https://upload.wikimedia.org/wikipedia/commons/4/41/Bones_logo.jpg"
+                                alt="Skull and bones logo">
+                            <div class="card-body">
+                                <p class="card-text">Read the articles about Skull and Bones!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="separator left"></div>
+        <footer>Footer</footer>
+    </div>
+    <script>
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        const pageMapping = {
+            1: "kkk1.html",
+            2: "kkk2.html",
+            3: "kkk3.html"
+        };
+
+        const generateButton = document.getElementById("generateButton");
+        generateButton.addEventListener("click", function () {
+            const randomNumber = getRandomNumber(1, 3); // Random number between 1 and 3
+            const pageName = pageMapping[randomNumber];
+
+            if (pageName) {
+                window.location.href = pageName;
+            } else {
+                console.log("Page mapping not found for random number:", randomNumber);
+            }
+        });
+        var circle = document.getElementsByClassName("circle");
+        document.onmousemove = function () {
+            var x = event.clientX * 100 / window.innerWidth + "%";
+            var y = event.clientY * 100 / window.innerHeight + "%";
+            //event.clientX => get the horizontal coordinate of the mouse
+            //event.clientY => get the Vertical coordinate of the mouse
+            //window.innerWidth => get the browser width
+            //window.innerHeight => get the browser height
+
+            for (var i = 0; i < 2; i++) {
+                circle[i].style.left = x;
+                circle[i].style.top = y;
+                circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
+            }
+        };
+    </script>
+</body>
+
+</html>

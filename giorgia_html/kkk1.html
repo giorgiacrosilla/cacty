@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Inter:400,800,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="90s.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="future.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -12,14 +12,22 @@
         crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body>
     <div class="main_container">
-        <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
             <div class="title">
+                <div class="rectangle"></div>
+                <div class="circle"></div>
                 <a class="navbar-brand" href="#">
-                    <h1 class="stroke-double" title="secretmag">secretmag</h1>
+                    <h1 class="stroke-double" title="secretmag">secretmag
+                    </h1>
                 </a>
             </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -29,7 +37,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Home </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Features</a>
@@ -51,68 +59,25 @@
                 </ul>
             </div>
         </nav>
-
-        <div id="sidebar">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Dates
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                            <form role="form">
-                                <div class="checkbox"><label>
-                                        <input type="checkbox" id="showasides" class="show">1700</label></div>
-                                <div class="checkbox"><label>
-                                        <input type="checkbox" id="showspeeches" class="show">1800</label>
-                                </div>
-                                <div class="checkbox"><label>
-                                        <input type="checkbox" id="showquotes" class="show">1900</label></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            People
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Places
-                        </button>
-                    </h2>
-                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        <div id="mySidebar" class="sidebar">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
         </div>
-        <main>
+        <main id="main">
+            <div class="bside"><button class="openbtn" onclick="toggleNav()">☰</button></div>
             <h1>THE TERROR IS BORN</h1>
             <h2>The Founding of the Ku Klux Klan</h2>
             <div class="text">
-                <p>The bare facts about the birth of the Ku Klux Klan and its revival half a century later are baffling
+                <p><span class="firstletter">T</span>he bare facts about the birth of the Ku Klux Klan and its revival
+                    half a century later are
+                    baffling
                     to
                     most
                     people today. Little more than a year after it was founded, the secret society thundered across the
                     war-torn
-                    South, sabotaging Reconstruction governments and imposing a reign of terror and violence thatla sted
+                    South, sabotaging Reconstruction governments and imposing a reign of terror and violence that lasted
                     three or
                     four years. And then as rapidly as it had spread, the Klan faded into the history books. After <span
                         class="event ww1">World War I</span>, a
@@ -127,7 +92,9 @@
                     such
                     widespread support. <br>
                     Today, it seems incredible that an organization so violent, so opposed to the American
-                    principles of justice and equality, could twice in the nation’s history have held such power. How
+                    principles of <span class="censorship" onmouseover="showAlert()">justice and equality</span>, could
+                    twice in the nation’s
+                    history have held such power. How
                     did
                     the Ku
                     Klux Klan — one of the nation’s first terrorist groups — so instantly seize the South in the
@@ -160,10 +127,12 @@
                         lessons about survival. Those lessons produced some of the qualities of life for which the
                         nation is
                         most
-                        admired — fierce individualism, enterprising inventiveness, and the freedom to be whatever a
-                        person
-                        wants and to
-                        go wherever a new road leads. <br>
+                        admired — <span class="censorship" onmouseover="showAlert()">fierce individualism, enterprising inventiveness, and the
+                            freedom to be whatever a
+                            person
+                            wants and to
+                            go wherever a new road leads.</span>
+                        <br>
                         But the frontier spirit included other traits as well, and one was a stubborn
                         insistence on the prerogative of “frontier justice” — an instant, private, very personal and
                         often
@@ -247,6 +216,7 @@
                     life, property and, in their eyes, honor. The time was ripe for the Ku Klux Klan to ride. </p>
                 <img src="kkk1.jpg" alt="Lynchings were a common form of vigilante justice during the 19th century.">
                 <figcaption> Lynchings were a common form of vigilante justice during the 19th century.</figcaption>
+
                 <img src="kkk2.jpg" alt="Klansmen were caught trying to lynch a carpetbagger in 1871.">
                 <figcaption>Klansmen were caught trying to lynch a carpetbagger in <span class="date 1800">1871</span>.
                 </figcaption>
@@ -351,7 +321,9 @@
                     and
                     threatening more visits if they didn’t. it didn’t take long for the threats to be converted into
                     violence
-                    against blacks who insisted on exercising their new rights and freedom. Before its six founders
+                    against blacks who insisted on exercising their <span class="censorship"
+                        onmouseover="showAlert()">new rights and
+                        freedom</span>. Before its six founders
                     realized
                     what
                     had happened, the Ku Klux Klan had become something they may not have originally intended —
@@ -730,8 +702,10 @@
                     radical governments this way: “Granting all their mistakes, the radical governments were by far the
                     most
                     democratic the South had ever known. they were the only governments in Southern history to extend to
-                    negroes
-                    complete civil and political equality, and to try to protect them in the enjoyment of the rights
+                    n*****s
+                    <span class="censorship" onmouseover="showAlert()">complete civil and political equality</span>, and
+                    to try to protect them in
+                    the enjoyment of the rights
                     they
                     were
                     granted.” and when these governments were replaced by all-white conservative governments, most of
@@ -975,41 +949,60 @@
                     mask.
                 </figcaption>
             </div>
-        </main> 
+        </main>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
     <script>
-        $(document).ready(main);
+        function showAlert() {
+            // Show a confirmation dialog
+            if (confirm("CENSORSHIP ALERT! Are you sure you want to know what's written here?")) {
+                const elements = document.querySelectorAll(".censorship");
+
+                elements.forEach(element => {
+                    element.style.backgroundColor = "transparent";
+                });
+            }
+        }
+
+        function toggleNav() {
+            var sidebar = document.getElementById("mySidebar");
+            var mainContent = document.getElementById("main");
+
+            if (sidebar.style.width === "300px") {
+                sidebar.style.width = "0";
+                mainContent.style.marginLeft = "0";
+            } else {
+                sidebar.style.width = "300px";
+                mainContent.style.marginLeft = "300px";
+            }
+        }
 
         function main() {
+            // Checkbox interactions
             $('#showasides').click(function () {
                 if (this.checked)
-                    $('.1700').addClass('n1700')
+                    $('.1700').addClass('n1700');
                 else
-                    $('.1700').removeClass('n1700')
-            })
+                    $('.1700').removeClass('n1700');
+            });
+
             $('#showspeeches').click(function () {
                 if (this.checked)
-                    $('.1800').addClass('n1800')
+                    $('.1800').addClass('n1800');
                 else
-                    $('.1800').removeClass('n1800')
-            })
+                    $('.1800').removeClass('n1800');
+            });
+
             $('#showquotes').click(function () {
                 if (this.checked)
-                    $('.1900').addClass('n1900')
+                    $('.1900').addClass('n1900');
                 else
-                    $('.1900').removeClass('n1900')
-            })
-
+                    $('.1900').removeClass('n1900');
+            });
         }
+
+        // Run the main function when the document is ready
+        $(document).ready(main);
+
     </script>
 </body>
 

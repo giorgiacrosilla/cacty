@@ -1,37 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 @font-face {
     font-family: coolvetica;
     src: url("coolvetica rg.otf");
 }
-body {
+
+html {
     cursor: url(https://ani.cursors-4u.net/symbols/sym-8/sym752.cur), auto !important;
-    overflow: auto;
+    overflow-x: hidden;
 }
+
+
 /* width */
 ::-webkit-scrollbar {
-    width: 20px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: fuchsia; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: fuchsia;
     border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: fuchsia; 
-  }
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: fuchsia;
+}
 
 .navbar-custom {
     background-color: lightgreen;
+    font-family: coolvetica;
 }
+
 /*NAVBAR*/
 .title {
     border: 2px solid black;
@@ -39,14 +45,13 @@ body {
     background-color: rgb(245, 226, 15);
     border-style: static;
     border-radius: 20px;
-    width: 200px;
-    height: 80px;
+    width: 15vw;
+    height: 11vh;
     z-index: 1;
-    margin-left: 1vw;
     display: flex;
     justify-content: center;
-    text-align: center;
     align-items: center;
+    text-align: center;
     overflow: hidden;
 }
 
@@ -57,9 +62,8 @@ body {
     background: transparent;
     z-index: 0;
     color: fuchsia;
-    font-size: 45px;
+    font-size: 3vw;
     font-family: 'Lobster', cursive;
-    
 }
 
 /* add a single stroke */
@@ -81,8 +85,200 @@ body {
     z-index: -2;
 }
 
+/*firstpage*/
+.uno {
+    position: relative;
+    height: 116vh;
+}
 
-/*MAIN_BODY*/
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(159, 56, 175) 50%, #09f 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: absolute;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+.wrapper {
+    background-color: white;
+    border-radius: .25em;
+    box-sizing: border-box;
+    margin-left: 50%;
+    padding: 10vmin;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+.separator {
+    background-color: violet;
+    width: 0;
+    height: 0;
+    border-left: 100vw solid transparent;
+    border-bottom: 13.9vw solid lightblue;
+    margin-top: 0vw;
+}
+
+.t {
+    position: absolute;
+    background-color: transparent;
+    width: 0;
+    height: 0;
+    border-left: 100vw solid transparent;
+    border-bottom: 13.9vw solid lightblue;
+    margin-top: 0vw;
+    bottom: 0;
+}
+
+.left {
+    background-color: lightblue;
+    width: 0;
+    height: 0;
+    border-left: 0;
+    border-right: 100vw solid transparent;
+    border-bottom: 13.9vw solid violet;
+    margin-top: 0vw;
+}
+
+.section {
+    margin-inline: auto;
+    padding-block: 5rem;
+
+}
+
+.content {
+    padding-inline: 3rem;
+    padding-top: 5%;
+}
+
+.due {
+    background: lightblue;
+    height: 70vh;
+    font-family: coolvetica;
+}
+
+.diagonal {
+    height: 60vh;
+    background: violet;
+    font-family: coolvetica;
+
+}
+
+.card {
+    width: 10rem;
+    height: 10rem;
+    font-family: coolvetica;
+}
+
+.card img {
+    border: none;
+}
+
+.card:hover {
+    content: " ";
+    animation: pulse 2s infinite;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.cioecontent {
+    background-color: lightgreen;
+    height: 90vh;
+    width: 60%;
+    margin: auto;
+    position: relative;
+}
+
+.side {
+    background-color: #09f;
+    width: 40%;
+    height: inherit;
+    position: absolute;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.95);
+    }
+}
 
 .main_container {
     width: 100vw;
@@ -100,18 +296,18 @@ nav {
     grid-area: nav;
 }
 
-#sidebar {
+.sidebar {
     background-color: aquamarine;
     grid-area: sidebar;
 }
 
 main {
-    overflow: auto;
     grid-area: main;
     text-align: center;
     padding-top: 3%;
     padding-left: 2%;
     padding-right: 2%;
+    /* overflow:auto; questo deve essere modificato per far funzionare correttamente la pagina iniziale*/
 }
 
 main h2 {
@@ -119,12 +315,10 @@ main h2 {
     text-transform: uppercase;
 }
 
-p {
-    text-align: justify;
-}
 .maiuscoletto {
     font-variant: small-caps;
 }
+
 .text {
     padding: 3% 3% 3% 3%;
     background-color: white;
@@ -132,6 +326,7 @@ p {
     column-gap: 3%;
     word-wrap: break-word;
     hyphens: auto;
+    text-align: justify;
 }
 
 .text p::first-letter {
@@ -146,7 +341,6 @@ p {
 .frontier {
     border-color: red;
     border-style: solid;
-    border-radius: 10px 10px 10px 10px;
 }
 
 .ghost {
@@ -167,6 +361,34 @@ figcaption {
     font-style: italic;
 }
 
+table {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+.footnotes {
+    font-size: 0.9rem;
+}
+
+.footnotes p::first-letter,
+.poetry p::first-letter {
+    color: black;
+    float: none;
+    font-weight: normal;
+    font-size: 0.9rem;
+    margin: 0 0 0 0;
+}
+
+footer {
+    grid-area: footer;
+    background-color: violet;
+    position: relative;
+    padding-top: 40px;
+    /* Space for the image */
+}
+
+
+/*sidebartag*/
 .n1700 {
     background-color: red;
 }
@@ -178,16 +400,7 @@ figcaption {
 .n1900 {
     background-color: fuchsia;
 }
-
-.footnotes p::first-letter,
-.poetry p::first-letter {
-    color: black;
-    float: none;
-    font-weight: normal;
-    font-size: 1rem;
-    margin: 0 0 0 0;
-}
-
+#map { height: 180px; }
 @media only screen and (max-width: 550px) {
     body {
         grid-template-columns: 100%;
@@ -195,7 +408,17 @@ figcaption {
     }
 
     .main_container {
+        display: grid;
         grid-template-columns: 100%;
-        grid-template-rows: 20% 80%;
+        grid-template-rows: 0.2fr 0.2fr 1.5fr 0.1fr;
+        grid-template-areas:
+            "nav"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .text {
+        column-count: 1;
     }
 }
