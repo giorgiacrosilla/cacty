@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="90s.css">
+    <script type="text/javascript" src="map.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+</head>
+
+<body>
+    <div class="main_container" id="coverpage">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="title">
+                <div class="rectangle"></div>
+                <div class="circle"></div>
+                <a class="navbar-brand" href="#">
+                    <h1 class="stroke-double" title="secretmag">secretmag
+                    </h1>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Issues </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Documentation</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Themes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <sidebar>
+            <div id="s"></div>
+            <div id="map"></div>
+        </sidebar>
+        <main id="maincover">
+            <div class="forma0" id="futuretitle">
+            </div>
+            <div class="testo_metadata" id="firstarticle">
+                <a href="kkk1.html">
+                    <p onmouseover="ShowMetadata()">1. The Terror is Born. </p>
+                </a>
+            </div>
+            <div class="forma1">
+                <div class="title" id="titlecover" style="display: none;">
+                    <div class="rectangle"></div>
+                    <div class="circle"></div>
+                    <h1 class="stroke-double" title="secretmag" >secretmag
+                    </h1>
+                </div>
+            </div>
+
+            <div class="testo_metadata" id="secondarticle">
+                <div class="new">
+                    <p>NEW!</p>
+                </div>
+                <a href="kkk2.html">
+                    <p onmouseover="ShowMetadata()">2. The Ku Klux Klan: Continuity and Change </p>
+                </a>
+            </div>
+            <div class="testo_metadata" id="thirdarticle">
+                <a href="kkk3.html">
+                    <p onmouseover="ShowMetadata()">3. The Rhetoric of Hiram Wesley Evans<br> and the Klan of the 1920s
+                    </p>
+                </a>
+            </div>
+            <div class='forma2'></div>
+        </main>
+    </div>
+    <script>
+
+        // Select the element by its ID
+        var element = document.getElementById("futuretitle");
+
+        // Define the HTML content you want to set
+        var htmlContent = '<h1>SECRETMAG</h1> <p>1/1/2084</p>';
+
+        // Set the innerHTML of the selected element
+        element.innerHTML = htmlContent;
+    </script>
+</body>
+
+</html>

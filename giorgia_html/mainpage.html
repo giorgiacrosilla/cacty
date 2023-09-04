@@ -2,7 +2,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="future.css">
+    <link rel="stylesheet" href="90s.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -11,6 +11,10 @@
         crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 
 <body>
@@ -31,11 +35,8 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Themes</a>
+                        <li class="nav-item-active">
+                            <a class="nav-link" href="#">Issues</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Documentation</a>
@@ -43,12 +44,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown link
+                                Themes
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
+                                <a class="dropdown-item" href="#">90s</a>
+                                <a class="dropdown-item" href="#">Future</a>
                             </div>
                         </li>
                     </ul>
@@ -56,13 +57,11 @@
             </nav>
         </header>
         <section class="uno">
-            <div class="bg"></div>
-            <div class="bg bg2"></div>
-            <div class="bg bg3"></div>
             <div class="wrapper">
                 <div class="glitcheffect">
-                <h1>Welcome to secretmag!</h1></div>
-                <p>The only place where you can get to know more about the secret organizations.</p>
+                    <h1>Welcome to secretmag!</h1>
+                </div>
+                <p>The only magazine where you can get to know more about the secret organizations.</p>
             </div>
             <div class="separator t"></div>
         </section>
@@ -73,10 +72,6 @@
         <div class="separator left"></div>
         <section class="diagonal">
             <div class="content">
-                <h1>We're deciding which article you're going to read!</h1>
-                <p>Click the button to read about the history of the new world</p>
-                <button id="generateButton">Random Article</button>
-                <p id="result"></p>
             </div>
         </section>
         <div class="separator"></div>
@@ -89,7 +84,9 @@
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Emblem_of_the_Ku_Klux_Klan.svg/668px-Emblem_of_the_Ku_Klux_Klan.svg.png"
                                 alt="kkk logo">
                             <div class="card-body">
-                                <p class="card-text">Read the articles about the KKK!</p>
+                                <a href="coverpage.html">
+                                    <p class="card-text">Read the KKK issue!</p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -99,7 +96,7 @@
                                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Square_compasses.svg/1200px-Square_compasses.svg.png"
                                 alt="Masonry logo">
                             <div class="card-body">
-                                <p class="card-text">Read more about the Masonry!</p>
+                                <p class="card-text">Read the Freemasonry issue!</p>
                             </div>
                         </div>
                     </div>
@@ -109,7 +106,7 @@
                                 src="https://upload.wikimedia.org/wikipedia/commons/4/41/Bones_logo.jpg"
                                 alt="Skull and bones logo">
                             <div class="card-body">
-                                <p class="card-text">Read the articles about Skull and Bones!</p>
+                                <p class="card-text">Read the Skull and Bones issue!</p>
                             </div>
                         </div>
                     </div>
@@ -120,41 +117,22 @@
         <footer>Footer</footer>
     </div>
     <script>
-        function getRandomNumber(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        const pageMapping = {
-            1: "kkk1.html",
-            2: "kkk2.html",
-            3: "kkk3.html"
-        };
+        
+var circle = document.getElementsByClassName("circle");
+document.onmousemove = function () {
+    var x = event.clientX * 100 / window.innerWidth + "%";
+    var y = event.clientY * 100 / window.innerHeight + "%";
+    //event.clientX => get the horizontal coordinate of the mouse
+    //event.clientY => get the Vertical coordinate of the mouse
+    //window.innerWidth => get the browser width
+    //window.innerHeight => get the browser height
 
-        const generateButton = document.getElementById("generateButton");
-        generateButton.addEventListener("click", function () {
-            const randomNumber = getRandomNumber(1, 3); // Random number between 1 and 3
-            const pageName = pageMapping[randomNumber];
-
-            if (pageName) {
-                window.location.href = pageName;
-            } else {
-                console.log("Page mapping not found for random number:", randomNumber);
-            }
-        });
-        var circle = document.getElementsByClassName("circle");
-        document.onmousemove = function () {
-            var x = event.clientX * 100 / window.innerWidth + "%";
-            var y = event.clientY * 100 / window.innerHeight + "%";
-            //event.clientX => get the horizontal coordinate of the mouse
-            //event.clientY => get the Vertical coordinate of the mouse
-            //window.innerWidth => get the browser width
-            //window.innerHeight => get the browser height
-
-            for (var i = 0; i < 2; i++) {
-                circle[i].style.left = x;
-                circle[i].style.top = y;
-                circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
-            }
-        };
+    for (var i = 0; i < 2; i++) {
+        circle[i].style.left = x;
+        circle[i].style.top = y;
+        circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
+    }
+};
     </script>
 </body>
 

@@ -51,9 +51,7 @@
                 </ul>
             </div>
         </nav>
-
-
-        <div class="sidebar">
+        <div class="sidebar" id="mySidebar">
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
@@ -102,9 +100,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        <main>
+        <main id="main">
+            <div class="bside"><button class="openbtn" onclick="toggleNav()">☰</button></div>
             <p>American Communication Journal
                 Vol. 11, No. 2, Summer 2009</p>
             <h2>Ambiguously Articulating “Americanism”</h2>
@@ -806,6 +804,36 @@
             </div>
         </main>
     </div>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+
+        function toggleNav() {
+            var sidebar = document.getElementById("mySidebar");
+            var mainContent = document.getElementById("main");
+
+            if (sidebar.style.width === "300px") {
+                sidebar.style.width = "0";
+                mainContent.style.marginLeft = "0";
+            } else {
+                sidebar.style.width = "300px";
+                mainContent.style.marginLeft = "300px";
+            }
+        }
+
+    </script>
 </body>
 
 </html>
