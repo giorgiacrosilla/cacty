@@ -23,17 +23,17 @@ html {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: fuchsia;
+    background: rgb(255, 0, 191);
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: fuchsia;
+    background: rgb(255, 0, 191);
 }
 
 .navbar-custom {
-    background-color: lightgreen;
+    background-color: #85c442;
     font-family: coolvetica;
 }
 
@@ -92,6 +92,7 @@ html {
 section {
     font-family: coolvetica;
 }
+
 /*firstpage*/
 
 
@@ -158,20 +159,20 @@ section {
 .due {
     background: lightblue;
     height: 70vh;
-    
+
 }
 
 .diagonal {
     height: 60vh;
     background: violet;
-    
+
 
 }
 
 .card {
     width: 10rem;
     height: 10rem;
-    
+
 }
 
 .card img {
@@ -207,6 +208,8 @@ section {
         "nav"
         "main";
     font-family: coolvetica;
+    font-size: 1.1em;
+    background-color: #f4f4fdff;
 }
 
 #coverpage {
@@ -227,35 +230,41 @@ nav {
 
 sidebar {
     grid-area: sidebar;
-    background-color: fuchsia;
+    background-color: rgb(255, 0, 191);
 }
 
 .sidebar {
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
+    z-index: 0;
     top: 0;
     left: 0;
     background-color: transparent;
-    overflow-x: hidden;
+    overflow: auto;
     transition: 0.5s;
-    padding-top: 90px;
+    margin-top: 13.5vh;
+    padding: 1%;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 0em;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }
 
 .accordion {
     padding: 8px 8px 8px 8px;
     text-decoration: none;
-    background-color: fuchsia;
-    border: 1px solid black;
-    border-radius: 20px;
-    box-shadow: 5px 5px black;
-    position:relative;
+    border: 3px solid black;
+    position: relative;
     width: 50%;
     height: 50px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-right: 10px;
-    margin-left: 10px;
+    margin-left: 15px;
     color: white;
     display: block;
 }
@@ -264,10 +273,34 @@ sidebar {
     color: #f1f1f1;
 }
 
+#dates {
+    background-color: rgb(245, 226, 15);
+    transform: rotate(-5deg);
+    border-color: white;
+}
+
+#places {
+    transform: rotate(5deg);
+    background-color: rgb(255, 0, 191);
+    border: 3px solid black;
+
+}
+
+#people {
+    background-color: #85c442;
+    transform: rotate(-5deg);
+}
+
+#events {
+    background-color: transparent;
+    color: black;
+    border-color: rgb(255, 0, 191);
+    transform: rotate(5deg);
+}
+
 .panel {
     padding: 0 18px;
     display: none;
-    background-color: white;
     overflow: auto;
 }
 
@@ -278,7 +311,7 @@ sidebar {
 .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: fuchsia;
+    background-color: rgb(255, 0, 191);
     color: white;
     padding: 10px 15px;
     border: none;
@@ -309,10 +342,38 @@ sidebar {
 
 main {
     grid-area: main;
-    text-align: center;
     padding-top: 3%;
     padding-left: 2%;
     padding-right: 2%;
+}
+
+main>h2,
+h1 {
+    text-align: center;
+}
+
+#p {
+    text-align: center;
+}
+
+.flex-container {
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.info {
+    background-color: rgb(184, 197, 252);
+    width: 40%;
+    padding: 1%;
+}
+
+.description {
+    background-color: pink;
+    width: 50%;
+    transform: rotate(-5deg);
+    padding: 1%;
 }
 
 #maincover {
@@ -344,7 +405,6 @@ main h2 {
 
 .text {
     padding: 3% 3% 3% 3%;
-    background-color: white;
     column-count: 3;
     column-gap: 3%;
     word-wrap: break-word;
@@ -352,26 +412,63 @@ main h2 {
     text-align: justify;
 }
 
+.text>h2 {
+    text-align: left;
+}
+
 .text p::first-letter {
-    color: fuchsia;
+    color: rgb(255, 0, 191);
     float: left;
     font-weight: bold;
-    font-size: 4rem;
-    margin: 0 .1em 0 0;
-    line-height: 0.75;
+    font-size: 4.2rem;
+    margin: .05em .1em 0 0;
+    line-height: 0.65;
 }
 
-#frontier {
-    border-color: red;
-    border-style: solid;
+.frontier {
+    padding: .5em;
+    border: 0.25em solid rgb(255, 0, 191);
+    position: relative;
+    margin-bottom: 2%;
 }
 
-#ghost {
-    border-radius: 10px 10px 10px 10px;
+.frontier::before,
+.frontier::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: #f4f4fdff;
+}
+
+.frontier::before {
+    top: -0.3em;
+    bottom: -0.3em;
+    left: 1em;
+    right: 1em;
+}
+
+.frontier::after {
+    left: -0.3em;
+    right: -0.3em;
+    top: 1em;
+    bottom: 1em;
+}
+
+.frontier>h2,
+p {
+    position: relative;
+    z-index: 1;
+}
+
+.ghost {
     background-color: pink;
 }
 
-.immagine img {
+.immagine {
+    margin-bottom: 3%;
+}
+
+.immagine>img {
     width: 15vw;
     height: auto;
     border-style: solid;
@@ -385,8 +482,9 @@ main h2 {
 }
 
 table {
-    border: 1px solid;
+    border: 3px solid blueviolet;
     border-collapse: collapse;
+    text-align: left;
 }
 
 .footnotes {
@@ -447,6 +545,9 @@ table {
 }
 
 .new {
+
+    clip-path: polygon(23.23% 27.92%, 27.75% 10.88%, 41.56% 23.99%, 55.36% 10.88%, 65.27% 23.99%, 83.89% 15.59%, 83.89% 30.49%, 97.18% 42.81%, 79.7% 44.54%, 75.61% 59.21%, 62.22% 46.27%, 48.83% 59.21%, 38.25% 46.27%, 17.57% 57.77%, 17.38% 39.05%, 0% 32.09%);
+
     border: 2px solid red;
     width: fit-content;
     height: fit-content;
@@ -469,17 +570,19 @@ footer {
 
 /*sidebartag*/
 
-.n1700,.nforrest {
+.n1700,
+.nforrest {
     background-color: red;
-  }
-  
-  .n1800, .nb {
+}
+
+.n1800,
+.nb {
     background-color: yellow;
-  }
-  
-  .n1900 {
-    background-color: fuchsia;
-  }
+}
+
+.n1900 {
+    background-color: rgb(255, 0, 191);
+}
 
 
 @media only screen and (max-width: 550px) {

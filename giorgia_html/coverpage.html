@@ -63,22 +63,22 @@
             <div id="map"></div>
         </sidebar>
         <main id="maincover">
-            <div class="forma0" id="futuretitle">
-            </div>
-            <div class="testo_metadata" id="firstarticle">
-                <a href="kkk1.html">
-                    <p onmouseover="ShowMetadata()">1. The Terror is Born. </p>
-                </a>
-            </div>
-            <div class="forma1">
-                <div class="title" id="titlecover" style="display: none;">
+            <div class="forma0">
+                <div class="title" id="titlecover">
                     <div class="rectangle"></div>
                     <div class="circle"></div>
                     <h1 class="stroke-double" title="secretmag" >secretmag
                     </h1>
                 </div>
             </div>
+            <div class="testo_metadata" id="firstarticle">
+                <a href="kkk1.html">
+                    <p onmouseover="ShowMetadata()">1. The Terror is Born. </p>
+                </a>
+            </div>
 
+            <div class="forma1">
+            </div>
             <div class="testo_metadata" id="secondarticle">
                 <div class="new">
                     <p>NEW!</p>
@@ -102,7 +102,7 @@
         var element = document.getElementById("futuretitle");
 
         // Define the HTML content you want to set
-        var htmlContent = '<h1>SECRETMAG</h1> <p>1/1/2084</p>';
+        var htmlContent = '<p>1/1/2084</p><h1>SECRETMAG</h1> ';
 
         // Set the innerHTML of the selected element
         element.innerHTML = htmlContent;

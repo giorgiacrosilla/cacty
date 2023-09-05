@@ -40,12 +40,16 @@ function toggleNav() {
 
     if (sidebar.style.width === "25vw") {
         sidebar.style.width = "0";
+        sidebar.style.height = "0"; // Set the height to 0 when closing the sidebar
         mainContent.style.marginLeft = "0";
     } else {
         sidebar.style.width = "25vw";
+        sidebar.style.height = "100vh"; // Set the height to full viewport height when opening the sidebar
         mainContent.style.marginLeft = "25vw";
     }
 }
+
+
 
 function main() {
     // Checkbox interactions
