@@ -38,12 +38,12 @@ function toggleNav() {
     var sidebar = document.getElementById("mySidebar");
     var mainContent = document.getElementById("main");
 
-    if (sidebar.style.width === "300px") {
+    if (sidebar.style.width === "25vw") {
         sidebar.style.width = "0";
         mainContent.style.marginLeft = "0";
     } else {
-        sidebar.style.width = "300px";
-        mainContent.style.marginLeft = "300px";
+        sidebar.style.width = "25vw";
+        mainContent.style.marginLeft = "25vw";
     }
 }
 
