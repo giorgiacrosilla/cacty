@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
 
-header {
-  font-family: 'Orbitron', sans-serif;
+@font-face {
+  font-family: Redoctober;
+  src: url("Redoctober-jzXO.otf");
 }
 
-body {
-  background-color: black;
-  font-family: 'Orbitron', sans-serif;
-  color: white;
-  overflow-x: hidden;
+@font-face {
+  font-family: rodchenkol;
+  src: url("rodchenko-light.ttf");
 }
 
+@font-face {
+  font-family: propaganda;
+  src: url("Rodchenko.ttf");
+}
 
 .eyes {
   position: absolute;
@@ -52,6 +55,7 @@ body {
   background-color: white;
   border-radius: 100% 0;
   transform: rotate(45deg);
+  font-family: Redoctober;
 }
 
 .circle {
@@ -90,13 +94,15 @@ body {
   grid-template-areas:
     "nav"
     "main";
-  font-family: 'Orbitron', sans-serif;
+  font-family: rodchenkol;
+  font-size: 1.2em;
   background: radial-gradient(circle at 0%, black, rgb(52, 22, 22) 50%, darkred 75%, black 75%);
 }
 
 nav {
   grid-area: nav;
   z-index: 0;
+  font-family: Redoctober;
 }
 
 #coverpage {
@@ -113,8 +119,7 @@ nav {
 sidebar {
   grid-area: sidebar;
   color: white;
-
-
+  
 }
 
 .sidebar {
@@ -125,12 +130,20 @@ sidebar {
   z-index: 1;
   top: 0;
   left: 0;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   background-color: #111;
   transition: 0.5s;
   padding-top: 60px;
 }
 
+.sidebar::-webkit-scrollbar {
+  width: 0em;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
 
 .accordion {
   background-color: #111;
@@ -140,6 +153,7 @@ sidebar {
   width: inherit;
   text-align: left;
   transition: 0.3s;
+  font-family: Redoctober;
 }
 
 .accordion:hover {
@@ -193,6 +207,8 @@ main {
   padding-top: 3%;
   padding-left: 2%;
   padding-right: 2%;
+  color: white;
+  font-size: 1.1em;
 }
 
 #maincover {
@@ -216,8 +232,6 @@ main {
   color: #f1f1f1;
 }
 
-
-
 .testo_metadata {
   width: 50%;
   border: 10px solid;
@@ -237,10 +251,12 @@ main {
 main h1 {
   color: grey;
   text-align: center;
+  font-family: Redoctober;
 }
 
 main h2 {
   color: white;
+  font-family: Redoctober;
   text-transform: uppercase;
   text-align: center;
   text-shadow:
@@ -250,13 +266,15 @@ main h2 {
   animation: glitch 750ms infinite;
 }
 
+
 .bside {
-  text-align: left;
+  position: fixed;
+  width:13%;
+  height: 100%;
 }
 
-
 .main {
-  font-family: 'Orbitron', sans-serif;
+  font-family: rodchenkol;
   background: radial-gradient(circle at 100%, black, rgb(52, 22, 22) 50%, darkred 75%, black 75%);
 }
 
@@ -350,25 +368,47 @@ main h2 {
   word-wrap: break-word;
   hyphens: auto;
   text-align: justify;
+  width: calc(100% - 13%);
+  float: right;
+}
+
+.table_section {
+  text-align: center;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid white;
+}
+
+td,
+th,
+.footnotes {
+  padding: 8px;
+  text-align: left;
 }
 
 .text p::first-letter {
   color: darkred;
   float: left;
   font-weight: bold;
-  font-size: 4rem;
-  margin: 0 .1em 0 0;
-  line-height: 0.75;
+  font-size: 5rem;
+  font-family: propaganda;
+  margin: .04em .1em 0 0;
+  line-height: 1em;
 }
 
 .censorship {
   background-color: white;
 }
 
-.flex-container {
+.fc {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-bottom: 3%;
 }
 
 .immagine {
@@ -380,8 +420,6 @@ main h2 {
   width: 15vw;
   height: auto;
   border-style: solid;
-  /*border-color: blueviolet;
-    border-width: 10px;*/
 }
 
 .immagine figcaption {
@@ -391,29 +429,28 @@ main h2 {
   font-style: italic;
 }
 
-table {
-  border: 1px solid;
-  border-collapse: collapse;
-}
 
 .footnotes {
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .footnotes p::first-letter,
 .poetry p::first-letter {
-  color: black;
+  color: white;
   float: none;
   font-weight: normal;
   font-size: 0.9rem;
   margin: 0 0 0 0;
 }
 
+.poetry {
+  text-align: center;
+}
+
 footer {
   grid-area: footer;
   position: relative;
   padding-top: 40px;
-  /* Space for the image */
 }
 
 

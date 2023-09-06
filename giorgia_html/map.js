@@ -49,6 +49,21 @@ function toggleNav() {
     }
 }
 
+function toggleS() {
+    var sidebarz = document.getElementById("newS");
+    var mainContent = document.getElementById("main");
+
+    if (sidebarz.style.width === "25vw") {
+        sidebarz.style.width = "0";
+        sidebarz.style.height = "0"; // Set the height to 0 when closing the sidebar
+        mainContent.style.marginLeft = "0";
+    } else {
+        sidebarz.style.width = "25vw";
+        sidebarz.style.height = "100vh"; // Set the height to full viewport height when opening the sidebar
+        mainContent.style.marginLeft = "25vw";
+    }
+}
+
 
 
 function main() {
