@@ -38,6 +38,8 @@ html {
 }
 
 /*NAVBAR*/
+
+
 .title {
     border: 2px solid black;
     box-shadow: 5px 5px;
@@ -239,7 +241,7 @@ sidebar {
     position: fixed;
     z-index: 0;
     top: 0;
-    left: 0;
+    left: -2%;
     background-color: transparent;
     overflow: auto;
     transition: 0.5s;
@@ -261,10 +263,10 @@ sidebar {
     border: 3px solid black;
     position: relative;
     width: 50%;
-    height: 50px;
-    margin-bottom: 20px;
-    margin-right: 10px;
-    margin-left: 15px;
+    height: fit-content;
+    margin-bottom: 10%;
+    margin-right: 10%;
+    margin-left: 15%;
     color: white;
     display: block;
 }
@@ -322,6 +324,7 @@ sidebar {
     background-color: pink;
 }
 
+
 #main {
     transition: margin-left .5s;
     padding: 16px;
@@ -345,6 +348,14 @@ main {
     padding-top: 3%;
     padding-left: 2%;
     padding-right: 2%;
+}
+
+main a:link, main a:visited {
+    color: blueviolet;
+    background-color: transparent;
+}
+ main a:hover, main a:active {
+    color: rgb(106, 106, 232);
 }
 
 main>h2,
@@ -389,15 +400,34 @@ h1 {
     background-image: url('https://i.ytimg.com/vi/kffacxfA7G4/maxresdefault.jpg');
 }
 
-main h2 {
+main h1 {
     color: rgb(106, 106, 232);
     text-transform: uppercase;
+    
+}
+
+main h2 {
+    color: rgb(106, 106, 232);
+    text-align: center;
+    
 }
 
 .bside {
-    text-align: left;
+    position: fixed;
+    width: 13%;
+    height: 100%;
 }
 
+.bside > button {
+    width: 10vw;
+    margin-bottom: 2vh;
+}
+
+#introduction {
+    width: calc(100% - 13%);
+    padding: 3% 3% 3% 3%;
+    float: right;
+}
 
 .maiuscoletto {
     font-variant: small-caps;
@@ -410,6 +440,8 @@ main h2 {
     word-wrap: break-word;
     hyphens: auto;
     text-align: justify;
+    width: calc(100% - 13%);
+    float: right;
 }
 
 .text>h2 {
@@ -481,10 +513,12 @@ p {
     font-style: italic;
 }
 
-table {
-    border: 3px solid blueviolet;
-    border-collapse: collapse;
-    text-align: left;
+table, th, td
+ {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid blueviolet !important;
 }
 
 .footnotes {

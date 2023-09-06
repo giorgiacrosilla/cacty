@@ -3,7 +3,7 @@
 <head>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="future.css">
+    <link rel="stylesheet" href="90s.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -87,51 +87,79 @@
             <div class="panel">
             </div>
         </div>
+        <div id="newS" class="sidebar">
+            <button class="accordion" id="dates">Issue 1: KKK</button>
+            <div class="panel">
+                <ul>
+                    <li><a href="kkk1.html">The Terror is Born</a></li>
+                    <li><a href="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
+                    <li><a href="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the 1920s</a></li>
+                </ul>
+            </div>
+            <button class="accordion" id="places">Issue 2: Freemasonry</button>
+            <div class="panel">
+
+            </div>
+            <button class="accordion" id="people">Issue 3: Skull and Bones</button>
+            <div class="panel">
+
+            </div>
+        </div>
         <main id="main">
-            <div class="bside"><button class="openbtn" onclick="toggleNav()">☰</button></div>
-            <p id="p">American Communication Journal
-                Vol. 11, No. 2, Summer 2009</p>
-            <h2>Ambiguously Articulating “Americanism”</h2>
-            <h1>The Rhetoric of <span class="person evans">Hiram Wesley Evans</span> and the Klan of the 1920s</h1>
-            <div class="flex-container">
-                <div class="flex-item info">
-                <p>Nicolas Rangel Jr.</p>
-                <p>Keywords: <span class="person evans">Hiram Wesley Evans</span>; Ku Klux Klan; Americanism; Strategic
-                    Ambiguity;
-                    American
-                    Civil Religion; Organizational Rhetoric</p>
-                <p>Nicolas Rangel Jr., Ph.D is an Assistant Professor of Communication Studies University of
-                    Houston-Downtown
-                    Department of Arts and Humanities rangeln@uhd.edu</p>
-                </div>
-                <div class="flex-item description">
-                    <p>Historian Richard Hofstadter once described an essay by <span class="role">Imperial Wizard</span>
-                        <span class="person evans">Hiram Wesley Evans</span>
-                        as “not immoderate in tone.” <span class="person evans">Evans</span> oriented that essay in the
-                        defense
-                        of
-                        Americanism, a
-                        frequent theme in his writing. Among the central tenets of <span
-                            class="person evans">Evans</span>’s
-                        Americanism was a
-                        devotion
-                        to Protestantism. It was in the religious fulfillment of Protestantism, <span
-                            class="person evans">Evans</span> would
-                        suggest that
-                        American values could be fully recognized, predominantly the American concern with
-                        individualism. In this essay, I argue that <span class="person evans">Evans</span> ambiguously
-                        defined
-                        his notion of
-                        Americanism
-                        by making substantial efforts to associate his organization’s goals with the American civil
-                        religious tradition. <span class="person evans">Evans</span>’s strategically ambiguous rhetoric
-                        portrayed a unified,
-                        moral and
-                        political vision for American life that served the Klan throughout the <span
-                            class="date 1900">1920s</span>, but
-                        ultimately
-                        undermined the virtues that the civil religious tradition was initially intended to maintain.
-                    </p>
+            <div class="bside"> <button class="openbtn" onclick="toggleSidebar('mySidebar')">Metadata</button><br>
+                <button class="openbtn" onclick="toggleSidebar('newS')">Articles</button>
+            </div>
+            <div id="introduction">
+                <p id="p">American Communication Journal
+                    Vol. 11, No. 2, Summer 2009</p>
+                <h2>Ambiguously Articulating “Americanism”</h2>
+                <h1>The Rhetoric of <span class="person evans">Hiram Wesley Evans</span> and the Klan of the 1920s</h1>
+                <div class="flex-container">
+                    <div class="flex-item info">
+                        <p>Nicolas Rangel Jr.</p>
+                        <p>Keywords: <span class="person evans">Hiram Wesley Evans</span>; Ku Klux Klan; Americanism;
+                            Strategic
+                            Ambiguity;
+                            American
+                            Civil Religion; Organizational Rhetoric</p>
+                        <p>Nicolas Rangel Jr., Ph.D is an Assistant Professor of Communication Studies University of
+                            Houston-Downtown
+                            Department of Arts and Humanities rangeln@uhd.edu</p>
+                    </div>
+                    <div class="flex-item description">
+                        <p>Historian Richard Hofstadter once described an essay by <span class="role">Imperial
+                                Wizard</span>
+                            <span class="person evans">Hiram Wesley Evans</span>
+                            as “not immoderate in tone.” <span class="person evans">Evans</span> oriented that essay in
+                            the
+                            defense
+                            of
+                            Americanism, a
+                            frequent theme in his writing. Among the central tenets of <span
+                                class="person evans">Evans</span>’s
+                            Americanism was a
+                            devotion
+                            to Protestantism. It was in the religious fulfillment of Protestantism, <span
+                                class="person evans">Evans</span> would
+                            suggest that
+                            American values could be fully recognized, predominantly the American concern with
+                            individualism. In this essay, I argue that <span class="person evans">Evans</span>
+                            ambiguously
+                            defined
+                            his notion of
+                            Americanism
+                            by making substantial efforts to associate his organization’s goals with the American civil
+                            religious tradition. <span class="person evans">Evans</span>’s strategically ambiguous
+                            rhetoric
+                            portrayed a unified,
+                            moral and
+                            political vision for American life that served the Klan throughout the <span
+                                class="date 1900">1920s</span>, but
+                            ultimately
+                            undermined the virtues that the civil religious tradition was initially intended to
+                            maintain.
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="text">
@@ -757,7 +785,8 @@
                 </div>
                 <h3>Notes</h3>
                 <div class="footnotes">
-                    <p id="footnote-1">[1]The founding consisted of a symbolic cross-burning, and was scheduled to occur
+                    <p id="footnote-1"> [1] The founding consisted of a symbolic cross-burning, and was scheduled to
+                        occur
                         two
                         weeks
                         prior to the Atlanta
@@ -775,7 +804,7 @@
                         (Maclean
                         13).
                     </p>
-                    <p id="footnote-2">[2]More specifically, Evans‟s conception of the organization “necessitated the
+                    <p id="footnote-2">[2] More specifically, Evans‟s conception of the organization “necessitated the
                         elimination of
                         <span class="person simmons">Simmons</span> and Clark
                         as
@@ -785,12 +814,12 @@
                         into a
                         movement”(Alexander, Ku Klux Klan In the SouthWest, 109).
                     </p>
-                    <p id="footnotet-3">[3]<span class="person simmons">Simmons</span>‟ did not exactly go quietly, and
+                    <p id="footnotet-3">[3] <span class="person simmons">Simmons</span>‟ did not exactly go quietly, and
                         he
                         and Clarke would
                         maintain animus with the Klan long after they had
                         officially parted company with the organization. See Bennett, 213-215.</p>
-                    <p id="footnotet-4">[4]Convention rules would quickly be modified in order to ensure “that there
+                    <p id="footnotet-4">[4] Convention rules would quickly be modified in order to ensure “that there
                         would
                         never be
                         a wearying debacle

@@ -2,7 +2,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="future.css">
+    <link rel="stylesheet" href="90s.css">
     <script src="map.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -86,10 +86,34 @@
             <div class="panel">
             </div>
         </div>
+        <div id="newS" class="sidebar">
+            <button class="accordion" id="dates">Issue 1: KKK</button>
+            <div class="panel">
+                <ul>
+                    <li><a href="kkk1.html">The Terror is Born</a></li>
+                    <li><a href="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
+                    <li><a href="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the 1920s</a></li>
+                </ul>
+            </div>
+            <button class="accordion" id="places">Issue 2: Freemasonry</button>
+            <div class="panel">
+
+            </div>
+            <button class="accordion" id="people">Issue 3: Skull and Bones</button>
+            <div class="panel">
+
+            </div>
+
+        </div>
         <main id="main">
-            <div class="bside"><button class="openbtn" onclick="toggleNav()">☰</button></div>
-            <h2>By RICHARD T. SCHAEFER </h2>
-            <h1>The Ku Klux Klan: Continuity and Change<a href="#footnote-0">*</a> </h1>
+            <div class="bside"> <button class="openbtn" onclick="toggleSidebar('mySidebar')">Metadata</button><br>
+                <button class="openbtn" onclick="toggleSidebar('newS')">Articles</button>
+            </div>
+
+            <div id="introduction">
+                <p>By RICHARD T. SCHAEFER </p>
+                <h1>The Ku Klux Klan: Continuity and Change<a href="#footnote-0">*</a> </h1>
+            </div>
             <div class="text">
                 <p><span class="maiuscoletto">THE KU KLUX KLAN</span> has seen as its mission the preservation of the
                     institutionalized caste pattern of the South and the promotion of a

@@ -34,36 +34,32 @@ function ShowMetadata() {
     })
 };
 
-function toggleNav() {
-    var sidebar = document.getElementById("mySidebar");
+var currentSidebar = null; // Keep track of the currently open sidebar
+
+function toggleSidebar(sidebarId) {
+    var sidebar = document.getElementById(sidebarId);
     var mainContent = document.getElementById("main");
 
-    if (sidebar.style.width === "25vw") {
+    if (currentSidebar === sidebar) {
+        // If the clicked sidebar is already open, close it
         sidebar.style.width = "0";
         sidebar.style.height = "0"; // Set the height to 0 when closing the sidebar
         mainContent.style.marginLeft = "0";
+        currentSidebar = null; // Update the currently open sidebar
     } else {
+        // Close the currently open sidebar (if any)
+        if (currentSidebar !== null) {
+            currentSidebar.style.width = "0";
+            currentSidebar.style.height = "0";
+        }
+
+        // Open the clicked sidebar
         sidebar.style.width = "25vw";
         sidebar.style.height = "100vh"; // Set the height to full viewport height when opening the sidebar
         mainContent.style.marginLeft = "25vw";
+        currentSidebar = sidebar; // Update the currently open sidebar
     }
 }
-
-function toggleS() {
-    var sidebarz = document.getElementById("newS");
-    var mainContent = document.getElementById("main");
-
-    if (sidebarz.style.width === "25vw") {
-        sidebarz.style.width = "0";
-        sidebarz.style.height = "0"; // Set the height to 0 when closing the sidebar
-        mainContent.style.marginLeft = "0";
-    } else {
-        sidebarz.style.width = "25vw";
-        sidebarz.style.height = "100vh"; // Set the height to full viewport height when opening the sidebar
-        mainContent.style.marginLeft = "25vw";
-    }
-}
-
 
 
 function main() {
