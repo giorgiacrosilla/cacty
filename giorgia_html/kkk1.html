@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="90s.css">
+    <link rel="stylesheet" href="future.css">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -17,42 +17,42 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    
+
 </head>
 
 <body>
     <div class="main_container">
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
             <div class="title">
-                <div class="rectangle"></div>
                 <div class="circle"></div>
                 <a class="navbar-brand" href="mainpage.html">
                     <h1 class="stroke-double" title="secretmag">secretmag
                     </h1>
                 </a>
             </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Issues</a>
-                    </li>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Documentation</a>
+                        <a class="nav-link" href="#">Link</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Themes
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -72,7 +72,6 @@
             </div>
             <button class="accordion" id="places">Places</button>
             <div class="panel">
-                <div id="map"></div>
             </div>
             <button class="accordion" id="people">People</button>
             <div class="panel">
@@ -86,6 +85,7 @@
             <button class="accordion" id="events">Events</button>
             <div class="panel">
             </div>
+            <div id="map"></div>
         </div>
         <div id="newS" class="sidebar">
             <button class="accordion" id="dates">Issue 1: KKK</button>
@@ -104,13 +104,12 @@
             <div class="panel">
 
             </div>
-
         </div>
+        <sidebar id="bside">
+            <button class="openbtn" onclick="toggleSidebar('mySidebar')">Metadata</button><br>
+            <button class="openbtn" onclick="toggleSidebar('newS')">Articles</button>
+        </sidebar>
         <main id="main">
-            <div class="bside">
-                <button class="openbtn" onclick="toggleSidebar('mySidebar')">Metadata</button><br>
-                <button class="openbtn" onclick="toggleSidebar('newS')">Articles</button>
-            </div>
             <div id="introduction">
                 <h1>THE TERROR IS BORN</h1>
                 <h2>The Founding of the Ku Klux Klan</h2>

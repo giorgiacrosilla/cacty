@@ -86,6 +86,11 @@ html {
     z-index: -2;
 }
 
+#navbarSupportedContent {
+    margin-left: 10%;
+  }
+  
+
 #titlecover {
     margin-left: 10px;
     margin-top: 10px;
@@ -153,9 +158,17 @@ section {
 
 }
 
-.content {
-    padding-inline: 3rem;
-    padding-top: 5%;
+#content {
+    display: flex;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.card {
+    width: 15%;
+    height: 15%;
+    margin-inline: 5%;
+    margin: 0 auto;
 }
 
 .due {
@@ -204,11 +217,11 @@ section {
     width: 100vw;
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 0.1fr 1fr;
     grid-template-rows: 0.1fr 1.5fr;
     grid-template-areas:
-        "nav"
-        "main";
+      "nav nav"
+      "sidebar main";
     font-family: coolvetica;
     font-size: 1.1em;
     background-color: #f4f4fdff;
@@ -318,7 +331,7 @@ sidebar {
     padding: 10px 15px;
     border: none;
     width: fit-content;
-    word-wrap:break-word;
+    word-wrap: break-word;
 
 }
 
@@ -351,11 +364,14 @@ main {
     padding-right: 2%;
 }
 
-main a:link, main a:visited {
+main a:link,
+main a:visited {
     color: blueviolet;
     background-color: transparent;
 }
- main a:hover, main a:active {
+
+main a:hover,
+main a:active {
     color: rgb(106, 106, 232);
 }
 
@@ -403,23 +419,19 @@ h1 {
 
 main h1 {
     color: rgb(255, 0, 191);
-    
+
 }
 
 main h2 {
     color: rgb(106, 106, 232);
     text-align: center;
     text-transform: uppercase;
-    
-}
 
-.bside {
-    position: fixed;
-    width: 13%;
-    height: 100%;
 }
-
-.bside > button {
+#bside {
+    padding-top: 5%;
+}
+#bside>button {
     width: 10vw;
     margin-bottom: 2vh;
 }
@@ -514,13 +526,14 @@ p {
     font-style: italic;
 }
 
-table, th, td
- {
-  table-layout: fixed;
-  width: 100%;
-  text-align: left;
-  border-collapse: collapse;
-  border: 3px solid blueviolet !important;
+table,
+th,
+td {
+    table-layout: fixed;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    border: 3px solid blueviolet !important;
 }
 
 .footnotes {

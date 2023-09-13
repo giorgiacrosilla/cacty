@@ -20,11 +20,16 @@ document.onmousemove = function () {
 document.addEventListener("DOMContentLoaded", function () {
     var map = L.map('map').setView([51.505, -0.09], 15);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 15,
+        attribution: '© OpenStreetMap',
     }).addTo(map);
+
+    var marker = L.marker([51.5, -0.09]).addTo(map);
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
 });
+
+
 
 function ShowMetadata() {
     const articles = document.querySelectorAll('.testo_metadata');
@@ -53,12 +58,13 @@ var currentSidebar = null;
 function toggleSidebar(sidebarId) {
     var sidebar = document.getElementById(sidebarId);
     var mainContent = document.getElementById("main");
+    var bside = document.getElementById('bside');
 
     if (currentSidebar === sidebar) {
         // If the clicked sidebar is already open, close it
         sidebar.style.width = "0";
         sidebar.style.height = "0"; // Set the height to 0 when closing the sidebar
-        mainContent.style.marginLeft = "0";
+        bside.style.marginLeft = "0";
         currentSidebar = null; // Update the currently open sidebar
     } else {
         // Close the currently open sidebar (if any)
@@ -69,8 +75,8 @@ function toggleSidebar(sidebarId) {
 
         // Open the clicked sidebar
         sidebar.style.width = "25vw";
-        sidebar.style.height = "100vh"; // Set the height to full viewport height when opening the sidebar
-        mainContent.style.marginLeft = "25vw";
+        sidebar.style.height = "100vh"; 
+        bside.style.marginLeft = "30vw";// Set the height to full viewport height when opening the sidebar
         currentSidebar = sidebar; // Update the currently open sidebar
     }
 }
@@ -90,6 +96,8 @@ function initializeAccordion() {
     }
 }
 initializeAccordion();
+
+
 
 function main() {
     // Checkbox interactions
