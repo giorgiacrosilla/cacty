@@ -15,8 +15,6 @@
   src: url("Rodchenko.ttf");
 }
 
-
-
 .eyes {
   position: absolute;
   top: 30%;
@@ -171,7 +169,8 @@ sidebar {
 }
 
 #map {
-  height: 180px;
+  height: 30vh;
+  width: 20vw;
 }
 
 .openbtn {
@@ -212,52 +211,160 @@ main {
   color: white;
   font-size: 1.1em;
 }
-main a:link, main a:visited {
+
+main a:link,
+main a:visited {
   color: grey;
   background-color: transparent;
 }
-main a:hover, main a:active {
+
+main a:hover,
+main a:active {
   color: white;
 }
 
 #maincover {
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding-top: 0%;
   padding-left: 0%;
   padding-right: 0%;
   position: relative;
+  background-color: black;
+}
+
+.forma1 {
+  position: relative;
+  background-color: transparent;
+  border-left: 100vw solid transparent;
+  border-bottom: 10vw solid darkred;
+  margin-top: -25vw;
+  bottom: 0;
+  z-index: 1;
+}
+
+.forma2 {
+  position: relative;
+  background-color: transparent;
+  width: 0;
+  height: 0;
+  border-right: 100vw solid transparent;
+  border-top: 10vw solid darkred;
+  margin-top: 0vw;
+  z-index: 1;
+  margin-bottom: -30%;
+}
+
+.content {
+  position: relative;
+  padding: 1%;
   background-color: darkred;
-  background-image: url('data:image/svg+xml,<svg version="1.1" class="circuit-no-fill" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 96.3 457.3" style="enable-background:new 0 0 96.3 457.3;" xml:space="preserve"><g id="circuit-left" transform="translate(92.128906, 524.812500)"><path class="st0" d="M-49.2-434.4c0,2.3,1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1c0-1.8-1.2-3.3-2.8-3.9v-24.2l-13.8-13.8v-23c1.6-0.6,2.8-2.1,2.8-3.9c0-2.3-1.8-4.1-4.1-4.1s-4.1,1.8-4.1,4.1c0,1.8,1.2,3.3,2.8,3.9v24.2l13.8,13.8v23.1C-48.1-437.7-49.2-436.2-49.2-434.4"/><path class="st0" d="M-57.7-109.3v-339.6l-13.5-13.7V-490l-11.2-11.4c0.3-0.5,0.4-1.1,0.4-1.8c0-2.3-1.8-4.1-4-4.1s-4,1.8-4,4.1c0,2.3,1.8,4.1,4,4.1c0.6,0,1.2-0.2,1.7-0.4l10.4,10.6v27.4l13.5,13.7v338.5c-1.6,0.6-2.7,2.1-2.7,3.9c0,2.3,1.8,4.1,4,4.1s4-1.8,4-4.1C-55-107.2-56.1-108.7-57.7-109.3"/><path class="st0" d="M-15.8-472.3c1.6-0.6,2.8-2.1,2.8-3.9c0-2.3-1.8-4.1-4.1-4.1s-4.1,1.8-4.1,4.1c0,1.8,1.2,3.3,2.8,3.9v159.7L-29-302c-0.5-0.3-1.1-0.4-1.8-0.4c-2.3,0-4.1,1.8-4.1,4.1c0,2.3,1.8,4.1,4.1,4.1s4.1-1.8,4.1-4.1c0-0.6-0.2-1.2-0.4-1.8l11.4-11.4v-160.8H-15.8z"/><path class="st0" d="M0-270.2c0-2.3-1.8-4.1-4-4.1s-4,1.8-4,4.1c0,1.8,1.1,3.3,2.7,3.8v33.2c-1.5,0.6-2.7,2.1-2.7,3.8c0,2.3,1.8,4.1,4,4.1s4-1.8,4-4.1c0-1.8-1.1-3.3-2.7-3.8v-33.2C-1.1-266.9,0-268.4,0-270.2"/><path class="st0" d="M-14-256.2c0-2.3-1.8-4.1-4-4.1s-4,1.8-4,4.1c0,1.8,1.1,3.3,2.7,3.9v116c-1.5,0.6-2.7,2.1-2.7,3.9c0,2.3,1.8,4.1,4,4.1s4-1.8,4-4.1c0-1.8-1.1-3.3-2.7-3.9v-116C-15.1-252.9-14-254.4-14-256.2"/><path class="st0" d="M-29.6-178.3V-270l26.9-27.5v-188.8c1.6-0.6,2.7-2.1,2.7-3.9c0-2.3-1.8-4.1-4-4.1s-4,1.8-4,4.1c0,1.8,1.1,3.3,2.7,3.9v187.8L-32.2-271v92.8c-1.6,0.6-2.7,2.1-2.7,3.9c0,2.3,1.8,4.1,4,4.1s4-1.8,4-4.1C-26.9-176.2-28.1-177.7-29.6-178.3"/><path class="st0" d="M-68-435.2c0-2.3-1.8-4.1-4-4.1s-4,1.8-4,4.1c0,1.8,1.1,3.3,2.7,3.9v116c-1.5,0.6-2.7,2.1-2.7,3.9c0,2.3,1.8,4.1,4,4.1s4-1.8,4-4.1c0-1.8-1.1-3.3-2.7-3.9v-116C-69.1-431.9-68-433.4-68-435.2"/><path class="st0" d="M-35-325.4c0,2.3,1.8,4.1,4,4.1s4-1.8,4-4.1c0-1.8-1.1-3.3-2.7-3.9v-61c1.5-0.6,2.7-2.1,2.7-3.9c0-2.3-1.8-4.1-4-4.1s-4,1.8-4,4.1c0,1.8,1.1,3.3,2.7,3.9v61C-33.9-328.7-35-327.2-35-325.4"/><path class="st0" d="M-43.6-82.3V-407l13.5-13.7v-68.6l13.5-13.7v-10.3c1.6-0.6,2.7-2.1,2.7-3.9c0-2.3-1.8-4.1-4-4.1s-4,1.8-4,4.1c0,1.8,1.1,3.3,2.7,3.9v9.3l-13.6,13.7v68.6L-46.3-408v325.7c-1.6,0.6-2.7,2.1-2.7,3.9c0,2.3,1.8,4.1,4,4.1s4-1.8,4-4.1C-40.9-80.2-42.1-81.7-43.6-82.3"/></g></svg>');
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 30%;
-  z-index: 0;
+  height: min-content;
+  text-align: center;
+  z-index: 1;
 }
 
-
-.forma0 {
-  width: 100%;
-  height: 18%;
-  color: #f1f1f1;
+.content h1 {
+  transform: rotate(-6deg);
+  z-index: 1;
+  font-size: 2.5em;
 }
 
-.testo_metadata {
-  width: 50%;
-  border: 10px solid;
-  border-image-slice: 1;
-  border-width: 5px;
-  border-image-source: linear-gradient(to right, red, black);
-  animation: 10s rotate linear infinite;
+foreignObject {
+  font-size: 0.7em;
+  word-wrap: break-word;
+
 }
 
+foreignObject>text {
 
-#firstarticle,
-#secondarticle,
-#thirdarticle {
-  margin-top: 20%;
+  animation: opacity 10s ease-in-out;
 }
 
-main h1 {
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+}
+
+.shape {
+  stroke-dasharray: 0;
+  /* Start with no stroke */
+  stroke: darkred;
+  /* You can change the stroke color */
+  stroke-width: 2;
+  /* You can change the stroke width */
+  animation: drawStroke 10s ease-in-out forwards;
+}
+
+@keyframes drawStroke {
+  0% {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dasharray: 10000;
+    /* Adjust the value to match the length of your SVG path */
+    stroke-dashoffset: 0;
+
+  }
+}
+
+.external {
+  stroke-dasharray: 0;
+  /* Start with no stroke */
+  stroke: darkred;
+  /* You can change the stroke color */
+  stroke-width: 2;
+  /* You can change the stroke width */
+  animation: drawStrokez 10s ease-in-out forwards;
+}
+
+@keyframes drawStrokez {
+  0% {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dasharray: 10000;
+    /* Adjust the value to match the length of your SVG path */
+    stroke-dashoffset: 0;
+
+  }
+}
+
+.centralt {
+  stroke-dasharray: 0;
+  /* Start with no stroke */
+  stroke: darkred;
+  /* You can change the stroke color */
+  stroke-width: 2;
+  /* You can change the stroke width */
+  animation: drawStrok 10s ease-in-out forwards;
+}
+
+@keyframes drawStrok {
+  0% {
+    stroke-dasharray: 0;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dasharray: 10000;
+    /* Adjust the value to match the length of your SVG path */
+    stroke-dashoffset: 0;
+
+  }
+}
+
+main h1, .main h1 {
   color: white;
   text-align: center;
   font-family: Redoctober;
@@ -286,6 +393,11 @@ main h2 {
   position: fixed;
   width: 13%;
   height: 100%;
+}
+
+.bside>button {
+  width: 10vw;
+  margin-bottom: 2vh;
 }
 
 .main {
@@ -361,7 +473,7 @@ main h2 {
 
 }
 
-.content {
+#content {
   padding-inline: 1rem;
   padding-top: 5%;
 }
@@ -391,8 +503,9 @@ main h2 {
   text-align: center;
 }
 
-table, th, td
- {
+table,
+th,
+td {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;

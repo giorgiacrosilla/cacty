@@ -1,7 +1,24 @@
 
 
+var circle = document.getElementsByClassName("circle");
+document.onmousemove = function () {
+    var x = event.clientX * 100 / window.innerWidth + "%";
+    var y = event.clientY * 100 / window.innerHeight + "%";
+    //event.clientX => get the horizontal coordinate of the mouse
+    //event.clientY => get the Vertical coordinate of the mouse
+    //window.innerWidth => get the browser width
+    //window.innerHeight => get the browser height
+
+    for (var i = 0; i < 2; i++) {
+        circle[i].style.left = x;
+        circle[i].style.top = y;
+        circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
+    }
+};
+
+
 document.addEventListener("DOMContentLoaded", function () {
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var map = L.map('map').setView([51.505, -0.09], 15);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
@@ -11,15 +28,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function ShowMetadata() {
     const articles = document.querySelectorAll('.testo_metadata');
+    const svgElement = document.getElementById('firstsvg');
     articles.forEach(element => {
         if (element.id === 'firstarticle') {
             document.getElementById("s").innerHTML =
                 '<h2>Article Metadata</h2><ul><li>title: The Terror is Born. </li><li>author</li><li>date</li></ul>';
         }
     })
+
+    if (svgElement) {
+        // Find the text element with id="metadata" inside the SVG
+        const textElement = svgElement.querySelector('#metadata');
+
+        // Update the text content of the text element
+        if (textElement) {
+            document.getElementById("s").innerHTML =
+                '<h2>Article Metadata</h2><ul><li>title: The Terror is Born. </li><li>author</li><li>date</li></ul>';
+        }
+    }
 };
 
-var currentSidebar = null; // Keep track of the currently open sidebar
+var currentSidebar = null;
 
 function toggleSidebar(sidebarId) {
     var sidebar = document.getElementById(sidebarId);
@@ -98,3 +127,6 @@ function main() {
     });
 }
 $(document).ready(main);
+
+
+

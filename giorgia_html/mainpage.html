@@ -66,17 +66,17 @@
             <div class="separator t"></div>
         </section>
         <section class="due">
-            <div class="content">
+            <div id="content">
             </div>
         </section>
         <div class="separator left"></div>
         <section class="diagonal">
-            <div class="content">
+            <div id="content">
             </div>
         </section>
         <div class="separator"></div>
         <section class="due">
-            <div class="content">
+            <div id="content">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="card">
@@ -116,24 +116,7 @@
         <div class="separator left"></div>
         <footer>Footer</footer>
     </div>
-    <script>
-        
-var circle = document.getElementsByClassName("circle");
-document.onmousemove = function () {
-    var x = event.clientX * 100 / window.innerWidth + "%";
-    var y = event.clientY * 100 / window.innerHeight + "%";
-    //event.clientX => get the horizontal coordinate of the mouse
-    //event.clientY => get the Vertical coordinate of the mouse
-    //window.innerWidth => get the browser width
-    //window.innerHeight => get the browser height
-
-    for (var i = 0; i < 2; i++) {
-        circle[i].style.left = x;
-        circle[i].style.top = y;
-        circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
-    }
-};
-    </script>
+    <script src="map.js"></script>
 </body>
 
 </html>

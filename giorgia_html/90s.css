@@ -102,7 +102,7 @@ section {
     position: relative;
     height: 116vh;
     z-index: -1;
-    background: linear-gradient(to top, rgba(251, 25, 217, 0.822), rgba(144, 238, 144, 0.822)), url(https://c.files.bbci.co.uk/4178/production/_105706761_gettyimages-90001717.jpg) no-repeat top center;
+    background: linear-gradient(to top, rgb(255, 0, 191), #85c442) no-repeat top center;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -317,6 +317,8 @@ sidebar {
     color: white;
     padding: 10px 15px;
     border: none;
+    width: fit-content;
+    word-wrap:break-word;
 
 }
 
@@ -331,7 +333,6 @@ sidebar {
     overflow: auto;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {
         padding-top: 5px;
@@ -397,18 +398,18 @@ h1 {
     text-align: left;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('https://i.ytimg.com/vi/kffacxfA7G4/maxresdefault.jpg');
+    background-image: url('https://newswirengr.com/wp-content/uploads/2023/02/ADC_ADV17022S_10.jpg');
 }
 
 main h1 {
-    color: rgb(106, 106, 232);
-    text-transform: uppercase;
+    color: rgb(255, 0, 191);
     
 }
 
 main h2 {
     color: rgb(106, 106, 232);
     text-align: center;
+    text-transform: uppercase;
     
 }
 
@@ -517,6 +518,7 @@ table, th, td
  {
   table-layout: fixed;
   width: 100%;
+  text-align: left;
   border-collapse: collapse;
   border: 3px solid blueviolet !important;
 }
@@ -565,7 +567,8 @@ table, th, td
 
 .testo_metadata {
     position: relative;
-
+    width: max-content;
+    height: max-content;
 }
 
 #firstarticle {
@@ -579,13 +582,13 @@ table, th, td
 }
 
 .new {
-
     clip-path: polygon(23.23% 27.92%, 27.75% 10.88%, 41.56% 23.99%, 55.36% 10.88%, 65.27% 23.99%, 83.89% 15.59%, 83.89% 30.49%, 97.18% 42.81%, 79.7% 44.54%, 75.61% 59.21%, 62.22% 46.27%, 48.83% 59.21%, 38.25% 46.27%, 17.57% 57.77%, 17.38% 39.05%, 0% 32.09%);
-
     border: 2px solid red;
-    width: fit-content;
-    height: fit-content;
+    width: 8vw;
+    height: 20vh;
     color: white;
+    text-align: center;
+    padding-top: 7%;
     background-color: red;
 }
 
