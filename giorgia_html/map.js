@@ -76,7 +76,7 @@ function toggleSidebar(sidebarId) {
         // Open the clicked sidebar
         sidebar.style.width = "25vw";
         sidebar.style.height = "100vh"; 
-        bside.style.marginLeft = "30vw";// Set the height to full viewport height when opening the sidebar
+        bside.style.marginLeft = "27vw";// Set the height to full viewport height when opening the sidebar
         currentSidebar = sidebar; // Update the currently open sidebar
     }
 }

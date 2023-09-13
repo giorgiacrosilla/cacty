@@ -88,8 +88,8 @@ html {
 
 #navbarSupportedContent {
     margin-left: 10%;
-  }
-  
+}
+
 
 #titlecover {
     margin-left: 10px;
@@ -161,7 +161,6 @@ section {
 #content {
     display: flex;
     width: fit-content;
-    margin: 0 auto;
 }
 
 .card {
@@ -184,11 +183,6 @@ section {
 
 }
 
-.card {
-    width: 10rem;
-    height: 10rem;
-
-}
 
 .card img {
     border: none;
@@ -220,8 +214,8 @@ section {
     grid-template-columns: 0.1fr 1fr;
     grid-template-rows: 0.1fr 1.5fr;
     grid-template-areas:
-      "nav nav"
-      "sidebar main";
+        "nav nav"
+        "sidebar main";
     font-family: coolvetica;
     font-size: 1.1em;
     background-color: #f4f4fdff;
@@ -245,7 +239,7 @@ nav {
 
 sidebar {
     grid-area: sidebar;
-    background-color: rgb(255, 0, 191);
+
 }
 
 .sidebar {
@@ -282,6 +276,7 @@ sidebar {
     margin-left: 15%;
     color: white;
     display: block;
+    word-wrap: break-word;
 }
 
 .accordion:hover {
@@ -342,7 +337,6 @@ sidebar {
 
 #main {
     transition: margin-left .5s;
-    padding: 16px;
     overflow: auto;
 }
 
@@ -428,11 +422,13 @@ main h2 {
     text-transform: uppercase;
 
 }
+
 #bside {
     padding-top: 5%;
 }
+
 #bside>button {
-    width: 10vw;
+    width: fit-content;
     margin-bottom: 2vh;
 }
 
