@@ -1,4 +1,13 @@
+var map = L.map('map').setView([51.505, -0.09], 15);
 
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+setInterval(function () {
+    map.invalidateSize();
+ }, 100);
 
 var circle = document.getElementsByClassName("circle");
 document.onmousemove = function () {

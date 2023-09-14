@@ -239,11 +239,10 @@ nav {
 
 sidebar {
     grid-area: sidebar;
-
 }
 
 .sidebar {
-    height: 100%;
+    height: 0;
     width: 0;
     position: fixed;
     z-index: 0;
@@ -315,8 +314,9 @@ sidebar {
 }
 
 #map {
-    height: 180px;
-}
+    height: 30vh;
+    width: 20vw;
+  }
 
 .openbtn {
     font-size: 20px;
