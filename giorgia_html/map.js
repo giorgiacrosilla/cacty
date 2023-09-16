@@ -7,7 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 setInterval(function () {
     map.invalidateSize();
- }, 100);
+}, 100);
 
 var circle = document.getElementsByClassName("circle");
 document.onmousemove = function () {
@@ -62,33 +62,38 @@ function ShowMetadata() {
     }
 };
 
-var currentSidebar = null;
+var currentSidebar = 0;
+var lastButton = null;
 
-function toggleSidebar(sidebarId) {
-    var sidebar = document.getElementById(sidebarId);
-    var mainContent = document.getElementById("main");
-    var bside = document.getElementById('bside');
+function toggleSidebar(panelId) {
+    var panel = document.getElementById(panelId);
+    var sidebar = document.getElementById("sidebar-txt-id");
+    var all = document.getElementById("body-txt-id");
+    if (currentSidebar === 0) {
+        currentSidebar = 1;
+        sidebar.style.display = "block";
+        panel.style.display = "block";
+        all.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+        lastButton = panel;
 
-    if (currentSidebar === sidebar) {
-        // If the clicked sidebar is already open, close it
-        sidebar.style.width = "0";
-        sidebar.style.height = "0"; // Set the height to 0 when closing the sidebar
-        bside.style.marginLeft = "0";
-        currentSidebar = null; // Update the currently open sidebar
-    } else {
-        // Close the currently open sidebar (if any)
-        if (currentSidebar !== null) {
-            currentSidebar.style.width = "0";
-            currentSidebar.style.height = "0";
-        }
-
-        // Open the clicked sidebar
-        sidebar.style.width = "25vw";
-        sidebar.style.height = "100vh"; 
-        bside.style.marginLeft = "27vw";// Set the height to full viewport height when opening the sidebar
-        currentSidebar = sidebar; // Update the currently open sidebar
     }
-}
+    else {
+        if (lastButton === panel) {
+            currentSidebar = 0;
+            lastButton = null;
+            sidebar.style.display = "none";
+            all.style.gridTemplateAreas = '"nav nav" "button main" "footer footer"';
+
+        }
+        else {
+            document.getElementById(lastButton).style.display = "none";
+            lastButton = panel;
+            panel.style.display = "block";
+        }
+    }
+};
+
+
 function initializeAccordion() {
     var accordions = document.getElementsByClassName("accordion");
 

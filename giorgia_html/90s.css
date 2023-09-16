@@ -7,7 +7,6 @@
 
 html {
     cursor: url(https://ani.cursors-4u.net/symbols/sym-8/sym752.cur), auto !important;
-    overflow-x: hidden;
 }
 
 /* width */
@@ -183,7 +182,6 @@ section {
 
 }
 
-
 .card img {
     border: none;
 }
@@ -207,15 +205,14 @@ section {
     }
 }
 
-.main_container {
-    width: 100vw;
-    height: 100vh;
+#body-txt-id {
     display: grid;
     grid-template-columns: 0.1fr 1fr;
-    grid-template-rows: 0.1fr 1.5fr;
+    grid-template-rows: 0.01fr 1.5fr 0.01fr;
     grid-template-areas:
         "nav nav"
-        "sidebar main";
+        "button main"
+        "footer footer";
     font-family: coolvetica;
     font-size: 1.1em;
     background-color: #f4f4fdff;
@@ -237,29 +234,39 @@ nav {
     grid-area: nav;
 }
 
-sidebar {
-    grid-area: sidebar;
+#sidebar-txt-id{     /*dobbiamo cambiare i nomi di classi e id per capirli più facilmente*/
+    display: none;   /*questa è la vera sidebar*/
 }
 
-.sidebar {
-    height: 0;
-    width: 0;
-    position: fixed;
-    z-index: 0;
-    top: 0;
-    left: -2%;
+#button-txt-id{                /*questa è la div con i pulsanti*/
+    grid-area: button;
+}
+
+#button-txt-id {
+    padding-top: 5%;
+}
+
+#button-txt-id>button {
+    width: fit-content;
+    margin-bottom: 2vh;
+}
+
+#metadata-txt-id, #article-txt-id {
+    display: none;
+}
+
+.side-cont-txt {
     background-color: transparent;
     overflow: auto;
     transition: 0.5s;
-    margin-top: 13.5vh;
     padding: 1%;
 }
 
-.sidebar::-webkit-scrollbar {
+.side-cont-txt::-webkit-scrollbar {
     width: 0em;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
+.side-cont-txt::-webkit-scrollbar-thumb {
     background-color: transparent;
 }
 
@@ -335,7 +342,7 @@ sidebar {
 }
 
 
-#main {
+#main-txt-id {
     transition: margin-left .5s;
     overflow: auto;
 }
@@ -423,19 +430,9 @@ main h2 {
 
 }
 
-#bside {
-    padding-top: 5%;
-}
 
-#bside>button {
-    width: fit-content;
-    margin-bottom: 2vh;
-}
-
-#introduction {
-    width: calc(100% - 13%);
+#introduction-txt-id {
     padding: 3% 3% 3% 3%;
-    float: right;
 }
 
 .maiuscoletto {
@@ -449,8 +446,6 @@ main h2 {
     word-wrap: break-word;
     hyphens: auto;
     text-align: justify;
-    width: calc(100% - 13%);
-    float: right;
 }
 
 .text>h2 {
@@ -609,8 +604,6 @@ td {
 footer {
     grid-area: footer;
     background-color: violet;
-    position: relative;
-    padding-top: 40px;
 }
 
 
@@ -637,7 +630,7 @@ footer {
         grid-template-rows: 10% 80% 10%;
     }
 
-    .main_container {
+    #body-txt-id {
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 0.2fr 0.2fr 1.5fr 0.1fr;

@@ -18,16 +18,16 @@ document.onmousemove = function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-var map = L.map('map').setView([51.505, -0.09], 15);
+    var map = L.map('map').setView([51.505, -0.09], 15);
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-}).addTo(map);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
 
-setInterval(function () {
-    map.invalidateSize();
- }, 100);    
+    setInterval(function () {
+        map.invalidateSize();
+    }, 100);
 
 
 });
@@ -60,30 +60,30 @@ var currentSidebar = 0;
 var lastButton = null;
 
 function toggleSidebar(panelId) {
-  var panel = document.getElementById(panelId);
-  var sidebar = document.getElementById("panel");
+    var panel = document.getElementById(panelId);
+    var sidebar = document.getElementById("panel");
     var all = document.getElementById("all");
     if (currentSidebar === 0) {
-      currentSidebar = 1;
-      sidebar.style.display = "block";
-      panel.style.display = "block";
-      all.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
-      lastButton = panelId;
-        }
-        else {
-          if (lastButton === panelId){
+        currentSidebar = 1;
+        sidebar.style.display = "block";
+        panel.style.display = "block";
+        all.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+        lastButton = panelId;
+    }
+    else {
+        if (lastButton === panelId) {
             currentSidebar = 0;
             lastButton = null;
             sidebar.style.display = "none";
             all.style.gridTemplateAreas = '"nav nav" "button main" "footer footer"';
-          }
-          else{
+        }
+        else {
             document.getElementById(lastButton).style.display = "none";
             lastButton = panelId;
             panel.style.display = "block";
-            
-            
-          }
+
+
+        }
     }
 }
 
