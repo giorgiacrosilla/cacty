@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="90s.css">
+    <script src="map.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
@@ -17,40 +18,42 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
 </head>
 
-<body>
-    <div class="main_container" id="all">
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
-            <div class="title">
-                <div class="circle"></div>
-                <a class="navbar-brand" href="mainpage.html">
-                    <h1 class="stroke-double" title="secretmag">secretmag </h1>
-                </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Theme 1</a></li>
-                            <li><a class="dropdown-item" href="#">Theme 2</a></li>
+<body id="body-txt-id">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="title">
+            <div class="circle"></div>
+            <a class="navbar-brand" href="mainpage.html">   
+                <h1 class="stroke-double" title="secretmag">secretmag         </h1>
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>                            
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Theme 1</a></li>
+                        <li><a class="dropdown-item" href="#">Theme 2</a></li>
 
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div id="panel">
-            <div id="mySidebar" class="sidebar">
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+            <div class= "sidecont-txt metarticle-inv-txt" id="metadata-txt-id">
                 <button class="accordion" id="dates">Dates</button>
                 <div class="panel">
                     <form role="form">
@@ -81,7 +84,7 @@
                 </div>
 
             </div>
-            <div id="newS" class="sidebar">
+            <div class= "sidecont-txt metarticle-inv-txt" id="article-txt-id" >
                 <button class="accordion" id="dates">Issue 1: KKK</button>
                 <div class="panel">
                     <ul>
@@ -99,18 +102,17 @@
 
                 </div>
             </div>
+        <div id="button-txt-id">
+            <button class="openbtn" onclick="toggleClass('metadata-txt-id', 'article-txt-id')">Metadata</button><br>
+            <button class="openbtn" onclick="toggleClass('article-txt-id', 'metadata-txt-id')">Articles</button>
         </div>
-        <sidebar id="bside">
-            <button class="openbtn" onclick="toggleSidebar('mySidebar')">Metadata</button><br>
-            <button class="openbtn" onclick="toggleSidebar('newS')">Articles</button>
-        </sidebar>
-        <main id="main">
-            <div id="introduction">
+        <main id="main-txt-id">
+            <div id="introduction-txt-id">
                 <h1>THE TERROR IS BORN</h1>
                 <h2>The Founding of the Ku Klux Klan</h2>
             </div>
             <div class="text">
-                <p><span class="firstletter">T</span>he bare facts about the birth of the Ku Klux Klan and its
+                <p>The bare facts about the birth of the Ku Klux Klan and its
                     revival
                     half a century later are
                     baffling
@@ -1300,10 +1302,7 @@
     </div>
     </main>
     <footer> Questo è il footer</footer>
-    </div>
-
-    <script src="map.js"></script>
-
+    
 </body>
 
 </html>

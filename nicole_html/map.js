@@ -18,16 +18,16 @@ document.onmousemove = function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    var map = L.map('map').setView([51.505, -0.09], 15);
+var map = L.map('map').setView([51.505, -0.09], 15);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
 
-    setInterval(function () {
-        map.invalidateSize();
-    }, 100);
+setInterval(function () {
+    map.invalidateSize();
+ }, 100);    
 
 
 });
@@ -56,38 +56,108 @@ function ShowMetadata() {
     }
 };
 
+
+/*
 var currentSidebar = 0;
 var lastButton = null;
 
+
 function toggleSidebar(panelId) {
-    var panel = document.getElementById(panelId);
-    var sidebar = document.getElementById("panel");
-    var all = document.getElementById("all");
+  var panel = document.getElementById(panelId);
+  var sidebar = document.getElementById("sidebar-txt-id");
+    var all = document.getElementById("body-txt-id");
     if (currentSidebar === 0) {
-        currentSidebar = 1;
-        sidebar.style.display = "block";
-        panel.style.display = "block";
-        all.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
-        lastButton = panelId;
-    }
+      currentSidebar = 1;
+      sidebar.style.display = "block";
+      panel.style.display = "block";
+      console.log(panel)
+      all.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+      lastButton = panelId;
+        }
     else {
-        if (lastButton === panelId) {
+        if (lastButton === panelId){
             currentSidebar = 0;
             lastButton = null;
             sidebar.style.display = "none";
             all.style.gridTemplateAreas = '"nav nav" "button main" "footer footer"';
-        }
-        else {
+          }
+        else{
             document.getElementById(lastButton).style.display = "none";
             lastButton = panelId;
             panel.style.display = "block";
-
-
+            
+            
+          }
+    }
+}
+*/
+/*
+function toggleSidebar1(){
+    var contentOne = document.getElementById("metadata-txt-id");
+    var contentTwo = document.getElementById("article-txt-id");
+    var body = document.getElementById("body-txt-id")
+    if(window.getComputedStyle(contentTwo).display === "none"){
+        if ( window.getComputedStyle(contentOne).display != "none"){
+            contentTwo.style.display = "none";
         }
+        contentOne.style.display = "block";
+        contentOne.style.gridArea ="sidebar";
+        body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+        console.log(window.getComputedStyle(contentOne).display)
+    }
+    else{
+        contentOne.style.display = "none";
+        body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
     }
 }
 
 
+function toggleSidebar2(){
+    var contentOne = document.getElementById('article-txt-id');
+    var contentTwo = document.getElementById('metadata-txt-id');
+    var body = document.getElementById('body-txt-id')
+    var statusOne= window.getComputedStyle(contentTwo).display
+    var statusTwo = window.getComputedStyle(contentOne).display
+    if(statusOne === 'none'){
+        if ( statusTwo != 'none'){
+            contentTwo.style.display = 'none';
+        }
+        contentOne.style.display = 'block';
+        contentOne.style.gridArea ='sidebar';
+        body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+        
+    }
+    else{
+        contentOne.style.display = 'none';
+        body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
+    }
+}
+
+
+*/
+
+
+function toggleClass(firstId, secondId) {
+    var firstEl = document.getElementById(firstId);
+    var secondEl = document.getElementById(secondId);
+    var body = document.getElementById('body-txt-id')
+    if (firstEl.classList.contains("metarticle-vis-txt")) {
+        firstEl.classList.remove("metarticle-vis-txt");
+        firstEl.classList.add("metarticle-inv-txt");
+
+        body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"'; 
+    } else {
+        if(firstEl.classList.contains("metarticle-inv-txt")){
+            firstEl.classList.remove("metarticle-inv-txt")
+        }
+        firstEl.classList.add("metarticle-vis-txt"); 
+        body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+        if (secondEl.classList.contains("metarticle-vis-txt")) {
+            secondEl.classList.remove("metarticle-vis-txt");
+            secondEl.classList.add("metarticle-inv-txt");
+        }
+    }
+}
 
 
 

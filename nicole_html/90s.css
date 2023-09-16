@@ -34,10 +34,9 @@
 }
 
 /*MAIN CONTAINER*/
-.main_container {
+#body-txt-id {
     display: grid;
     grid-template-columns:0.01fr 1fr;
-    grid-template-rows: 0.01fr 1.5fr;
     grid-template-areas:
         "nav nav"
         "button main"
@@ -46,11 +45,12 @@
     
 }
 
-#panel{     /*dobbiamo cambiare i nomi di classi e id per capirli più facilmente*/
-    display: none;   /*questa è la vera sidebar*/
+#sidebar-txt-id{     /*dobbiamo cambiare i nomi di classi e id per capirli più facilmente*/
+    display: none;
+  /*questa è la vera sidebar*/
 }
 
-sidebar{                /*questa è la div con i pulsanti*/
+.button-txt-id{                /*questa è la div con i pulsanti*/
     grid-area: button;
 }
 main{                   /*Questa è il testo*/
@@ -67,18 +67,14 @@ nav li {
     border-right-color:#f0c86d;
   }
 
-h1{
-    margin-left: 0;
-}
+
 nav li  a {
     color:#f0c86d !important;
   }
 .circle{
     display: none;
 }
-.navbar-toggler{
-    display: none;
-}
+
 .stroke-double{
     color: #f0c86d;
     text-transform: uppercase;
@@ -228,8 +224,15 @@ nav .nav-link {
 
 /*SIDEBAR NEI TESTI*/
 
+.metarticle-visible-txt{
+    display: block;
+    grid-area: sidebar;
+}
+.metarticle-inv-txt{
+    display: none;
+}
 
-.sidebar{
+.sidecont-txt{
     transition: 0.5s;
 }
 @keyframes fadeIn {                 /*Animazione random da modificare*/
@@ -245,7 +248,7 @@ nav .nav-link {
     }
   }
   
-  .sidebar {
+  .sidecont-txt {
     animation: fadeIn 1s ease-in-out; /* Imposta la durata dell'animazione */
   }
 /*
@@ -293,11 +296,11 @@ nav .nav-link {
 
 
 @media screen and (max-height: 450px) {
-    .sidebar {
+    .sidecont-txt {
         padding-top: 5px;
     }
 
-    .sidebar a {
+    .sidecont-txt a {
         font-size: 1em;
     }
 }
@@ -368,7 +371,7 @@ h1 {
     margin-bottom: 2vh;
 }
 
-#introduction {
+#introduction-txt-id {
     width: calc(100% - 13%);
     padding: 3% 3% 3% 3%;
     float: right;
@@ -579,7 +582,7 @@ footer {
         grid-template-rows: 0.2fr 0.2fr 1.5fr 0.1fr;
         grid-template-areas:
             "nav"
-            "sidebar"
+            "button"
             "main"
             "footer";
     }
