@@ -127,28 +127,19 @@ section {
     height: 0;
     border-left: 100vw solid transparent;
     border-bottom: 13.9vw solid lightblue;
-    margin-top: 0vw;
 }
 
 .t {
     position: absolute;
     background-color: transparent;
-    width: 0;
-    height: 0;
-    border-left: 100vw solid transparent;
-    border-bottom: 13.9vw solid lightblue;
-    margin-top: 0vw;
     bottom: 0;
 }
 
 .left {
     background-color: lightblue;
-    width: 0;
-    height: 0;
     border-left: 0;
     border-right: 100vw solid transparent;
     border-bottom: 13.9vw solid violet;
-    margin-top: 0vw;
 }
 
 .section {
@@ -205,6 +196,7 @@ section {
     }
 }
 
+
 #body-txt-id {
     display: grid;
     grid-template-columns: 0.1fr 1fr;
@@ -234,9 +226,10 @@ nav {
     grid-area: nav;
 }
 
-#sidebar-txt-id{     /*dobbiamo cambiare i nomi di classi e id per capirli più facilmente*/
-    display: none;   /*questa è la vera sidebar*/
+#sidebar-cover-id {
+    background-color: rgb(255, 0, 191);
 }
+
 
 #button-txt-id{                /*questa è la div con i pulsanti*/
     grid-area: button;
@@ -251,7 +244,11 @@ nav {
     margin-bottom: 2vh;
 }
 
-#metadata-txt-id, #article-txt-id {
+.metarticle-visible-txt{
+    display: block;
+    grid-area: sidebar;
+}
+.metarticle-inv-txt{
     display: none;
 }
 
@@ -449,7 +446,7 @@ main h2 {
 }
 
 .text>h2 {
-    text-align: left;
+    text-align: center;
 }
 
 .text p::first-letter {
@@ -502,19 +499,23 @@ p {
 
 .immagine {
     margin-bottom: 3%;
+    align-items: center;
+    text-align: center;
 }
 
 .immagine>img {
     width: 15vw;
-    height: auto;
     border-style: solid;
     border-color: blueviolet;
     border-width: 10px;
+   
+    
 }
 
 .immagine figcaption {
     font-size: 0.8em;
     font-style: italic;
+    text-align: center;
 }
 
 table,
@@ -544,10 +545,10 @@ td {
     clip-path: polygon(50% 0%, 69% 20%, 50% 28%, 33% 38%, 18% 29%, 0 44%, 0 0);
     background-color: orange;
     width: 70%;
-    height: 70%;
+    height: 65%;
     position: absolute;
     display: block;
-    float: right;
+    left:0%;
 }
 
 .forma2 {
@@ -563,8 +564,8 @@ td {
     position: absolute;
     clip-path: polygon(59% 36%, 57% 14%, 100% 18%, 100% 70%, 77% 89%, 39% 91%, 42% 65%, 39% 43%);
     background-color: yellow;
-    width: 60%;
-    margin-left: 40%;
+    width: 50%;
+    right:0%;
     height: 100%;
     margin-top: -10%;
 }
@@ -585,16 +586,6 @@ td {
     padding-top: 17%;
 }
 
-.new {
-    clip-path: polygon(23.23% 27.92%, 27.75% 10.88%, 41.56% 23.99%, 55.36% 10.88%, 65.27% 23.99%, 83.89% 15.59%, 83.89% 30.49%, 97.18% 42.81%, 79.7% 44.54%, 75.61% 59.21%, 62.22% 46.27%, 48.83% 59.21%, 38.25% 46.27%, 17.57% 57.77%, 17.38% 39.05%, 0% 32.09%);
-    border: 2px solid red;
-    width: 8vw;
-    height: 20vh;
-    color: white;
-    text-align: center;
-    padding-top: 7%;
-    background-color: red;
-}
 
 #thirdarticle {
     padding-left: 20%;
