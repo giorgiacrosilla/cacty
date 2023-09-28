@@ -72,12 +72,14 @@ function toggleClass(firstId, secondId) {
         firstEl.classList.add("metarticle-inv-txt");
 
         body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"'; 
+        body.style.gridTemplateColumns="0.3fr 1fr";
     } else {
         if(firstEl.classList.contains("metarticle-inv-txt")){
             firstEl.classList.remove("metarticle-inv-txt")
         }
         firstEl.classList.add("metarticle-vis-txt"); 
         body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+        body.style.gridTemplateColumns="0.3fr 0.2fr 1fr";
         if (secondEl.classList.contains("metarticle-vis-txt")) {
             secondEl.classList.remove("metarticle-vis-txt");
             secondEl.classList.add("metarticle-inv-txt");

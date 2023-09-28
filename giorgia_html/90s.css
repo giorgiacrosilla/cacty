@@ -148,10 +148,6 @@ section {
 
 }
 
-#content {
-    display: flex;
-    width: fit-content;
-}
 
 .card {
     width: 15%;
@@ -169,8 +165,6 @@ section {
 .diagonal {
     height: 60vh;
     background: violet;
-
-
 }
 
 .card img {
@@ -198,6 +192,7 @@ section {
 
 
 #body-txt-id {
+    height: 100vh;
     display: grid;
     grid-template-columns: 0.1fr 1fr;
     grid-template-rows: 0.01fr 1.5fr 0.01fr;
@@ -229,7 +224,6 @@ nav {
 #sidebar-cover-id {
     background-color: rgb(255, 0, 191);
 }
-
 
 #button-txt-id{                /*questa è la div con i pulsanti*/
     grid-area: button;
@@ -338,12 +332,6 @@ nav {
     background-color: pink;
 }
 
-
-#main-txt-id {
-    transition: margin-left .5s;
-    overflow: auto;
-}
-
 @media screen and (max-height: 450px) {
     .sidebar {
         padding-top: 5px;
@@ -357,6 +345,7 @@ nav {
 
 main {
     grid-area: main;
+    overflow: auto;
     padding-top: 3%;
     padding-left: 2%;
     padding-right: 2%;
