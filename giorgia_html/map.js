@@ -9,6 +9,235 @@ setInterval(function () {
     map.invalidateSize();
 }, 100);
 
+
+document.addEventListener("DOMContentLoaded", function () {
+    var placeSpans = document.querySelectorAll("span.place");
+
+    var contentArray = [];
+
+    placeSpans.forEach(function (span) {
+        var content = span.textContent;
+        contentArray.push(content);
+        span.setAttribute("id", content);
+    });
+
+    console.log(contentArray);
+
+    let uniqueSet = new Set(contentArray);
+
+    let locations = Array.from(uniqueSet);
+
+    locations.forEach(function (content) {
+        // Use Mapbox's Geocoding API
+        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${content}.json?access_token=${mapboxgl.accessToken}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.features.length > 0) {
+                    // Extract coordinates from the response
+                    var coordinates = data.features[0].geometry.coordinates;
+                    var latitude = coordinates[1];
+                    var longitude = coordinates[0];
+
+                    // Create a marker for each location and add it to the map
+                    var marker = L.marker([latitude, longitude]).addTo(map)
+                        .bindPopup('<a href="#' + content + '">' + content + '</a>')
+                        .openPopup();
+
+                    // Get a reference to the link and the element with the ID you want to change
+                    var textToChangeColor = document.getElementById(content);
+
+                    // Add a click event listener to the marker
+                    marker.addEventListener('click', function () {
+                        // Change the color of the element with the specified ID
+                        textToChangeColor.style.backgroundColor = 'yellow';
+                    });
+                }
+            })
+            .catch(error => console.error(error));
+    });
+    placeSpans.forEach(function (span) {
+        if (span.classList.contains("state")) {
+            if (span.id === "Alabama") {
+                var Alabama = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/alabama.geojson'
+
+                fetch(
+                    Alabama
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Georgia") {
+                var Georgia = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/georgia.geojson'
+
+                fetch(
+                    Georgia
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Indiana") {
+                var Indiana = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/indiana.geojson'
+
+                fetch(
+                    Indiana
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Oregon") {
+                var oregon = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/oregon.geojson'
+
+                fetch(
+                    oregon
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "North Carolina") {
+                var NorthCarolina = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/north%20carolina.geojson'
+
+                fetch(
+                    NorthCarolina
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "South Carolina") {
+                var SouthCarolina = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/south%20carolina.geojson'
+
+                fetch(
+                    SouthCarolina
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Florida") {
+                var Florida = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/florida.geojson'
+
+                fetch(
+                    Florida
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Mississippi") {
+                var Mississippi = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/mississippi.geojson'
+
+                fetch(
+                    Mississippi
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Tennessee") {
+                var Mississippi = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/tennessee.geojson'
+
+                fetch(
+                    Mississippi
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Louisiana") {
+                var Louisiana = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/louisiana.geojson'
+
+                fetch(
+                    Louisiana
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Virginia") {
+                var Virginia = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/virginia.geojson'
+
+                fetch(
+                    Virginia
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Great Britain") {
+                var GreatBritain = '..//geojson/united-kingdom_.geojson'
+
+                fetch(
+                    GreatBritain
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Italy") {
+                var Italy = '..//geojson/italy-detailed-boundary_943.geojson'
+
+                fetch(
+                    Italy
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Hungary") {
+                var Hungary = '..//geojson/hungary_338.geojson'
+
+                fetch(
+                    Hungary
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Germany") {
+                var Germany = 'https://raw.githubusercontent.com/isellsoap/deutschlandGeoJSON/main/1_deutschland/1_sehr_hoch.geo.json'
+
+                fetch(
+                    Germany
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Russia") {
+                var Russia = '..//geojson/russia_609.geojson'
+
+                fetch(
+                    Russia
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+        }
+    });
+});
+
+
 var circle = document.getElementsByClassName("circle");
 document.onmousemove = function () {
     var x = event.clientX * 100 / window.innerWidth + "%";
@@ -24,21 +253,6 @@ document.onmousemove = function () {
         circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
     }
 };
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    var map = L.map('map').setView([51.505, -0.09], 15);
-
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 15,
-        attribution: '© OpenStreetMap',
-    }).addTo(map);
-
-    var marker = L.marker([51.5, -0.09]).addTo(map);
-    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
-});
-
-
 
 function ShowMetadata() {
     const articles = document.querySelectorAll('.testo_metadata');
@@ -71,15 +285,15 @@ function toggleClass(firstId, secondId) {
         firstEl.classList.remove("metarticle-vis-txt");
         firstEl.classList.add("metarticle-inv-txt");
 
-        body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"'; 
-        body.style.gridTemplateColumns="0.3fr 1fr";
+        body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
+        body.style.gridTemplateColumns = "0.3fr 1fr";
     } else {
-        if(firstEl.classList.contains("metarticle-inv-txt")){
+        if (firstEl.classList.contains("metarticle-inv-txt")) {
             firstEl.classList.remove("metarticle-inv-txt")
         }
-        firstEl.classList.add("metarticle-vis-txt"); 
+        firstEl.classList.add("metarticle-vis-txt");
         body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
-        body.style.gridTemplateColumns="0.3fr 0.2fr 1fr";
+        body.style.gridTemplateColumns = "0.3fr 0.2fr 1fr";
         if (secondEl.classList.contains("metarticle-vis-txt")) {
             secondEl.classList.remove("metarticle-vis-txt");
             secondEl.classList.add("metarticle-inv-txt");
