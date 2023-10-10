@@ -12,7 +12,6 @@ setInterval(function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     var placeSpans = document.querySelectorAll("span.place");
-
     var contentArray = [];
 
     placeSpans.forEach(function (span) {
@@ -254,27 +253,6 @@ document.onmousemove = function () {
     }
 };
 
-function ShowMetadata() {
-    const articles = document.querySelectorAll('.testo_metadata');
-    const svgElement = document.getElementById('firstsvg');
-    articles.forEach(element => {
-        if (element.id === 'firstarticle') {
-            document.getElementById("s").innerHTML =
-                '<h2>Article Metadata</h2><ul><li>title: The Terror is Born. </li><li>author</li><li>date</li></ul>';
-        }
-    })
-
-    if (svgElement) {
-        // Find the text element with id="metadata" inside the SVG
-        const textElement = svgElement.querySelector('#metadata');
-
-        // Update the text content of the text element
-        if (textElement) {
-            document.getElementById("s").innerHTML =
-                '<h2>Article Metadata</h2><ul><li>title: The Terror is Born. </li><li>author</li><li>date</li></ul>';
-        }
-    }
-};
 
 
 function toggleClass(firstId, secondId) {
@@ -286,7 +264,7 @@ function toggleClass(firstId, secondId) {
         firstEl.classList.add("metarticle-inv-txt");
 
         body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
-        body.style.gridTemplateColumns = "0.3fr 1fr";
+        body.style.gridTemplateColumns = "0.08fr 1fr";
     } else {
         if (firstEl.classList.contains("metarticle-inv-txt")) {
             firstEl.classList.remove("metarticle-inv-txt")

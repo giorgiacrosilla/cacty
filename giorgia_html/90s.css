@@ -95,23 +95,30 @@ html {
     margin-top: 10px;
 }
 
-section {
-    font-family: coolvetica;
-}
-
 /*firstpage*/
-
 
 .uno {
     position: relative;
     height: 116vh;
     z-index: -1;
-    background: linear-gradient(to top, rgb(255, 0, 191), #85c442) no-repeat top center;
+    background-image: url("https://i.etsystatic.com/31247061/r/il/7e6b58/3669040700/il_1588xN.3669040700_hhwg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
-.wrapper {
+.uno::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgb(255, 0, 191), #85c442);
+    opacity: 0.7;
+}
+
+.wrapper1 {
     box-sizing: border-box;
     left: 50%;
     padding: 10vmin;
@@ -121,25 +128,98 @@ section {
     transform: translate(-50%, -50%);
 }
 
-.separator {
-    background-color: violet;
-    width: 0;
-    height: 0;
-    border-left: 100vw solid transparent;
-    border-bottom: 13.9vw solid lightblue;
+.wrapper {
+    box-sizing: border-box;
+    left: 50%;
+    padding-right: 3%;
+    position: relative;
+    text-align: justify;
+    align-items: left;
+    top: 60%;
+    transform: translate(-50%, -50%);
 }
 
-.t {
+.wrapper h2 {
+    text-align: center;
+}
+
+.separator.t {
     position: absolute;
-    background-color: transparent;
+    width: 100%;
+    height: 20%;
     bottom: 0;
+    z-index: 0;
 }
 
-.left {
+.separator.t::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+
+}
+
+.separator.t::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
     background-color: lightblue;
-    border-left: 0;
-    border-right: 100vw solid transparent;
-    border-bottom: 13.9vw solid violet;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.separator.left {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    z-index: 0;
+}
+
+.separator.left::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+    transform: rotateY(180deg);
+}
+
+.separator.left::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 0, 191);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    transform: rotateY(180deg);
+}
+
+.separator.right {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    z-index: 0;
+}
+
+.separator.right::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 0, 191);
+    clip-path: polygon(100% 0, 0 0, 0 100%);
+}
+
+.separator.right::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
 }
 
 .section {
@@ -148,30 +228,85 @@ section {
 
 }
 
+#content-card {
+    display: flex;
+    width: fit-content;
+  }
+  
+  .element {
+    margin-right: 10px;
+    text-align: left;
+    width: 15vw;
+    height: 15vh;
+    color: #000;
+    background-color: rgba(161, 164, 164, 0.323);
+    border-radius: 5%;
+  }
+  
+  .element:hover {
+    content: " ";
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(0.95);
+    }
+  
+    70% {
+      transform: scale(1);
+    }
+  
+    100% {
+      transform: scale(0.95);
+    }
+  }
 
-.card {
-    width: 15%;
-    height: 15%;
-    margin-inline: 5%;
-    margin: 0 auto;
+.due,
+.diagonal {
+    height: 90vh;
 }
-
 .due {
     background: lightblue;
-    height: 70vh;
-
 }
 
 .diagonal {
+    background: rgb(255, 0, 191);
+}
+
+.logo-image {
+    width: 40vw;
     height: 60vh;
-    background: violet;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
-.card img {
-    border: none;
+#kkk-logo {
+    shape-outside: polygon(0 0, 0% 100%, 100% 100%);
+    position: relative;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    float: left;
+    z-index: 2;
+    background-color: green;
 }
 
-.card:hover {
+#masonry-logo {
+    float: right;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    shape-outside: polygon(100% 0, 0% 100%, 100% 100%);
+    background-color: green;
+    position: relative;
+}
+
+#skull-logo {
+    shape-outside: circle(50% at 0 50%);
+    clip-path: circle(50% at 0 50%);
+    float: left;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/41/Bones_logo.jpg");
+}
+
+
+.element:hover {
     content: " ";
     animation: pulse 2s infinite;
 }
@@ -193,6 +328,7 @@ section {
 
 #body-txt-id {
     height: 100vh;
+    width: 100%;
     display: grid;
     grid-template-columns: 0.1fr 1fr;
     grid-template-rows: 0.01fr 1.5fr 0.01fr;
@@ -204,17 +340,9 @@ section {
     font-size: 1.1em;
     background-color: #f4f4fdff;
 }
-
-#coverpage {
-    width: 100vw;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 0.5fr 1fr;
-    grid-template-rows: 0.1fr 1.5fr;
-    grid-template-areas:
-        "nav nav"
-        "sidebar main";
+#body-main-id {
     font-family: coolvetica;
+    font-size: 1.1em;
 }
 
 nav {
@@ -225,7 +353,8 @@ nav {
     background-color: rgb(255, 0, 191);
 }
 
-#button-txt-id{                /*questa è la div con i pulsanti*/
+#button-txt-id {
+    /*questa è la div con i pulsanti*/
     grid-area: button;
 }
 
@@ -238,19 +367,19 @@ nav {
     margin-bottom: 2vh;
 }
 
-.metarticle-visible-txt{
+.metarticle-visible-txt {
     display: block;
     grid-area: sidebar;
 }
-.metarticle-inv-txt{
+
+.metarticle-inv-txt {
     display: none;
 }
 
 .side-cont-txt {
     background-color: transparent;
-    overflow: auto;
     transition: 0.5s;
-    padding: 1%;
+    padding-top: 3%;
 }
 
 .side-cont-txt::-webkit-scrollbar {
@@ -314,7 +443,7 @@ nav {
 #map {
     height: 30vh;
     width: 20vw;
-  }
+}
 
 .openbtn {
     font-size: 20px;
@@ -342,13 +471,15 @@ nav {
     }
 }
 
-
 main {
     grid-area: main;
-    overflow: auto;
     padding-top: 3%;
     padding-left: 2%;
     padding-right: 2%;
+}
+
+#main-txt-id {
+    overflow: auto;
 }
 
 main a:link,
@@ -497,8 +628,8 @@ figure>img {
     border-style: solid;
     border-color: blueviolet;
     border-width: 10px;
-   
-    
+
+
 }
 
 figure figcaption {
@@ -530,60 +661,16 @@ td {
     margin: 0 0 0 0;
 }
 
-.forma0 {
-    clip-path: polygon(50% 0%, 69% 20%, 50% 28%, 33% 38%, 18% 29%, 0 44%, 0 0);
-    background-color: orange;
-    width: 70%;
-    height: 65%;
-    position: absolute;
-    display: block;
-    left:0%;
-}
-
-.forma2 {
-    clip-path: polygon(100% 100%, 0% 100%, 0 0);
-    background-color: blue;
-    width: 50%;
-    height: 50%;
-    position: absolute;
-
-}
-
-.forma1 {
-    position: absolute;
-    clip-path: polygon(59% 36%, 57% 14%, 100% 18%, 100% 70%, 77% 89%, 39% 91%, 42% 65%, 39% 43%);
-    background-color: yellow;
-    width: 50%;
-    right:0%;
-    height: 100%;
-    margin-top: -10%;
-}
-
 .testo_metadata {
     position: relative;
     width: max-content;
     height: max-content;
 }
 
-#firstarticle {
-    padding-left: 55%;
-    padding-top: 10%;
-}
-
-#secondarticle {
-    padding-left: 10%;
-    padding-top: 17%;
-}
-
-
-#thirdarticle {
-    padding-left: 20%;
-    padding-top: 20%;
-}
-
 footer {
     grid-area: footer;
-    background-color: violet;
+    height: 40vh;
+    background-color: lightblue;
 }
 
 

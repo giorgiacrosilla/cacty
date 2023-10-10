@@ -2,7 +2,7 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="90s.css">
+    <link rel="stylesheet" href="future.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -40,74 +40,135 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Issues
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">KKK issue</a></li>
+                        <li><a class="dropdown-item" href="#">Freemasonry Issue</a></li>
+                        <li><a class="dropdown-item" href="#">Skull and Bones Issue</a></li>
+                    </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Dropdown
+                        Themes
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><a class="dropdown-item" href="#">1500</a></li>
+                        <li><a class="dropdown-item" href="#">1800</a></li>
+                        <li><a class="dropdown-item" href="#">1990</a></li>
+                        <li><a class="dropdown-item" href="#">Future</a></li>
                     </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Documentation</a>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="sidecont-txt metarticle-inv-txt" id="metadata-txt-id">
-        <button class="accordion" id="dates">Dates</button>
-        <div class="panel">
-            <form role="form">
-                <div class="checkbox"><label>
-                        <input type="checkbox" id="showasides" class="show">1700</label></div>
-                <div class="checkbox"><label>
-                        <input type="checkbox" id="showspeeches" class="show">1800</label>
-                </div>
-                <div class="checkbox"><label>
-                        <input type="checkbox" id="showquotes" class="show">1900</label></div>
-            </form>
+    <div id="sidebar-txt-id">
+        <div class="sidecont-txt metarticle-inv-txt" id="metadata-txt-id">
+            <button class="accordion" id="dates">Dates</button>
+            <div class="panel">
+                <form role="form">
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showasides" class="show">1700</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showspeeches" class="show">1800</label>
+                    </div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showquotes" class="show">1900</label></div>
+                </form>
+            </div>
+            <button class="accordion" id="places">Places</button>
+            <div class="panel">
+                <div id="map"></div>
+            </div>
+            <button class="accordion" id="people">People</button>
+            <div class="panel">
+                <form role="form">
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showpeople" class="show">Forrest</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Brownlow</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Hayes</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Adams</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Eliot</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Addams</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Simmons</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Clarke</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Tyler</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Smith</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Stephenson</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Colescott</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Evans</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Green</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Edwards</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Schelton</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Jones</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Liuzzo</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Evers</label></div>
+                </form>
+            </div>
+            <button class="accordion" id="events">Events</button>
+            <div class="panel">
+                <form role="form">
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showevent" class="show">Reconstruction</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showe" class="show">World War 1</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showe" class="show">Civil War</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showe" class="show">Armistice</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showe" class="show">Immigration</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showe" class="show">Wall Street</label></div>
+                </form>
+            </div>
         </div>
-        <button class="accordion" id="places">Places</button>
-        <div class="panel">
-            <div id="map"></div>
-        </div>
-        <button class="accordion" id="people">People</button>
-        <div class="panel">
-            <form role="form">
-                <div class="checkbox"><label>
-                        <input type="checkbox" id="showpeople" class="show">Forrest</label></div>
-                <div class="checkbox"><label>
-                        <input type="checkbox" id="showp" class="show">Brownlow</label></div>
-            </form>
-        </div>
-        <button class="accordion" id="events">Events</button>
-        <div class="panel">
-        </div>
-    </div>
-    <div class="sidecont-txt metarticle-inv-txt" id="article-txt-id">
-        <button class="accordion" id="dates">Issue 1: KKK</button>
-        <div class="panel">
-            <ul>
-                <li><a href="kkk1.html">The Terror is Born</a></li>
-                <li><a href="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
-                <li><a href="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the 1920s</a></li>
-            </ul>
-        </div>
-        <button class="accordion" id="places">Issue 2: Freemasonry</button>
-        <div class="panel">
+        <div class="sidecont-txt metarticle-inv-txt" id="article-txt-id">
+            <button class="accordion" id="dates">Issue 1: KKK</button>
+            <div class="panel">
+                <ul>
+                    <li><a href="kkk1.html">The Terror is Born</a></li>
+                    <li><a href="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
+                    <li><a href="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the 1920s</a></li>
+                </ul>
+            </div>
+            <button class="accordion" id="places">Issue 2: Freemasonry</button>
+            <div class="panel">
 
-        </div>
-        <button class="accordion" id="people">Issue 3: Skull and Bones</button>
-        <div class="panel">
+            </div>
+            <button class="accordion" id="people">Issue 3: Skull and Bones</button>
+            <div class="panel">
 
+            </div>
         </div>
-
     </div>
     <div id="button-txt-id">
         <button class="openbtn" onclick="toggleClass('metadata-txt-id', 'article-txt-id')">Metadata</button><br>
@@ -341,7 +402,8 @@
                         Hayes</span><a href="https://en.wikipedia.org/wiki/Rutherford_B._Hayes"><span
                             class="material-symbols-outlined">
                             link
-                        </span></a> in <span class="date 1800">1877</span> withdrew the last of the occupation armies.
+                        </span></a> in <span class="date 1800">1877</span> withdrew the last of the occupation
+                    armies.
                     The
                     government was again in the hands of native-born white Southern Democrats or Conservatives. The
                     South saw the
@@ -392,8 +454,8 @@
                 Lillian
                 Gish).
                 Despite protests from the National Association for vancement of Colored People, Harvard President
-                <span class="person">Charles Eliot</span><a href="https://it.wikipedia.org/wiki/Charles_W._Eliot"><span
-                        class="material-symbols-outlined">
+                <span class="person eliot">Charles Eliot</span><a
+                    href="https://it.wikipedia.org/wiki/Charles_W._Eliot"><span class="material-symbols-outlined">
                         link
                     </span></a>,
                 Washington, <span class="person jane">Jane Addams</span><a
@@ -440,7 +502,8 @@
                 and rituals
                 helped the Klansmen to set themselves apart from the mass of humanity and to become an indispensable
                 part of the Invisible Empire. As one author suggested, <q>When a man joins
-                    the Ku Klux Klan, a sensation seems to come over him as definite as falling in love. He simply drops
+                    the Ku Klux Klan, a sensation seems to come over him as definite as falling in love. He simply
+                    drops
                     out of
                     society and enters a new world.</q><sup><a href="#footnote-14">[14]</a></sup> <br>
                 Despite this, the Klan had fewer than five thousand members when
@@ -514,10 +577,10 @@
                 were much more real. In <span class="place chicago">Chicago</span>, the Ku Klux Klan was strongest
                 on the South
                 Side,
-                particularly in <span class="place  kenwood">Kenwood</span>, <span
-                    class="place hyde">Hyde Woodlawn</span>
-                , <span class="place sshore">South Shore</span>, and <span
-                    class="place englewood">Englewood</span>. These areas of the city
+                particularly in <span class="place  kenwood">Kenwood</span>, <span class="place hyde">Hyde
+                    Woodlawn</span>
+                , <span class="place sshore">South Shore</span>, and <span class="place englewood">Englewood</span>.
+                These areas of the city
                 spond closely to the sections which felt the
                 political pressure of the Roman Catholics and second generation immigrants, and the pressure exerted
                 by the
@@ -573,14 +636,16 @@
                     class="person simmons">Simmons</span> often used the phrase
                 vocational Klanishness, which
                 meant the <q>Trading, with and patronizing Klansmen in preference to all
-                    others.</q> <sup><a href="#footnote-23">[23]</a></sup>It was always to the benefit of the Klan to
+                    others.</q> <sup><a href="#footnote-23">[23]</a></sup>It was always to the benefit of the Klan
+                to
                 make
                 it seem to
                 those
                 outside visible Empire that it was larger than
                 it actually was. Parades, burnings, and other mass public demonstrations helped it to purpose. In
                 <span class="date 1900">August of
-                    1925</span>, <span class="place washington">Washington D.C.</span> hosted a parade of tens sands of
+                    1925</span>, <span class="place washington">Washington D.C.</span> hosted a parade of tens sands
+                of
                 Klansmen that
                 lasted
                 three and a half hours. The publicity
@@ -597,10 +662,12 @@
                 role of violence, it is valuable to go
                 beyond the initial ments made by those who opposed the Klan. Rather than being open-minded,
                 opposition to the
-                Klan in the <span class="date 1900">1920's</span> was often only against its use of violence, with the
+                Klan in the <span class="date 1900">1920's</span> was often only against its use of violence, with
+                the
                 opponents occasionally guage
                 just as
-                bigoted as the Klan. <span class="author fry">Fry</span> argued that <q>experience that the two races
+                bigoted as the Klan. <span class="author fry">Fry</span> argued that <q>experience that the two
+                    races
                     get along
                     better when they are segregated,</q>
                 he conceded the Klan should not bring this about. <q>Rather</q>, he said, <q>come through an
@@ -653,7 +720,8 @@
                 appeared to
                 permeate every American life. One only has to turn to the Lynds' analysis of <span
                     class="place muncie">Muncie,Indiana</span>. They note that <q>one
-                    man who was divorced for 'non-stated privately that 'She and I split over the G- d- Klan. stand them
+                    man who was divorced for 'non-stated privately that 'She and I split over the G- d- Klan. stand
+                    them
                     around any
                     longer.' </q><sup><a href="#footnote-30">[30]</a></sup> Before too long, there appeared growing
                 number
@@ -693,13 +761,16 @@
                 <p id="footnote-18">[18] <span class="place hyde">Hyde Park</span> is bordered on the west by the
                     communities of <span class="place gbo">Grand Boulevard</span> and
                     Washington
-                    Park, both of which experienced radical change in the twenties. <span class="place gbo">Grand Boulevard</span> <q>was the
-                        scene of conflict as efforts were made to keep new N***o families out of the district.</q> De-
+                    Park, both of which experienced radical change in the twenties. <span class="place gbo">Grand
+                        Boulevard</span> <q>was the
+                        scene of conflict as efforts were made to keep new N***o families out of the district.</q>
+                    De-
                     spite these efforts, <span class="place gbo">Grand Boulevard</span> went from 32 percent black
                     in <span class="date 1900">1920</span> to 94.6 percent black
                     in <span class="date 1900">1930</span>. Likewise, Washington Park went from 15 percent black in
                     <span class="date 1900">1920</span> to 91.9 percent in
-                    <span class="date 1900">1930</span>. In both communities the black people displaced Jews of German
+                    <span class="date 1900">1930</span>. In both communities the black people displaced Jews of
+                    German
                     descent who moved
                     into <span class="place hyde">Hyde Park</span>. Consequently, Klansmen of <span
                         class="place hyde">Hyde Park</span> saw an immediate threat from the
@@ -917,7 +988,9 @@
                     the largest
                     following. <br>
                     The largest contemporary Klan group is the United Klans of America
-                    (UKA) operating out of headquarters in <span class="place tuscaloosa">Tuscaloosa, Alabama</span>, under
+                    (UKA) operating out of headquarters in <span class="place tuscaloosa">Tuscaloosa,
+                        Alabama</span>,
+                    under
                     the
                     front of the "Alabama Rescue Service." Since <span class="date 1900">1961</span> its <span
                         class="role">Imperial
@@ -928,7 +1001,8 @@
                     Congress before the House Un-American Activities Committee.<sup><a
                             href="#footnote-39">[39]</a></sup> Very
                     recently there have been significant signs that the UKA's hold on local
-                    klaverns has been weakening. The largest UKA following is in <span class="place ncarolina">North Carolina</span>, where over half of the group's members reside. In <span class="date 1900">July
+                    klaverns has been weakening. The largest UKA following is in <span class="place ncarolina">North
+                        Carolina</span>, where over half of the group's members reside. In <span class="date 1900">July
                         of
                         1968</span>,
                     reports began to filter out of <span class="place ncarolina">North Carolina</span> that <span
@@ -967,7 +1041,8 @@
                         eatin' possum,
                         servin' time. ...</q><sup><a href="#footnote-41">[41]</a></sup> An exalted cy-
                     clops, the head of a klavern, summarizes the Klan's outlook, <q>Well, now,
-                        I'm not saying I approve of what was done there [the murder in <span class="place state">Alabama</span>
+                        I'm not saying I approve of what was done there [the murder in <span
+                            class="place state">Alabama</span>
                         of a white civil rights worker, <span class="person liuzzo">Viola Liuzzo</span><a
                             href="https://en.wikipedia.org/wiki/Viola_Liuzzo"><span class="material-symbols-outlined">
                                 link
@@ -998,7 +1073,8 @@
                     Richard Flowers,
                     the Attorney General of
                     Alabama, said <q>the average kluxer is a fifth-grade school dropout, with a
-                        background of social and economic failure.</q><sup><a href="#footnote-44">[44]</a></sup> At the
+                        background of social and economic failure.</q><sup><a href="#footnote-44">[44]</a></sup> At
+                    the
                     same
                     time a member
                     of North Carolinas' State Bureau of Investigation said that respected

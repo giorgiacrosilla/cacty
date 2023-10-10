@@ -15,6 +15,26 @@
   src: url("Rodchenko.ttf");
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background-color: rgba(128, 128, 128, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkred;
+}
+
 .eyes {
   position: absolute;
   top: 30%;
@@ -78,24 +98,22 @@
 
 }
 
-
 #navbarSupportedContent {
   margin-left: 10%;
 }
 
-
-
 /*textpage*/
 
-.main_container {
-  width: 100vw;
-  height: 100vh;
+#body-txt-id {
+  width: 100%;
+  height: 115vh;
   display: grid;
-  grid-template-columns: 0.1fr 1fr;
-  grid-template-rows: 0.1fr 1.5fr;
+  grid-template-columns: 0.09fr 1fr;
+  grid-template-rows: 0.01fr 1.5fr 0.01fr;
   grid-template-areas:
     "nav nav"
-    "sidebar main";
+    "button main"
+    "footer footer";
   font-family: rodchenkol;
   font-size: 1.2em;
   background: radial-gradient(circle at 0%, black, rgb(52, 22, 22) 50%, darkred 75%, black 75%);
@@ -116,45 +134,58 @@ nav {
   grid-template-areas:
     "nav nav"
     "sidebar main";
+  background: radial-gradient(circle at 0%, black, rgb(52, 22, 22) 50%, darkred 75%, black 75%);
+  font-family: rodchenkol;
 }
 
-sidebar {
+#button-txt-id {
+  /*questa è la div con i pulsanti*/
+  grid-area: button;
+}
+
+#button-txt-id {
+  padding-top: 5%;
+}
+
+#button-txt-id>button {
+  width: fit-content;
+  margin-bottom: 2vh;
+}
+
+.metarticle-visible-txt {
+  display: block;
   grid-area: sidebar;
-
 }
 
-.sidebar {
-  height: 0;
-  width: 0;
-  position: fixed;
-  border-radius: 0% 100% 100% 0%;
-  z-index: 1;
-  top: 0;
-  left: 0;
+.metarticle-inv-txt {
+  display: none;
+}
+
+#sidebar-txt-id {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: #111;
-  transition: 0.5s;
-  padding-top: 60px;
+  border-radius: 0% 100% 100% 0%;
+  z-index: 1;
+  top: 0;
   word-wrap: break-word;
 }
 
-.sidebar::-webkit-scrollbar {
+#sidebar-txt-id::-webkit-scrollbar {
   width: 0em;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
+#sidebar-txt-id::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
 
-.accordion {
+button.accordion {
+  width: 20vw;
   background-color: #111;
-  padding: 8px 8px 8px 32px;
+  padding: 8px 8px 8px 8px;
   color: white;
   display: block;
-  width: inherit;
   text-align: left;
-  transition: 0.3s;
   font-family: Redoctober;
 }
 
@@ -268,102 +299,8 @@ main a:active {
   font-size: 2.5em;
 }
 
-foreignObject {
-  font-size: 0.7em;
-  word-wrap: break-word;
-
-}
-
-foreignObject>text {
-
-  animation: opacity 10s ease-in-out;
-}
-
-@keyframes opacity {
-  0% {
-    opacity: 0;
-  }
-
-  80% {
-    opacity: 1;
-  }
-
-}
-
-.shape {
-  stroke-dasharray: 0;
-  /* Start with no stroke */
-  stroke: darkred;
-  /* You can change the stroke color */
-  stroke-width: 2;
-  /* You can change the stroke width */
-  animation: drawStroke 10s ease-in-out forwards;
-}
-
-@keyframes drawStroke {
-  0% {
-    stroke-dasharray: 0;
-    stroke-dashoffset: 0;
-  }
-
-  100% {
-    stroke-dasharray: 10000;
-    /* Adjust the value to match the length of your SVG path */
-    stroke-dashoffset: 0;
-
-  }
-}
-
-.external {
-  stroke-dasharray: 0;
-  /* Start with no stroke */
-  stroke: darkred;
-  /* You can change the stroke color */
-  stroke-width: 2;
-  /* You can change the stroke width */
-  animation: drawStrokez 10s ease-in-out forwards;
-}
-
-@keyframes drawStrokez {
-  0% {
-    stroke-dasharray: 0;
-    stroke-dashoffset: 0;
-  }
-
-  100% {
-    stroke-dasharray: 10000;
-    /* Adjust the value to match the length of your SVG path */
-    stroke-dashoffset: 0;
-
-  }
-}
-
-.centralt {
-  stroke-dasharray: 0;
-  /* Start with no stroke */
-  stroke: darkred;
-  /* You can change the stroke color */
-  stroke-width: 2;
-  /* You can change the stroke width */
-  animation: drawStrok 10s ease-in-out forwards;
-}
-
-@keyframes drawStrok {
-  0% {
-    stroke-dasharray: 0;
-    stroke-dashoffset: 0;
-  }
-
-  100% {
-    stroke-dasharray: 10000;
-    /* Adjust the value to match the length of your SVG path */
-    stroke-dashoffset: 0;
-
-  }
-}
-
 main h1,
-.main h1 {
+#body-main-id h1 {
   color: white;
   text-align: center;
   font-family: Redoctober;
@@ -387,6 +324,7 @@ main h2 {
   padding: 3% 3% 3% 3%;
   float: right;
 }
+
 #bside {
   padding-top: 5%;
 }
@@ -394,12 +332,14 @@ main h2 {
 #bside>button {
   width: fit-content;
   margin-bottom: 2vh;
-  
+
 }
 
-.main {
+#body-main-id {
   font-family: rodchenkol;
+  font-size: 1.2rem;
   background: radial-gradient(circle at 100%, black, rgb(52, 22, 22) 50%, darkred 75%, black 75%);
+  color: white;
 }
 
 .uno {
@@ -407,8 +347,21 @@ main h2 {
   text-align: center;
   color: white;
   height: 80vh;
-  background-attachment: fixed;
   z-index: 0;
+}
+
+#body-main-id::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(from 45deg at 10% 10%,
+      rgba(251, 250, 250, 0.129) 0deg 10deg,
+      rgba(141, 141, 141, 0.215) 10deg 20deg,
+      rgba(122, 122, 122, 0.132) 20deg 30deg);
+  opacity: 0.6;
 }
 
 .glitcheffect {
@@ -467,27 +420,78 @@ main h2 {
 .section {
   margin-inline: auto;
   padding-block: 5rem;
-
+  height: fit-content;
 }
 
-#content {
+.wrapper1 {
+  box-sizing: border-box;
+  left: 50%;
+  padding: 10vmin;
+  position: relative;
+  text-align: center;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.due,
+.diagonal {
+  text-align: justify;
+  align-items: center;
+  margin-bottom: 10%;
+}
+
+.diagonal p, .due p {
+  padding-right: 5%;
+  padding-left:5%;
+
+}
+.diagonal h2, .due h2 {
+  padding-left:5%;
+}
+
+#content-card {
+  margin: 0 auto;
   display: flex;
   width: fit-content;
 }
 
-.card {
-  width: 15%;
-  height: 15%;
-  margin-inline: 5%;
-  margin: 0 auto;
+.element {
+  margin-right: 10px;
+  width: 15vw;
+  min-height: fit-content;
+  color: #000;
+  background-color: rgba(161, 164, 164, 0.323);
+  border-radius: 5%;
+  text-align: center;
+  word-wrap: break-word;
 }
+
+.element:hover {
+  content: " ";
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+}
+
 
 .maiuscoletto {
   font-variant: small-caps;
 }
 
 .text {
-  padding: 3% 3% 3% 3%;
+  padding: 3% 3% 3% 0%;
   color: white;
   text-align: 1em;
   word-wrap: break-word;
@@ -537,24 +541,55 @@ td {
   margin-bottom: 3%;
 }
 
-.immagine {
+figure {
   float: left;
-  margin-right: 30px;
+  margin: 1rem 1rem !important;
 }
 
-.immagine img {
+figure img {
   width: 15vw;
   height: auto;
-  border-style: solid;
 }
 
-.immagine figcaption {
-  text-align: center;
+figure figcaption {
   max-width: 15vw;
   font-size: 0.8em;
   font-style: italic;
 }
 
+.logo-image {
+  width: 30vw;
+  height: 60vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: center;
+}
+
+#kkk-logo {
+  margin-right: 5%;
+  shape-outside: circle(40%);
+  clip-path: circle(40%);
+  float: left;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Emblem_of_the_Ku_Klux_Klan.svg/1024px-Emblem_of_the_Ku_Klux_Klan.svg.png");
+}
+
+#masonry-logo {
+  float: right;
+  clip-path: circle(40%);
+  shape-outside: circle(40%);
+  margin-left: 5%;
+  right: 0;
+  background-image: url("https://www.masonicsupplyshop.com/content/EMBLEMS/square-and-compass-01/square-and-compass-01.png");
+}
+
+#skull-logo {
+  shape-outside: circle(40%);
+  margin-right: 5%;
+  clip-path: circle(40%);
+  float: left;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/41/Bones_logo.jpg");
+}
 
 .footnotes {
   font-size: 1rem;
