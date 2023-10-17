@@ -455,16 +455,18 @@ main h2 {
   width: fit-content;
 }
 
+
 .element {
   margin-right: 10px;
   width: 15vw;
   min-height: fit-content;
   color: #000;
   background-color: rgba(161, 164, 164, 0.323);
-  border-radius: 5%;
   text-align: center;
+  border-radius: 5%;
   word-wrap: break-word;
 }
+
 
 .element:hover {
   content: " ";

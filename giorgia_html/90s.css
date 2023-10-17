@@ -131,7 +131,6 @@ html {
 .wrapper {
     box-sizing: border-box;
     left: 50%;
-    padding-right: 3%;
     position: relative;
     text-align: justify;
     align-items: left;
@@ -231,9 +230,9 @@ html {
 #content-card {
     display: flex;
     width: fit-content;
-  }
-  
-  .element {
+}
+
+.element {
     margin-right: 10px;
     text-align: left;
     width: 15vw;
@@ -241,31 +240,32 @@ html {
     color: #000;
     background-color: rgba(161, 164, 164, 0.323);
     border-radius: 5%;
-  }
-  
-  .element:hover {
+}
+
+.element:hover {
     content: " ";
     animation: pulse 2s infinite;
-  }
-  
-  @keyframes pulse {
+}
+
+@keyframes pulse {
     0% {
-      transform: scale(0.95);
+        transform: scale(0.95);
     }
-  
+
     70% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  
+
     100% {
-      transform: scale(0.95);
+        transform: scale(0.95);
     }
-  }
+}
 
 .due,
 .diagonal {
     height: 90vh;
 }
+
 .due {
     background: lightblue;
 }
@@ -286,23 +286,20 @@ html {
     position: relative;
     clip-path: polygon(0 0, 0% 100%, 100% 100%);
     float: left;
-    z-index: 2;
-    background-color: green;
 }
 
 #masonry-logo {
     float: right;
     clip-path: polygon(100% 0, 0% 100%, 100% 100%);
     shape-outside: polygon(100% 0, 0% 100%, 100% 100%);
-    background-color: green;
     position: relative;
 }
 
 #skull-logo {
-    shape-outside: circle(50% at 0 50%);
-    clip-path: circle(50% at 0 50%);
+    shape-outside: polygon(0 0, 0% 100%, 100% 100%);
+    position: relative;
+    clip-path: polygon(0 0, 0% 100%, 100% 100%);
     float: left;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/41/Bones_logo.jpg");
 }
 
 
@@ -340,6 +337,7 @@ html {
     font-size: 1.1em;
     background-color: #f4f4fdff;
 }
+
 #body-main-id {
     font-family: coolvetica;
     font-size: 1.1em;
@@ -544,9 +542,7 @@ main h2 {
     color: rgb(106, 106, 232);
     text-align: center;
     text-transform: uppercase;
-
 }
-
 
 #introduction-txt-id {
     padding: 3% 3% 3% 3%;

@@ -1,3 +1,33 @@
+var circle = document.getElementsByClassName("circle");
+document.onmousemove = function (event) {
+    var x = event.clientX * 100 / window.innerWidth + "%";
+    var y = event.clientY * 100 / window.innerHeight + "%";
+
+    for (var i = 0; i < 2; i++) {
+        circle[i].style.left = x;
+        circle[i].style.top = y;
+        circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
+    }
+};
+
+var alertShown = false; 
+
+function showAlert() {
+    if (!alertShown) {
+        if (confirm("CENSORSHIP ALERT! Do you REALLY want to see what's written here?")) {
+            changeBackgroundColor();
+        }
+        alertShown = true; 
+    }
+}
+
+function changeBackgroundColor() {
+    var textElements = document.getElementsByClassName('censorship');
+    for (var i = 0; i < textElements.length; i++) {
+        textElements[i].style.backgroundColor = "transparent";
+    }
+}
+
 var map = L.map('map').setView([51.505, -0.09], 15);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -19,8 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
         contentArray.push(content);
         span.setAttribute("id", content);
     });
-
-    console.log(contentArray);
 
     let uniqueSet = new Set(contentArray);
 
@@ -235,24 +263,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-
-var circle = document.getElementsByClassName("circle");
-document.onmousemove = function () {
-    var x = event.clientX * 100 / window.innerWidth + "%";
-    var y = event.clientY * 100 / window.innerHeight + "%";
-    //event.clientX => get the horizontal coordinate of the mouse
-    //event.clientY => get the Vertical coordinate of the mouse
-    //window.innerWidth => get the browser width
-    //window.innerHeight => get the browser height
-
-    for (var i = 0; i < 2; i++) {
-        circle[i].style.left = x;
-        circle[i].style.top = y;
-        circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
-    }
-};
-
 
 
 function toggleClass(firstId, secondId) {
