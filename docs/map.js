@@ -9,7 +9,7 @@ document.onmousemove = function (event) {
         circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
     }
 };
-
+//only if style is future do this
 var alertShown = false; 
 
 function showAlert() {

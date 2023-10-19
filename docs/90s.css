@@ -665,7 +665,7 @@ td {
 
 footer {
     grid-area: footer;
-    height: 40vh;
+    height: 5vh;
     background-color: lightblue;
 }
 

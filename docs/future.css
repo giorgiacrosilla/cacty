@@ -125,19 +125,6 @@ nav {
   font-family: Redoctober;
 }
 
-#coverpage {
-  width: 100vw;
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
-  grid-template-rows: 0.1fr 1.5fr;
-  grid-template-areas:
-    "nav nav"
-    "sidebar main";
-  background: radial-gradient(circle at 0%, black, rgb(52, 22, 22) 50%, darkred 75%, black 75%);
-  font-family: rodchenkol;
-}
-
 #button-txt-id {
   /*questa è la div con i pulsanti*/
   grid-area: button;
@@ -299,8 +286,7 @@ main a:active {
   font-size: 2.5em;
 }
 
-main h1,
-#body-main-id h1 {
+main h1 {
   color: white;
   text-align: center;
   font-family: Redoctober;
@@ -323,16 +309,6 @@ main h2 {
   width: calc(100% - 13%);
   padding: 3% 3% 3% 3%;
   float: right;
-}
-
-#bside {
-  padding-top: 5%;
-}
-
-#bside>button {
-  width: fit-content;
-  margin-bottom: 2vh;
-
 }
 
 #body-main-id {
@@ -362,6 +338,103 @@ main h2 {
       rgba(141, 141, 141, 0.215) 10deg 20deg,
       rgba(122, 122, 122, 0.132) 20deg 30deg);
   opacity: 0.6;
+}
+.wrapper1 {
+  box-sizing: border-box;
+  left: 50%;
+  padding: 10vmin;
+  position: relative;
+  text-align: center;
+  top: 40%;
+  transform: translate(-50%, -50%);
+}
+
+.wrapper1> h1 {
+  height: fit-content;
+  margin-left: 50%;
+  margin-bottom: 5%;
+  font-family: Redoctober;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-shadow: 0 0 0.15em darkred;
+  filter: blur(0.007em);
+  animation: shake 2.5s linear forwards;
+}
+
+.wrapper1> h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  -webkit-clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+          clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+}
+
+.wrapper1> h1::before,
+.wrapper1 >h1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wrapper1> h1::before {
+  animation: crack1 2.5s linear forwards;
+  -webkit-clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+          clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
+}
+
+.wrapper1> h1::after {
+  animation: crack2 2.5s linear forwards;
+  -webkit-clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+          clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
+}
+
+@keyframes shake {
+  5%, 15%, 25%, 35%, 55%, 65%, 75%, 95% {
+      filter: blur(0.018em);
+      transform: translateY(0.018em) rotate(0deg);
+  }
+
+  10%, 30%, 40%, 50%, 70%, 80%, 90% {
+      filter: blur(0.01em);
+      transform: translateY(-0.018em) rotate(0deg);
+  }
+
+  20%, 60% {
+      filter: blur(0.03em);
+      transform: translate(-0.018em, 0.018em) rotate(0deg);
+  }
+
+  45%, 85% {
+      filter: blur(0.03em);
+      transform: translate(0.018em, -0.018em) rotate(0deg);
+  }
+
+  100% {
+      filter: blur(0.007em);
+      transform: translate(0) rotate(-0.5deg);
+  }
+}
+
+@keyframes crack1 {
+  0%, 95% {
+      transform: translate(-50%, -50%);
+  }
+
+  100% {
+      transform: translate(-51%, -48%);
+  }
+}
+
+@keyframes crack2 {
+  0%, 95% {
+      transform: translate(-50%, -50%);
+  }
+
+  100% {
+      transform: translate(-49%, -53%);
+  }
 }
 
 .glitcheffect {
@@ -421,16 +494,6 @@ main h2 {
   margin-inline: auto;
   padding-block: 5rem;
   height: fit-content;
-}
-
-.wrapper1 {
-  box-sizing: border-box;
-  left: 50%;
-  padding: 10vmin;
-  position: relative;
-  text-align: center;
-  top: 40%;
-  transform: translate(-50%, -50%);
 }
 
 .due,
