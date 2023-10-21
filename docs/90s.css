@@ -5,6 +5,11 @@
     src: url("coolvetica rg.otf");
 }
 
+@font-face {
+    font-family: telelower;
+    src: url("telelower.ttf");
+}
+
 html {
     cursor: url(https://ani.cursors-4u.net/symbols/sym-8/sym752.cur), auto !important;
 }
@@ -56,7 +61,7 @@ html {
 }
 
 /* prepare the selectors to add a stroke to */
-.stroke-single,
+
 .stroke-double {
     position: relative;
     background: transparent;
@@ -67,7 +72,6 @@ html {
 }
 
 /* add a single stroke */
-.stroke-single:before,
 .stroke-double:before {
     content: attr(title);
     position: absolute;
@@ -121,25 +125,34 @@ html {
 .wrapper1 {
     box-sizing: border-box;
     left: 50%;
-    padding: 10vmin;
     position: relative;
     text-align: center;
-    top: 40%;
+    align-items: center;
+    top: 45%;
+    color: white;
     transform: translate(-50%, -50%);
 }
 
-.wrapper {
-    box-sizing: border-box;
-    left: 50%;
-    position: relative;
-    text-align: justify;
-    align-items: left;
-    top: 60%;
-    transform: translate(-50%, -50%);
+.wrapper1>h1,
+.wrapper>h2 {
+    font-family: telelower;
+    text-transform: uppercase;
 }
 
-.wrapper h2 {
-    text-align: center;
+.stroke-d {
+    position: relative;
+    background: transparent;
+    z-index: 0;
+    color: rgb(255, 0, 191);
+    font-size: 3vw;
+}
+
+/* add a single stroke */
+.stroke-d:before {
+    content: attr(title);
+    position: absolute;
+    -webkit-text-stroke: 0.2em white;
+    z-index: -1;
 }
 
 .separator.t {
@@ -236,11 +249,13 @@ html {
     margin-right: 10px;
     text-align: left;
     width: 15vw;
-    height: 15vh;
+    height: 20vh;
     color: #000;
-    background-color: rgba(161, 164, 164, 0.323);
-    border-radius: 5%;
+    background-color: transparent;
+    border: 3px solid #85c442;
+    padding: 8px 8px 8px 8px;
 }
+
 
 .element:hover {
     content: " ";
@@ -263,7 +278,7 @@ html {
 
 .due,
 .diagonal {
-    height: 90vh;
+    height: fit-content;
 }
 
 .due {
@@ -274,9 +289,17 @@ html {
     background: rgb(255, 0, 191);
 }
 
+.wrapper {
+    text-align: justify;
+    padding: 10%;
+    height: fit-content;
+    box-sizing: border-box;
+/*questo deve essere maggiormente centrato*/
+}
+
 .logo-image {
     width: 40vw;
-    height: 60vh;
+    height: 40vh;
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -284,13 +307,11 @@ html {
 #kkk-logo {
     shape-outside: polygon(0 0, 0% 100%, 100% 100%);
     position: relative;
-    clip-path: polygon(0 0, 0% 100%, 100% 100%);
     float: left;
 }
 
 #masonry-logo {
     float: right;
-    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
     shape-outside: polygon(100% 0, 0% 100%, 100% 100%);
     position: relative;
 }
@@ -298,72 +319,43 @@ html {
 #skull-logo {
     shape-outside: polygon(0 0, 0% 100%, 100% 100%);
     position: relative;
-    clip-path: polygon(0 0, 0% 100%, 100% 100%);
     float: left;
 }
-
-
-.element:hover {
-    content: " ";
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.95);
-    }
-
-    70% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(0.95);
-    }
-}
-
 
 #body-txt-id {
     height: 100vh;
     width: 100%;
     display: grid;
     grid-template-columns: 0.1fr 1fr;
-    grid-template-rows: 0.01fr 1.5fr 0.01fr;
+    grid-template-rows: auto 1.5fr auto;
     grid-template-areas:
         "nav nav"
         "button main"
         "footer footer";
     font-family: coolvetica;
-    font-size: 1.1em;
+    font-size: 1.5vw;
     background-color: #f4f4fdff;
 }
 
 #body-main-id {
     font-family: coolvetica;
-    font-size: 1.1em;
+    font-size: 1.5vw;
 }
 
 nav {
     grid-area: nav;
 }
 
-#sidebar-cover-id {
-    background-color: rgb(255, 0, 191);
-}
-
 #button-txt-id {
     /*questa è la div con i pulsanti*/
     grid-area: button;
-}
-
-#button-txt-id {
     padding-top: 5%;
 }
 
 #button-txt-id>button {
     width: fit-content;
     margin-bottom: 2vh;
-}
+  }
 
 .metarticle-visible-txt {
     display: block;
@@ -374,21 +366,25 @@ nav {
     display: none;
 }
 
-.side-cont-txt {
+#sidebar-txt-id {
+    overflow-x: hidden;
+    overflow-y: auto;
     background-color: transparent;
-    transition: 0.5s;
-    padding-top: 3%;
-}
-
-.side-cont-txt::-webkit-scrollbar {
+    z-index: 1;
+    top: 0;
+    word-wrap: break-word;
+  }
+  
+#sidebar-txt-id::-webkit-scrollbar {
     width: 0em;
-}
-
-.side-cont-txt::-webkit-scrollbar-thumb {
+  }
+  
+#sidebar-txt-id::-webkit-scrollbar-thumb {
     background-color: transparent;
-}
+  }
 
 .accordion {
+    margin-top: 5%;
     padding: 8px 8px 8px 8px;
     text-decoration: none;
     border: 3px solid black;
@@ -405,6 +401,13 @@ nav {
 
 .accordion:hover {
     color: #f1f1f1;
+}
+
+#data {
+    transform: rotate(5deg);
+    background-color: rgb(255, 0, 191);
+    border: 3px solid black;
+
 }
 
 #dates {
@@ -436,6 +439,7 @@ nav {
     padding: 0 18px;
     display: none;
     overflow: auto;
+    font-size: 0.8em;
 }
 
 #map {
@@ -455,22 +459,9 @@ nav {
 
 }
 
-.openbtn:hover {
-    background-color: pink;
-}
-
-@media screen and (max-height: 450px) {
-    .sidebar {
-        padding-top: 5px;
-    }
-
-    .sidebar a {
-        font-size: 1em;
-    }
-}
-
 main {
     grid-area: main;
+    height: 100vh;
     padding-top: 3%;
     padding-left: 2%;
     padding-right: 2%;
@@ -518,19 +509,6 @@ h1 {
     width: 50%;
     transform: rotate(-5deg);
     padding: 1%;
-}
-
-#maincover {
-    overflow: auto;
-    padding-top: 0%;
-    padding-left: 0%;
-    padding-right: 0%;
-    background-color: lightblue;
-    position: relative;
-    text-align: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-image: url('https://newswirengr.com/wp-content/uploads/2023/02/ADC_ADV17022S_10.jpg');
 }
 
 main h1 {
@@ -665,7 +643,6 @@ td {
 
 footer {
     grid-area: footer;
-    height: 5vh;
     background-color: lightblue;
 }
 
@@ -688,17 +665,13 @@ footer {
 
 
 @media only screen and (max-width: 550px) {
-    body {
-        grid-template-columns: 100%;
-        grid-template-rows: 10% 80% 10%;
-    }
-
     #body-txt-id {
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 0.2fr 0.2fr 1.5fr 0.1fr;
         grid-template-areas:
             "nav"
+            "button"
             "sidebar"
             "main"
             "footer";

@@ -35,37 +35,6 @@
   background: darkred;
 }
 
-.eyes {
-  position: absolute;
-  top: 30%;
-  transform: translateY(-50%);
-  width: 100%;
-  text-align: center;
-  z-index: 0;
-}
-
-.eye {
-  margin: 0 auto;
-  width: 240px;
-  height: 240px;
-  background-color: white;
-  border-radius: 100% 0px;
-  transform: rotate(45deg);
-  position: relative;
-}
-
-.pupilla {
-  width: 40px;
-  height: 40px;
-  background: #000;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  border: 15px solid #710b0b;
-}
-
 /*NAVBAR*/
 .title {
   margin-left: 5%;
@@ -75,7 +44,16 @@
   background-color: white;
   border-radius: 100% 0;
   transform: rotate(45deg);
-  font-family: Redoctober;
+}
+
+.inner-box {
+  width: 100px;
+  height: 70px;
+  position: absolute;
+  top: 13%;
+  left: 8%;
+  background-color: transparent;
+  transform: rotate(-45deg);
 }
 
 .circle {
@@ -128,9 +106,6 @@ nav {
 #button-txt-id {
   /*questa è la div con i pulsanti*/
   grid-area: button;
-}
-
-#button-txt-id {
   padding-top: 5%;
 }
 
@@ -205,19 +180,6 @@ button.accordion {
 .openbtn:hover {
   background-color: #444;
 }
-
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-
-  .sidebar a {
-    font-size: 18px;
-  }
-}
-
 main {
   grid-area: main;
   overflow: auto;
@@ -239,54 +201,9 @@ main a:active {
   color: white;
 }
 
-#maincover {
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-top: 0%;
-  padding-left: 0%;
-  padding-right: 0%;
-  position: relative;
-  background-color: black;
-}
 
-.forma1 {
-  position: relative;
-  background-color: transparent;
-  border-left: 100vw solid transparent;
-  border-bottom: 10vw solid darkred;
-  margin-top: -25vw;
-  bottom: 0;
-  z-index: 1;
-}
-
-.forma2 {
-  position: relative;
-  background-color: transparent;
-  width: 0;
-  height: 0;
-  border-right: 100vw solid transparent;
-  border-top: 10vw solid darkred;
-  margin-top: 0vw;
-  z-index: 1;
-  margin-bottom: -30%;
-}
-
-.content {
-  position: relative;
-  padding: 1%;
-  background-color: darkred;
-  height: min-content;
-  text-align: center;
-  z-index: 1;
-}
-
-.content h1 {
-  transform: rotate(-6deg);
-  z-index: 1;
-  font-size: 2.5em;
-}
-
-main h1 {
+h1,
+h2 {
   color: white;
   text-align: center;
   font-family: Redoctober;
@@ -297,12 +214,18 @@ main h1 {
   animation: glitch 750ms infinite;
 }
 
+h2 {
+  text-align: left;
+}
+
 
 main h2 {
   color: grey;
   font-family: Redoctober;
   text-transform: uppercase;
   text-align: center;
+  animation: none;
+  text-shadow: none;
 }
 
 #introduction {
@@ -338,103 +261,6 @@ main h2 {
       rgba(141, 141, 141, 0.215) 10deg 20deg,
       rgba(122, 122, 122, 0.132) 20deg 30deg);
   opacity: 0.6;
-}
-.wrapper1 {
-  box-sizing: border-box;
-  left: 50%;
-  padding: 10vmin;
-  position: relative;
-  text-align: center;
-  top: 40%;
-  transform: translate(-50%, -50%);
-}
-
-.wrapper1> h1 {
-  height: fit-content;
-  margin-left: 50%;
-  margin-bottom: 5%;
-  font-family: Redoctober;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-shadow: 0 0 0.15em darkred;
-  filter: blur(0.007em);
-  animation: shake 2.5s linear forwards;
-}
-
-.wrapper1> h1 span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  -webkit-clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
-          clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
-}
-
-.wrapper1> h1::before,
-.wrapper1 >h1::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.wrapper1> h1::before {
-  animation: crack1 2.5s linear forwards;
-  -webkit-clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
-          clip-path: polygon(0% 0%, 10% 0%, 55% 100%, 0% 100%);
-}
-
-.wrapper1> h1::after {
-  animation: crack2 2.5s linear forwards;
-  -webkit-clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
-          clip-path: polygon(44% 0%, 100% 0%, 100% 100%, 70% 100%);
-}
-
-@keyframes shake {
-  5%, 15%, 25%, 35%, 55%, 65%, 75%, 95% {
-      filter: blur(0.018em);
-      transform: translateY(0.018em) rotate(0deg);
-  }
-
-  10%, 30%, 40%, 50%, 70%, 80%, 90% {
-      filter: blur(0.01em);
-      transform: translateY(-0.018em) rotate(0deg);
-  }
-
-  20%, 60% {
-      filter: blur(0.03em);
-      transform: translate(-0.018em, 0.018em) rotate(0deg);
-  }
-
-  45%, 85% {
-      filter: blur(0.03em);
-      transform: translate(0.018em, -0.018em) rotate(0deg);
-  }
-
-  100% {
-      filter: blur(0.007em);
-      transform: translate(0) rotate(-0.5deg);
-  }
-}
-
-@keyframes crack1 {
-  0%, 95% {
-      transform: translate(-50%, -50%);
-  }
-
-  100% {
-      transform: translate(-51%, -48%);
-  }
-}
-
-@keyframes crack2 {
-  0%, 95% {
-      transform: translate(-50%, -50%);
-  }
-
-  100% {
-      transform: translate(-49%, -53%);
-  }
 }
 
 .glitcheffect {
@@ -503,21 +329,24 @@ main h2 {
   margin-bottom: 10%;
 }
 
-.diagonal p, .due p {
+.diagonal p,
+.due p {
   padding-right: 5%;
-  padding-left:5%;
+  padding-left: 5%;
 
 }
-.diagonal h2, .due h2 {
-  padding-left:5%;
+
+.diagonal h2,
+.due h2 {
+  padding-left: 5%;
 }
 
 #content-card {
   margin: 0 auto;
   display: flex;
   width: fit-content;
+  flex-direction: row;
 }
-
 
 .element {
   margin-right: 10px;
@@ -529,7 +358,6 @@ main h2 {
   border-radius: 5%;
   word-wrap: break-word;
 }
-
 
 .element:hover {
   content: " ";
@@ -697,10 +525,6 @@ footer {
 }
 
 @media only screen and (max-width: 550px) {
-  body {
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 80% 10%;
-  }
 
   .main_container {
     display: grid;
@@ -708,6 +532,7 @@ footer {
     grid-template-rows: 0.2fr 0.2fr 1.5fr 0.1fr;
     grid-template-areas:
       "nav"
+      "button"
       "sidebar"
       "main"
       "footer";

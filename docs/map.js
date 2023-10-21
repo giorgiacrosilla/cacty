@@ -1,23 +1,36 @@
 var circle = document.getElementsByClassName("circle");
+var innerBox = document.querySelector(".inner-box"); // Select the .inner-box element
+
 document.onmousemove = function (event) {
-    var x = event.clientX * 100 / window.innerWidth + "%";
-    var y = event.clientY * 100 / window.innerHeight + "%";
+    var x = event.clientX * 100 / innerBox.clientWidth + "%";
+    var y = event.clientY * 100 / innerBox.clientHeight + "%";
+
+    // Define the boundaries of the inner box
+    var minX = 0;
+    var maxX = innerBox.clientWidth - circle[0].clientWidth;
+    var minY = 0;
+    var maxY = innerBox.clientHeight - circle[0].clientHeight;
 
     for (var i = 0; i < 2; i++) {
+        // Constrain x and y within the inner box boundaries
+        x = Math.min(Math.max(parseInt(x, 10), minX), maxX) + "%";
+        y = Math.min(Math.max(parseInt(y, 10), minY), maxY) + "%";
+
         circle[i].style.left = x;
         circle[i].style.top = y;
         circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
     }
 };
+
 //only if style is future do this
-var alertShown = false; 
+var alertShown = false;
 
 function showAlert() {
     if (!alertShown) {
         if (confirm("CENSORSHIP ALERT! Do you REALLY want to see what's written here?")) {
             changeBackgroundColor();
         }
-        alertShown = true; 
+        alertShown = true;
     }
 }
 
@@ -27,8 +40,7 @@ function changeBackgroundColor() {
         textElements[i].style.backgroundColor = "transparent";
     }
 }
-
-var map = L.map('map').setView([51.505, -0.09], 15);
+var map = L.map('map').setView([51.505, -0.09], 10);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
@@ -38,7 +50,6 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 setInterval(function () {
     map.invalidateSize();
 }, 100);
-
 
 document.addEventListener("DOMContentLoaded", function () {
     var placeSpans = document.querySelectorAll("span.place");
