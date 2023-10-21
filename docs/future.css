@@ -47,11 +47,11 @@
 }
 
 .inner-box {
-  width: 100px;
-  height: 70px;
+  width: 110px;
+  height: 65px;
   position: absolute;
-  top: 13%;
-  left: 8%;
+  top: 15%;
+  border-radius: 50%;
   background-color: transparent;
   transform: rotate(-45deg);
 }
@@ -156,7 +156,6 @@ button.accordion {
 }
 
 .panel {
-  padding: 0 18px;
   display: none;
   color: white;
   background-color: #111;
@@ -201,7 +200,15 @@ main a:active {
   color: white;
 }
 
-
+.wrapper1 {
+  box-sizing: border-box;
+  left: 50%;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  top: 45%;
+  transform: translate(-50%, -50%);
+}
 h1,
 h2 {
   color: white;
@@ -457,29 +464,25 @@ figure figcaption {
   background-repeat: no-repeat;
   background-color: white;
   background-position: center;
+  clip-path: circle(40%);
+  shape-outside: circle(40%);
 }
 
 #kkk-logo {
   margin-right: 5%;
-  shape-outside: circle(40%);
-  clip-path: circle(40%);
   float: left;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Emblem_of_the_Ku_Klux_Klan.svg/1024px-Emblem_of_the_Ku_Klux_Klan.svg.png");
 }
 
 #masonry-logo {
   float: right;
-  clip-path: circle(40%);
-  shape-outside: circle(40%);
   margin-left: 5%;
   right: 0;
   background-image: url("https://www.masonicsupplyshop.com/content/EMBLEMS/square-and-compass-01/square-and-compass-01.png");
 }
 
 #skull-logo {
-  shape-outside: circle(40%);
   margin-right: 5%;
-  clip-path: circle(40%);
   float: left;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/4/41/Bones_logo.jpg");
 }
@@ -541,4 +544,7 @@ footer {
   .text {
     column-count: 1;
   }
+  .logo-image {
+    clip-path: circle(25%);
+}
 }

@@ -1,5 +1,5 @@
 var circle = document.getElementsByClassName("circle");
-var innerBox = document.querySelector(".inner-box"); // Select the .inner-box element
+var innerBox = document.querySelector(".inner-box");
 
 document.onmousemove = function (event) {
     var x = event.clientX * 100 / innerBox.clientWidth + "%";
@@ -32,26 +32,26 @@ function showAlert() {
         }
         alertShown = true;
     }
-}
+};
 
 function changeBackgroundColor() {
     var textElements = document.getElementsByClassName('censorship');
     for (var i = 0; i < textElements.length; i++) {
         textElements[i].style.backgroundColor = "transparent";
     }
-}
-var map = L.map('map').setView([51.505, -0.09], 10);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-}).addTo(map);
-
-setInterval(function () {
-    map.invalidateSize();
-}, 100);
-
+};
 document.addEventListener("DOMContentLoaded", function () {
+    var map = L.map('map').setView([51.505, -0.09], 10);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+    }).addTo(map);
+
+    setInterval(function () {
+        map.invalidateSize();
+    }, 100);
+
     var placeSpans = document.querySelectorAll("span.place");
     var contentArray = [];
 
@@ -71,11 +71,10 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(response => response.json())
             .then(data => {
                 if (data.features.length > 0) {
-                    // Extract coordinates from the response
                     var coordinates = data.features[0].geometry.coordinates;
                     var latitude = coordinates[1];
                     var longitude = coordinates[0];
-
+                    
                     // Create a marker for each location and add it to the map
                     var marker = L.marker([latitude, longitude]).addTo(map)
                         .bindPopup('<a href="#' + content + '">' + content + '</a>')
@@ -184,10 +183,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 )
             }
             if (span.id === "Tennessee") {
-                var Mississippi = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/tennessee.geojson'
+                var Tennessee = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/tennessee.geojson'
 
                 fetch(
-                    Mississippi
+                    Tennessee
                 ).then(
                     res => res.json()
                 ).then(

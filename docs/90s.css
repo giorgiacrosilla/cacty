@@ -133,10 +133,16 @@ html {
     transform: translate(-50%, -50%);
 }
 
-.wrapper1>h1,
+.wrapper1>h1 {
+    font-family: telelower;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
 .wrapper>h2 {
     font-family: telelower;
     text-transform: uppercase;
+    font-size: 1.5rem;
 }
 
 .stroke-d {
@@ -278,7 +284,7 @@ html {
 
 .due,
 .diagonal {
-    height: fit-content;
+    height: 95vh;
 }
 
 .due {
@@ -291,16 +297,20 @@ html {
 
 .wrapper {
     text-align: justify;
-    padding: 10%;
-    height: fit-content;
     box-sizing: border-box;
-/*questo deve essere maggiormente centrato*/
+    height: fit-content;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    position: relative;
+    top: 60%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 
 .logo-image {
     width: 40vw;
     height: 40vh;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -355,7 +365,7 @@ nav {
 #button-txt-id>button {
     width: fit-content;
     margin-bottom: 2vh;
-  }
+}
 
 .metarticle-visible-txt {
     display: block;
@@ -373,15 +383,15 @@ nav {
     z-index: 1;
     top: 0;
     word-wrap: break-word;
-  }
-  
+}
+
 #sidebar-txt-id::-webkit-scrollbar {
     width: 0em;
-  }
-  
+}
+
 #sidebar-txt-id::-webkit-scrollbar-thumb {
     background-color: transparent;
-  }
+}
 
 .accordion {
     margin-top: 5%;
@@ -644,6 +654,11 @@ td {
 footer {
     grid-area: footer;
     background-color: lightblue;
+    height: 30vh;
+}
+
+footer>.wrapper {
+    top: 80%;
 }
 
 
@@ -679,5 +694,12 @@ footer {
 
     .text {
         column-count: 1;
+    }
+    .wrapper1>h1 {
+        font-size: 2rem;
+    }
+    .due,
+    .diagonal {
+        height: 70vh;
     }
 }
