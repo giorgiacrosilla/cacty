@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 )
             }
             if (span.id === "Great Britain") {
-                var GreatBritain = '..//geojson/united-kingdom_.geojson'
+                var GreatBritain = '../geojson/united-kingdom_.geojson'
 
                 fetch(
                     GreatBritain
@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 )
             }
             if (span.id === "Italy") {
-                var Italy = '..//geojson/italy-detailed-boundary_943.geojson'
+                var Italy = '../geojson/italy-detailed-boundary_943.geojson'
 
                 fetch(
                     Italy
@@ -239,7 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 )
             }
             if (span.id === "Hungary") {
-                var Hungary = '..//geojson/hungary_338.geojson'
+                var Hungary = '../geojson/hungary_338.geojson'
 
                 fetch(
                     Hungary
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 )
             }
             if (span.id === "Russia") {
-                var Russia = '..//geojson/russia_609.geojson'
+                var Russia = '../geojson/russia_609.geojson'
 
                 fetch(
                     Russia
