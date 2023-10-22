@@ -179,6 +179,7 @@ button.accordion {
 .openbtn:hover {
   background-color: #444;
 }
+
 main {
   grid-area: main;
   overflow: auto;
@@ -209,6 +210,7 @@ main a:active {
   top: 45%;
   transform: translate(-50%, -50%);
 }
+
 h1,
 h2 {
   color: white;
@@ -337,14 +339,14 @@ main h2 {
 }
 
 .diagonal p,
-.due p {
+.due p, footer p {
   padding-right: 5%;
   padding-left: 5%;
 
 }
 
 .diagonal h2,
-.due h2 {
+.due h2, footer h2 {
   padding-left: 5%;
 }
 
@@ -511,6 +513,69 @@ footer {
   padding-top: 40px;
 }
 
+footer>.wrapper {
+  top: 60%;
+}
+
+.layoutfooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.layoutfooter>button {
+  margin-top: 3%;
+  margin-bottom: 3%;
+  width: 15%;
+  margin-left: 5%;
+}
+
+.card-name {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+.name-card {
+  background-color: rgba(161, 164, 164, 0.323);
+  color: black;
+  margin-right: 10px;
+  width: 25%;
+  height: fit-content;
+  border-radius: 5%;
+  box-shadow: 0 5px 5px 0px;
+  word-wrap: break-word;
+}
+
+.name-card:hover {
+  content: " ";
+  animation: pulse 2s infinite;
+}
+
+.modal-body, .modal-header {
+  color: black
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+.name-card>img {
+  width: 50%;
+  border-radius: 50%;
+  padding:3%;
+}
 
 /*sidebartag*/
 .n1700,
@@ -544,7 +609,8 @@ footer {
   .text {
     column-count: 1;
   }
+
   .logo-image {
     clip-path: circle(25%);
-}
+  }
 }
