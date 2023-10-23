@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Style Switcher</title>
+    <link id="style-link" rel="stylesheet" href="Aldine.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Cormorant+Garamond:wght@500&family=IM+Fell+English&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+var map = L.map('map').setView([51.505, -0.09], 15);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+
+setInterval(function () {
+    map.invalidateSize();
+ }, 100);    
+
+
+});
+
+
+
+function ShowMetadata() {
+    const articles = document.querySelectorAll('.testo_metadata');
+    const svgElement = document.getElementById('firstsvg');
+    articles.forEach(element => {
+        if (element.id === 'firstarticle') {
+            document.getElementById("s").innerHTML =
+                '<h2>Article Metadata</h2><ul><li>title: The Terror is Born. </li><li>author</li><li>date</li></ul>';
+        }
+    })
+
+    if (svgElement) {
+        // Find the text element with id="metadata" inside the SVG
+        const textElement = svgElement.querySelector('#metadata');
+
+        // Update the text content of the text element
+        if (textElement) {
+            document.getElementById("s").innerHTML =
+                '<h2>Article Metadata</h2><ul><li>title: The Terror is Born. </li><li>author</li><li>date</li></ul>';
+        }
+    }
+};
+
+
+/*
+var currentSidebar = 0;
+var lastButton = null;
+
+
+function toggleSidebar(panelId) {
+  var panel = document.getElementById(panelId);
+  var sidebar = document.getElementById("sidebar-txt-id");
+    var all = document.getElementById("body-txt-id");
+    if (currentSidebar === 0) {
+      currentSidebar = 1;
+      sidebar.style.display = "block";
+      panel.style.display = "block";
+      console.log(panel)
+      all.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+      lastButton = panelId;
+        }
+    else {
+        if (lastButton === panelId){
+            currentSidebar = 0;
+            lastButton = null;
+            sidebar.style.display = "none";
+            all.style.gridTemplateAreas = '"nav nav" "button main" "footer footer"';
+          }
+        else{
+            document.getElementById(lastButton).style.display = "none";
+            lastButton = panelId;
+            panel.style.display = "block";
+            
+            
+          }
+    }
+}
+*/
+/*
+function toggleSidebar1(){
+    var contentOne = document.getElementById("metadata-txt-id");
+    var contentTwo = document.getElementById("article-txt-id");
+    var body = document.getElementById("body-txt-id")
+    if(window.getComputedStyle(contentTwo).display === "none"){
+        if ( window.getComputedStyle(contentOne).display != "none"){
+            contentTwo.style.display = "none";
+        }
+        contentOne.style.display = "block";
+        contentOne.style.gridArea ="sidebar";
+        body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+        console.log(window.getComputedStyle(contentOne).display)
+    }
+    else{
+        contentOne.style.display = "none";
+        body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
+    }
+}
+
+
+function toggleSidebar2(){
+    var contentOne = document.getElementById('article-txt-id');
+    var contentTwo = document.getElementById('metadata-txt-id');
+    var body = document.getElementById('body-txt-id')
+    var statusOne= window.getComputedStyle(contentTwo).display
+    var statusTwo = window.getComputedStyle(contentOne).display
+    if(statusOne === 'none'){
+        if ( statusTwo != 'none'){
+            contentTwo.style.display = 'none';
+        }
+        contentOne.style.display = 'block';
+        contentOne.style.gridArea ='sidebar';
+        body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+        
+    }
+    else{
+        contentOne.style.display = 'none';
+        body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
+    }
+}
+
+
+*/
+
+
+function toggleClass(firstId, secondId) {
+    var firstEl = document.getElementById(firstId);
+    var secondEl = document.getElementById(secondId);
+    var body = document.getElementById('body-txt-id')
+    if (firstEl.classList.contains("metarticle-vis-txt")) {
+        firstEl.classList.remove("metarticle-vis-txt");
+        firstEl.classList.add("metarticle-inv-txt");
+
+        body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"'; 
+    } else {
+        if(firstEl.classList.contains("metarticle-inv-txt")){
+            firstEl.classList.remove("metarticle-inv-txt")
+        }
+        firstEl.classList.add("metarticle-vis-txt"); 
+        body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+        if (secondEl.classList.contains("metarticle-vis-txt")) {
+            secondEl.classList.remove("metarticle-vis-txt");
+            secondEl.classList.add("metarticle-inv-txt");
+        }
+    }
+}
+
+
+
+
+function initializeAccordion() {
+    var accordions = document.getElementsByClassName("accordion");
+
+    for (var i = 0; i < accordions.length; i++) {
+        accordions[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+}
+initializeAccordion();
+
+
+
+function main() {
+    // Checkbox interactions
+    $('#showasides').click(function () {
+        if (this.checked)
+            $('.1700').addClass('n1700');
+        else
+            $('.1700').removeClass('n1700');
+    });
+
+    $('#showspeeches').click(function () {
+        if (this.checked)
+            $('.1800').addClass('n1800');
+        else
+            $('.1800').removeClass('n1800');
+    });
+
+    $('#showquotes').click(function () {
+        if (this.checked)
+            $('.1900').addClass('n1900');
+        else
+            $('.1900').removeClass('n1900');
+    });
+    $('#showpeople').click(function () {
+        if (this.checked)
+            $('.forrest').addClass('nforrest');
+        else
+            $('.forrest').removeClass('nforrest');
+    });
+    $('#showp').click(function () {
+        if (this.checked)
+            $('.brownlow').addClass('nb');
+        else
+            $('.brownlow').removeClass('nb');
+    });
+}
+$(document).ready(main);
+
+
+
+
+</script>
+</head>
+</head>
+<body id="body-txt-id">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="title">
+            <a class="navbar-brand" href="mainpage.html">
+                <h1 class="stroke-double" title="secretmag">secretmag</h1>
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Styles
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><button class="style-button" name="Aldine.css" onclick="stylechanger('Aldine.css')">Aldine</button></a></li>
+                        <li><a class="dropdown-item" href="#"><button class="style-button" name="De_Stijl.css" onclick="stylechanger('De_Stijl.css')">De stijl</button></a></li>
+                        <li><a class="dropdown-item" href="#"><button class="style-button" name="style3.css" onclick="stylechanger('style3.css')">style 3</button></a></li>
+                        <li><a class="dropdown-item" href="#"><button class="style-button" name="style4.css" onclick="stylechanger('style4.css')">style 4</button></a></li>
+                        <li><a class="dropdown-item" href="#"><button class="style-button" name="90s.css" onclick="stylechanger('90s.css')">90</button></a></li>
+                        <li><a class="dropdown-item" href="#"><button class="style-button" name="future.css" onclick="stylechanger('future.css')">Future</button></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<div class= "sidecont-txt metarticle-inv-txt" id="metadata-txt-id">
+    <button class="accordion" id="dates">Dates</button>
+    <div class="panel">
+        <form role="form">
+            <div class="checkbox"><label>
+                    <input type="checkbox" id="showasides" class="show">1700</label></div>
+            <div class="checkbox"><label>
+                    <input type="checkbox" id="showspeeches" class="show">1800</label>
+            </div>
+            <div class="checkbox"><label>
+                    <input type="checkbox" id="showquotes" class="show">1900</label></div>
+        </form>
+    </div>
+    <button class="accordion" id="places">Places</button>
+    <div class="panel">
+        <div id="map"></div>
+    </div>
+    <button class="accordion" id="people">People</button>
+    <div class="panel">
+        <form role="form">
+            <div class="checkbox"><label>
+                    <input type="checkbox" id="showpeople" class="show">Forrest</label></div>
+            <div class="checkbox"><label>
+                    <input type="checkbox" id="showp" class="show">Brownlow</label></div>
+        </form>
+    </div>
+    <button class="accordion" id="events">Events</button>
+    <div class="panel">
+    </div>
+
+</div>
+    <div class= "sidecont-txt metarticle-inv-txt" id="article-txt-id" >
+    <button class="accordion" id="dates">Issue 1: KKK</button>
+    <div class="panel">
+        <ul>
+            <li><a href="kkk1.html">The Terror is Born</a></li>
+            <li><a href="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
+            <li><a href="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the 1920s</a></li>
+        </ul>
+    </div>
+    <button class="accordion" id="places">Issue 2: Freemasonry</button>
+    <div class="panel">
+
+    </div>
+    <button class="accordion" id="people">Issue 3: Skull and Bones</button>
+    <div class="panel">
+
+    </div>
+</div>
+
+<div id="button-txt-id">
+<button class="openbtn" onclick="toggleClass('metadata-txt-id', 'article-txt-id')">Metadata</button><br>
+<button class="openbtn" onclick="toggleClass('article-txt-id', 'metadata-txt-id')">Articles</button>
+</div>
+
+    
+    
+        
+        <!-- <button class="block hidden", id="gold-square"></button>
+        <script>
+            function getRandomColor() {
+                const colors = ['white', 'yellow', 'blue', 'black', 'red',];
+                const randomIndex = Math.floor(Math.random() * colors.length);
+                return colors[randomIndex];
+            }
+            const buttongold = document.getElementById('gold-square');
+            buttongold.addEventListener('click', function() {
+                const randomColor = getRandomColor();
+                buttongold.style.backgroundColor = randomColor;
+            });
+        </script>
+        <button class="block hidden", id="place-square2"></button>
+        <script>
+            function getRandomColor() {
+                const colors = ['white', 'yellow', 'blue', 'black', 'red',];
+                const randomIndex = Math.floor(Math.random() * colors.length);
+                return colors[randomIndex];
+            }
+            const buttonblack1 = document.getElementById('place-square2');
+            buttonblack1.addEventListener('click', function() {
+                const randomColor = getRandomColor();
+                buttonblack1.style.backgroundColor = randomColor;
+            });
+        </script> -->
+    <div class="page content">
+        <p>
+            <h1 class="chapter-title"><b><span class="organization"><span class="skull-and-bones"><a href="https://it.wikipedia.org/wiki/Skull_and_Bones">Skull and Bones</a></span></span>, the Ivy League, and
+            the Hidden Paths of Power</br></b>
+            
+            <h2>THE TODAY SHOW</br>
+            <a href="http://www.msnbc.com/news/802773.asp?cp1=1">http://www.msnbc.com/news/802773.asp?cp1=1</a>
+            
+            Sept. 4 — Inside a cold, foreboding structure of brown sandstone in <span class="place"><span class="New-Haven"><a href="https://it.wikipedia.org/wiki/New_Haven">New Haven,
+            Conn.</a></span></span>, lives one of the most heavily shrouded secret societies in American history.
+            
+            <span class="organization"><span class="Yale"><a href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale">Yale’s</a></span></span></span> super-elite <span class="organization"><span class="skull-and-bones"><a href="https://it.wikipedia.org/wiki/Skull_and_Bones">Skull and Bones</a></span></span>, a 200-year-old organization whose roster is
+            stocked with some of the country’s most prominent families: <span class="person"><span class="Bush"><a href="https://it.wikipedia.org/wiki/Bush">Bush</a></span></span>, <span class="person"><span class="Harriman">Harriman</span></span>, <span class="person"><span class="Phelps">Phelps</span></span>,
+            <span class="person"><span class="Rockfeller"><a href="https://it.wikipedia.org/wiki/Rockefeller_(famiglia)">Rockefeller</a></span></span>, <span class="person"><span class="Taft"><a href="https://en.wikipedia.org/wiki/Taft_family">Taft</a></span></span>, and <span class="person"><span class="Whitney"><a href="https://en.wikipedia.org/wiki/Whitney_family">Whitney</a></span></span>. Journalist <span class="person"><span class="Alexandra-Robbins"><a href="https://en.wikipedia.org/wiki/Alexandra_Robbins">Alexandra Robbins</a></span></span>, herself a member of
+            another of <span class="organization"><span class="Yale"><a href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale">Yale’s</a></span></span></span> secret societies, interviewed more than a hundred Bonesmen and
+            writes about the rituals that make up the organization. Read an excerpt from her book
+            ‘The Secrets of the Tomb’ below.
+            
+            <span class="organization"><span class="skull-and-bones"><a href="https://it.wikipedia.org/wiki/Skull_and_Bones">Skull and Bones</a></span></span>, the Ivy League, and the Hidden Paths of Power by <span class="person"><span class="Alexandra-Robbins"><a href="https://en.wikipedia.org/wiki/Alexandra_Robbins">Alexandra Robbins</a></span></span>
+            <h2><b><i>THE LEGEND OF <span class="organization"><span class="skull-and-bones"><a href="https://it.wikipedia.org/wiki/Skull_and_Bones">Skull and Bones</a></span></span></i></b>
+            Sometime in the early <span class="date-1800">1830s</span>, a <span class="organization"><span class="Yale"><a href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale">Yale</a></span></span></span> <span class="role">student</span> named <span class="person"><span class="William-H-Russel"><a href="https://it.wikipedia.org/wiki/William_Howard_Russell">William H.Russell</a></span></span>—the future
+            <span class="role">valedictorian</span> of the class of <span class="date-1800">1833</span>- traveled to <span class="place"><span class="Germany"><a href="https://en.wikipedia.org/wiki/Germany">Germany</a></span></span> to study for a year. <span class="person"><span class="William-H-Russel"><a href="https://it.wikipedia.org/wiki/William_Howard_Russell">Russell</a></span></span>
+            came from an inordinately wealthy family that ran one of <span class="place"><span class="America"><a href="https://en.wikipedia.org/wiki/United_States">America’s</a></span></span> most despicable
+            business organizations of the nineteenth century: <span class="organization"><a href="https://en.wikipedia.org/wiki/Russell_%26_Company">Russell and Company</a></span>, an opium
+            empire. <span class="person"><span class="William-H-Russel"><a href="https://it.wikipedia.org/wiki/William_Howard_Russell">William H.Russell</a></span></span> would later become a member of the <span class="place"><span class="Connecticut"><a href="https://it.wikipedia.org/wiki/Connecticut">Connecticut</a> <span class="role">state legislature</span></span></span>, a
+            general in the <span class="place"><span class="Connecticut"><a href="https://it.wikipedia.org/wiki/Connecticut">Connecticut</a><span class="role">National Guard</span></span></span>, and the founder of the Collegiate and
+            Commercial Institute in <span class="place"><span class="New-Haven">New Haven</span></span>. While in <span class="place"><span class="Germany"><a href="https://en.wikipedia.org/wiki/Germany">Germany</a></span></span>, <span class="person"><span class="William-H-Russel"><a href="https://it.wikipedia.org/wiki/William_Howard_Russell">William H.Russell</a></span></span> befriended the leader
+            of an insidious German secret society that hailed the death’s head as its logo. <span class="person"><span class="William-H-Russel"><a href="https://it.wikipedia.org/wiki/William_Howard_Russell">William H.Russell</a></span></span>
+            soon became caught up in this group, itself a sinister outgrowth of the notorious
+            eighteenth-century society the <span class="organization"><span class="Illuminati"><a href="https://it.wikipedia.org/wiki/Illuminati">Illuminati</a></span></span>. When <span class="person"><span class="William-H-Russel"><a href="https://it.wikipedia.org/wiki/William_Howard_Russell">William H.Russell</a></span></span> returned to the <span class="place">United States</span>,
+            he found an atmosphere so Anti-Masonic that even his beloved <span class="organization"><a href="https://it.wikipedia.org/wiki/Phi_Beta_Kappa">Phi Beta Kappa</a></span>, the
+            honor society, had been unceremoniously stripped of its secrecy. Incensed, <span class="person"><span class="William-H-Russel"><a href="https://it.wikipedia.org/wiki/William_Howard_Russell">William H.Russell</a></span></span>
+            rounded up a group of the most promising students in his class-including <span class="person"><span class="Alphonso-Taft"><a href="https://it.wikipedia.org/wiki/Alphonso_Taft">Alphonso
+            Taft</a></span></span>, the future <span class="role">secretary of war attorney general</span>, <span class="role">minister to Austria</span>, <span class="role">ambassador to
+                <span class="place"><span class="Russia"><a href="https://it.wikipedia.org/wiki/Russia">Russia</a></span></span></span>, and father of future <span class="role">president <span class="person"><span class="William-Howard-Taft"><a href="https://it.wikipedia.org/wiki/William_Howard_Taft">William Howard Taft</a></span></span></span>-and out of vengeance
+            constructed the most powerful secret society the <span class="place"><span class="America"><a href="https://en.wikipedia.org/wiki/United_States">America’s</a></span></span> has ever known.
+        </p>
+    <script>
+//         function stylechanger(stylename) {
+//     if (stylename == "De_Stijl.css") {
+//         $("#side-image").remove();
+//         $("#right-image").remove();
+//     }
+//     if (stylename == "Aldine.css" && !document.getElementById("side-image")){
+//         $("body").before('<img id="right-image" src="https://github.com/giorgiacrosilla/cacty/blob/main/cssfinalimage.png?raw=true")>');
+//         $("body").before('<img id="side-image" src="https://github.com/giorgiacrosilla/cacty/blob/main/cssfinalimage.png?raw=true")>');
+//     }
+// }
+
+    function stylechanger(name) {
+        const buttons = document.querySelectorAll(".style-button");
+        const buttonName = event.currentTarget.getAttribute("name");
+        const styleLink = document.getElementById("style-link");
+        if (styleLink.getAttribute("href") === name) {
+        return;
+        }
+        styleLink.setAttribute("href", name);
+
+        if (name === "De_Stijl.css") {
+            $("#side-image").remove();
+            $("#right-image").remove();
+            $("body").after('<div class="main-container"></div>')
+            $(".main-container").after('<div class="background-grid"></div>')
+            $(".background-grid").after('<div class="block", id="square"></div>')
+            $(".background-grid").after('<div class="block", id="gold-square"></div>')
+            $(".background-grid").after('<div class="block", id="square-3"></div>')
+            $(".background-grid").after('<div class="block", id="yellow-square"></div>')
+            $(".background-grid").after('<div class="block", id="mini-white-square"></div>')
+            $(".background-grid").after('<div class="block", id="blue-square-2"></div>')
+            $(".background-grid").after('<div class="block", id="white-square5"></div>')
+            $(".background-grid").after('<div class="block", id="place-square2"></div>')
+            $(".background-grid").after('<div class="block", id="place-square1"></div>')
+
+        } 
+        else if (name === "Aldine.css") {
+            $("body").before('<img id="right-image" src="https://github.com/giorgiacrosilla/cacty/blob/main/cssfinalimage.png?raw=true")>');
+            $("body").before('<img id="side-image" src="https://github.com/giorgiacrosilla/cacty/blob/main/cssfinalimage.png?raw=true")>');
+            $(".main-container").display(none)
+            $(".background-grid").display(none)
+            $(".block").display(none)
+
+        }
+        else if (name ==="90s.css"){
+            $("#side-image").remove();
+            $("#right-image").remove();
+            $(".block").remove()
+        }
+        else if (name ==="future.css"){
+            $("#side-image").remove();
+            $("#right-image").remove();
+            $(".block").remove()
+
+        }
+    }     
+            
+    </script>
+</body>
+</html>
