@@ -1,32 +1,35 @@
 $(document).ready(function () {
-    // Al click di un link nella lista
+    // On click of a link in the list
     $('#article-txt-id a').click(function (e) {
         e.preventDefault();
-        // Recupera l'URL del file associato al link
+        // Retrieve the URL of the file associated with the link
         var fileDaCaricare = $(this).data('file');
-        // Chiama la funzione per caricare il contenuto
+        // Call the function to load the content
         caricaContenuto(fileDaCaricare);
     });
 
-    // Funzione per caricare il contenuto
     function caricaContenuto(url) {
         $.ajax({
             url: url,
             type: 'GET',
             dataType: 'html',
             success: function (data) {
-                // Sostituisci il contenuto nell'elemento desiderato
-                $('#body-txt-id').html(data);
+                // Create a new HTML document
+                var newDoc = document.implementation.createHTMLDocument();
+                newDoc.documentElement.innerHTML = data;
+                // Replace the <body> content
+                $('body').html(newDoc.body.innerHTML);
+                // Add or remove classes from the elements
                 $('#metadata-txt-id').removeClass('metarticle-inv-txt').addClass('metarticle-vis-txt');
                 $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
                 loadMap();
             },
             error: function (error) {
-                console.log('Errore nel caricamento del file: ' + error.statusText);
+                console.log('Error loading file: ' + error.statusText);
             }
         });
     }
-});
+}); 
 
 function stylechanger(newCSSFileName) {
     const linkElement = document.getElementById("csstochange");
