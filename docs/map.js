@@ -1,12 +1,32 @@
 $(document).ready(function () {
-    // Gestisci il clic sui link
-    $("#article-txt-id a").click(function () {
-        var nuovofile = $(this).data('file');
-        $('#main-txt-id').empty();
-        $('#main-txt-id').load(nuovofile + " #main-txt-id");
-    })
-});
+    // Al click di un link nella lista
+    $('#article-txt-id a').click(function (e) {
+        e.preventDefault();
+        // Recupera l'URL del file associato al link
+        var fileDaCaricare = $(this).data('file');
+        // Chiama la funzione per caricare il contenuto
+        caricaContenuto(fileDaCaricare);
+    });
 
+    // Funzione per caricare il contenuto
+    function caricaContenuto(url) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'html',
+            success: function (data) {
+                // Sostituisci il contenuto nell'elemento desiderato
+                $('#body-txt-id').html(data);
+                $('#metadata-txt-id').removeClass('metarticle-inv-txt').addClass('metarticle-vis-txt');
+                $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
+                loadMap();
+            },
+            error: function (error) {
+                console.log('Errore nel caricamento del file: ' + error.statusText);
+            }
+        });
+    }
+});
 
 function stylechanger(newCSSFileName) {
     const linkElement = document.getElementById("csstochange");
@@ -127,7 +147,7 @@ function sections90s() {
 sections90s();
 
 
-document.addEventListener("DOMContentLoaded", function () {
+function loadMap() {
     var map = L.map('map').setView([34.225727, -77.944710], 4);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -399,6 +419,39 @@ document.addEventListener("DOMContentLoaded", function () {
                     data => L.geoJSON(data).addTo(map)
                 )
             }
+            if (span.id === "Connecticut") {
+                var Connecticut = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/connecticut.geojson'
+
+                fetch(
+                    Connecticut
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "California") {
+                var California = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/california.geojson'
+
+                fetch(
+                    California
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
+            if (span.id === "Texas") {
+                var Texas = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/texas.geojson'
+
+                fetch(
+                    Texas
+                ).then(
+                    res => res.json()
+                ).then(
+                    data => L.geoJSON(data).addTo(map)
+                )
+            }
             if (span.id === "Great Britain") {
                 var GreatBritain = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/united-kingdom_.geojson'
 
@@ -456,6 +509,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+};
+document.addEventListener("DOMContentLoaded", function () {
+    loadMap();
 });
 
 
