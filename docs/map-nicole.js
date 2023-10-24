@@ -1,40 +1,4 @@
 
-/*
-var circle = document.getElementsByClassName("circle");
-document.onmousemove = function () {
-    var x = event.clientX * 100 / window.innerWidth + "%";
-    var y = event.clientY * 100 / window.innerHeight + "%";
-    //event.clientX => get the horizontal coordinate of the mouse
-    //event.clientY => get the Vertical coordinate of the mouse
-    //window.innerWidth => get the browser width
-    //window.innerHeight => get the browser height
-
-    for (var i = 0; i < 2; i++) {
-        circle[i].style.left = x;
-        circle[i].style.top = y;
-        circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
-    }
-};
-
-*/
-document.addEventListener("DOMContentLoaded", function () {
-var map = L.map('map').setView([51.505, -0.09], 15);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '© OpenStreetMap'
-}).addTo(map);
-
-setInterval(function () {
-    map.invalidateSize();
- }, 100);    
-
-
-});
-
-
-
-
 function openDiv(firstId, secondId) {
     var firstEl = document.getElementById(firstId);
     var secondEl = document.getElementById(secondId);
@@ -57,8 +21,6 @@ function openDiv(firstId, secondId) {
         }
     }
 }
-
-
 
 
 function initializeAccordion() {

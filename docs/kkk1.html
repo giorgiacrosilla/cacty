@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="anniSettanta.css">
+    <link rel="stylesheet" href="future.css" id="csstochange">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -24,13 +24,14 @@
         mapboxgl.accessToken = 'pk.eyJ1IjoiZ2lvY3Jvc2kiLCJhIjoiY2xuNXQ1ZGV5MGQybjJqcDZ6YWFzMnByZCJ9.TWuwEi8RI7prLyZOAnx6ng';
     </script>
 
-</head> 
+</head>
+
 <body id="body-txt-id">
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="title">
             <div class="inner-box"> <!--prova  ainserire con js-->
                 <div class="circle"></div>
-            </div> 
+            </div>
             <a class="navbar-brand" href="index.html">
                 <h1 class="stroke-double" title="secretmag">secretmag
                 </h1>
@@ -51,12 +52,18 @@
                         Themes
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Aldine</a></li>
-                        <li><a class="dropdown-item" href="#">1860</a></li>
-                        <li><a class="dropdown-item" href="#">De Stijl</a></li>
-                        <li><a class="dropdown-item" href="#">70s</a></li>
-                        <li><a class="dropdown-item" href="#">90s</a></li>
-                        <li><a class="dropdown-item" href="#">Dystopian future</a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('Aldine.css')">Aldine</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('ottocento.css')">1860</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('De_Stijl.css')">De Stijl</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('anniSettanta.css')">70s</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('90s.css')">90s</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('future.css')">Dystopian future</button></a></li>
                     </ul>
                 </li>
             </ul>
@@ -66,15 +73,14 @@
         <div class="sidecont-txt metarticle-inv-txt" id="metadata-txt-id">
             <button class="accordion" id="data">Data</button>
             <div class="panel">
-                    <p>Author:</p>
-                    <p>Title: The Terror is Born</p>
-                    <p>Journal:</p>
-                    <p>Year:</p>
-                    <p>DOI:</p>
-                    <p>Online access to the resource:</p>
+                <p>Author: Richard Badouin</p>
+                <p>Title: The Terror is Born</p>
+                <p>Journal:Southern Poverty Law Center</p>
+                <p>Year: 2011</p>
+                <p>Online access to the resource: <a href="https://www.jstor.org/stable/resrep27205.4">https://www.jstor.org/stable/resrep27205.4</a></p>
             </div>
             <button class="accordion" id="dates">Dates</button>
-            <div class="panel">
+            <div class="panel" id="panel1">
                 <form role="form">
                     <div class="checkbox"><label>
                             <input type="checkbox" id="showasides" class="show">1700</label></div>
@@ -130,9 +136,9 @@
             <button class="accordion" id="dates">Issue 1: KKK</button>
             <div class="panel">
                 <ul>
-                    <li><a href="kkk1.html">The Terror is Born</a></li>
-                    <li><a href="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
-                    <li><a href="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the 1920s</a></li>
+                    <li><a href="#" data-file="kkk1.html">The Terror is Born</a></li>
+                    <li><a href="#" data-file="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
+                    <li><a href="#" data-file="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the 1920s</a></li>
                 </ul>
             </div>
             <button class="accordion" id="places">Issue 2: Freemasonry</button>
@@ -219,55 +225,52 @@
                 America today with hatred,
                 violence and sometimes death for its enemies and its own members?
             </p>
-
-            <div class="frontier">
-                <h2>Frontier Justice </h2>
-                <p>The answers do not lie on the surface of American history. They are deeper than the events of
-                    the
-                    turbulent
-                    <span class="date 1900">1960s</span>, the parades and cross burnings and lynchings of the <span
-                        class="date 1900">1920s</span>,
-                    beyond
-                    even the
-                    <span class="event reconstruction">Reconstruction</span> era and the
-                    <span class="event civilwar"> Civil War</span>. The story begins, really, on the frontier,
-                    where
-                    successive
-                    generations
-                    of Americans learned hard
-                    lessons about survival. Those lessons produced some of the qualities of life for which the
-                    nation is
-                    most
-                    admired — <span class="censorship" onmouseover="showAlert()">fierce individualism,
-                        enterprising
-                        inventiveness, and the
-                        freedom to be whatever a
-                        person
-                        wants and to
-                        go wherever a new road leads.</span>
-                    <br>
-                    But the frontier spirit included other traits as well, and one was a stubborn
-                    insistence on the prerogative of "frontier justice" — an instant, private, very personal and
-                    often
-                    violent
-                    method of settling differences without involving lawyers or courts. As the frontier was
-                    tamed
-                    and
-                    churches,
-                    schools and courthouses replaced log trading posts, settlers substituted law and order for
-                    the
-                    older
-                    brand of
-                    private justice. But there were always those who did not accept the change. The quest for
-                    personal
-                    justice or
-                    revenge became a key motivation for many who later rode with the Ku Klux Klan, especially
-                    among
-                    those
-                    who were
-                    poor and uneducated.
-                </p>
-            </div>
+            <h2>Frontier Justice </h2>
+            <p>The answers do not lie on the surface of American history. They are deeper than the events of
+                the
+                turbulent
+                <span class="date 1900">1960s</span>, the parades and cross burnings and lynchings of the <span
+                    class="date 1900">1920s</span>,
+                beyond
+                even the
+                <span class="event reconstruction">Reconstruction</span> era and the
+                <span class="event civilwar"> Civil War</span>. The story begins, really, on the frontier,
+                where
+                successive
+                generations
+                of Americans learned hard
+                lessons about survival. Those lessons produced some of the qualities of life for which the
+                nation is
+                most
+                admired — <span class="censorship" onmouseover="showAlert()">fierce individualism,
+                    enterprising
+                    inventiveness, and the
+                    freedom to be whatever a
+                    person
+                    wants and to
+                    go wherever a new road leads.</span>
+                <br>
+                But the frontier spirit included other traits as well, and one was a stubborn
+                insistence on the prerogative of "frontier justice" — an instant, private, very personal and
+                often
+                violent
+                method of settling differences without involving lawyers or courts. As the frontier was
+                tamed
+                and
+                churches,
+                schools and courthouses replaced log trading posts, settlers substituted law and order for
+                the
+                older
+                brand of
+                private justice. But there were always those who did not accept the change. The quest for
+                personal
+                justice or
+                revenge became a key motivation for many who later rode with the Ku Klux Klan, especially
+                among
+                those
+                who were
+                poor and uneducated.
+            </p>
             <h2>Night Patrols</h2>
             <p>A more obvious explanation of the South’s widespread acceptance of the Klan is found in the
                 institution
@@ -312,67 +315,67 @@
                 in
                 <span class="date 1800">1866</span>.
             </p>
-            <div class="ghost">
-                <h2>Aftermath of War</h2>
-                <p>An even more immediate impetus for the Ku Klux Klan was the <span class="event civilwar">
-                        Civil
-                        War
-                    </span>
-                    itself and the
-                    reconstruction that
-                    followed. When robed Klansmen were at their peak of power, alarmed Northerners justifiably
-                    saw
-                    in
-                    the
-                    Klan an
-                    attempt of unrepentant confederates to win through terrorism what they had been unable to
-                    win on
-                    the
-                    battlefield. Such a simple view did not totally explain the Klan’s sway over the South, but
-                    there is
-                    little
-                    doubt that many a confederate veteran exchanged his rebel gray for the hoods and sheets of
-                    the
-                    Invisible
-                    Empire.<br>
-                    Finally, and most importantly, there were the conditions Southerners were faced with
-                    immediately
-                    after
-                    the war.
-                    Their cities, plantations and farms were ruined; they were impoverished and often hungry;
-                    there
-                    was
-                    an
-                    occupation army in their midst; and reconstruction governments threatened to usurp the
-                    traditional
-                    white
-                    ruling
-                    authority. In the first few months after the fighting ended, white Southerners had to
-                    contend
-                    with
-                    the
-                    losses of
-                    life, property and, in their eyes, honor. The time was ripe for the Ku Klux Klan to ride.
-                </p>
-                <div class="fc">
-                    <figure class="fi">
-                        <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk1.jpg?raw=true"
-                            alt="Lynchings were a common form of vigilante justice during the 19th century.">
-                        <figcaption> Lynchings were a common form of vigilante justice during the <span
-                                class="date 1800">19th century</span>.
-                        </figcaption>
-                    </figure>
-                    <figure class="fi">
-                        <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk2.jpg?raw=true alt="Klansmen were caught trying to lynch a carpetbagger in 1871.">
-                        <figcaption>Klansmen were caught trying to lynch a carpetbagger in <span
-                                class="date 1800">1871</span>.
-                        </figcaption>
-                    </figure>
-                </div>
+            <h2>Aftermath of War</h2>
+            <p>An even more immediate impetus for the Ku Klux Klan was the <span class="event civilwar">
+                    Civil
+                    War
+                </span>
+                itself and the
+                reconstruction that
+                followed. When robed Klansmen were at their peak of power, alarmed Northerners justifiably
+                saw
+                in
+                the
+                Klan an
+                attempt of unrepentant confederates to win through terrorism what they had been unable to
+                win on
+                the
+                battlefield. Such a simple view did not totally explain the Klan’s sway over the South, but
+                there is
+                little
+                doubt that many a confederate veteran exchanged his rebel gray for the hoods and sheets of
+                the
+                Invisible
+                Empire.<br>
+                Finally, and most importantly, there were the conditions Southerners were faced with
+                immediately
+                after
+                the war.
+                Their cities, plantations and farms were ruined; they were impoverished and often hungry;
+                there
+                was
+                an
+                occupation army in their midst; and reconstruction governments threatened to usurp the
+                traditional
+                white
+                ruling
+                authority. In the first few months after the fighting ended, white Southerners had to
+                contend
+                with
+                the
+                losses of
+                life, property and, in their eyes, honor. The time was ripe for the Ku Klux Klan to ride.
+            </p>
+            <div class="fc">
+                <figure class="fi">
+                    <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk1.jpg?raw=true"
+                        alt="Lynchings were a common form of vigilante justice during the 19th century.">
+                    <figcaption> Lynchings were a common form of vigilante justice during the <span
+                            class="date 1800">19th century</span>.
+                    </figcaption>
+                </figure>
+                <figure class="fi">
+                    <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk2.jpg?raw=true alt=" Klansmen
+                        were caught trying to lynch a carpetbagger in 1871.">
+                    <figcaption>Klansmen were caught trying to lynch a carpetbagger in <span
+                            class="date 1800">1871</span>.
+                    </figcaption>
+                </figure>
             </div>
             <h2>The Unusual Origins of the Klan</h2>
             <figure>
-                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk4.jpg?raw=true" alt="a Klansman’s costume from the late 19th century.">
+                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk4.jpg?raw=true"
+                    alt="a Klansman’s costume from the late 19th century.">
                 <figcaption>A Klansman’s costume from the late 19th century.</figcaption>
             </figure>
             <p>The origin of the Ku Klux Klan was a carefully guarded secret for years, although there were
@@ -538,8 +541,7 @@
                     1865</span>
                 to
                 form a secret club that they
-                called the Ku Klux Klan. From that beginning in the little town of <span class="place pulaski">Pulaski,
-                    Tennessee</span>, their club began to grow.
+                called the Ku Klux Klan. From that beginning in the little town of <span class="place pulaski">Pulaski, Tennessee</span>, their club began to grow.
                 Historians disagree on the intention of the six founders, but it is known that word quickly
                 spread
                 about
@@ -594,116 +596,114 @@
                 Southern
                 unionists. from the start, however, there was also a sinister side to the Klan.
             </p>
-
-            <div class="ghost">
-                <h2>Black Codes</h2>
-                <p>By the time the six Klan founders met in December
-                    <span class="date 1800">1865</span>, the opening phase of reconstruction was nearly
-                    complete.
-                    All 11
+            <h2>Black Codes</h2>
+            <p>By the time the six Klan founders met in December
+                <span class="date 1800">1865</span>, the opening phase of reconstruction was nearly
+                complete.
+                All 11
+                of
+                the
+                former
+                rebel states had been
+                rebuilt on astonishingly lenient terms which allowed
+                many of the ex-confederate leaders to return to positions of power. Southern state
+                legislatures
+                began
+                enacting
+                laws that made it clear that the aristocrats who ran them intended to yield none of their
+                pre-war
+                power
+                and
+                dominance over poor whites and especially over blacks. These laws became known as the Black
+                codes
+                and in
+                some
+                cases amounted to a virtual re-enslavement of blacks.<br> In <span class="place state">Louisiana</span>,
+                the Democratic
+                convention
+                resolved that
+                <q>we
+                    hold this to be a Government of White People, made and to be perpetuated for the
+                    exclusive
+                    benefit
                     of
-                    the
-                    former
-                    rebel states had been
-                    rebuilt on astonishingly lenient terms which allowed
-                    many of the ex-confederate leaders to return to positions of power. Southern state
-                    legislatures
-                    began
-                    enacting
-                    laws that made it clear that the aristocrats who ran them intended to yield none of their
-                    pre-war
-                    power
-                    and
-                    dominance over poor whites and especially over blacks. These laws became known as the Black
-                    codes
-                    and in
-                    some
-                    cases amounted to a virtual re-enslavement of blacks.<br> In <span
-                        class="place state">Louisiana</span>, the Democratic
-                    convention
-                    resolved that
-                    <q>we
-                        hold this to be a Government of White People, made and to be perpetuated for the
-                        exclusive
-                        benefit
-                        of
-                        the White
-                        race, and ... that the people of African descent cannot be considered as citizens of the
-                        United
-                        States.</q>
-                    <span class="place state">Mississippi</span> and <span class="place state">Florida</span>,
-                    in particular, enacted vicious Black codes, other Southern states
-                    (except
-                    <span class="place state">North Carolina</span>) passed somewhat less severe versions,
-                    and
-                    President
-                    <span class="person johnson">Andrew
-                        Johnson</span><a href="https://it.wikipedia.org/wiki/Lyndon_B._Johnson"><span
-                            class="material-symbols-outlined">
-                            link
-                        </span></a> did
-                    nothing to prevent them from
-                    being enforced. <br> These laws and the hostility and violence that erupted against blacks
-                    and
-                    Union
-                    supporters
-                    in
-                    the South outraged Northerners who just a few months before had celebrated victory, not only
-                    over
-                    the
-                    confederacy but its system of slavery as well. In protest of the defiant Black codes,
-                    congress
-                    refused
-                    to seat
-                    the new Southern senators and representatives when it reconvened in <span class="date 1800">December
-                        1865</span>
-                    after a long recess. At the
-                    moment the fledgling Klan was born in <span class="place pulaski">Pulaski</span>,
-                    the
-                    stage
-                    was set
-                    for a showdown
-                    between Northerners determined
-                    not to be cheated out of the fruits of their victory and die-hard Southerners who refused to
-                    give up
-                    their
-                    supremacy over blacks. <br>Ironically, the increasingly violent activities of the Klan
-                    throughout
-                    <span class="date 1800">1866</span> helped
-                    prove
-                    the argument of radical republicans in the North, who wanted harsher measures taken against
-                    Southern
-                    governments
-                    as part of their program to force equal treatment for blacks. Partly as a result of news
-                    reports
-                    of
-                    Klan
-                    violence in the South, the radicals won overwhelming victories in the congressional
-                    elections of
-                    <span class="date 1800">1866</span>. In early
-                    1867, they made a fresh start at reconstruction. In <span class="date 1800">March
-                        1867</span>,
-                    congress
-                    overrode
-                    <span class="person johnson">President Johnson</span>’s veto and
-                    passed the reconstruction Acts, which abolished the ex-confederate state governments and
-                    divided
-                    10
-                    of
-                    the 11
-                    former rebel states into military districts. The military governors of these districts were
-                    charged
-                    with
-                    enrolling black voters and holding elections for new constitutional conventions in each of
-                    the
-                    10
-                    states, which
-                    led to the creation of the radical reconstruction Southern governments.
-                </p>
-            </div>
+                    the White
+                    race, and ... that the people of African descent cannot be considered as citizens of the
+                    United
+                    States.</q>
+                <span class="place state">Mississippi</span> and <span class="place state">Florida</span>,
+                in particular, enacted vicious Black codes, other Southern states
+                (except
+                <span class="place state">North Carolina</span>) passed somewhat less severe versions,
+                and
+                President
+                <span class="person johnson">Andrew
+                    Johnson</span><a href="https://it.wikipedia.org/wiki/Lyndon_B._Johnson"><span
+                        class="material-symbols-outlined">
+                        link
+                    </span></a> did
+                nothing to prevent them from
+                being enforced. <br> These laws and the hostility and violence that erupted against blacks
+                and
+                Union
+                supporters
+                in
+                the South outraged Northerners who just a few months before had celebrated victory, not only
+                over
+                the
+                confederacy but its system of slavery as well. In protest of the defiant Black codes,
+                congress
+                refused
+                to seat
+                the new Southern senators and representatives when it reconvened in <span class="date 1800">December
+                    1865</span>
+                after a long recess. At the
+                moment the fledgling Klan was born in <span class="place pulaski">Pulaski</span>,
+                the
+                stage
+                was set
+                for a showdown
+                between Northerners determined
+                not to be cheated out of the fruits of their victory and die-hard Southerners who refused to
+                give up
+                their
+                supremacy over blacks. <br>Ironically, the increasingly violent activities of the Klan
+                throughout
+                <span class="date 1800">1866</span> helped
+                prove
+                the argument of radical republicans in the North, who wanted harsher measures taken against
+                Southern
+                governments
+                as part of their program to force equal treatment for blacks. Partly as a result of news
+                reports
+                of
+                Klan
+                violence in the South, the radicals won overwhelming victories in the congressional
+                elections of
+                <span class="date 1800">1866</span>. In early
+                1867, they made a fresh start at reconstruction. In <span class="date 1800">March
+                    1867</span>,
+                congress
+                overrode
+                <span class="person johnson">President Johnson</span>’s veto and
+                passed the reconstruction Acts, which abolished the ex-confederate state governments and
+                divided
+                10
+                of
+                the 11
+                former rebel states into military districts. The military governors of these districts were
+                charged
+                with
+                enrolling black voters and holding elections for new constitutional conventions in each of
+                the
+                10
+                states, which
+                led to the creation of the radical reconstruction Southern governments.
+            </p>
             <h2>The Terror of the Nightrider</h2>
             <figure>
-                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk5.jpg?raw=true" alt="the Klan’s costumes were supernatural in appearance.">
+                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk5.jpg?raw=true"
+                    alt="the Klan’s costumes were supernatural in appearance.">
                 <figcaption> the Klan’s costumes were supernatural in appearance.</figcaption>
             </figure>
             <p>The scholar <span class="author fry">Gladys-Marie Fry</span><a
@@ -871,83 +871,79 @@
                 before
                 their time.</q>
             </p>
-            <div class="ghost">
-                <h2>Ghost Riders</h2>
-                <p>In <span class="date 1800">April 1867</span>, a call went out for all known Ku Klux Klan
-                    chapters
-                    or
-                    dens
-                    to send
-                    representatives to <span class="place tennessee nashville">Nashville, Tenn.</span>, for a meeting
-                    that would plan, among other things, the Klan response to
-                    the
-                    new
-                    federal
-                    reconstruction
-                    policy. <br>Throughout the summer and fall, the Klan had steadily become more violent.
-                    Thousands
-                    of
-                    the
-                    white
-                    citizens of <span class="place state">west Tennessee</span>, <span class="place state">northern
-                        Alabama</span>and part of
-                    <span class="place state">Georgia</span> and <span class="place state">Mississippi</span>
-                    had
-                    by this time joined the
-                    Klan. Many now viewed the escalating violence with growing alarm — not necessarily because
-                    they
-                    had
-                    sympathy for
-                    the victims, but because the night riding was getting out of their control. Anyone
-                    could put on a sheet and a mask and ride into the night to commit assault, robbery, rape,
-                    arson
-                    or
-                    murder. The
-                    Klan was increasingly used as a cover for common crime or for personal revenge. <br>The
-                    <span class="place tennessee nashville">Nashville</span> Klan
-                    convention
-                    was called to grapple with these problems by creating a chain of command and deciding just
-                    what
-                    sort
-                    of
-                    organization the Klan would be. The meeting gave birth to the official philosophy of white
-                    supremacy
-                    as
-                    the
-                    fundamental creed of the Ku Klux Klan. Throughout the summer of <span class="date 1800">1867</span>
-                    the
-                    Invisible
-                    empire changed, shedding the
-                    antics that had brought laughter during its parades and other public appearances, and
-                    instead
-                    taking
-                    on
-                    the full
-                    nature of a secret and powerful force with a sinister purpose.<br> All the now-familiar
-                    tactics of the Klan date from this period —
-                    the threats delivered to blacks, radicals and other enemies warning them to leave town; the
-                    night
-                    raids
-                    on
-                    individuals they singled out for rougher treatment; and the mass demonstrations of masked
-                    and
-                    robed
-                    Klansmen
-                    designed to cast their long shadow of fear over a troubled community. <br> By early <span
-                        class="date 1800">1868</span>, stories about Klan
-                    activities were appearing in newspapers nationwide, and reconstruction governors realized
-                    they
-                    faced
-                    nothing
-                    less than an insurrection by a terrorist organization. Orders went out from state capitols
-                    and
-                    Union
-                    army
-                    headquarters during the early months
-                    of <span class="date 1800">1868</span> to suppress the Klan.
-                </p>
-            </div>
-
+            <h2>Ghost Riders</h2>
+            <p>In <span class="date 1800">April 1867</span>, a call went out for all known Ku Klux Klan
+                chapters
+                or
+                dens
+                to send
+                representatives to <span class="place tennessee nashville">Nashville, Tenn.</span>, for a meeting
+                that would plan, among other things, the Klan response to
+                the
+                new
+                federal
+                reconstruction
+                policy. <br>Throughout the summer and fall, the Klan had steadily become more violent.
+                Thousands
+                of
+                the
+                white
+                citizens of <span class="place state">west Tennessee</span>, <span class="place state">northern Alabama</span>and part of
+                <span class="place state">Georgia</span> and <span class="place state">Mississippi</span>
+                had
+                by this time joined the
+                Klan. Many now viewed the escalating violence with growing alarm — not necessarily because
+                they
+                had
+                sympathy for
+                the victims, but because the night riding was getting out of their control. Anyone
+                could put on a sheet and a mask and ride into the night to commit assault, robbery, rape,
+                arson
+                or
+                murder. The
+                Klan was increasingly used as a cover for common crime or for personal revenge. <br>The
+                <span class="place tennessee nashville">Nashville</span> Klan
+                convention
+                was called to grapple with these problems by creating a chain of command and deciding just
+                what
+                sort
+                of
+                organization the Klan would be. The meeting gave birth to the official philosophy of white
+                supremacy
+                as
+                the
+                fundamental creed of the Ku Klux Klan. Throughout the summer of <span class="date 1800">1867</span>
+                the
+                Invisible
+                empire changed, shedding the
+                antics that had brought laughter during its parades and other public appearances, and
+                instead
+                taking
+                on
+                the full
+                nature of a secret and powerful force with a sinister purpose.<br> All the now-familiar
+                tactics of the Klan date from this period —
+                the threats delivered to blacks, radicals and other enemies warning them to leave town; the
+                night
+                raids
+                on
+                individuals they singled out for rougher treatment; and the mass demonstrations of masked
+                and
+                robed
+                Klansmen
+                designed to cast their long shadow of fear over a troubled community. <br> By early <span
+                    class="date 1800">1868</span>, stories about Klan
+                activities were appearing in newspapers nationwide, and reconstruction governors realized
+                they
+                faced
+                nothing
+                less than an insurrection by a terrorist organization. Orders went out from state capitols
+                and
+                Union
+                army
+                headquarters during the early months
+                of <span class="date 1800">1868</span> to suppress the Klan.
+            </p>
             <h2>The Klan’s Version of History</h2>
             <p>Few eras of United States history are as entangled in myth and legend as the period of <span
                     class="date 1800">1865</span> to <span class="date 1800">1877</span>, known as the
@@ -1025,7 +1021,8 @@
                 after
                 the war.
             <figure>
-                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk7.jpg?raw=true" alt="the Klan wasromanticized as the South’s savior.">
+                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk7.jpg?raw=true"
+                    alt="the Klan wasromanticized as the South’s savior.">
                 <figcaption> the Klan was romanticized as the South’s
                     savior.
                 </figcaption>
@@ -1074,7 +1071,8 @@
             </p>
             <h2>Invisible Government</h2>
             <figure>
-                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk8.jpg?raw=true" alt="Confederate General nathan Bedford Forrest.">
+                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk8.jpg?raw=true"
+                    alt="Confederate General nathan Bedford Forrest.">
                 <figcaption> Confederate General <span class="person forrest">Nathan Bedford Forrest</span>.
                 </figcaption>
             </figure>
@@ -1181,110 +1179,106 @@
                 expressed at the <span class="place nashville">Nashville</span>
                 meeting were submerged beneath a stream of bloody deeds.
             </p>
-
-            <div class="frontier">
-                <h2>The KKK’s first death</h2>
-                <p>As the violence escalated, it turned to general lawlessness, and some Klan groups even began
-                    fightingeach
-                    other.
-                    In <span class="place nashville">Nashville</span>, a gang of outlaws who adopted
-                    the
-                    Klan
-                    disguise
-                    came to be known as the
-                    Black Ku Klux Klan. For
-                    several months middle<span class="place state">Tennessee</span> was
-                    plagued by a guerrilla war
-                    between the real and bogus Klans.<br> The Klan was also coming under increased attack by
-                    Congress
-                    and
-                    the
-                    Reconstruction state governments. The leaders of the Klan thus realized that the order’s end
-                    was
-                    at
-                    hand, at
-                    least as any sort of organized force to serve their interests. It is widely believed that
-                    <span class="person forrest">Forrest</span> ordered the
-                    Klan disbanded in <span class="date 1800">January 1869</span>, but the surviving document is
-                    rather
-                    ambiguous.
-                    (Some
-                    historians think <span class="person forrest">Forrest</span>’s
-                    "order" was just a trick so he could deny responsibility or knowledge of Klan
-                    atrocities.)<br>
-                    Whatever
-                    the
-                    actual
-                    date, it is clear that as an organized, cohesive body across the South, the Ku Klux Klan had
-                    ceased
-                    to
-                    exist by
-                    the end of <span class="date 1800">1869</span>. <br> That did not end the violence, however,
-                    and
-                    as
-                    atrocities
-                    became
-                    more widespread, Radical
-                    legislatures throughout the region began to pass very restrictive laws, impose martial law
-                    in
-                    some
-                    Klandominated
-                    counties, and actively hunt Klan leaders.
-                    In <span class="date 1800">1871</span>, Congress held hearings on the Klan and passed a
-                    harsh
-                    anti-Klan
-                    law
-                    modeled
-                    after a <span class="place state">North Carolina</span>
-                    statute. Under the new federal law, Southerners lost their jurisdiction over the crimes of
-                    assault,
-                    robbery and
-                    murder, and the president was authorized to declare martial law and suspend the writ of
-                    habeas
-                    corpus.
-                    Nightriding and the wearing of masks were expressly prohibited. Hundreds of Klansmen were
-                    arrested,
-                    but
-                    few
-                    actually went to prison.<br> The laws probably dampened the enthusiasm for the Ku Klux Klan,
-                    but
-                    they
-                    can hardly
-                    be
-                    credited with destroying the hooded order. By the <span class="date 1800">mid 1870s</span>,
-                    white
-                    Southerners
-                    didn’t
-                    need the Klan as much as
-                    before because they had by that time retaken control of most Southern state governments.
-                    Klan
-                    terror
-                    had
-                    proven
-                    very effective at keeping black voters away from the polls. Some black officeholders were
-                    hanged
-                    and
-                    many more
-                    were brutally beaten. White Southern Democrats won elections easily and then passed laws
-                    taking
-                    away
-                    the
-                    rights
-                    blacks had won during <span class="event reconstruction">Reconstruction</span>.<br> The
-                    result was
-                    an official system of segregation
-                    which
-                    was
-                    the
-                    law of
-                    the
-                    land for more than 80 years. This system was called “separate but equal,” which was half
-                    true —
-                    everything was
-                    separate, but nothing was equal.
-                </p>
-            </div>
-
+            <h2>The KKK’s first death</h2>
+            <p>As the violence escalated, it turned to general lawlessness, and some Klan groups even began
+                fightingeach
+                other.
+                In <span class="place nashville">Nashville</span>, a gang of outlaws who adopted
+                the
+                Klan
+                disguise
+                came to be known as the
+                Black Ku Klux Klan. For
+                several months middle<span class="place state">Tennessee</span> was
+                plagued by a guerrilla war
+                between the real and bogus Klans.<br> The Klan was also coming under increased attack by
+                Congress
+                and
+                the
+                Reconstruction state governments. The leaders of the Klan thus realized that the order’s end
+                was
+                at
+                hand, at
+                least as any sort of organized force to serve their interests. It is widely believed that
+                <span class="person forrest">Forrest</span> ordered the
+                Klan disbanded in <span class="date 1800">January 1869</span>, but the surviving document is
+                rather
+                ambiguous.
+                (Some
+                historians think <span class="person forrest">Forrest</span>’s
+                "order" was just a trick so he could deny responsibility or knowledge of Klan
+                atrocities.)<br>
+                Whatever
+                the
+                actual
+                date, it is clear that as an organized, cohesive body across the South, the Ku Klux Klan had
+                ceased
+                to
+                exist by
+                the end of <span class="date 1800">1869</span>. <br> That did not end the violence, however,
+                and
+                as
+                atrocities
+                became
+                more widespread, Radical
+                legislatures throughout the region began to pass very restrictive laws, impose martial law
+                in
+                some
+                Klandominated
+                counties, and actively hunt Klan leaders.
+                In <span class="date 1800">1871</span>, Congress held hearings on the Klan and passed a
+                harsh
+                anti-Klan
+                law
+                modeled
+                after a <span class="place state">North Carolina</span>
+                statute. Under the new federal law, Southerners lost their jurisdiction over the crimes of
+                assault,
+                robbery and
+                murder, and the president was authorized to declare martial law and suspend the writ of
+                habeas
+                corpus.
+                Nightriding and the wearing of masks were expressly prohibited. Hundreds of Klansmen were
+                arrested,
+                but
+                few
+                actually went to prison.<br> The laws probably dampened the enthusiasm for the Ku Klux Klan,
+                but
+                they
+                can hardly
+                be
+                credited with destroying the hooded order. By the <span class="date 1800">mid 1870s</span>,
+                white
+                Southerners
+                didn’t
+                need the Klan as much as
+                before because they had by that time retaken control of most Southern state governments.
+                Klan
+                terror
+                had
+                proven
+                very effective at keeping black voters away from the polls. Some black officeholders were
+                hanged
+                and
+                many more
+                were brutally beaten. White Southern Democrats won elections easily and then passed laws
+                taking
+                away
+                the
+                rights
+                blacks had won during <span class="event reconstruction">Reconstruction</span>.<br> The
+                result was
+                an official system of segregation
+                which
+                was
+                the
+                law of
+                the
+                land for more than 80 years. This system was called “separate but equal,” which was half
+                true —
+                everything was
+                separate, but nothing was equal.
+            </p>
             <h2>Born Again</h2>
             <p>During the <span class="date 1800">last half of 19th Century</span>, memories of the Ku Klux
                 Klan’s
@@ -1346,7 +1340,8 @@
                 another series of events occurred which helped breathe life into the Klan several decades
                 later.
             <figure>
-                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk3.jpg?raw=true" alt="William J. Simmons poses in his imperial wizard robe and mask.">
+                <img src="https://github.com/giorgiacrosilla/cacty/blob/main/imgs/kkk3.jpg?raw=true"
+                    alt="William J. Simmons poses in his imperial wizard robe and mask.">
                 <figcaption><span class="person simmons">William J. Simmons</span> poses in his imperial
                     wizard
                     robe and
@@ -1392,8 +1387,13 @@
             </p>
         </div>
     </main>
-    <footer>this is the footer</footer>
+    <footer>
+        <p>All copyrights and related rights on the content remain with their original owners.<br>
 
+            All copyright on the typographic and layout choices are 2023 © Giorgia Crosilla, Salvatore Di Marzo
+            and
+            Nicole Liggeri.</p>
+    </footer>
     <script src="map.js"></script>
 
 </body>

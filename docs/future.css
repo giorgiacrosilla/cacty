@@ -143,28 +143,30 @@ nav {
 
 button.accordion {
   width: 20vw;
-  background-color: #111;
+  background-color: transparent;
   padding: 8px 8px 8px 8px;
   color: white;
   display: block;
   text-align: left;
   font-family: Redoctober;
+  border: none;
 }
 
-.accordion:hover {
-  color: #f1f1f1;
+button.accordion:hover {
+  color: #444;
 }
-
 .panel {
+  width: 40vh;
   display: none;
   color: white;
-  background-color: #111;
+  background-color: transparent;
   overflow: hidden;
 }
 
 #map {
+  margin-left: 5%;
   height: 30vh;
-  width: 20vw;
+  width: 40vw;
 }
 
 .openbtn {
@@ -235,12 +237,6 @@ main h2 {
   text-align: center;
   animation: none;
   text-shadow: none;
-}
-
-#introduction {
-  width: calc(100% - 13%);
-  padding: 3% 3% 3% 3%;
-  float: right;
 }
 
 #body-main-id {
@@ -510,11 +506,6 @@ figure figcaption {
 footer {
   grid-area: footer;
   position: relative;
-  padding-top: 40px;
-}
-
-footer>.wrapper {
-  top: 60%;
 }
 
 .layoutfooter {
@@ -541,11 +532,13 @@ footer>.wrapper {
   background-color: rgba(161, 164, 164, 0.323);
   color: black;
   margin-right: 10px;
-  width: 25%;
+  width: 23vw;
   height: fit-content;
   border-radius: 5%;
   box-shadow: 0 5px 5px 0px;
   word-wrap: break-word;
+  padding: 3%;
+  height: 53vh;
 }
 
 .name-card:hover {
@@ -554,7 +547,8 @@ footer>.wrapper {
 }
 
 .modal-body, .modal-header {
-  color: black
+  color: black;
+  overflow:auto;
 }
 
 @keyframes pulse {
@@ -574,8 +568,8 @@ footer>.wrapper {
 .name-card>img {
   width: 50%;
   border-radius: 50%;
-  padding:3%;
 }
+
 
 /*sidebartag*/
 .n1700,

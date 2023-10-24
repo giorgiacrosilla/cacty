@@ -454,7 +454,7 @@ nav {
 
 #map {
     height: 30vh;
-    width: 20vw;
+    width: 18vw;
 }
 
 .openbtn {
@@ -575,6 +575,7 @@ main h2 {
     display: block;
     position: absolute;
     background: #f4f4fdff;
+    z-index: -1;
 }
 
 .frontier::before {
@@ -595,10 +596,6 @@ main h2 {
 p {
     position: relative;
     z-index: 1;
-}
-
-.ghost {
-    background-color: pink;
 }
 
 figure {
@@ -645,12 +642,6 @@ td {
     margin: 0 0 0 0;
 }
 
-.testo_metadata {
-    position: relative;
-    width: max-content;
-    height: max-content;
-}
-
 footer {
     grid-area: footer;
     background-color: lightblue;
@@ -686,12 +677,13 @@ footer {
 .name-card {
     background-color: white;
     margin-right: 10px;
-    width: 25%;
+    width: 23vw;
     height: fit-content;
     border-radius: 5%;
     box-shadow: 0 5px 5px 0px;
     word-wrap: break-word;
     padding: 3%;
+    height: 55vh;
 }
 
 .name-card:hover {
@@ -760,5 +752,16 @@ footer {
     .due,
     .diagonal {
         height: 70vh;
+    }
+
+    #main-footer {
+        height: 80vh;
+    }
+    #main-footer>.wrapper {
+        top: 60%;
+    }
+
+    .name-card {
+        height: 25vh;
     }
 }
