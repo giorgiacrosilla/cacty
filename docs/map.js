@@ -6,8 +6,7 @@ $(document).ready(function () {
         var fileDaCaricare = $(this).data('file');
         // Call the function to load the content
         caricaContenuto(fileDaCaricare);
-    });
-
+    })
     function caricaContenuto(url) {
         $.ajax({
             url: url,
@@ -23,13 +22,50 @@ $(document).ready(function () {
                 $('#metadata-txt-id').removeClass('metarticle-inv-txt').addClass('metarticle-vis-txt');
                 $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
                 loadMap();
+                sections90s();
+
             },
             error: function (error) {
                 console.log('Error loading file: ' + error.statusText);
             }
         });
     }
-}); 
+});
+$(document).ready(function () {
+    // On click of a link in the list
+    $('#content-card a').click(function (e) {
+        e.preventDefault();
+        // Retrieve the URL of the file associated with the link
+        var fileDaCaricare = $(this).data('file');
+        // Call the function to load the content
+        carica(fileDaCaricare);
+    })
+    function carica(url) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'html',
+            success: function (data) {
+                // Create a new HTML document
+                var newDoc = document.implementation.createHTMLDocument();
+                newDoc.documentElement.innerHTML = data;
+                // Replace the <body> content
+                $('body').html(newDoc.body.innerHTML);
+                // Add or remove classes from the elements
+                $('#metadata-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
+                $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
+                $('body').removeAttr('id').attr('id', 'body-txt-id');
+                loadMap();
+                sections90s();
+
+            },
+            error: function (error) {
+                console.log('Error loading file: ' + error.statusText);
+            }
+        });
+    }
+});
+
 
 function stylechanger(newCSSFileName) {
     const linkElement = document.getElementById("csstochange");
@@ -65,7 +101,8 @@ function stylechanger(newCSSFileName) {
     else if (newCSSFileName === "90s.css") {
         $("#side-image").remove();
         $("#right-image").remove();
-        $(".block").remove()
+        $(".block").remove();
+        sections90s();
     }
     else if (newCSSFileName === "future.css") {
         $("#side-image").remove();
@@ -137,7 +174,7 @@ function sections90s() {
             for (var i = 0; i < paragraphs.length; i++) {
                 if (paragraphs[i].parentNode.className !== 'footnotes') {
                     if (i % 4 === 0) {
-                        paragraphs[i].style.backgroundColor = 'pink';
+                        paragraphs[i].classList.add('ghost');
                     }
                     if (i % 5 === 2) {
                         paragraphs[i].classList.add('frontier');

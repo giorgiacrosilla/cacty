@@ -255,7 +255,7 @@ html {
     margin-right: 10px;
     text-align: left;
     width: 15vw;
-    height: 20vh;
+    height: 23vh;
     color: #000;
     background-color: transparent;
     border: 3px solid #85c442;
@@ -284,7 +284,7 @@ html {
 
 .due,
 .diagonal {
-    height: 95vh;
+    height: 100vh;
 }
 
 .due {
@@ -337,7 +337,7 @@ html {
     width: 100%;
     display: grid;
     grid-template-columns: 0.1fr 1fr;
-    grid-template-rows: auto 1.5fr auto;
+    grid-template-rows: 0.01fr 1.5fr 0.01fr;
     grid-template-areas:
         "nav nav"
         "button main"
@@ -475,11 +475,17 @@ main {
     padding-top: 3%;
     padding-left: 2%;
     padding-right: 2%;
-}
-
-#main-txt-id {
     overflow: auto;
 }
+
+main::-webkit-scrollbar {
+    width: 0em;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
 
 main a:link,
 main a:visited {
@@ -562,6 +568,10 @@ main h2 {
     line-height: 0.65;
 }
 
+.ghost {
+    background-color: pink;
+}
+
 .frontier {
     padding: .5em;
     border: 0.25em solid rgb(255, 0, 191);
@@ -610,7 +620,6 @@ figure>img {
     border-color: blueviolet;
     border-width: 10px;
 
-
 }
 
 figure figcaption {
@@ -644,15 +653,21 @@ td {
 
 footer {
     grid-area: footer;
-    background-color: lightblue;
+    position: relative;
+    background-color: #85c442;
 }
 
 #main-footer {
-    height: 125vh;
+    height: 100vh;
 }
 
 #main-footer>.wrapper {
-    top: 60%;
+    top: 50%;
+    width: 80%;
+    height: fit-content;
+    border-radius: 7%;
+    background-color: yellow;
+    padding: 1%;
 }
 
 .layoutfooter {
@@ -677,13 +692,13 @@ footer {
 .name-card {
     background-color: white;
     margin-right: 10px;
-    width: 23vw;
+    width: 20vw;
     height: fit-content;
     border-radius: 5%;
     box-shadow: 0 5px 5px 0px;
     word-wrap: break-word;
-    padding: 3%;
-    height: 55vh;
+    padding: 2%;
+    height: 50vh;
 }
 
 .name-card:hover {

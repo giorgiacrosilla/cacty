@@ -586,7 +586,7 @@ footer {
   background-color: fuchsia;
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
 
   .main_container {
     display: grid;
