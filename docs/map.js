@@ -2,9 +2,7 @@ $(document).ready(function () {
     // On click of a link in the list
     $('#article-txt-id a').click(function (e) {
         e.preventDefault();
-        // Retrieve the URL of the file associated with the link
         var fileDaCaricare = $(this).data('file');
-        // Call the function to load the content
         caricaContenuto(fileDaCaricare);
     })
     function caricaContenuto(url) {
@@ -18,7 +16,6 @@ $(document).ready(function () {
                 newDoc.documentElement.innerHTML = data;
                 // Replace the <body> content
                 $('body').html(newDoc.body.innerHTML);
-                // Add or remove classes from the elements
                 $('#metadata-txt-id').removeClass('metarticle-inv-txt').addClass('metarticle-vis-txt');
                 $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
                 loadMap();
@@ -65,7 +62,35 @@ $(document).ready(function () {
         });
     }
 });
+$(document).ready(function () {
+    // On click of a link in the list
+    $('#titlemainp a').click(function (e) {
+        e.preventDefault();
+        // Retrieve the URL of the file associated with the link
+        var fileDaCaricare = $(this).data('file');
+        // Call the function to load the content
+        caricaf(fileDaCaricare);
+    })
+    function caricaf(url) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'html',
+            success: function (data) {
+                var newDoc = document.implementation.createHTMLDocument();
+                newDoc.documentElement.innerHTML = data;
+                // Replace the <body> content
+                $('body').html(newDoc.body.innerHTML);
+                $('body').removeAttr('id').attr('id', 'body-main-id');
+                
 
+            },
+            error: function (error) {
+                console.log('Error loading file: ' + error.statusText);
+            }
+        });
+    }
+});
 
 function stylechanger(newCSSFileName) {
     const linkElement = document.getElementById("csstochange");

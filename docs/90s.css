@@ -12,6 +12,7 @@
 
 html {
     cursor: url(https://ani.cursors-4u.net/symbols/sym-8/sym752.cur), auto !important;
+    font-size: 1rem;
 }
 
 /* width */
@@ -54,9 +55,7 @@ html {
     height: 11vh;
     z-index: 1;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    padding: 1%;
     overflow: hidden;
 }
 
@@ -693,12 +692,11 @@ footer {
     background-color: white;
     margin-right: 10px;
     width: 20vw;
-    height: fit-content;
     border-radius: 5%;
     box-shadow: 0 5px 5px 0px;
     word-wrap: break-word;
     padding: 2%;
-    height: 50vh;
+    height: fit-content;
 }
 
 .name-card:hover {
@@ -764,19 +762,24 @@ footer {
         font-size: 2rem;
     }
 
+    .stroke-d:before {
+        left: -1%;
+    }
+
     .due,
     .diagonal {
         height: 70vh;
     }
 
     #main-footer {
-        height: 80vh;
+        height: 50vh;
     }
+
     #main-footer>.wrapper {
-        top: 60%;
+        top: 50%;
     }
 
     .name-card {
-        height: 25vh;
+        height: 18vh;
     }
 }

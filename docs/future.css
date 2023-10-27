@@ -364,26 +364,6 @@ main h2 {
   word-wrap: break-word;
 }
 
-.element:hover {
-  content: " ";
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-  }
-
-  70% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(0.95);
-  }
-}
-
-
 .maiuscoletto {
   font-variant: small-caps;
 }
@@ -568,6 +548,12 @@ footer {
 .name-card>img {
   width: 50%;
   border-radius: 50%;
+  filter: invert(1);
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: darkred !important;
+  border-color: #710b0b !important;
 }
 
 
