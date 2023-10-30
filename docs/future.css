@@ -103,6 +103,15 @@ nav {
   font-family: Redoctober;
 }
 
+.navbar-nav .dropdown-menu {
+  background: rgb(117, 117, 117);
+}
+
+button.style-button {
+  border:transparent;
+  background: transparent;
+}
+
 #button-txt-id {
   /*questa è la div con i pulsanti*/
   grid-area: button;
@@ -155,12 +164,18 @@ button.accordion {
 button.accordion:hover {
   color: #444;
 }
+
 .panel {
   width: 40vh;
   display: none;
   color: white;
   background-color: transparent;
   overflow: hidden;
+}
+
+#article-txt-id a:link,
+#article-txt-id a:visited {
+color:white;
 }
 
 #map {
@@ -213,6 +228,7 @@ main a:active {
   transform: translate(-50%, -50%);
 }
 
+
 h1,
 h2 {
   color: white;
@@ -253,6 +269,8 @@ main h2 {
   height: 80vh;
   z-index: 0;
 }
+
+
 
 #body-main-id::before {
   content: "";
@@ -335,14 +353,16 @@ main h2 {
 }
 
 .diagonal p,
-.due p, footer p {
+.due p,
+footer p {
   padding-right: 5%;
   padding-left: 5%;
 
 }
 
 .diagonal h2,
-.due h2, footer h2 {
+.due h2,
+footer h2 {
   padding-left: 5%;
 }
 
@@ -355,13 +375,34 @@ main h2 {
 
 .element {
   margin-right: 10px;
-  width: 15vw;
+  width: 18vw;
   min-height: fit-content;
   color: #000;
-  background-color: rgba(161, 164, 164, 0.323);
+  padding: 1.5%;
   text-align: center;
-  border-radius: 5%;
   word-wrap: break-word;
+  background: linear-gradient(-135deg, transparent 11%, rgba(161, 164, 164, 0.323) 0);
+}
+
+.element>p {
+  font-family: Redoctober;
+  
+}
+
+.element a:link,
+.element a:visited {
+  color: white;
+  background-color: transparent;
+}
+
+.element a:hover,
+.element a:active {
+  color: white;
+}
+
+.element:hover {
+  content: " ";
+  animation: pulse 2s infinite;
 }
 
 .maiuscoletto {
@@ -378,7 +419,10 @@ main h2 {
   width: calc(100% - 5%);
   float: right;
 }
-
+.text h2 {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
 .table_section {
   text-align: center;
 }
@@ -449,8 +493,67 @@ figure figcaption {
 #kkk-logo {
   margin-right: 5%;
   float: left;
+  position: relative;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Emblem_of_the_Ku_Klux_Klan.svg/1024px-Emblem_of_the_Ku_Klux_Klan.svg.png");
 }
+
+
+#kkk-logo::after, #skull-logo::after, #masonry-logo::after {
+  content: '';
+  height: 300%;
+  left: -50%;
+  position: fixed;
+  top: -100%;
+  width: 300%;
+  background-image: url('noise.png');
+  animation: noiseanimation 0.1s infinite;
+  /* Adjust the noise intensity */
+}
+
+@keyframes noiseanimation {
+
+  0%,
+  100% {
+    transform: translate(0, 0)
+  }
+
+  10% {
+    transform: translate(-5%, -10%)
+  }
+
+  20% {
+    transform: translate(-15%, 5%)
+  }
+
+  30% {
+    transform: translate(7%, -25%)
+  }
+
+  40% {
+    transform: translate(-5%, 25%)
+  }
+
+  50% {
+    transform: translate(-15%, 10%)
+  }
+
+  60% {
+    transform: translate(15%, 0%)
+  }
+
+  70% {
+    transform: translate(0%, 15%)
+  }
+
+  80% {
+    transform: translate(3%, 35%)
+  }
+
+  90% {
+    transform: translate(-10%, 10%)
+  }
+}
+
 
 #masonry-logo {
   float: right;
@@ -486,6 +589,7 @@ figure figcaption {
 footer {
   grid-area: footer;
   position: relative;
+  color: white;
 }
 
 .layoutfooter {
@@ -514,8 +618,7 @@ footer {
   margin-right: 10px;
   width: 23vw;
   height: fit-content;
-  border-radius: 5%;
-  box-shadow: 0 5px 5px 0px;
+  background: linear-gradient(-135deg, transparent 25px, rgba(161, 164, 164, 0.323) 0);
   word-wrap: break-word;
   padding: 3%;
   height: 53vh;
@@ -526,9 +629,10 @@ footer {
   animation: pulse 2s infinite;
 }
 
-.modal-body, .modal-header {
+.modal-body,
+.modal-header {
   color: black;
-  overflow:auto;
+  overflow: auto;
 }
 
 @keyframes pulse {
@@ -548,12 +652,14 @@ footer {
 .name-card>img {
   width: 50%;
   border-radius: 50%;
-  filter: invert(1);
 }
-
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
   background-color: darkred !important;
   border-color: #710b0b !important;
+  width: fit-content !important;
 }
 
 

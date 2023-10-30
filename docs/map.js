@@ -134,7 +134,6 @@ function stylechanger(newCSSFileName) {
         $("#side-image").remove();
         $("#right-image").remove();
         $(".block").remove();
-
     }
 };
 
