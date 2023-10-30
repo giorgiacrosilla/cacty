@@ -82,6 +82,7 @@ $(document).ready(function () {
                 // Replace the <body> content
                 $('body').html(newDoc.body.innerHTML);
                 $('body').removeAttr('id').attr('id', 'body-main-id');
+                sections90s();
                 
 
             },
@@ -255,6 +256,11 @@ function loadMap() {
                     marker.addEventListener('click', function () {
                         textToChangeColor.forEach(function (element) {
                             element.style.backgroundColor = 'yellow';
+                        });
+                    });
+                    marker.getPopup().on('remove', function () {
+                        textToChangeColor.forEach(function (element) {
+                            element.style.backgroundColor = 'transparent';
                         });
                     });
                 }
