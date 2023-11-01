@@ -28,18 +28,19 @@ html {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: rgb(255, 0, 191);
+    background: #e93f82;
     border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgb(255, 0, 191);
+    background: #e93f82;
 }
 
 .navbar-custom {
-    background-color: #85c442;
+    background-color: #74b74f;
     font-family: coolvetica;
+    font-size: 1em;
 }
 
 /*NAVBAR*/
@@ -48,14 +49,14 @@ html {
 .title {
     border: 2px solid black;
     box-shadow: 5px 5px;
-    background-color: rgb(245, 226, 15);
+    background-color:  #f6ec59;
     border-style: static;
     border-radius: 20px;
     width: 15vw;
     height: 11vh;
     z-index: 1;
     display: flex;
-    padding-left:1%;
+    padding-left: 1%;
     overflow: hidden;
 }
 
@@ -65,7 +66,7 @@ html {
     position: relative;
     background: transparent;
     z-index: 0;
-    color: rgb(255, 0, 191);
+    color: #e93f82;
     font-size: 3vw;
     font-family: 'Lobster', cursive;
 }
@@ -74,7 +75,7 @@ html {
 .stroke-double:before {
     content: attr(title);
     position: absolute;
-    -webkit-text-stroke: 0.2em white;
+    -webkit-text-stroke: 0.2em #f4f4fdff;
     left: 0;
     z-index: -1;
 }
@@ -117,7 +118,7 @@ html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgb(255, 0, 191), #85c442);
+    background: linear-gradient(to top, #e93f82, #74b74f);
     opacity: 0.7;
 }
 
@@ -128,11 +129,11 @@ html {
     text-align: center;
     align-items: center;
     top: 45%;
-    color: white;
+    color: #f4f4fdff;
     transform: translate(-50%, -50%);
 }
 
-.wrapper1>h1 {
+.wrapper1>h1, main h1 {
     font-family: telelower;
     text-transform: uppercase;
     font-size: 3rem;
@@ -148,7 +149,7 @@ html {
     position: relative;
     background: transparent;
     z-index: 0;
-    color: rgb(255, 0, 191);
+    color: #e93f82;
     font-size: 3vw;
 }
 
@@ -156,7 +157,7 @@ html {
 .stroke-d:before {
     content: attr(title);
     position: absolute;
-    -webkit-text-stroke: 0.2em white;
+    -webkit-text-stroke: 0.2em #f4f4fdff;
     z-index: -1;
 }
 
@@ -183,7 +184,7 @@ html {
     content: "";
     width: 100%;
     height: 100%;
-    background-color: lightblue;
+    background-color: #e93f82;
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
 }
 
@@ -199,7 +200,7 @@ html {
     content: "";
     width: 100%;
     height: 100%;
-    background-color: lightblue;
+    background-color: #e93f82;
     clip-path: polygon(100% 0, 0 0, 0 100%);
     transform: rotateY(180deg);
 }
@@ -209,7 +210,7 @@ html {
     content: "";
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 0, 191);
+    background-color: rgb(159 203 218);
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
     transform: rotateY(180deg);
 }
@@ -226,7 +227,7 @@ html {
     content: "";
     width: 100%;
     height: 100%;
-    background-color: rgb(255, 0, 191);
+    background-color: rgb(159 203 218);
     clip-path: polygon(100% 0, 0 0, 0 100%);
 }
 
@@ -235,7 +236,7 @@ html {
     content: "";
     width: 100%;
     height: 100%;
-    background-color: lightblue;
+    background-color: #e93f82;
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
 }
 
@@ -252,13 +253,57 @@ html {
 
 .element {
     margin-right: 10px;
+    color:#f4f4fdff;
     text-align: left;
-    width: 15vw;
-    height: 23vh;
-    color: #000;
-    background-color: transparent;
-    border: 3px solid #85c442;
+    width: 20vw;
+    height: 30vh;
     padding: 8px 8px 8px 8px;
+}
+
+#firstelement {
+    aspect-ratio: 1;
+    clip-path: polygon(99.54% 56.79%, 77.66% 61.63%, 89.51% 80.65%, 68.14% 73.90%, 68.89% 96.29%, 53.76% 79.76%, 43.21% 99.54%, 38.37% 77.66%, 19.35% 89.51%, 26.10% 68.14%, 3.71% 68.89%, 20.24% 53.76%, 0.46% 43.21%, 22.34% 38.37%, 10.49% 19.35%, 31.86% 26.10%, 31.11% 3.71%, 46.24% 20.24%, 56.79% 0.46%, 61.63% 22.34%, 80.65% 10.49%, 73.90% 31.86%, 96.29% 31.11%, 79.76% 46.24%);
+    background-color: #74b74f;
+}
+
+#firstelement >p {
+    margin-top: 16%;
+    margin-bottom:18%; 
+}
+
+#secondelement>p {
+  
+    padding: none;
+    background-color: transparent;
+    border: 5px solid #f4f4fdff;
+    transform:rotate(-20deg);
+}
+
+#thirdelement >p {
+    background-color:  #f6ec59;
+   color:black;
+}
+
+.element p {
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    width: 10vw;
+    font-size: 0.77em;
+    margin-left: 23%;
+    word-wrap: break-word;
+}
+
+.element a:link,
+.element a:visited {
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+.element a:hover,
+.element a:active {
+    color: inherit;
 }
 
 
@@ -286,12 +331,12 @@ html {
     height: 100vh;
 }
 
-.due {
-    background: lightblue;
+.diagonal {
+    background: rgb(159 203 218);
 }
 
-.diagonal {
-    background: rgb(255, 0, 191);
+.due {
+    background: #e93f82;
 }
 
 .wrapper {
@@ -355,6 +400,16 @@ nav {
     grid-area: nav;
 }
 
+.navbar-nav .dropdown-menu {
+    background: #74b74f;
+  }
+  
+  button.style-button {
+    color:#f4f4fdff;
+    border: transparent;
+    background: transparent;
+  }
+
 #button-txt-id {
     /*questa è la div con i pulsanti*/
     grid-area: button;
@@ -404,7 +459,7 @@ nav {
     margin-bottom: 10%;
     margin-right: 10%;
     margin-left: 15%;
-    color: white;
+    color: #f4f4fdff;
     display: block;
     word-wrap: break-word;
 }
@@ -415,33 +470,33 @@ nav {
 
 #data {
     transform: rotate(5deg);
-    background-color: rgb(255, 0, 191);
+    background-color: #e93f82;
     border: 3px solid black;
 
 }
 
 #dates {
-    background-color: rgb(245, 226, 15);
+    background-color:  #f6ec59;
     transform: rotate(-5deg);
-    border-color: white;
+    border-color: #f4f4fdff;
 }
 
 #places {
     transform: rotate(5deg);
-    background-color: rgb(255, 0, 191);
+    background-color: #e93f82;
     border: 3px solid black;
 
 }
 
 #people {
-    background-color: #85c442;
+    background-color: #74b74f;
     transform: rotate(-5deg);
 }
 
 #events {
     background-color: transparent;
     color: black;
-    border-color: rgb(255, 0, 191);
+    border-color: #e93f82;
     transform: rotate(5deg);
 }
 
@@ -460,8 +515,8 @@ nav {
 .openbtn {
     font-size: 20px;
     cursor: pointer;
-    background-color: rgb(255, 0, 191);
-    color: white;
+    background-color: #e93f82;
+    color: #f4f4fdff;
     padding: 10px 15px;
     border: none;
     width: fit-content;
@@ -489,13 +544,13 @@ main::-webkit-scrollbar-thumb {
 
 main a:link,
 main a:visited {
-    color: blueviolet;
+    color: #845ba6;
     background-color: transparent;
 }
 
 main a:hover,
 main a:active {
-    color: rgb(106, 106, 232);
+    color: rgb(101 177 202);;
 }
 
 main>h2,
@@ -515,27 +570,31 @@ h1 {
 }
 
 .info {
-    background-color: rgb(184, 197, 252);
+    background-color: rgb(159 203 218);
     width: 40%;
     padding: 1%;
 }
 
 .description {
-    background-color: pink;
+    background-color: rgb(255, 169, 183);
     width: 50%;
     transform: rotate(-5deg);
     padding: 1%;
 }
 
 main h1 {
-    color: rgb(255, 0, 191);
+    color: #e93f82;
 
 }
-
+main h3 {
+    font-family:telelower;
+}
 main h2 {
-    color: rgb(106, 106, 232);
+    color: rgb(51, 144, 175);
     text-align: center;
     text-transform: uppercase;
+    font-family: telelower;
+
 }
 
 #introduction-txt-id {
@@ -560,7 +619,7 @@ main h2 {
 }
 
 .text p::first-letter {
-    color: rgb(255, 0, 191);
+    color: #e93f82;
     float: left;
     font-weight: bold;
     font-size: 4.2rem;
@@ -569,12 +628,12 @@ main h2 {
 }
 
 .ghost {
-    background-color: pink;
+    background-color: rgb(255, 169, 183);
 }
 
 .frontier {
     padding: .5em;
-    border: 0.25em solid rgb(255, 0, 191);
+    border: 0.25em solid #e93f82;
     position: relative;
     margin-bottom: 2%;
 }
@@ -617,7 +676,7 @@ figure {
 figure>img {
     width: 15vw;
     border-style: solid;
-    border-color: blueviolet;
+    border-color: #845ba6;
     border-width: 10px;
 
 }
@@ -635,7 +694,7 @@ td {
     width: 100%;
     text-align: left;
     border-collapse: collapse;
-    border: 3px solid blueviolet !important;
+    border: 3px solid #845ba6 !important;
 }
 
 .footnotes {
@@ -654,11 +713,13 @@ td {
 footer {
     grid-area: footer;
     position: relative;
-    background-color: #85c442;
+    background-color: #74b74f;
 }
 
 #main-footer {
+    margin-top: 9%;
     height: 100vh;
+    background-color: #e93f82;
 }
 
 #main-footer>.wrapper {
@@ -666,7 +727,7 @@ footer {
     width: 80%;
     height: fit-content;
     border-radius: 7%;
-    background-color: white;
+    background-color: #74b74f;
     padding: 1%;
 }
 
@@ -690,11 +751,12 @@ footer {
 }
 
 .name-card {
-    background-color: white;
+    background-color: #f4f4fdff;
     margin-right: 10px;
     width: 20vw;
     border-radius: 5%;
-    box-shadow: 0 5px 5px 0px;
+    border: 2px solid #e93f82;
+    box-shadow: 5px 5px #e93f82;
     word-wrap: break-word;
     padding: 2%;
     height: fit-content;
@@ -724,6 +786,15 @@ footer {
     border-radius: 50%;
 }
 
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited {
+  background-color: rgb(159 203 218) !important;
+  border-color:  rgb(159 203 218)!important;
+  width: fit-content !important;
+}
+
 
 /*sidebartag*/
 
@@ -738,22 +809,11 @@ footer {
 }
 
 .n1900 {
-    background-color: rgb(255, 0, 191);
+    background-color: #e93f82;
 }
 
 
 @media only screen and (max-width: 550px) {
-    #body-txt-id {
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 0.2fr 0.2fr 1.5fr 0.1fr;
-        grid-template-areas:
-            "nav"
-            "button"
-            "sidebar"
-            "main"
-            "footer";
-    }
 
     .text {
         column-count: 1;
