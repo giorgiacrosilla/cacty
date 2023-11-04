@@ -19,7 +19,7 @@ $(document).ready(function () {
                 $('#metadata-txt-id').removeClass('metarticle-inv-txt').addClass('metarticle-vis-txt');
                 $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
                 loadMap();
-                sections90s();
+                
 
             },
             error: function (error) {
@@ -53,7 +53,6 @@ $(document).ready(function () {
                 $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
                 $('body').removeAttr('id').attr('id', 'body-txt-id');
                 loadMap();
-                sections90s();
 
             },
             error: function (error) {
@@ -82,9 +81,10 @@ $(document).ready(function () {
                 // Replace the <body> content
                 $('body').html(newDoc.body.innerHTML);
                 $('body').removeAttr('id').attr('id', 'body-main-id');
-                sections90s();
-                
-
+                if (isCssLoaded('90s.css') === true) {
+                    $("#content-card > div").addClass("card");
+                    $("#content-card >div").prepend('<div class="star"></div>');
+                }
             },
             error: function (error) {
                 console.log('Error loading file: ' + error.statusText);
@@ -114,6 +114,9 @@ function stylechanger(newCSSFileName) {
         $(".background-grid").after('<div class="block", id="white-square5"></div>')
         $(".background-grid").after('<div class="block", id="place-square2"></div>')
         $(".background-grid").after('<div class="block", id="place-square1"></div>')
+        $(".star").remove();
+        $(".card").removeClass("card");
+
 
     }
     else if (newCSSFileName === "Aldine.css") {
@@ -122,18 +125,23 @@ function stylechanger(newCSSFileName) {
         $(".main-container").display(none);
         $(".background-grid").display(none);
         $(".block").display(none);
+        $(".star").remove();
+        $(".card").removeClass("card");
 
     }
     else if (newCSSFileName === "90s.css") {
         $("#side-image").remove();
         $("#right-image").remove();
         $(".block").remove();
-        sections90s();
+        $("#content-card > div").addClass("card");
+        $("#content-card >div").prepend('<div class="star"></div>');
     }
     else if (newCSSFileName === "future.css") {
         $("#side-image").remove();
         $("#right-image").remove();
         $(".block").remove();
+        $(".star").remove();
+        $(".card").removeClass("card");
     }
 };
 
@@ -191,25 +199,7 @@ function changeBackgroundColor() {
     }
 };
 
-function sections90s() {
-    if (isCssLoaded("90s.css")) {
-        var textDiv = document.querySelector('div.text');
-        if (textDiv) {
-            var paragraphs = textDiv.getElementsByTagName('p');
-            for (var i = 0; i < paragraphs.length; i++) {
-                if (paragraphs[i].parentNode.className !== 'footnotes') {
-                    if (i % 4 === 0) {
-                        paragraphs[i].classList.add('ghost');
-                    }
-                    if (i % 5 === 2) {
-                        paragraphs[i].classList.add('frontier');
-                    }
-                }
-            }
-        }
-    }
-}
-sections90s();
+
 
 
 function loadMap() {
@@ -589,25 +579,68 @@ function toggleClass(firstId, secondId) {
     var firstEl = document.getElementById(firstId);
     var secondEl = document.getElementById(secondId);
     var body = document.getElementById('body-txt-id');
-    if (firstEl.classList.contains("metarticle-vis-txt")) {
-        firstEl.classList.remove("metarticle-vis-txt");
-        firstEl.classList.add("metarticle-inv-txt");
+    
+    if (window.innerWidth < 900) {
+        if (firstEl.classList.contains("metarticle-vis-txt")) {
+            firstEl.classList.remove("metarticle-vis-txt");
+            firstEl.classList.add("metarticle-inv-txt");
 
-        body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
-        body.style.gridTemplateColumns = "0.08fr 1fr";
-    } else {
-        if (firstEl.classList.contains("metarticle-inv-txt")) {
-            firstEl.classList.remove("metarticle-inv-txt")
+            body.style.gridTemplateAreas = '"nav" "button" "main" "footer"';
+            body.style.gridTemplateColumns = "1fr";
+            body.style.gridTemplateRows = "0.1fr 0.1fr 1fr 0.1fr";
+        } else {
+            if (firstEl.classList.contains("metarticle-inv-txt")) {
+                firstEl.classList.remove("metarticle-inv-txt");
+            }
+            firstEl.classList.add("metarticle-vis-txt");
+            body.style.gridTemplateAreas = '"nav" "button" "sidebar" "main" "footer"';
+            body.style.gridTemplateColumns = "1fr";
+            body.style.gridTemplateRows = "0.1fr 0.1fr 1fr 1fr 0.1fr";
+            if (secondEl.classList.contains("metarticle-vis-txt")) {
+                secondEl.classList.remove("metarticle-vis-txt");
+                secondEl.classList.add("metarticle-inv-txt");
+            }
         }
-        firstEl.classList.add("metarticle-vis-txt");
-        body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
-        body.style.gridTemplateColumns = "0.4fr 0.1fr 1fr";
-        if (secondEl.classList.contains("metarticle-vis-txt")) {
-            secondEl.classList.remove("metarticle-vis-txt");
-            secondEl.classList.add("metarticle-inv-txt");
+    } else {
+        if (firstEl.classList.contains("metarticle-vis-txt")) {
+            firstEl.classList.remove("metarticle-vis-txt");
+            firstEl.classList.add("metarticle-inv-txt");
+
+            body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
+            body.style.gridTemplateColumns = "0.08fr 1fr";
+            body.style.gridTemplateRows = '0.1fr 1fr 0.1fr';
+        } else {
+            if (firstEl.classList.contains("metarticle-inv-txt")) {
+                firstEl.classList.remove("metarticle-inv-txt");
+            }
+            firstEl.classList.add("metarticle-vis-txt");
+            body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+            body.style.gridTemplateColumns = "0.4fr 0.1fr 1fr";
+            if (secondEl.classList.contains("metarticle-vis-txt")) {
+                secondEl.classList.remove("metarticle-vis-txt");
+                secondEl.classList.add("metarticle-inv-txt");
+            }
         }
     }
 }
+document.addEventListener('DOMContentLoaded', function () {
+    function adjustGridStructure() {
+        var gridContainer = document.querySelector('#body-txt-id');
+
+        if (window.innerWidth <= 900) {
+            gridContainer.style.gridTemplateAreas = '"nav" "button" "main" "footer"';
+            gridContainer.style.gridTemplateRows = '0.1fr 0.1fr 1fr 0.1fr';
+            gridContainer.style.gridTemplateColumns = '1fr';
+        } else {
+            gridContainer.style.gridTemplateAreas = '';
+            gridContainer.style.gridTemplateRows = '';
+            gridContainer.style.gridTemplateColumns = '';
+        }
+    }
+
+    adjustGridStructure();
+    window.addEventListener('resize', adjustGridStructure);
+});
 
 
 function initializeAccordion() {
