@@ -19,7 +19,8 @@ $(document).ready(function () {
                 $('#metadata-txt-id').removeClass('metarticle-inv-txt').addClass('metarticle-vis-txt');
                 $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
                 loadMap();
-                
+                sections90s();
+
 
             },
             error: function (error) {
@@ -53,6 +54,7 @@ $(document).ready(function () {
                 $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
                 $('body').removeAttr('id').attr('id', 'body-txt-id');
                 loadMap();
+                sections90s();
 
             },
             error: function (error) {
@@ -81,6 +83,7 @@ $(document).ready(function () {
                 // Replace the <body> content
                 $('body').html(newDoc.body.innerHTML);
                 $('body').removeAttr('id').attr('id', 'body-main-id');
+                sections90s();
                 if (isCssLoaded('90s.css') === true) {
                     $("#content-card > div").addClass("card");
                     $("#content-card >div").prepend('<div class="star"></div>');
@@ -135,6 +138,7 @@ function stylechanger(newCSSFileName) {
         $(".block").remove();
         $("#content-card > div").addClass("card");
         $("#content-card >div").prepend('<div class="star"></div>');
+        sections90s();
     }
     else if (newCSSFileName === "future.css") {
         $("#side-image").remove();
@@ -199,376 +203,398 @@ function changeBackgroundColor() {
     }
 };
 
-
+function sections90s() {
+    if (isCssLoaded("90s.css")) {
+        var textDiv = document.querySelector('div.text');
+        console.log(textDiv);
+        if (textDiv) {
+            var paragraphs = textDiv.getElementsByTagName('p');
+            for (var i = 0; i < paragraphs.length; i++) {
+                if (paragraphs[i].parentNode.className !== 'footnotes') {
+                    if (i % 4 === 0) {
+                        paragraphs[i].classList.add('ghost');
+                    }
+                     else if (i % 5 === 2) {
+                        paragraphs[i].classList.add('frontier');
+                    }
+                }
+            }
+        }
+    }
+}
+sections90s();
 
 
 function loadMap() {
-    var map = L.map('map').setView([34.225727, -77.944710], 4);
+    var mapcontainer = document.getElementById('map');
+    if (mapcontainer) {
+        var map = L.map('map').setView([34.225727, -77.944710], 4);
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
 
-    setInterval(function () {
-        map.invalidateSize();
-    }, 100);
+        setInterval(function () {
+            map.invalidateSize();
+        }, 100);
 
-    var placeSpans = document.querySelectorAll("span.place");
-    var contentArray = [];
+        var placeSpans = document.querySelectorAll("span.place");
+        var contentArray = [];
 
-    placeSpans.forEach(function (span) {
-        var content = span.textContent;
-        contentArray.push(content);
-        span.setAttribute("id", content);
-    });
+        placeSpans.forEach(function (span) {
+            var content = span.textContent;
+            contentArray.push(content);
+            span.setAttribute("id", content);
+        });
 
-    let uniqueSet = new Set(contentArray);
-    let locations = Array.from(uniqueSet);
+        let uniqueSet = new Set(contentArray);
+        let locations = Array.from(uniqueSet);
 
-    locations.forEach(function (content) {
-        // Use Mapbox's Geocoding API
-        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${content}.json?access_token=${mapboxgl.accessToken}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.features.length > 0) {
-                    var coordinates = data.features[0].geometry.coordinates;
+        locations.forEach(function (content) {
+            // Use Mapbox's Geocoding API
+            fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${content}.json?access_token=${mapboxgl.accessToken}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.features.length > 0) {
+                        var coordinates = data.features[0].geometry.coordinates;
 
-                    // Create a marker for each location
-                    var marker = L.marker([coordinates[1], coordinates[0]]).addTo(map);
+                        // Create a marker for each location
+                        var marker = L.marker([coordinates[1], coordinates[0]]).addTo(map);
 
-                    marker.bindPopup('<a href="#' + content + '">' + content + '</a');
+                        marker.bindPopup('<a href="#' + content + '">' + content + '</a');
 
-                    var textToChangeColor = document.querySelectorAll("span.place[id='" + content + "']");
+                        var textToChangeColor = document.querySelectorAll("span.place[id='" + content + "']");
 
-                    // Add a click event listener to the marker
-                    marker.addEventListener('click', function () {
-                        textToChangeColor.forEach(function (element) {
-                            element.style.backgroundColor = 'yellow';
+                        // Add a click event listener to the marker
+                        marker.addEventListener('click', function () {
+                            textToChangeColor.forEach(function (element) {
+                                element.style.backgroundColor = 'yellow';
+                            });
                         });
-                    });
-                    marker.getPopup().on('remove', function () {
-                        textToChangeColor.forEach(function (element) {
-                            element.style.backgroundColor = 'transparent';
+                        marker.getPopup().on('remove', function () {
+                            textToChangeColor.forEach(function (element) {
+                                element.style.backgroundColor = 'transparent';
+                            });
                         });
-                    });
+                    }
+                })
+                .catch(error => console.error(error));
+        });
+
+        placeSpans.forEach(function (span) {
+            if (span.classList.contains("state")) {
+                if (span.id === "France") {
+                    var France = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions.geojson'
+
+                    fetch(
+                        France
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
                 }
-            })
-            .catch(error => console.error(error));
-    });
+                if (span.id === "India") {
+                    var India = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/geoBoundaries-IND-ADM0.geojson'
 
-    placeSpans.forEach(function (span) {
-        if (span.classList.contains("state")) {
-            if (span.id === "France") {
-                var France = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions.geojson'
+                    fetch(
+                        India
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Midwest") {
+                    var Midwest = 'https://raw.githubusercontent.com/scdoshi/us-geojson/master/geojson/region/Midwest.geojson'
 
-                fetch(
-                    France
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
+                    fetch(
+                        Midwest
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Massachussetts") {
+                    var Massachussetts = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/massachusetts.geojson'
+
+                    fetch(
+                        Massachussetts
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Pennsylvania") {
+                    var Pennsylvania = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/pennsylvania.geojson'
+
+                    fetch(
+                        Pennsylvania
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "North America") {
+                    var NorthAmerica = 'https://raw.githubusercontent.com/koopjs/geodata/master/north-america.geojson'
+
+                    fetch(
+                        NorthAmerica
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Northern Europe") {
+                    var NorthernEurope = 'https://raw.githubusercontent.com/highcharts/map-collection-dist/master/custom/nordic-countries.topo.json'
+
+                    fetch(
+                        NorthernEurope
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Bretagne") {
+                    var Bretagne = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions/bretagne/arrondissements-bretagne.geojson'
+
+                    fetch(
+                        Bretagne
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "United States") {
+                    var USA = 'https://raw.githubusercontent.com/scdoshi/us-geojson/master/geojson/nation/US.geojson'
+
+                    fetch(
+                        USA
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Alabama") {
+                    var Alabama = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/alabama.geojson'
+
+                    fetch(
+                        Alabama
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Georgia") {
+                    var Georgia = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/georgia.geojson'
+
+                    fetch(
+                        Georgia
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Indiana") {
+                    var Indiana = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/indiana.geojson'
+
+                    fetch(
+                        Indiana
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Oregon") {
+                    var oregon = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/oregon.geojson'
+
+                    fetch(
+                        oregon
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "North Carolina") {
+                    var NorthCarolina = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/north%20carolina.geojson'
+
+                    fetch(
+                        NorthCarolina
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "South Carolina") {
+                    var SouthCarolina = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/south%20carolina.geojson'
+
+                    fetch(
+                        SouthCarolina
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Florida") {
+                    var Florida = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/florida.geojson'
+
+                    fetch(
+                        Florida
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Mississippi") {
+                    var Mississippi = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/mississippi.geojson'
+
+                    fetch(
+                        Mississippi
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Tennessee") {
+                    var Tennessee = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/tennessee.geojson'
+
+                    fetch(
+                        Tennessee
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Louisiana") {
+                    var Louisiana = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/louisiana.geojson'
+
+                    fetch(
+                        Louisiana
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Virginia") {
+                    var Virginia = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/virginia.geojson'
+
+                    fetch(
+                        Virginia
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Connecticut") {
+                    var Connecticut = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/connecticut.geojson'
+
+                    fetch(
+                        Connecticut
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "California") {
+                    var California = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/california.geojson'
+
+                    fetch(
+                        California
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Texas") {
+                    var Texas = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/texas.geojson'
+
+                    fetch(
+                        Texas
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Great Britain") {
+                    var GreatBritain = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/united-kingdom_.geojson'
+
+                    fetch(
+                        GreatBritain
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Italy") {
+                    var Italy = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/italy-detailed-boundary_943.geojson'
+
+                    fetch(
+                        Italy
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Hungary") {
+                    var Hungary = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/hungary_338.geojson'
+
+                    fetch(
+                        Hungary
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Germany") {
+                    var Germany = 'https://raw.githubusercontent.com/isellsoap/deutschlandGeoJSON/main/1_deutschland/1_sehr_hoch.geo.json'
+
+                    fetch(
+                        Germany
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
+                if (span.id === "Russia") {
+                    var Russia = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/russia_609.geojson'
+
+                    fetch(
+                        Russia
+                    ).then(
+                        res => res.json()
+                    ).then(
+                        data => L.geoJSON(data).addTo(map)
+                    )
+                }
             }
-            if (span.id === "India") {
-                var India = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/geoBoundaries-IND-ADM0.geojson'
-
-                fetch(
-                    India
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Midwest") {
-                var Midwest = 'https://raw.githubusercontent.com/scdoshi/us-geojson/master/geojson/region/Midwest.geojson'
-
-                fetch(
-                    Midwest
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Massachussetts") {
-                var Massachussetts = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/massachusetts.geojson'
-
-                fetch(
-                    Massachussetts
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Pennsylvania") {
-                var Pennsylvania = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/pennsylvania.geojson'
-
-                fetch(
-                    Pennsylvania
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "North America") {
-                var NorthAmerica = 'https://raw.githubusercontent.com/koopjs/geodata/master/north-america.geojson'
-
-                fetch(
-                    NorthAmerica
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Northern Europe") {
-                var NorthernEurope = 'https://raw.githubusercontent.com/highcharts/map-collection-dist/master/custom/nordic-countries.topo.json'
-
-                fetch(
-                    NorthernEurope
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Bretagne") {
-                var Bretagne = 'https://raw.githubusercontent.com/gregoiredavid/france-geojson/master/regions/bretagne/arrondissements-bretagne.geojson'
-
-                fetch(
-                    Bretagne
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "United States") {
-                var USA = 'https://raw.githubusercontent.com/scdoshi/us-geojson/master/geojson/nation/US.geojson'
-
-                fetch(
-                    USA
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Alabama") {
-                var Alabama = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/alabama.geojson'
-
-                fetch(
-                    Alabama
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Georgia") {
-                var Georgia = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/georgia.geojson'
-
-                fetch(
-                    Georgia
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Indiana") {
-                var Indiana = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/indiana.geojson'
-
-                fetch(
-                    Indiana
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Oregon") {
-                var oregon = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/oregon.geojson'
-
-                fetch(
-                    oregon
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "North Carolina") {
-                var NorthCarolina = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/north%20carolina.geojson'
-
-                fetch(
-                    NorthCarolina
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "South Carolina") {
-                var SouthCarolina = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/south%20carolina.geojson'
-
-                fetch(
-                    SouthCarolina
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Florida") {
-                var Florida = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/florida.geojson'
-
-                fetch(
-                    Florida
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Mississippi") {
-                var Mississippi = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/mississippi.geojson'
-
-                fetch(
-                    Mississippi
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Tennessee") {
-                var Tennessee = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/tennessee.geojson'
-
-                fetch(
-                    Tennessee
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Louisiana") {
-                var Louisiana = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/louisiana.geojson'
-
-                fetch(
-                    Louisiana
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Virginia") {
-                var Virginia = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/virginia.geojson'
-
-                fetch(
-                    Virginia
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Connecticut") {
-                var Connecticut = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/connecticut.geojson'
-
-                fetch(
-                    Connecticut
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "California") {
-                var California = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/california.geojson'
-
-                fetch(
-                    California
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Texas") {
-                var Texas = 'https://raw.githubusercontent.com/glynnbird/usstatesgeojson/master/texas.geojson'
-
-                fetch(
-                    Texas
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Great Britain") {
-                var GreatBritain = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/united-kingdom_.geojson'
-
-                fetch(
-                    GreatBritain
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Italy") {
-                var Italy = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/italy-detailed-boundary_943.geojson'
-
-                fetch(
-                    Italy
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Hungary") {
-                var Hungary = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/hungary_338.geojson'
-
-                fetch(
-                    Hungary
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Germany") {
-                var Germany = 'https://raw.githubusercontent.com/isellsoap/deutschlandGeoJSON/main/1_deutschland/1_sehr_hoch.geo.json'
-
-                fetch(
-                    Germany
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-            if (span.id === "Russia") {
-                var Russia = 'https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/geojson/russia_609.geojson'
-
-                fetch(
-                    Russia
-                ).then(
-                    res => res.json()
-                ).then(
-                    data => L.geoJSON(data).addTo(map)
-                )
-            }
-        }
-    });
+        });
+    }
 };
 document.addEventListener("DOMContentLoaded", function () {
     loadMap();
@@ -579,7 +605,7 @@ function toggleClass(firstId, secondId) {
     var firstEl = document.getElementById(firstId);
     var secondEl = document.getElementById(secondId);
     var body = document.getElementById('body-txt-id');
-    
+
     if (window.innerWidth < 900) {
         if (firstEl.classList.contains("metarticle-vis-txt")) {
             firstEl.classList.remove("metarticle-vis-txt");
@@ -625,16 +651,17 @@ function toggleClass(firstId, secondId) {
 }
 document.addEventListener('DOMContentLoaded', function () {
     function adjustGridStructure() {
-        var gridContainer = document.querySelector('#body-txt-id');
-
-        if (window.innerWidth <= 900) {
-            gridContainer.style.gridTemplateAreas = '"nav" "button" "main" "footer"';
-            gridContainer.style.gridTemplateRows = '0.1fr 0.1fr 1fr 0.1fr';
-            gridContainer.style.gridTemplateColumns = '1fr';
-        } else {
-            gridContainer.style.gridTemplateAreas = '';
-            gridContainer.style.gridTemplateRows = '';
-            gridContainer.style.gridTemplateColumns = '';
+        var body = document.getElementById('body-txt-id');
+        if (body) {
+            if (window.innerWidth <= 900) {
+                body.style.gridTemplateAreas = '"nav" "button" "main" "footer"';
+                body.style.gridTemplateRows = '0.1fr 0.1fr 1fr 0.1fr';
+                body.style.gridTemplateColumns = '1fr';
+            } else {
+                body.style.gridTemplateAreas = '';
+                body.style.gridTemplateRows = '';
+                body.style.gridTemplateColumns = '';
+            }
         }
     }
 
