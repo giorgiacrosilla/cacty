@@ -644,6 +644,8 @@ main h2 {
 
 #introduction-txt-id {
     padding: 3% 3% 3% 3%;
+    font-family: 'Helvetica';
+    font-weight: bold;
 }
 
 .maiuscoletto {
