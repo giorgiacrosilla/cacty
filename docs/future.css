@@ -15,24 +15,20 @@
   src: url("Rodchenko.ttf");
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background-color: rgba(128, 128, 128, 0);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: black;
+  background: #111;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: darkred;
+  background: #690000;
 }
 
 /*NAVBAR*/
@@ -41,7 +37,7 @@
   position: relative;
   width: 100px;
   height: 100px;
-  background-color: white;
+  background-color: #EEEEEE;
   border-radius: 100% 0;
   transform: rotate(45deg);
 }
@@ -94,7 +90,7 @@
     "footer footer";
   font-family: rodchenkol;
   font-size: 1.2em;
-  background: radial-gradient(circle at 0%, black, rgb(52, 22, 22) 50%, darkred 75%, black 75%);
+  background: radial-gradient(circle at 0%, #060606, rgb(52, 22, 22) 50%, #690000 75%, #050505 75%);
 }
 
 nav {
@@ -107,13 +103,14 @@ nav {
   background: rgb(117, 117, 117);
 }
 
+/*sidebar*/
+
 button.style-button {
   border: transparent;
   background: transparent;
 }
 
 #button-txt-id {
-  /*questa è la div con i pulsanti*/
   grid-area: button;
   padding-top: 5%;
 }
@@ -121,6 +118,7 @@ button.style-button {
 #button-txt-id>button {
   width: fit-content;
   margin-bottom: 2vh;
+  background: linear-gradient(-135deg, transparent 10px, #111 0);
 }
 
 .metarticle-visible-txt {
@@ -154,7 +152,7 @@ button.accordion {
   width: 20vw;
   background-color: transparent;
   padding: 8px 8px 8px 8px;
-  color: white;
+  color: #EEEEEE;
   display: block;
   text-align: left;
   font-family: Redoctober;
@@ -168,14 +166,14 @@ button.accordion:hover {
 .panel {
   width: 40vh;
   display: none;
-  color: white;
+  color: #EEEEEE;
   background-color: transparent;
   overflow: hidden;
 }
 
 #article-txt-id a:link,
 #article-txt-id a:visited {
-  color: white;
+  color: #EEEEEE;
 }
 
 #map {
@@ -188,7 +186,7 @@ button.accordion:hover {
   font-size: 20px;
   cursor: pointer;
   background-color: #111;
-  color: white;
+  color: #EEEEEE;
   padding: 10px 15px;
   border: none;
 }
@@ -197,13 +195,12 @@ button.accordion:hover {
   background-color: #444;
 }
 
+/*main page*/
 main {
   grid-area: main;
   overflow: auto;
-  padding-top: 3%;
-  padding-left: 2%;
-  padding-right: 2%;
-  color: white;
+  padding: 3%;
+  color: #EEEEEE;
   font-size: 1.1em;
 }
 
@@ -215,7 +212,7 @@ main a:visited {
 
 main a:hover,
 main a:active {
-  color: white;
+  color: #EEEEEE;
 }
 
 .wrapper1 {
@@ -223,7 +220,6 @@ main a:active {
   left: 50%;
   position: relative;
   text-align: center;
-  align-items: center;
   top: 45%;
   transform: translate(-50%, -50%);
 }
@@ -231,7 +227,7 @@ main a:active {
 
 h1,
 h2 {
-  color: white;
+  color: #EEEEEE;
   text-align: center;
   font-family: Redoctober;
   text-shadow:
@@ -247,7 +243,7 @@ h2 {
 
 
 main h2 {
-  color: grey;
+  color: #808080;
   font-family: Redoctober;
   text-transform: uppercase;
   text-align: center;
@@ -258,19 +254,17 @@ main h2 {
 #body-main-id {
   font-family: rodchenkol;
   font-size: 1.2rem;
-  background: radial-gradient(circle at 100%, black, rgb(52, 22, 22) 50%, darkred 75%, black 75%);
-  color: white;
+  background: radial-gradient(circle at 100%, #070707, rgb(52, 22, 22) 50%, #690000 75%, #070707 75%);
+  color: #EEEEEE;
 }
 
 .uno {
   position: relative;
   text-align: center;
-  color: white;
+  color: #EEEEEE;
   height: 80vh;
   z-index: 0;
 }
-
-
 
 #body-main-id::before {
   content: "";
@@ -383,7 +377,7 @@ footer h2 {
 }
 
 .element {
-  margin-right: 8%;
+  margin-right: 1.5vw;
   width: 18vw;
   min-height: 20vh;
 }
@@ -430,94 +424,17 @@ footer h2 {
 
 .element a:link,
 .element a:visited {
-  color: white;
+  color: #EEEEEE;
   background-color: transparent;
 }
 
 .element a:hover,
 .element a:active {
-  color: white;
+  color: #EEEEEE;
 }
 
 .element:hover {
-  content: " ";
-  animation: pulse 2s infinite;
-}
-
-.maiuscoletto {
-  font-variant: small-caps;
-}
-
-.text {
-  padding: 3% 3% 3% 0%;
-  color: white;
-  text-align: 1em;
-  word-wrap: break-word;
-  hyphens: auto;
-  text-align: justify;
-  width: calc(100% - 5%);
-  float: right;
-}
-
-.text h2 {
-  margin-top: 5%;
-  margin-bottom: 2%;
-}
-
-.table_section {
-  text-align: center;
-}
-
-table,
-th,
-td {
-  table-layout: fixed;
-  width: 100%;
-  border-collapse: collapse;
-  border: 3px solid white !important;
-}
-
-
-.footnotes {
-  padding: 8px;
-  text-align: left;
-}
-
-.text p::first-letter {
-  color: darkred;
-  float: left;
-  font-weight: bold;
-  font-size: 5rem;
-  font-family: propaganda;
-  margin: .04em .1em 0 0;
-  line-height: 1em;
-}
-
-.censorship {
-  background-color: white;
-}
-
-.fc {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 3%;
-}
-
-figure {
-  float: left;
-  margin: 1rem 1rem !important;
-}
-
-figure img {
-  width: 15vw;
-  height: auto;
-}
-
-figure figcaption {
-  max-width: 15vw;
-  font-size: 0.8em;
-  font-style: italic;
+  transform: scale(1.05);
 }
 
 .logo-image {
@@ -525,7 +442,7 @@ figure figcaption {
   height: 60vh;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: white;
+  background-color: #f1f1f1;
   background-position: center;
   clip-path: circle(40%);
   shape-outside: circle(40%);
@@ -562,7 +479,6 @@ figure figcaption {
   width: 300%;
   background-image: url('noise.png');
   animation: noiseanimation 0.1s infinite;
-  /* Adjust the noise intensity */
 }
 
 @keyframes noiseanimation {
@@ -608,6 +524,98 @@ figure figcaption {
     transform: translate(-10%, 10%)
   }
 }
+/*article text section*/
+
+.maiuscoletto {
+  font-variant: small-caps;
+}
+
+.text {
+  color: #EEEEEE;
+  text-align: 1em;
+  word-wrap: break-word;
+  hyphens: auto;
+  text-align: justify;
+  width: calc(100% - 5%);
+  float: right;
+}
+
+.text h2 {
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+.table_section {
+  text-align: center;
+}
+
+table,
+th,
+td {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid #EEEEEE !important;
+}
+
+
+.footnotes {
+  padding: 8px;
+  text-align: left;
+}
+
+.text p::first-letter {
+  color: #690000;
+  float: left;
+  font-weight: bold;
+  font-size: 5rem;
+  font-family: propaganda;
+  margin: .04em .1em 0 0;
+  line-height: 1em;
+}
+
+.censorship {
+  background-color: #EEEEEE;
+}
+
+.fc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 3%;
+}
+
+figure {
+  float: left;
+  margin: 1rem 1rem !important;
+}
+
+figure img {
+  width: 15vw;
+  height: auto;
+}
+
+figure figcaption {
+  max-width: 15vw;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+.imgcontainer {
+  position: relative;
+}
+
+.imgcontainer::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  background-image: url('noise.png');
+  background-size: cover;
+  pointer-events: none;
+}
 
 .footnotes {
   font-size: 1rem;
@@ -615,7 +623,7 @@ figure figcaption {
 
 .footnotes p::first-letter,
 .poetry p::first-letter {
-  color: white;
+  color: #EEEEEE;
   float: none;
   font-family: rodchenkol;
   font-weight: normal;
@@ -626,11 +634,11 @@ figure figcaption {
 .poetry {
   text-align: center;
 }
-
+/*footer*/
 footer {
   grid-area: footer;
   position: relative;
-  color: white;
+  color: #EEEEEE;
 }
 
 .layoutfooter {
@@ -655,7 +663,7 @@ footer {
 
 .name-card {
   background-color: rgba(161, 164, 164, 0.323);
-  color: white;
+  color: #EEEEEE;
   margin-right: 10px;
   width: 23vw;
   background: linear-gradient(-135deg, transparent 25px, rgba(161, 164, 164, 0.323) 0);
@@ -671,7 +679,7 @@ footer {
 
 .modal-body,
 .modal-header {
-  color: black;
+  color: #111;
   overflow: auto;
 }
 
@@ -689,34 +697,121 @@ footer {
   }
 }
 
-.name-card>img {
+.name-card>.imgcontainer::after {
+  content: '';
+  width: 50%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  background-image: url('noise.png');
+  background-size: cover;
+  pointer-events: none;
+}
+
+.name-card>.imgcontainer img {
   width: 50%;
   border-radius: 50%;
 }
 
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:active,
-.btn-primary:visited {
-  background-color: darkred !important;
+.btn-primary {
+  position: relative;
+  background-color: #690000 !important;
   border-color: #710b0b !important;
   width: fit-content !important;
+  transition: all 0.5s;
 }
 
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5%;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover::before {
+  opacity: 0;
+  transform: scale(0.5, 0.5);
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 5%;
+  transform: scale(1.2, 1.2);
+}
+
+.btn-primary:hover::after {
+  opacity: 1;
+  transform: scale(1, 1);
+}
 
 /*sidebartag*/
-.n1700,
-.nforrest {
-  background-color: red;
+.n {
+  background-color: rgb(7, 7, 241);
 }
 
-.n1800,
 .nb {
-  background-color: yellow;
+  background-color: rgb(196, 14, 14)
 }
 
-.n1900 {
-  background-color: fuchsia;
+.ne {
+  background-color: rgb(2, 138, 25);
+}
+
+.nmap {
+  background-color: rgb(118, 8, 128);
+}
+
+@media only screen and (max-width: 900px) {
+
+  #button-txt-id {
+    display: flex;
+    justify-content: center;
+  }
+
+  #sidebar-txt-id {
+    border-radius: 5%;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  button.accordion {
+    width: inherit;
+  }
+
+  #button-txt-id>button {
+    margin-right: 3vh;
+  }
+
+  .panel {
+    width: 100%;
+  }
+
+  #map {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .checkbox {
+    display: inline-block;
+    margin-right: 1vw;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -728,20 +823,18 @@ footer {
   .due #content-card {
     font-size: 0.6rem;
     margin-top: 10%;
-    margin-left: 15%;
     width: 80%;
   }
 
   .diagonal #content-card {
     font-size: 0.6rem;
-    margin-top: 5%;
     width: 80%;
     margin-left: 15%;
   }
 
   .element {
-    margin-right: 10%;
-    width: 30vw;
+    margin: 8vh 1vw 0vh 3vw;
+    width: 20vw;
     min-height: 20vh;
   }
 
@@ -752,16 +845,35 @@ footer {
 
   .name-card {
     font-size: 0.9em;
-    margin-right: 0%;
-    margin-left: 10%;
-    margin-bottom: 5%;
-    width: 70vw;
-    height: 26vh;
+    margin: 0% auto 5% auto;
+    width: 60vw;
+    height: 30vh;
   }
 
-  .name-card>img {
+  .name-card>.imgcontainer::after {
     width: 20%;
+    left: 40%;
+  }
 
+  .name-card>.imgcontainer img {
+    width: 20%;
+  }
+
+  .fc {
+    flex-direction: column;
+  }
+
+  figure {
+    float: none;
+    margin: 0 auto;
+  }
+
+  figure img {
+    width: 50vw;
+  }
+
+  figure figcaption {
+    max-width: 50vw;
   }
 }
 
@@ -787,8 +899,6 @@ footer {
   }
 
   .element {
-    margin-right: 10%;
-    width: 30vw;
     min-height: 20vh;
   }
 
@@ -796,14 +906,31 @@ footer {
     margin-right: 10px;
     width: 23vw;
     padding: 3%;
-    height: 33vh;
+    height: 40vh;
   }
 
-  .name-card>img {
-    width: 20%;
+  .name-card>.imgcontainer img {
+    width: 50%;
+  }
 
+  .fc {
+    flex-direction: column;
+  }
+
+  figure {
+    float: none;
+    margin: 0 auto;
+  }
+
+  figure img {
+    width: 50vw;
+  }
+
+  figure figcaption {
+    max-width: 50vw;
   }
 }
+
 
 @media only screen and (min-width: 601px) and (max-width: 1000px) {
   .logo-image {
@@ -820,61 +947,37 @@ footer {
   .diagonal #content-card {
     font-size: 0.6rem;
     margin-top: 9%;
-    width: 60%;
-    margin-left: 40%;
-
-  }
-
-  .element {
-    width: 25vw;
+    margin-left: 20%;
   }
 
   .name-card {
-    margin-right: 10px;
-    width: 23vw;
-    padding: 3%;
-    height: 33vh;
+    height: 41vh;
   }
 
-  .name-card>img {
-    width: 20%;
+  .name-card>.imgcontainer img {
+    width: 40%;
+  }
 
+  .name-card>.imgcontainer::after {
+    width: 40%;
+    left: 30%;
   }
 }
 
 @media only screen and (min-width: 1001px) and (max-width: 1200px) {
-  .logo-image {
-    clip-path: circle(30%);
-  }
 
   .due #content-card {
-    font-size: 0.9rem;
     margin-top: 9%;
-    margin-left: 15%;
-    margin-right: 30%;
     width: 50%;
 
   }
 
   .diagonal #content-card {
-    font-size: 0.9rem;
     margin-top: 9%;
-    display: flex;
-    margin-left: 40%;
-
-  }
-
-  .element {
-    margin-right: 10%;
-    width: 18vw;
-    min-height: 20vh;
   }
 
   .name-card {
-    margin-right: 10px;
-    width: 23vw;
-    padding: 3%;
-    height: 35vh;
+    height: 43vh;
   }
 }
 
@@ -886,22 +989,13 @@ footer {
   .due #content-card {
     font-size: 1em;
     margin-top: 9%;
-    margin-left: 15%;
     margin-right: 30%;
     width: 50%;
-
   }
 
   .diagonal #content-card {
     font-size: 1rem;
     margin-top: 9%;
-    margin-left: 40%;
-
-  }
-
-  .name-card {
-    width: 23vw;
-    height: 50vh;
   }
 }
 
