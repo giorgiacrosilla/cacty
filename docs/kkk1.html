@@ -24,7 +24,7 @@
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZ2lvY3Jvc2kiLCJhIjoiY2xuNXQ1ZGV5MGQybjJqcDZ6YWFzMnByZCJ9.TWuwEi8RI7prLyZOAnx6ng';
     </script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body id="body-txt-id">
@@ -84,15 +84,15 @@
                 </p>
             </div>
             <button class="accordion" id="dates">Dates</button>
-            <div class="panel" id="panel1">
-                <form role="form">
+            <div class="panel">
+                <form role="form" id="dates">
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showasides" class="show">1700</label></div>
+                            <input type="checkbox" id="show1700" class="show">1700</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showspeeches" class="show">1800</label>
+                            <input type="checkbox" id="show1800" class="show">1800</label>
                     </div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showquotes" class="show">1900</label></div>
+                            <input type="checkbox" id="show1900" class="show">1900</label></div>
                 </form>
             </div>
             <button class="accordion" id="places">Places</button>
@@ -101,38 +101,38 @@
             </div>
             <button class="accordion" id="people">People</button>
             <div class="panel">
-                <form role="form">
+                <form role="form" id="people">
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showpeople" class="show">Forrest</label></div>
+                            <input type="checkbox" id="showf" class="show">Forrest</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showp" class="show">Brownlow</label></div>
+                            <input type="checkbox" id="showb" class="show">Brownlow</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showp" class="show">Kennedy</label></div>
+                            <input type="checkbox" id="showk" class="show">Kennedy</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showp" class="show">Lee</label></div>
+                            <input type="checkbox" id="showl" class="show">Lee</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showp" class="show">Johnson</label></div>
+                            <input type="checkbox" id="showj" class="show">Johnson</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showp" class="show">Wilson</label></div>
+                            <input type="checkbox" id="showw" class="show">Wilson</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showp" class="show">Simmons</label></div>
+                            <input type="checkbox" id="shows" class="show">Simmons</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showp" class="show">Reed</label></div>
+                            <input type="checkbox" id="showr" class="show">Reed</label></div>
                 </form>
             </div>
             <button class="accordion" id="events">Events</button>
             <div class="panel">
                 <form role="form">
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showevent" class="show">Reconstruction</label></div>
+                            <input type="checkbox" id="showe1" class="show">Reconstruction</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showe" class="show">World War 1</label></div>
+                            <input type="checkbox" id="showe2" class="show">World War 1</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showe" class="show">Civil War</label></div>
+                            <input type="checkbox" id="showe3" class="show">Civil War</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showe" class="show">Shiloh</label></div>
+                            <input type="checkbox" id="showe4" class="show">Shiloh</label></div>
                     <div class="checkbox"><label>
-                            <input type="checkbox" id="showe" class="show">Immigration</label></div>
+                            <input type="checkbox" id="showe5" class="show">Immigration</label></div>
                 </form>
             </div>
         </div>
@@ -833,7 +833,7 @@
             </figure> The
             master told him, <q>there are Ku Klux here; are you afraid they will get among you?</q> the black
             said,
-            <q>>what
+            <q>what
                 sort of
                 men are they?</q> the reply: <q>they are men who rise from the dead.</q> according to the
             Congressional

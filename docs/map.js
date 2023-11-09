@@ -19,9 +19,9 @@ $(document).ready(function () {
                 $('#metadata-txt-id').removeClass('metarticle-inv-txt').addClass('metarticle-vis-txt');
                 $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
                 loadMap();
-                sections90s();
-
-
+                if (isCssLoaded('90s.css')) {
+                    sections90s();
+                }
             },
             error: function (error) {
                 console.log('Error loading file: ' + error.statusText);
@@ -54,7 +54,9 @@ $(document).ready(function () {
                 $('#article-txt-id').removeClass('metarticle-vis-txt').addClass('metarticle-inv-txt');
                 $('body').removeAttr('id').attr('id', 'body-txt-id');
                 loadMap();
-                sections90s();
+                if (isCssLoaded('90s.css')) {
+                    sections90s();
+                }
 
             },
             error: function (error) {
@@ -82,11 +84,12 @@ $(document).ready(function () {
                 newDoc.documentElement.innerHTML = data;
                 // Replace the <body> content
                 $('body').html(newDoc.body.innerHTML);
+
                 $('body').removeAttr('id').attr('id', 'body-main-id');
-                sections90s();
-                if (isCssLoaded('90s.css') === true) {
+                if (isCssLoaded('90s.css')) {
                     $("#content-card > div").addClass("card");
                     $("#content-card >div").prepend('<div class="star"></div>');
+                    sections90s();
                 }
             },
             error: function (error) {
@@ -212,9 +215,6 @@ function sections90s() {
             for (var i = 0; i < paragraphs.length; i++) {
                 if (paragraphs[i].parentNode.className !== 'footnotes') {
                     if (i % 4 === 0) {
-                        paragraphs[i].classList.add('ghost');
-                    }
-                     else if (i % 5 === 2) {
                         paragraphs[i].classList.add('frontier');
                     }
                 }
@@ -600,75 +600,89 @@ document.addEventListener("DOMContentLoaded", function () {
     loadMap();
 });
 
+function adjustGridStructure() {
+    var body = document.getElementById('body-txt-id');
+    var metarticleList = document.querySelectorAll('.metarticle-vis-txt');
+
+    if (window.innerWidth < 900) {
+        body.style.gridTemplateColumns = "1fr";
+        body.style.gridTemplateRows = "0.1fr 0.1fr 1fr 0.1fr";
+        body.style.gridTemplateAreas = "'nav' 'button' 'main' 'footer'";
+        metarticleList.forEach(function (metarticle) {
+            if (metarticle) {
+                body.style.gridTemplateColumns = "1fr";
+                body.style.gridTemplateRows = "0.1fr 0.05fr 0.6fr 1fr 0.1fr";
+                body.style.gridTemplateAreas = "'nav' 'button' 'sidebar' 'main' 'footer'";
+            } 
+        });
+    } else {
+        body.style.gridTemplateColumns = "0.4fr 1fr";
+        body.style.gridTemplateRows = "0.1fr 1fr 0.1fr";
+        body.style.gridTemplateAreas = "'nav nav' 'button main' 'footer footer'";
+        metarticleList.forEach(function (metarticle) {
+            if (metarticle) {
+                body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+                body.style.gridTemplateColumns = "0.4fr 0.1fr 1fr";
+                body.style.gridTemplateRows = "0.1fr 1fr 0.1fr";
+
+            } 
+        });
+    }
+}
+
+// Add a resize event listener to call the adjustGridStructure function when the window size changes
+window.addEventListener('resize', adjustGridStructure);
+
+
+
 
 function toggleClass(firstId, secondId) {
     var firstEl = document.getElementById(firstId);
     var secondEl = document.getElementById(secondId);
     var body = document.getElementById('body-txt-id');
-
-    if (window.innerWidth < 900) {
+    if (window.innerWidth > 900) {
         if (firstEl.classList.contains("metarticle-vis-txt")) {
             firstEl.classList.remove("metarticle-vis-txt");
             firstEl.classList.add("metarticle-inv-txt");
-
-            body.style.gridTemplateAreas = '"nav" "button" "main" "footer"';
-            body.style.gridTemplateColumns = "1fr";
-            body.style.gridTemplateRows = "0.1fr 0.1fr 1fr 0.1fr";
-        } else {
-            if (firstEl.classList.contains("metarticle-inv-txt")) {
-                firstEl.classList.remove("metarticle-inv-txt");
-            }
-            firstEl.classList.add("metarticle-vis-txt");
-            body.style.gridTemplateAreas = '"nav" "button" "sidebar" "main" "footer"';
-            body.style.gridTemplateColumns = "1fr";
-            body.style.gridTemplateRows = "0.1fr 0.1fr 1fr 1fr 0.1fr";
-            if (secondEl.classList.contains("metarticle-vis-txt")) {
-                secondEl.classList.remove("metarticle-vis-txt");
-                secondEl.classList.add("metarticle-inv-txt");
-            }
-        }
-    } else {
-        if (firstEl.classList.contains("metarticle-vis-txt")) {
-            firstEl.classList.remove("metarticle-vis-txt");
-            firstEl.classList.add("metarticle-inv-txt");
-
             body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
             body.style.gridTemplateColumns = "0.08fr 1fr";
-            body.style.gridTemplateRows = '0.1fr 1fr 0.1fr';
         } else {
             if (firstEl.classList.contains("metarticle-inv-txt")) {
-                firstEl.classList.remove("metarticle-inv-txt");
-            }
-            firstEl.classList.add("metarticle-vis-txt");
-            body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
-            body.style.gridTemplateColumns = "0.4fr 0.1fr 1fr";
-            if (secondEl.classList.contains("metarticle-vis-txt")) {
-                secondEl.classList.remove("metarticle-vis-txt");
-                secondEl.classList.add("metarticle-inv-txt");
-            }
-        }
-    }
-}
-document.addEventListener('DOMContentLoaded', function () {
-    function adjustGridStructure() {
-        var body = document.getElementById('body-txt-id');
-        if (body) {
-            if (window.innerWidth <= 900) {
-                body.style.gridTemplateAreas = '"nav" "button" "main" "footer"';
-                body.style.gridTemplateRows = '0.1fr 0.1fr 1fr 0.1fr';
-                body.style.gridTemplateColumns = '1fr';
-            } else {
-                body.style.gridTemplateAreas = '';
-                body.style.gridTemplateRows = '';
-                body.style.gridTemplateColumns = '';
+                firstEl.classList.remove("metarticle-inv-txt")
+                firstEl.classList.add("metarticle-vis-txt");
+                body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
+                body.style.gridTemplateColumns = "0.4fr 0.1fr 1fr";
+                if (secondEl.classList.contains("metarticle-vis-txt")) {
+                    secondEl.classList.remove("metarticle-vis-txt");
+                    secondEl.classList.add("metarticle-inv-txt")
+                }
             }
         }
     }
 
-    adjustGridStructure();
-    window.addEventListener('resize', adjustGridStructure);
-});
-
+    else {
+        if (firstEl.classList.contains("metarticle-vis-txt")) {
+            firstEl.classList.remove("metarticle-vis-txt");
+            firstEl.classList.add("metarticle-inv-txt");
+            body.style.gridTemplateAreas = '"nav" " button" "main" "footer"';
+            body.style.gridTemplateColumns = "1fr";
+            body.style.gridTemplateRows = "0.1fr 0.2fr 1fr 0.1fr";
+        }
+        else {
+            if (firstEl.classList.contains("metarticle-inv-txt")) {
+                firstEl.classList.remove("metarticle-inv-txt")
+                firstEl.classList.add("metarticle-vis-txt");
+                body.style.gridTemplateAreas = '"nav" "button" "sidebar" "main" "footer"';
+                body.style.gridTemplateColumns = "1fr";
+                body.style.gridTemplateRows = "0.1fr 0.05fr 0.6fr 1fr 0.1fr";
+                if (secondEl.classList.contains("metarticle-vis-txt")) {
+                    secondEl.classList.remove("metarticle-vis-txt");
+                    secondEl.classList.add("metarticle-inv-txt")
+                }
+            }
+        }
+    }
+};
 
 function initializeAccordion() {
     var accordions = document.getElementsByClassName("accordion");
@@ -689,39 +703,214 @@ initializeAccordion();
 
 function main() {
     // Checkbox interactions
-    $('#showasides').click(function () {
+    $('#show1700').click(function () {
         if (this.checked)
-            $('.1700').addClass('n1700');
+            $('.1700').addClass('n');
         else
-            $('.1700').removeClass('n1700');
+            $('.1700').removeClass('n');
     });
 
-    $('#showspeeches').click(function () {
+    $('#show1800').click(function () {
         if (this.checked)
-            $('.1800').addClass('n1800');
+            $('.1800').addClass('n');
         else
-            $('.1800').removeClass('n1800');
+            $('.1800').removeClass('n');
     });
 
-    $('#showquotes').click(function () {
+    $('#show1900').click(function () {
         if (this.checked)
-            $('.1900').addClass('n1900');
+            $('.1900').addClass('n');
         else
-            $('.1900').removeClass('n1900');
+            $('.1900').removeClass('n');
     });
-    $('#showpeople').click(function () {
+    $('#showf').click(function () {
         if (this.checked)
-            $('.forrest').addClass('nforrest');
+            $('.forrest').addClass('nb');
         else
-            $('.forrest').removeClass('nforrest');
+            $('.forrest').removeClass('nb');
     });
-    $('#showp').click(function () {
+    $('#showb').click(function () {
         if (this.checked)
             $('.brownlow').addClass('nb');
         else
             $('.brownlow').removeClass('nb');
     });
+    $('#showk').click(function () {
+        if (this.checked)
+            $('.kennedy').addClass('nb');
+        else
+            $('.kennedy').removeClass('nb');
+    });
+    $('#showl').click(function () {
+        if (this.checked)
+            $('.lee').addClass('nb');
+        else
+            $('.lee').removeClass('nb');
+    });
+    $('#showj').click(function () {
+        if (this.checked)
+            $('.johnson').addClass('nb');
+        else
+            $('.johnson').removeClass('nb');
+    });
+    $('#showw').click(function () {
+        if (this.checked)
+            $('.wilson').addClass('nb');
+        else
+            $('.wilson').removeClass('nb');
+    });
+    $('#shows').click(function () {
+        if (this.checked)
+            $('.simmons').addClass('nb');
+        else
+            $('.simmons').removeClass('nb');
+    });
+    $('#showr').click(function () {
+        if (this.checked)
+            $('.reed').addClass('nb');
+        else
+            $('.reed').removeClass('nb');
+    });
+    $('#showh').click(function () {
+        if (this.checked)
+            $('.hayes').addClass('nb');
+        else
+            $('.hayes').removeClass('nb');
+    });
+    $('#showa').click(function () {
+        if (this.checked)
+            $('.adams').addClass('nb');
+        else
+            $('.adams').removeClass('nb');
+    });
+    $('#showe').click(function () {
+        if (this.checked)
+            $('.eliot').addClass('nb');
+        else
+            $('.eliot').removeClass('nb');
+    });
+    $('#showadd').click(function () {
+        if (this.checked)
+            $('.addams').addClass('nb');
+        else
+            $('.addams').removeClass('nb');
+    });
+    $('#showc').click(function () {
+        if (this.checked)
+            $('.clarke').addClass('nb');
+        else
+            $('.clarke').removeClass('nb');
+    });
+    $('#showt').click(function () {
+        if (this.checked)
+            $('.tyler').addClass('nb');
+        else
+            $('.tyler').removeClass('nb');
+    });
+    $('#showsm').click(function () {
+        if (this.checked)
+            $('.smith').addClass('nb');
+        else
+            $('.smith').removeClass('nb');
+    });
+    $('#showst').click(function () {
+        if (this.checked)
+            $('.stephenson').addClass('nb');
+        else
+            $('.stephenson').removeClass('nb');
+    });
+    $('#showco').click(function () {
+        if (this.checked)
+            $('.colescott').addClass('nb');
+        else
+            $('.colescott').removeClass('nb');
+    });
+    $('#showev').click(function () {
+        if (this.checked)
+            $('.evans').addClass('nb');
+        else
+            $('.evans').removeClass('nb');
+    });
+    $('#showgr').click(function () {
+        if (this.checked)
+            $('.green').addClass('nb');
+        else
+            $('.green').removeClass('nb');
+    });
+    $('#showed').click(function () {
+        if (this.checked)
+            $('.edwards').addClass('nb');
+        else
+            $('.edwards').removeClass('nb');
+    });
+    $('#showjo').click(function () {
+        if (this.checked)
+            $('.jones').addClass('nb');
+        else
+            $('.jones').removeClass('nb');
+    });
+    $('#showli').click(function () {
+        if (this.checked)
+            $('.liuzzo').addClass('nb');
+        else
+            $('.liuzzo').removeClass('nb');
+    });
+    $('#showev').click(function () {
+        if (this.checked)
+            $('.evers').addClass('nb');
+        else
+            $('.evers').removeClass('nb');
+    });
+    $('#showwa').click(function () {
+        if (this.checked)
+            $('.washington').addClass('nb');
+        else
+            $('.washington').removeClass('nb');
+    });
+    $('#showe1').click(function () {
+        if (this.checked)
+            $('.reconstruction').addClass('ne');
+        else
+            $('.reconstruction').removeClass('ne');
+    });
+    $('#showe2').click(function () {
+        if (this.checked)
+            $('.ww1').addClass('ne');
+        else
+            $('.ww1').removeClass('ne');
+    });
+    $('#showe3').click(function () {
+        if (this.checked)
+            $('.civilwar').addClass('ne');
+        else
+            $('.civilwar').removeClass('ne');
+    });
+    $('#showe4').click(function () {
+        if (this.checked)
+            $('.shiloh').addClass('ne');
+        else
+            $('.shiloh').removeClass('ne');
+    });
+    $('#showe5').click(function () {
+        if (this.checked)
+            $('.immigration').addClass('ne');
+        else
+            $('.immigration').removeClass('ne');
+    });
+    $('#showe6').click(function () {
+        if (this.checked)
+            $('.armistice').addClass('ne');
+        else
+            $('.armistice').removeClass('ne');
+    });
+    $('#showe7').click(function () {
+        if (this.checked)
+            $('.wallstreet').addClass('ne');
+        else
+            $('.wallstreet').removeClass('ne');
+    });
+    
+
+    
 }
 $(document).ready(main);
-
-
