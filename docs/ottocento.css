@@ -681,7 +681,7 @@ footer{
         margin: 0;
         box-shadow: -1px 0 15px transparent, 1px 3px 15px transparent, inset 5px 5px 10px transparent, inset -5px -5px 10px transparent;
     text-align: center;
-	background-color:transparent;
+	background-color: transparent;
 }
 #main-footer p{
     max-width: 80vw;
