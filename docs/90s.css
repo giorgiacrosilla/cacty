@@ -396,15 +396,36 @@ section.uno+section {
     width: 100%;
     height: 115vh;
     display: grid;
+    font-family: coolvetica;
+    font-size: 1.5vw;
+    background-color: #f4f4fdff;
+}
+
+.grid-s-normal {
+    grid-template-areas: 'nav' 'button' 'main' 'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.2fr 1fr 0.1fr;
+  }
+  
+
+.grid-normal {
     grid-template-columns: 0.09fr 1fr;
     grid-template-rows: 0.01fr 1.5fr 0.01fr;
     grid-template-areas:
         "nav nav"
         "button main"
         "footer footer";
-    font-family: coolvetica;
-    font-size: 1.5vw;
-    background-color: #f4f4fdff;
+}
+.grid-small {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.05fr 0.6fr 1fr 0.1fr;
+    grid-template-areas: 'nav' 'button' 'sidebar' 'main' 'footer';
+}
+
+.grid-large {
+    grid-template-columns: 0.4fr 0.1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 0.1fr;
+    grid-template-areas: 'nav nav nav' 'sidebar button main' 'footer footer footer';
 }
 
 #body-main-id {

@@ -389,33 +389,35 @@ document.addEventListener("DOMContentLoaded", function () {
 function adjustGridStructure() {
     var body = document.getElementById('body-txt-id');
     var metarticleList = document.querySelectorAll('.metarticle-vis-txt');
-    if (body) {
-        if (window.innerWidth < 900) {
-            body.style.gridTemplateColumns = "1fr";
-            body.style.gridTemplateRows = "0.1fr 0.1fr 1fr 0.1fr";
-            body.style.gridTemplateAreas = "'nav' 'button' 'main' 'footer'";
-            metarticleList.forEach(function (metarticle) {
-                if (metarticle) {
-                    body.style.gridTemplateColumns = "1fr";
-                    body.style.gridTemplateRows = "0.1fr 0.05fr 0.6fr 1fr 0.1fr";
-                    body.style.gridTemplateAreas = "'nav' 'button' 'sidebar' 'main' 'footer'";
-                }
-            });
-        } else {
-            body.style.gridTemplateColumns = "0.2fr 1fr";
-            body.style.gridTemplateRows = "0.1fr 1fr 0.1fr";
-            body.style.gridTemplateAreas = "'nav nav' 'button main' 'footer footer'";
-            metarticleList.forEach(function (metarticle) {
-                if (metarticle) {
-                    body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
-                    body.style.gridTemplateColumns = "0.4fr 0.1fr 1fr";
-                    body.style.gridTemplateRows = "0.1fr 1fr 0.1fr";
 
+    if (body) {
+        // Check window width and add/remove classes accordingly
+        if (window.innerWidth < 900) {
+            body.classList.remove('grid-normal');
+            body.classList.add('grid-s-normal');
+        } else {
+            body.classList.add('grid-normal');
+            body.classList.remove('grid-s-normal');
+        }
+
+        if (metarticleList) {
+            metarticleList.forEach(function (metarticle) {
+                if (metarticle) {
+                    if (window.innerWidth < 900) {
+                        body.classList.remove('grid-large');
+                        body.classList.add('grid-small');
+                    } else {
+                        body.classList.remove('grid-small');
+                        body.classList.add('grid-large');
+                    }
                 }
             });
         }
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+    adjustGridStructure();
+});
 
 window.addEventListener('resize', adjustGridStructure);
 
@@ -427,14 +429,14 @@ function toggleClass(firstId, secondId) {
         if (firstEl.classList.contains("metarticle-vis-txt")) {
             firstEl.classList.remove("metarticle-vis-txt");
             firstEl.classList.add("metarticle-inv-txt");
-            body.style.gridTemplateAreas = '" nav nav" " button main" " footer footer"';
-            body.style.gridTemplateColumns = "0.08fr 1fr";
+            body.classList.remove('grid-large');
+            body.classList.add('grid-normal');
         } else {
             if (firstEl.classList.contains("metarticle-inv-txt")) {
                 firstEl.classList.remove("metarticle-inv-txt")
                 firstEl.classList.add("metarticle-vis-txt");
-                body.style.gridTemplateAreas = '"nav nav nav" "sidebar button main" "footer footer footer"';
-                body.style.gridTemplateColumns = "0.4fr 0.1fr 1fr";
+                body.classList.add('grid-large');
+                body.classList.remove('grid-normal');
                 if (secondEl.classList.contains("metarticle-vis-txt")) {
                     secondEl.classList.remove("metarticle-vis-txt");
                     secondEl.classList.add("metarticle-inv-txt")
@@ -447,17 +449,15 @@ function toggleClass(firstId, secondId) {
         if (firstEl.classList.contains("metarticle-vis-txt")) {
             firstEl.classList.remove("metarticle-vis-txt");
             firstEl.classList.add("metarticle-inv-txt");
-            body.style.gridTemplateAreas = '"nav" " button" "main" "footer"';
-            body.style.gridTemplateColumns = "1fr";
-            body.style.gridTemplateRows = "0.1fr 0.2fr 1fr 0.1fr";
+            body.classList.remove('grid-small');
+            body.classList.add('grid-s-normal');
         }
         else {
             if (firstEl.classList.contains("metarticle-inv-txt")) {
                 firstEl.classList.remove("metarticle-inv-txt")
                 firstEl.classList.add("metarticle-vis-txt");
-                body.style.gridTemplateAreas = '"nav" "button" "sidebar" "main" "footer"';
-                body.style.gridTemplateColumns = "1fr";
-                body.style.gridTemplateRows = "0.1fr 0.05fr 0.6fr 1fr 0.1fr";
+                body.classList.add('grid-small');
+                body.classList.remove('grid-s-normal');
                 if (secondEl.classList.contains("metarticle-vis-txt")) {
                     secondEl.classList.remove("metarticle-vis-txt");
                     secondEl.classList.add("metarticle-inv-txt")
@@ -497,7 +497,7 @@ function main() {
     $('#show1800').click(function () {
         if (this.checked) {
             $('.1800').addClass('n');
-            
+
         }
         else
             $('.1800').removeClass('n');
