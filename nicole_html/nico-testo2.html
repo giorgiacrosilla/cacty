@@ -22,127 +22,160 @@
 </head>
 
 <body id="body-txt-id">
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="decoration-sx">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+		<div class="decoration-sx">
             <p class="p-dec">Decorazione</p>
         </div>
-        <div class="title">
-            <div class="circle"></div>
-            <a class="navbar-brand" href="mainpage.html">   
-                <h1 class="stroke-double" title="secretmag">secretmag         </h1>
+        <div class="title" id="titlemainp">
+            <div class="inner-box">
+                <div class="circle"></div>
+            </div>
+            <a class="navbar-brand" href="#" data-file="index.html">
+                <h1 class="stroke-double" title="secretmag">secretmag
+                </h1>
             </a>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>                            
+        </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <a class="nav-link" href="#" data-file="documentation.html">Documentation</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        Dropdown
+                        Themes
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Theme 1</a></li>
-                        <li><a class="dropdown-item" href="#">Theme 2</a></li>
-                        <li><a class="dropdown-item" href="#">Theme 2</a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('Aldine.css')">Aldine</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('ottocento.css')">1860</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('De_Stijl.css')">De Stijl</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('anniSettanta.css')">70s</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('90s.css')">90s</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('future.css')">Dystopian future</button></a></li>
                     </ul>
                 </li>
             </ul>
         </div>
-        <div class="decoration-dx">
+		<div class="decoration-dx">
             <p class="p-dec">Decorazione</p>
         </div>
     </nav>
-            <div class= "sidecont-txt metarticle-inv-txt" id="metadata-txt-id">
-                <button class="accordion menu__link" id="dates">Dates
-                </button>
-                <div class="panel">
-                    <form role="form">
-                        <div class="checkbox"><label>
-                                <input type="checkbox" id="showasides" class="show">1700</label></div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" id="showspeeches" class="show">1800</label>
-                        </div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" id="showquotes" class="show">1900</label></div>
-                    </form>
-                </div>
-                <button class="accordion menu__link" id="places">Places
-                    
-                </button>
-                <div class="panel">
-                    <div id="map"></div>
-                </div>
-                <button class="accordion menu__link" id="people">People
-                    
-                </button>
-                <div class="panel">
-                    <form role="form">
-                        <div class="checkbox"><label>
-                                <input type="checkbox" id="showpeople" class="show">Forrest</label></div>
-                        <div class="checkbox"><label>
-                                <input type="checkbox" id="showp" class="show">Brownlow</label></div>
-                    </form>
-                </div>
-                <button class="accordion menu__link" id="events">Events
-                   
-                </button>
-                <div class="panel">
-                </div>
-
+    <div id="sidebar-txt-id">
+        <div class="sidecont-txt metarticle-inv-txt" id="metadata-txt-id">
+            <button class="accordion" id="data">Data</button>
+            <div class="panel">
+                <p>Creator: John Wilson</p>
+                <p>Title: Voluntary Associations and Civil Religion: The Case of Freemasonry</p>
+                <p>Journal:Review of Religious Research</p>
+                <p>Date: Dec., 1980</p>
+                <p>Pages: Vol. 22, No. 2 (Dec., 1980), pp. 125-136</p>
+                <p>Source: <a
+                        href="https://www.jstor.org/stable/3510655">https://www.jstor.org/stable/3510655</a>
+                </p>
             </div>
-            <div class= "sidecont-txt metarticle-inv-txt" id="article-txt-id" >
-                
-                <button class="accordion btn" id="dates">Issue 1: KKK
-                </button>
-                <div class="panel">
-                    <ul>
-                        <li><a href="kkk1.html">The Terror is Born</a></li>
-                        <li><a href="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
-                        <li><a href="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the 1920s</a></li>
-                    </ul>
-                </div>
-                <button class="accordion btn" id="places">Issue 2: Freemasonry
-                    
-                </button>
-                <div class="panel">
-                    <ul>
-                        <li><a href="kkk1.html">Freemason and the American Revolution</a></li>
-                        <li><a href="kkk2.html">Voluntary Associations and Civil Religion: The Case of Freemasonry</a></li>
-                        <li><a href="kkk3.html">Freemasonry and Sir John Soane</a></li>
-                    </ul>
-                </div>
-                <button class="accordion btn" id="people">Issue 3: Skull and Bones
-                </button>
-                <div class="panel">
-
-                </div>
+            <button class="accordion" id="dates">Dates</button>
+            <div class="panel" id="panel1">
+                <form role="form">
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showasides" class="show">1700</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showspeeches" class="show">1800</label>
+                    </div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showquotes" class="show">1900</label></div>
+                </form>
             </div>
-        <div id="button-txt-id">
-            <button class="openbtn menu__link" onclick="openDiv('metadata-txt-id', 'article-txt-id'), buttonClick()" id="button-meta">     
-                    Metadata
-                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve"  id="pencil-circle-id">
-                      <path d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4"/>
-                    </svg>
-                    
-                  </button><br>
-                  <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
-                    <defs>
-                        <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6" fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
-                    </defs>
-                    </svg>
-            <button class="openbtn btn" onclick="openDiv('article-txt-id', 'metadata-txt-id'), buttonClick()" id="button-art">Articles  
-                <svg class="button-stroke" viewBox="0 0 154 13">
-                <use href="#line" id="underline"></use>
-                </svg>
-            </button>
+            <button class="accordion" id="places">Places</button>
+            <div class="panel">
+                <div id="map"></div>
+            </div>
+            <button class="accordion" id="people">People</button>
+            <div class="panel">
+                <form role="form">
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showpeople" class="show">Forrest</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Brownlow</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Kennedy</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Lee</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Johnson</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Wilson</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Simmons</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showp" class="show">Reed</label></div>
+                </form>
+            </div>
         </div>
+        <div class="sidecont-txt metarticle-inv-txt" id="article-txt-id">
+            <button class="accordion" id="dates">Issue 1: KKK</button>
+            <div class="panel">
+                <ul>
+                    <li><a href="#" data-file="kkk1.html">The Terror is Born</a></li>
+                    <li><a href="#" data-file="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
+                    <li><a href="#" data-file="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the
+                            1920s</a></li>
+                </ul>
+            </div>
+            <button class="accordion" id="places">Issue 2: Freemasonry</button>
+            <div class="panel">
+                <ul>
+                    <li><a href="#" data-file="nico-testo1.html">Freemason and the American Revolution</a></li>
+                    <li><a href="#" data-file="nico-testo2.html">Voluntary Associations and Civil Religion: The Case of Freemasonry</a></li>
+                    <li><a href="#" data-file="nico-testo3.html">Freemasonry and Sir John Soane</a></li>
+                </ul>
+            </div>
+            <button class="accordion" id="people">Issue 3: Skull and Bones</button>
+            <div class="panel">
+                <ul>
+                    <li><a href=".html">Skull and
+                            Bones, the Ivy League, and
+                            the Hidden Paths of Power</a></li>
+                    <li><a href=".html"></a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="button-txt-id">
+        <button class="openbtn menu__link" onclick="toggleClass('metadata-txt-id', 'article-txt-id'), buttonClick()"
+            id="button-meta"> <!--cambiare con js-->
+            Metadata
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve"
+                id="pencil-circle-id">
+                <path
+                    d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4" />
+            </svg>
+
+        </button><br>
+        <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+            <defs>
+                <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6"
+                    fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+            </defs>
+        </svg>
+        <button class="openbtn btn" onclick="toggleClass('article-txt-id', 'metadata-txt-id'), buttonClick()"
+            id="button-art">Articles
+            <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line" id="underline"></use>
+            </svg>
+        </button>
+    </div>
         <main id="main-txt-id">
             <div id="introduction-txt-id">
                 <h1>VOLUNTARY ASSOCIATIONS AND CIVIL RELIGION: THE CASE OF FREEMASONRY</h1>
@@ -586,11 +619,15 @@
             </div>
     </div>
     </main>
-    <footer class="navbar navbar-expand-lg navbar-custom">
+    <footer>
         <div class="decoration-sx">
             <p class="p-dec">Decorazione</p>
         </div>
-        
+            <p>All copyrights and related rights on the content remain with their original owners.<br>
+    
+                All copyright on the typographic and layout choices are 2023 © Giorgia Crosilla, Salvatore Di Marzo
+                and
+                Nicole Liggeri.</p>
         <div class="decoration-dx">
             <p class="p-dec">Decorazione</p>
         </div>
