@@ -193,7 +193,7 @@ function stylechanger(newCSSFileName) {
         $('.due:eq(1)').before('<div class="separator right"></div>');
         $('#main-footer').before('<div class="separator right"></div>');
         $('.uno').append('<div class="separator t"></div>');
-        $('.container img').unwrap();
+        $('.imgcontainer img').unwrap();
         sections90s();
 
     }

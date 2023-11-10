@@ -815,7 +815,6 @@ footer {
     box-shadow: 5px 5px #e93f82;
     word-wrap: break-word;
     padding: 1.5%;
-    height: fit-content;
 }
 
 .name-card:hover {
@@ -1016,6 +1015,8 @@ footer {
 
     .name-card>img {
         width: 20%;
+        margin: 6% auto;
+        float: left;
     }
 
     .modal-body {
@@ -1088,11 +1089,12 @@ footer {
     }
 
     #main-footer {
-        height: 80vh;
+        height: 100vh;
     }
 
     .name-card {
-        height: 35vh;
+        width:22vw;
+        height: 42vh;
     }
 }
 
@@ -1129,7 +1131,7 @@ footer {
     }
 
     #main-footer {
-        height: 90vh;
+        height: 80vh;
     }
 
     .footnotes {

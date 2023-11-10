@@ -904,9 +904,9 @@ footer {
 
   .name-card {
     margin-right: 10px;
-    width: 23vw;
+    width: 24vw;
     padding: 3%;
-    height: 40vh;
+    height: 43vh;
   }
 
   .name-card>.imgcontainer img {
@@ -951,7 +951,7 @@ footer {
   }
 
   .name-card {
-    height: 41vh;
+    height: 43vh;
   }
 
   .name-card>.imgcontainer img {
