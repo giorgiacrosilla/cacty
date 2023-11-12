@@ -274,7 +274,6 @@ main h2 {
 
 #body-main-id {
   font-family: rodchenkol;
-  font-size: 1.2rem;
   background: radial-gradient(circle at 100%, #070707, rgb(52, 22, 22) 50%, #690000 75%, #070707 75%);
   color: #EEEEEE;
 }
@@ -884,6 +883,7 @@ footer {
 
 .container-doc .name-card>.imgcontainer::after {
   width: 80%;
+  margin-left:-15%;
 }
 @media only screen and (max-width: 900px) {
   #button-txt-id {
@@ -952,8 +952,8 @@ footer {
   .name-card {
     font-size: 0.9em;
     margin: 0% auto 5% auto;
-    width: 60vw;
-    height: 30vh;
+    width: 50vw;
+    height: 40vh;
   }
 
   .name-card>.imgcontainer::after {
@@ -1010,9 +1010,9 @@ footer {
 
   .name-card {
     margin-right: 10px;
-    width: 24vw;
+    width: 26vw;
     padding: 3%;
-    height: 43vh;
+    height: 55vh;
   }
 
   .name-card>.imgcontainer img {
@@ -1057,7 +1057,7 @@ footer {
   }
 
   .name-card {
-    height: 43vh;
+    height: 55vh;
   }
 
   .name-card>.imgcontainer img {

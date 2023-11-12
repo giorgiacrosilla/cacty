@@ -948,6 +948,7 @@ footer {
 }
 
 #main-d {
+    z-index: 0;
     padding-left: 0;
     padding-right: 0;
     font-size: 1rem;
@@ -987,10 +988,18 @@ footer {
 
 
 @media only screen and (max-width: 900px) {
+    #body-main-id, #body-d-id, .btn-primary {
+        font-size: 0.6rem !important;
+    } 
+
+    .wrapper h2 {
+        font-size: 1.1rem;
+    }
     #button-txt-id {
         display: flex;
         justify-content: center;
     }
+
 
     #sidebar-txt-id {
         margin: 0 auto;
@@ -1055,11 +1064,6 @@ footer {
         font-size: 1.2em;
         margin-top: 10%;
     }
-
-    a.nav-link {
-        font-size: 3em;
-    }
-
     .text {
         column-count: 1;
     }
@@ -1106,13 +1110,9 @@ footer {
         width: 80%;
     }
 
-    .fa {
-        font-size: 2em !important;
-    }
-
     .name-card>img {
         width: 20%;
-        margin: 6% auto;
+        margin: auto;
         float: left;
     }
 
@@ -1190,16 +1190,12 @@ footer {
         height: 50%;
     }
 
-    .element span {
-        font-size: 0.7em !important;
-    }
-
     .wrapper1>h1 {
         font-size: 2rem;
     }
 
-    .wrapper p {
-        font-size: 2em;
+    .wrapper p .navlink{
+        font-size: 1.4em;
     }
 
     #main-footer {
@@ -1247,10 +1243,6 @@ footer {
         width: 25%;
         height: 40%;
 
-    }
-
-    #main-footer {
-        height: 80vh;
     }
 
     .footnotes {
