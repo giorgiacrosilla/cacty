@@ -35,7 +35,7 @@ $(document).ready(function () {
                     $("#content-card >div").prepend('<div class="star"></div>');
                     $('.diagonal').before('<div class="separator left"></div>');
                     $('.due:eq(1)').before('<div class="separator right"></div>');
-                    $('#main-footer').before('<div class="separator right"></div>');
+                    $('#txt-main-id').append('<div class="separator right"></div>');
                     $('.uno').append('<div class="separator t"></div>');
                     sections90s();
                 }
@@ -50,6 +50,7 @@ $(document).ready(function () {
         });
     }
 });
+
 $(document).ready(function () {
     // On click of a link in the list
     $('#content-card a').click(function (e) {
@@ -78,12 +79,6 @@ $(document).ready(function () {
                 loadMap();
                 var is90sLoaded = isCssLoaded('90s.css');
                 if (is90sLoaded) {
-                    $("#content-card > div").addClass("card");
-                    $("#content-card >div").prepend('<div class="star"></div>');
-                    $('.diagonal').before('<div class="separator left"></div>');
-                    $('.due:eq(1)').before('<div class="separator right"></div>');
-                    $('#main-footer').before('<div class="separator right"></div>');
-                    $('.uno').append('<div class="separator t"></div>');
                     sections90s();
                 }
                 var isfutureloaded = isCssLoaded('future.css');
@@ -117,6 +112,7 @@ $(document).ready(function () {
                 // Replace the <body> content
                 $('body').html(newDoc.body.innerHTML);
                 $('body').removeAttr('id').attr('id', 'body-main-id');
+                $('body').removeClass();
                 adjustGridStructure();
                 loadMap();
                 var is90sLoaded = isCssLoaded('90s.css');
@@ -125,7 +121,7 @@ $(document).ready(function () {
                     $("#content-card >div").prepend('<div class="star"></div>');
                     $('.diagonal').before('<div class="separator left"></div>');
                     $('.due:eq(1)').before('<div class="separator right"></div>');
-                    $('#main-footer').before('<div class="separator right"></div>');
+                    $('#txt-main-id').append('<div class="separator right"></div>');
                     $('.uno').append('<div class="separator t"></div>');
                     sections90s();
                 }
@@ -140,7 +136,50 @@ $(document).ready(function () {
         });
     }
 });
-
+$(document).ready(function () {
+    // On click of a link in the list
+    $('#docs a').click(function (e) {
+        e.preventDefault();
+        // Retrieve the URL of the file associated with the link
+        var fileDaCaricare = $(this).data('file');
+        // Call the function to load the content
+        caricaf(fileDaCaricare);
+    })
+    function caricaf(url) {
+        $.ajax({
+            url: url,
+            type: 'GET',
+            dataType: 'html',
+            success: function (data) {
+                var newDoc = document.implementation.createHTMLDocument();
+                newDoc.documentElement.innerHTML = data;
+                // Replace the <body> content
+                $('body').html(newDoc.body.innerHTML);
+                $('body').removeAttr('id').attr('id', 'body-d-id');
+                $('body').removeClass();
+                adjustGridStructure();
+                loadMap();
+                var is90sLoaded = isCssLoaded('90s.css');
+                if (is90sLoaded) {
+                    sections90s();
+                }
+                var isfutureloaded = isCssLoaded('future.css');
+                if (isfutureloaded) {
+                    $('.container-doc:eq(0)').before('<div class="left-side"><img src=""></div>');
+                    $('.container-doc:eq(1)').before('<div class="left-side"><img src=""></div>');
+                    $('.container-doc:eq(2)').before('<div class="left-side"><img src=""></div>');
+                    $('.container-doc:eq(3)').before('<div class="left-side"><img src=""></div>');
+                    $('.container-doc:eq(4)').before('<div class="left-side"><img src="https://i0.wp.com/www.futurevintagefestival.com/wp-content/uploads/2017/07/cioe-future-vintage-cover-verticale.png?fit=628%2C1024&ssl=1"></div>');
+                    $('.container-doc:eq(5)').before('<div class="left-side"><img src="https://i.pinimg.com/550x/8c/95/9c/8c959c596302445cc2be630b55b3473a.jpg"></div>');
+                    containerfuture();
+                }
+            },
+            error: function (error) {
+                console.log('Error loading file: ' + error.statusText);
+            }
+        });
+    }
+});
 function stylechanger(newCSSFileName) {
     const linkElement = document.getElementById("csstochange");
 
@@ -191,22 +230,37 @@ function stylechanger(newCSSFileName) {
         $("#content-card >div").prepend('<div class="star"></div>');
         $('.diagonal').before('<div class="separator left"></div>');
         $('.due:eq(1)').before('<div class="separator right"></div>');
-        $('#main-footer').before('<div class="separator right"></div>');
+        $('#txt-main-id').append('<div class="separator right"></div>');
         $('.uno').append('<div class="separator t"></div>');
         $('.imgcontainer img').unwrap();
+        $('.decoration-dx').remove();
+        $('.decoration-sx').remove();
+        $('.left-side').remove();
         sections90s();
 
     }
     else if (newCSSFileName === "future.css") {
+        $('.imgcontainer img').unwrap();
         $("#side-image").remove();
         $("#right-image").remove();
         $(".block").remove();
         $(".star").remove();
         $(".card").removeClass("card");
-        containerfuture();
         $(".separator.t").remove();
         $(".separator.right").remove();
         $(".separator.left").remove();
+        $('.decoration-dx').remove();
+        $('.decoration-sx').remove();
+        if ($('.left-side').length === 0) {
+            $('.container-doc:eq(0)').before('<div class="left-side"><img src=""></div>');
+            $('.container-doc:eq(1)').before('<div class="left-side"><img src=""></div>');
+            $('.container-doc:eq(2)').before('<div class="left-side"><img src=""></div>');
+            $('.container-doc:eq(3)').before('<div class="left-side"><img src=""></div>');
+            $('.container-doc:eq(4)').before('<div class="left-side"><img src="https://i0.wp.com/www.futurevintagefestival.com/wp-content/uploads/2017/07/cioe-future-vintage-cover-verticale.png?fit=628%2C1024&ssl=1"></div>');
+            $('.container-doc:eq(5)').before('<div class="left-side"><img src="https://i.pinimg.com/550x/8c/95/9c/8c959c596302445cc2be630b55b3473a.jpg"></div>');
+        }
+    
+        containerfuture();
     }
 };
 
@@ -391,7 +445,6 @@ function adjustGridStructure() {
     var metarticleList = document.querySelectorAll('.metarticle-vis-txt');
 
     if (body) {
-        // Check window width and add/remove classes accordingly
         if (window.innerWidth < 900) {
             body.classList.remove('grid-normal');
             body.classList.add('grid-s-normal');

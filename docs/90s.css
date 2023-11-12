@@ -241,7 +241,7 @@ main h1 {
 .due,
 .diagonal {
     margin-top: 19vh;
-    height: 90vh;
+    min-height: 95vh;
 }
 
 section.uno+section {
@@ -262,8 +262,7 @@ section.uno+section {
     box-sizing: border-box;
     height: fit-content;
     position: relative;
-    padding-left: 3%;
-    padding-right: 3%;
+    padding: 3%;
 }
 
 #content-card {
@@ -337,7 +336,7 @@ section.uno+section {
     color: #f4f4fdff;
     margin-left: 10vw;
     width: 20vw;
-    height: 25vh;
+    min-height: 25vh;
     padding: 5%;
     background-color: #845ba6bc;
     border-radius: 5%;
@@ -405,8 +404,8 @@ section.uno+section {
     grid-template-areas: 'nav' 'button' 'main' 'footer';
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 0.2fr 1fr 0.1fr;
-  }
-  
+}
+
 
 .grid-normal {
     grid-template-columns: 0.09fr 1fr;
@@ -416,6 +415,7 @@ section.uno+section {
         "button main"
         "footer footer";
 }
+
 .grid-small {
     grid-template-columns: 1fr;
     grid-template-rows: 0.1fr 0.05fr 0.6fr 1fr 0.1fr;
@@ -428,9 +428,14 @@ section.uno+section {
     grid-template-areas: 'nav nav nav' 'sidebar button main' 'footer footer footer';
 }
 
-#body-main-id {
+#body-main-id,
+#body-d-id {
     font-family: coolvetica;
     font-size: 1.5vw;
+    display: grid;
+    grid-template-areas: 'nav' 'main' 'footer';
+    grid-template-rows: 0.01fr 1.5fr 0.01fr;
+    grid-template-columns: 1fr;
 }
 
 nav {
@@ -646,16 +651,19 @@ h1 {
     padding: 1%;
 }
 
-main h1 {
+main h1,
+#main-d h2 {
     color: #e93f82;
 
 }
 
-main h3 {
+main h3,
+#main-d h4 {
     font-family: telelower;
 }
 
-main h2 {
+main h2,
+#main-d h3 {
     color: rgb(51, 144, 175);
     text-align: center;
     text-transform: uppercase;
@@ -689,8 +697,8 @@ main h2 {
 }
 
 .text>h2 {
-    margin-top:7%;
-    margin-bottom:5%;
+    margin-top: 7%;
+    margin-bottom: 5%;
     text-align: center;
     break-before: auto;
     page-break-before: auto;
@@ -789,7 +797,7 @@ td {
 footer {
     grid-area: footer;
     position: relative;
-    background-color: rgb(114, 183, 78)
+    background-color: rgb(114, 183, 78);
 }
 
 #main-footer {
@@ -860,6 +868,7 @@ footer {
 .name-card img {
     width: 50%;
     border-radius: 50%;
+    border: 1px solid black;
 }
 
 .btn-primary,
@@ -912,6 +921,71 @@ footer {
     background-color: rgb(118, 8, 128);
 }
 
+/*documentation*/
+
+.cover-d {
+    min-height: 70vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#cioe {
+    background-image: url("https://i0.wp.com/www.thegiornale.it/wp-content/uploads/2018/05/cioe-riviste.jpeg?resize=800%2C445&ssl=1");
+}
+
+#dystopia {
+    background-image: url('https://i.guim.co.uk/img/media/4cb94c55b32d89a3c644f6490860da75f29b8f25/0_0_2560_1536/master/2560.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=26450aa873e6ba8a9d4c7e624042f229');
+}
+
+#destijl {
+    background-image: url('https://www.liminarivista.it/wp-content/uploads/2022/03/Mondrian-Moran_header-image-1920x886.jpg');
+}
+
+#aldine {
+    background-image: url('http://www.telos.tv/telos17/wp-content/uploads/2016/10/Aldine-Press-and-Aldo.jpg');
+}
+
+#main-d {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1rem;
+    background-color: #f1f1f1;
+}
+
+
+#second-d-paragraph {
+    background-color: #f1f1f1;
+    padding: 2%;
+}
+
+.first-d-paragraph {
+    background-color: #845ba6;
+    width: 80vh;
+    position: relative;
+    height: 100vh;
+    shape-outside: polygon(30% 0, 100% 0, 100% 60%, 100% 100%, 33% 87%, 32% 87%, 0 11%);
+    clip-path: polygon(30% 0, 100% 0, 100% 60%, 100% 100%, 33% 87%, 32% 87%, 0 11%);
+}
+
+#shape-right {
+    float: right;
+    padding: 4% 2% 0% 12%;
+}
+
+#shape-left {
+    float: left;
+    clip-path: polygon(70% 100%, 0 100%, 0 40%, 0 0, 67% 13%, 68% 13%, 100% 89%);
+    padding: 6% 16% 0 2%;
+}
+
+#third-d-paragraph {
+    background-color: #f6ec59;
+    padding: 2%;
+}
+
+
 @media only screen and (max-width: 900px) {
     #button-txt-id {
         display: flex;
@@ -953,6 +1027,14 @@ footer {
         height: 3.5vh;
 
     }
+
+    #shape-right {
+        padding: 10% 2% 0% 22%;
+    }
+
+    #shape-left {
+        padding: 15% 25% 0 2%;
+    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -982,10 +1064,6 @@ footer {
         column-count: 1;
     }
 
-    p {
-        font-size: 2em;
-    }
-
     .wrapper1>h1 {
         font-size: 2rem;
     }
@@ -1010,9 +1088,9 @@ footer {
         height: 110vh;
     }
 
-
     #main-footer>.wrapper {
-        background-color: transparent;
+        background-color: #74b74f;
+        border-radius: 5%;
     }
 
     .card-name {
@@ -1020,8 +1098,6 @@ footer {
         padding: 3%;
         flex-direction: column;
         justify-content: space-evenly;
-        background-color: #74b74f;
-        border-radius: 5%;
     }
 
     .name-card {
@@ -1051,6 +1127,28 @@ footer {
     figure figcaption {
         font-size: 1.5em;
     }
+
+    .first-d-paragraph,
+    #shape-left {
+        clip-path: none;
+        height: fit-content;
+        width: 100%;
+        shape-outside: none;
+    }
+
+    #third-d-paragraph .card-name {
+        flex-wrap: wrap;
+    }
+
+    #third-d-paragraph .card-name>.name-card {
+        width: 15vw;
+        height: 15vh;
+    }
+
+    #third-d-paragraph .card-name>.name-card img {
+        width: 100%;
+    }
+
 }
 
 @media only screen and (min-width: 551px) and (max-width:660px) {
@@ -1069,11 +1167,6 @@ footer {
 
     .text {
         column-count: 1;
-    }
-
-    p,
-    li {
-        font-size: 2.2em;
     }
 
     figure>img {
@@ -1098,7 +1191,7 @@ footer {
     }
 
     .element span {
-        font-size: 0.8em !important;
+        font-size: 0.7em !important;
     }
 
     .wrapper1>h1 {
@@ -1113,10 +1206,15 @@ footer {
         height: 100vh;
     }
 
-    .name-card {
-        width:22vw;
-        height: 42vh;
+    #third-d-paragraph .card-name>.name-card {
+        width: 15vw;
+        height: 15vh;
     }
+
+    #third-d-paragraph .card-name>.name-card img {
+        width: 100%;
+    }
+
 }
 
 @media only screen and (min-width: 661px) and (max-width:900px) {

@@ -279,6 +279,14 @@ main h2 {
   color: #EEEEEE;
 }
 
+#body-main-id, #body-d-id {
+  display: grid;
+  grid-template-areas: 'nav' 'main' 'footer';
+  grid-template-rows: 0.01fr 1.5fr 0.01fr;
+  grid-template-columns: 1fr;
+  font-family: rodchenkol;
+}
+
 .uno {
   position: relative;
   text-align: center;
@@ -287,7 +295,7 @@ main h2 {
   z-index: 0;
 }
 
-#body-main-id::before {
+#body-main-id::before{
   content: "";
   position: absolute;
   top: 0;
@@ -585,7 +593,7 @@ td {
   text-align: left;
 }
 
-.text p::first-letter {
+.text p::first-letter, #main-d p::first-letter {
   color: #690000;
   float: left;
   font-weight: bold;
@@ -799,6 +807,84 @@ footer {
   background-color: rgb(118, 8, 128);
 }
 
+/*documentation*/
+#body-d-id {
+  background-color: #111;
+  position: relative;
+  
+}
+
+#body-d-id::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(from 45deg at 10% 1.5%,
+      rgba(251, 250, 250, 0.129) 0deg 10deg,
+      rgba(141, 141, 141, 0.215) 10deg 20deg,
+      rgba(122, 122, 122, 0.132) 20deg 30deg);
+  opacity: 0.6;
+}
+
+#main-d{
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding:0%;
+}
+
+#main-d p {
+  padding: 0% 2%;
+}
+.container1 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5%;
+}
+
+.left-side {
+  position: relative;
+  height: 100vh;
+  width: 50vw;
+  padding: 5% 10%;
+}
+.left-side .imgcontainer>img {
+  height: 80vh;
+  width: 25vw;
+}
+
+.container1 .imgcontainer::after {
+  width: 25vw;
+}
+.container-doc{
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  height: 100vh;
+  width: 50vw;
+  padding:1%;
+  text-align: justify;
+}
+
+#third-d-paragraph .card-name {
+  flex-wrap: wrap;
+  
+}
+#third-d-paragraph .card-name >* {
+  height: 15vh;
+  width: 15vh;
+  margin-bottom: 1%;
+}
+
+.container-doc .name-card>.imgcontainer img {
+  width:80%;
+}
+
+.container-doc .name-card>.imgcontainer::after {
+  width: 80%;
+}
 @media only screen and (max-width: 900px) {
   #button-txt-id {
     display: flex;
