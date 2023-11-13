@@ -129,7 +129,7 @@ html {
 main h1 {
     font-family: telelower;
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .wrapper>h2 {
@@ -396,7 +396,6 @@ section.uno+section {
     height: 115vh;
     display: grid;
     font-family: coolvetica;
-    font-size: 1.5vw;
     background-color: #f4f4fdff;
 }
 
@@ -431,7 +430,6 @@ section.uno+section {
 #body-main-id,
 #body-d-id {
     font-family: coolvetica;
-    font-size: 1.5vw;
     display: grid;
     grid-template-areas: 'nav' 'main' 'footer';
     grid-template-rows: 0.01fr 1.5fr 0.01fr;
@@ -599,9 +597,7 @@ button.accordion:hover {
 
 main {
     grid-area: main;
-    padding-top: 3%;
-    padding-left: 2%;
-    padding-right: 2%;
+    padding: 3% 1%;
     overflow: auto;
 }
 
@@ -672,7 +668,7 @@ main h2,
 }
 
 #introduction-txt-id {
-    padding: 3% 3% 3% 3%;
+    padding: 3%;
     font-family: 'Helvetica';
     font-weight: bold;
 }
@@ -688,11 +684,13 @@ main h2,
 }
 
 .text {
-    padding: 3% 3% 3% 3%;
+    padding: 2%;
     column-count: 3;
+    column-rule: dashed 5px rgb(51, 144, 175);
     column-gap: 3%;
     word-wrap: break-word;
     hyphens: auto;
+    -webkit-hyphens: auto;
     text-align: justify;
 }
 
@@ -777,15 +775,26 @@ td {
     width: 100%;
     text-align: left;
     border-collapse: collapse;
+    border-radius: 5% !important;
     border: 3px solid rgb(131, 89, 166) !important;
 }
 
+.table_section>p {
+    text-align: center;
+}
+
+th:nth-child(odd) {
+    color: #e93f82;
+}
+th:nth-child(even) {
+    color:rgb(51, 144, 175);
+}
 .footnotes {
     font-size: 0.9rem;
 }
 
 .footnotes p::first-letter,
-.poetry p::first-letter {
+.poetry p::first-letter, .table_section p::first-letter {
     color: black;
     float: none;
     font-weight: normal;
@@ -1004,7 +1013,6 @@ footer {
     #sidebar-txt-id {
         margin: 0 auto;
         width: 80%;
-        font-size: 1.5em;
     }
 
     #button-txt-id>button {
@@ -1051,18 +1059,13 @@ footer {
         height: 110vh;
     }
 
-    #button-txt-id>button {
-        font-size: 2em;
-    }
-
     .title {
         width: 30vw;
-        padding-left: 2%
+        padding-left: 2%;
     }
 
     .stroke-double {
         font-size: 1.2em;
-        margin-top: 10%;
     }
     .text {
         column-count: 1;
@@ -1116,16 +1119,8 @@ footer {
         float: left;
     }
 
-    .modal-body {
-        font-size: 2em !important;
-    }
-
     figure>img {
         width: 50vw;
-    }
-
-    figure figcaption {
-        font-size: 1.5em;
     }
 
     .first-d-paragraph,
@@ -1152,17 +1147,12 @@ footer {
 }
 
 @media only screen and (min-width: 551px) and (max-width:660px) {
-    .navbarSupportedContent {
-        font-size: 1em;
-    }
-
     .title {
         width: 23vw;
     }
 
     .stroke-double {
         font-size: 4.5vw;
-        margin: 5%;
     }
 
     .text {
@@ -1172,11 +1162,6 @@ footer {
     figure>img {
         width: 50vw;
     }
-
-    figure figcaption {
-        font-size: 1.5em;
-    }
-
     .element {
         width: 23vw;
         margin: 0 auto;
@@ -1215,17 +1200,13 @@ footer {
 
 @media only screen and (min-width: 661px) and (max-width:900px) {
 
-    #navbarSupportedContent {
-        font-size: 1.5em;
-    }
-
     .title {
         width: 23vw;
     }
 
     .stroke-double {
         font-size: 4.5vw;
-        margin: 0% 5% 5%;
+        transform: translate(5%, -10%);
     }
 
     .wrapper1>h1 {
@@ -1242,7 +1223,6 @@ footer {
         margin-top: -11%;
         width: 25%;
         height: 40%;
-
     }
 
     .footnotes {

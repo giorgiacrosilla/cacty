@@ -314,7 +314,7 @@ function sections90s() {
         if (textDiv) {
             var paragraphs = textDiv.getElementsByTagName('p');
             for (var i = 0; i < paragraphs.length; i++) {
-                if (paragraphs[i].parentNode.className !== 'footnotes') {
+                if (paragraphs[i].parentNode.className !== 'footnotes' && paragraphs[i].parentNode.className !== 'table_section' ) {
                     if (i % 4 === 0) {
                         paragraphs[i].classList.add('frontier');
                     }
