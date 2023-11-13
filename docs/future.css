@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap');
-
 @font-face {
   font-family: Redoctober;
   src: url("Redoctober-jzXO.otf");
@@ -14,7 +12,12 @@
   font-family: propaganda;
   src: url("Rodchenko.ttf");
 }
-
+:root {
+  --rossoscuro:#690000;
+  --nero:#111;
+  --bianco:#EEEEEE;
+  --grigio:#808080;
+}
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -24,11 +27,11 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #111;
+  background: var(--nero);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #690000;
+  background: var(--rossoscuro);
 }
 
 /*NAVBAR*/
@@ -37,7 +40,7 @@
   position: relative;
   width: 100px;
   height: 100px;
-  background-color: #EEEEEE;
+  background-color: var(--bianco);
   border-radius: 100% 0;
   transform: rotate(45deg);
 }
@@ -84,7 +87,7 @@
   display: grid;
   font-family: rodchenkol;
   font-size: 1.2em;
-  background: radial-gradient(circle at 0%, #060606, rgb(52, 22, 22) 50%, #690000 75%, #050505 75%);
+  background: radial-gradient(circle at 0%, #060606, rgb(52, 22, 22) 50%, var(--rossoscuro) 75%, #050505 75%);
 }
 
 .grid-s-normal {
@@ -139,7 +142,7 @@ button.style-button {
 #button-txt-id>button {
   width: fit-content;
   margin-bottom: 2vh;
-  background: linear-gradient(-135deg, transparent 10px, #111 0);
+  background: linear-gradient(-135deg, transparent 10px, var(--nero) 0);
 }
 
 .metarticle-visible-txt {
@@ -154,7 +157,7 @@ button.style-button {
 #sidebar-txt-id {
   overflow-x: hidden;
   overflow-y: auto;
-  background-color: #111;
+  background-color: var(--nero);
   border-radius: 0% 100% 100% 0%;
   z-index: 1;
   top: 0;
@@ -173,7 +176,7 @@ button.accordion {
   width: 20vw;
   background-color: transparent;
   padding: 8px 8px 8px 8px;
-  color: #EEEEEE;
+  color: var(--bianco);
   display: block;
   text-align: left;
   font-family: Redoctober;
@@ -187,14 +190,14 @@ button.accordion:hover {
 .panel {
   width: 40vh;
   display: none;
-  color: #EEEEEE;
+  color: var(--bianco);
   background-color: transparent;
   overflow: hidden;
 }
 
 #article-txt-id a:link,
 #article-txt-id a:visited {
-  color: #EEEEEE;
+  color: var(--bianco);
 }
 
 #map {
@@ -206,14 +209,14 @@ button.accordion:hover {
 .openbtn {
   font-size: 20px;
   cursor: pointer;
-  background-color: #111;
-  color: #EEEEEE;
+  background-color: var(--nero);
+  color: var(--bianco);
   padding: 10px 15px;
   border: none;
 }
 
 .openbtn:hover {
-  background-color: #444;
+  background-color: var(--grigio);
 }
 
 /*main page*/
@@ -221,19 +224,19 @@ main {
   grid-area: main;
   overflow: auto;
   padding: 3%;
-  color: #EEEEEE;
+  color: var(--bianco);
   font-size: 1.1em;
 }
 
 main a:link,
 main a:visited {
-  color: grey;
+  color: var(--grigio);
   background-color: transparent;
 }
 
 main a:hover,
 main a:active {
-  color: #EEEEEE;
+  color: var(--bianco);
 }
 
 .wrapper1 {
@@ -248,7 +251,7 @@ main a:active {
 
 h1,
 h2 {
-  color: #EEEEEE;
+  color: var(--bianco);
   text-align: center;
   font-family: Redoctober;
   text-shadow:
@@ -264,7 +267,7 @@ h2 {
 
 
 main h2 {
-  color: #808080;
+  color: var(--grigio);
   font-family: Redoctober;
   text-transform: uppercase;
   text-align: center;
@@ -274,8 +277,8 @@ main h2 {
 
 #body-main-id {
   font-family: rodchenkol;
-  background: radial-gradient(circle at 100%, #070707, rgb(52, 22, 22) 50%, #690000 75%, #070707 75%);
-  color: #EEEEEE;
+  background: radial-gradient(circle at 100%, #070707, rgb(52, 22, 22) 50%, var(--rossoscuro) 75%, #070707 75%);
+  color: var(--bianco);
 }
 
 #body-main-id, #body-d-id {
@@ -289,7 +292,7 @@ main h2 {
 .uno {
   position: relative;
   text-align: center;
-  color: #EEEEEE;
+  color: var(--bianco);
   height: 80vh;
   z-index: 0;
 }
@@ -414,7 +417,7 @@ footer h2 {
   font-family: Redoctober;
   text-align: left;
   position: relative;
-  color: #fff;
+  color: var(--bianco);
   font-size: 1em;
   letter-spacing: 0.02em;
   text-transform: uppercase;
@@ -452,13 +455,13 @@ footer h2 {
 
 .element a:link,
 .element a:visited {
-  color: #EEEEEE;
+  color: var(--bianco);
   background-color: transparent;
 }
 
 .element a:hover,
 .element a:active {
-  color: #EEEEEE;
+  color: var(--bianco);
 }
 
 .element:hover {
@@ -470,9 +473,10 @@ footer h2 {
   height: 60vh;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: #f1f1f1;
+  background-color: var(--bianco);
   background-position: center;
   clip-path: circle(40%);
+  -webkit-clip-path:circle(40%);
   shape-outside: circle(40%);
 }
 
@@ -559,7 +563,7 @@ footer h2 {
 }
 
 .text {
-  color: #EEEEEE;
+  color: var(--bianco);
   text-align: 1em;
   word-wrap: break-word;
   hyphens: auto;
@@ -583,7 +587,7 @@ td {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 3px solid #EEEEEE !important;
+  border: 3px solid var(--bianco) !important;
 }
 
 
@@ -593,7 +597,7 @@ td {
 }
 
 .text p::first-letter, #main-d p::first-letter {
-  color: #690000;
+  color: var(--rossoscuro);
   float: left;
   font-weight: bold;
   font-size: 5rem;
@@ -603,7 +607,7 @@ td {
 }
 
 .censorship {
-  background-color: #EEEEEE;
+  background-color: var(--bianco);
 }
 
 .fc {
@@ -651,7 +655,7 @@ figure figcaption {
 
 .footnotes p::first-letter,
 .poetry p::first-letter {
-  color: #EEEEEE;
+  color: var(--bianco);
   float: none;
   font-family: rodchenkol;
   font-weight: normal;
@@ -666,7 +670,7 @@ figure figcaption {
 footer {
   grid-area: footer;
   position: relative;
-  color: #EEEEEE;
+  color: var(--bianco);
 }
 
 .layoutfooter {
@@ -691,7 +695,7 @@ footer {
 
 .name-card {
   background-color: rgba(161, 164, 164, 0.323);
-  color: #EEEEEE;
+  color: var(--bianco);
   margin-right: 10px;
   width: 23vw;
   background: linear-gradient(-135deg, transparent 25px, rgba(161, 164, 164, 0.323) 0);
@@ -707,7 +711,7 @@ footer {
 
 .modal-body,
 .modal-header {
-  color: #111;
+  color: var(--nero);
   overflow: auto;
 }
 
@@ -745,7 +749,7 @@ footer {
 
 .btn-primary {
   position: relative;
-  background-color: #690000 !important;
+  background-color: var(--rossoscuro) !important;
   border-color: #710b0b !important;
   width: fit-content !important;
   transition: all 0.5s;
@@ -808,7 +812,7 @@ footer {
 
 /*documentation*/
 #body-d-id {
-  background-color: #111;
+  background-color: var(--nero);
   position: relative;
   
 }
@@ -924,6 +928,7 @@ footer {
 
   .logo-image {
     clip-path: circle(15%);
+    -webkit-clip-path:circle(15%);
   }
 
   .due #content-card {
@@ -986,6 +991,7 @@ footer {
 @media only screen and (min-width: 551px) and (max-width: 600px) {
   .logo-image {
     clip-path: circle(25%);
+    -webkit-clip-path:circle(25%);
   }
 
   .due #content-card {
@@ -1041,6 +1047,7 @@ footer {
 @media only screen and (min-width: 601px) and (max-width: 1000px) {
   .logo-image {
     clip-path: circle(25%);
+    -webkit-clip-path:circle(25%);
   }
 
   .due #content-card {
@@ -1090,6 +1097,7 @@ footer {
 @media only screen and (min-width: 1201px) {
   .logo-image {
     clip-path: circle(40%);
+    -webkit-clip-path:circle(40%);
   }
 
   .due #content-card {
