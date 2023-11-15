@@ -36,7 +36,7 @@ $(document).ready(function () {
                     $('.diagonal').before('<div class="separator left"></div>');
                     $('.due:eq(1)').before('<div class="separator right"></div>');
                     $('#txt-main-id').append('<div class="separator right"></div>');
-                    $('.uno').append('<div class="separator t"></div>');
+                    $('.due:eq(0)').before('<div class="separator t"></div>');
                     sections90s();
                 }
                 var isfutureloaded = isCssLoaded('future.css');
@@ -122,7 +122,7 @@ $(document).ready(function () {
                     $('.diagonal').before('<div class="separator left"></div>');
                     $('.due:eq(1)').before('<div class="separator right"></div>');
                     $('#txt-main-id').append('<div class="separator right"></div>');
-                    $('.uno').append('<div class="separator t"></div>');
+                    $('.due:eq(0)').before('<div class="separator t"></div>');
                     sections90s();
                 }
                 var isfutureloaded = isCssLoaded('future.css');
@@ -314,14 +314,14 @@ function sections90s() {
             var paragraphs = textDiv.getElementsByTagName('p');
             for (var i = 0; i < paragraphs.length; i++) {
                 if (paragraphs[i].parentNode.className !== 'footnotes' && paragraphs[i].parentNode.className !== 'table_section') {
-                    if (i % 4 === 0) {
+                    if (i % 4 === 0 && paragraphs[i].textContent.trim() !== '') {
                         paragraphs[i].classList.add('frontier');
-                    }
+                    }                    
                 }
             }
         }
     }
-}
+};
 
 function containerfuture() {
     if (isCssLoaded('future.css')) {

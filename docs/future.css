@@ -718,7 +718,7 @@ footer {
 .modal-body,
 .modal-header {
   color: var(--nero);
-  overflow: auto;
+  overflow: hidden;
 }
 
 @keyframes pulse {

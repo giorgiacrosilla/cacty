@@ -427,7 +427,7 @@ main h1 {
     background-size: cover;
 }
 
-body::before {
+body#body-main-id::before {
     content: "";
     position: fixed;
     top: 0;
@@ -437,7 +437,6 @@ body::before {
     background: linear-gradient(to top, var(--fuchsia), var(--verde));
     opacity: 0.7;
     z-index: -1;
-    /* Ensure the gradient is behind other content */
 }
 
 nav {
@@ -909,6 +908,10 @@ footer {
 
 .btn-primary:hover:after {
     width: 100%;
+}
+
+.modal-header {
+    overflow: hidden;
 }
 
 /*sidebartag*/
