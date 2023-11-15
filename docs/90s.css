@@ -115,13 +115,21 @@ html {
     z-index: -1;
 }
 
-.wrapper1 {
+.wrapper1, .wrapper2 {
     box-sizing: border-box;
     position: relative;
     text-align: center;
     align-items: center;
+}
+.wrapper1 {
     color: var(--bianco);
     transform: translate(0vw, 40vh);
+}
+
+.wrapper2 {
+    margin:0 10% 10%;
+    text-align: justify;
+    transform: translate(0vw, 10vh);
 }
 
 .wrapper1>h1,
@@ -131,7 +139,7 @@ main h1 {
     font-size: 2.5rem;
 }
 
-.wrapper>h2 {
+.wrapper>h2, .wrapper2>h2 {
     font-family: telelower;
     text-transform: uppercase;
     font-size: 1.5rem;
@@ -559,12 +567,12 @@ button.accordion {
     color: black;
 }
 
-#article-txt-id ul {
+#article-txt-id ul, .wrapper2 ul {
     list-style-type: none;
     list-style: none;
 }
 
-#article-txt-id ul li::before {
+#article-txt-id ul li::before, .wrapper2 ul li::before {
     content: '';
     display: inline-block;
     width: 2vw;
