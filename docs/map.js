@@ -225,7 +225,7 @@ function stylechanger(newCSSFileName) {
         $('.diagonal').before('<div class="separator left"></div>');
         $('.due:eq(1)').before('<div class="separator right"></div>');
         $('#txt-main-id').append('<div class="separator right"></div>');
-        $('.uno').append('<div class="separator t"></div>');
+        $('.due:eq(0)').before('<div class="separator t"></div>');
         $('.imgcontainer img').unwrap();
         $('.decoration-dx').remove();
         $('.decoration-sx').remove();
