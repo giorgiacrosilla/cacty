@@ -188,6 +188,7 @@ function stylechanger(newCSSFileName) {
     }
 
     if (newCSSFileName === "De_Stijl.css") {
+        $('.imgcontainer img').unwrap();
         $("#destijlprint").remove();
         $("#side-image").remove();
         $("#right-image").remove();
@@ -208,6 +209,7 @@ function stylechanger(newCSSFileName) {
         }
     }
     else if (newCSSFileName === "Aldine.css") {
+        $('.imgcontainer img').unwrap();
         $("#aldinedelf").remove();
         $(".background-grid").remove();
         $(".uno").after('<img id ="aldinedelf" src="https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/Sasy/delfinoaldine.jpg">');
