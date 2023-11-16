@@ -44,6 +44,9 @@ html{
       overflow-x:hidden;
       
     }
+    .decoration-sx, .decoration-dx{
+      display:none;
+    }
 
     #main-txt-id{
     top: 80px;
