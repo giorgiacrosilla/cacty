@@ -52,9 +52,10 @@
 }
 
 #destijlprint{
-    height: 65%;
+    height: 30%;
     position: relative;
-    left: 36%;
+    left: 30%;
+    width: auto;
     background-blend-mode: multiply; 
     border: 20px rgb(232,232,222);
     mix-blend-mode: color-burn;
@@ -562,5 +563,9 @@ font-size: 1em;
     .name-card>img {
       width: 50%;
       border-radius: 50%;
+    }
+
+    .decoration-sx, .decoration-dx{
+      display:none;
     }
     
