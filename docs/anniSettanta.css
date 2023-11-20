@@ -254,6 +254,10 @@ nav li {
 header .stroke-double{
     font-size: 60px;
 }
+h2.stoke-d{
+    white-space: pre-line; /* Allow line breaks in the button text */
+    height: auto;
+}
 
 #txt-main-id{
         padding: 10px 0;
@@ -274,13 +278,12 @@ header .stroke-double{
     grid-template-areas: "v" "tx";
     grid-template-columns: 50% 50%; 
 }
-.separator{
-    grid-area: v;
-}
 
+.hola{
+    grid-area:"v";
+}
 .wrapper1{
     grid-area: "tx";
-
 }
 .wrapper1{
     width: 90%;
@@ -840,5 +843,8 @@ footer{
         "nav"
         "main"
         "footer" !important;
+    }
+    h2.stoke-d{
+        max-width: 50px !important;
     }
 }
