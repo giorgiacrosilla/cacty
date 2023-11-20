@@ -264,8 +264,24 @@ function stylechanger(newCSSFileName) {
 
         containerfuture();
     }
+    else if (newCSSFileName === "ottocento.css") {
+        $('.title').before('<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>');
+        $('#navbarSupportedContent').after('<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>');
+
+    }
 }
 ;
+$(document).ready(function(){
+    const linkElement = document.getElementById("csstochange");
+
+    if (linkElement === "ottocento.css") {
+        $('.title').before('<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>');
+        $('#navbarSupportedContent').after('<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>');
+        $('#copyr').before('<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>');
+        $('#copyr').after('<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>');
+    }
+});
+
 
 var circle = document.getElementsByClassName("circle");
 var innerBox = document.querySelector(".inner-box");
