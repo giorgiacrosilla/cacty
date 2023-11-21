@@ -656,10 +656,7 @@ h1{
     height: 60vh;
     text-transform: uppercase;
 }
-section:nth-of-type(2) .wrapper h2{
-    font-size: 14px;
-    text-transform: lowercase;
-}
+
 
 .wrapper1 h1{
     font-size: 300%;
