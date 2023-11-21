@@ -818,7 +818,7 @@ footer{
     }
 
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
 
     .wrapper, .layoutfooter{
         display: block !important;
