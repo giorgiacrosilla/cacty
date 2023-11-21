@@ -145,7 +145,10 @@ footer{
     opacity: 1 !important;  
   }
 
-  
+ .wrapper2 ul{
+    list-style-type: none;
+ } 
+
 
 main{                   /*Questa è il testo*/
     grid-area: main;
@@ -622,7 +625,10 @@ header{
         margin-left: 20px;
         margin-right:10px
     }
-
+    #body-txt-id{
+        grid-template-areas: "nav" "button" "sidebar""main" "footer";
+    }
+    
    
 
 }
@@ -753,6 +759,9 @@ footer{
     margin: 0 auto;
 
 }
+.wrapper{
+    margin-top: 200px;
+}
 #content-card a{
     text-decoration: none;
     font-style: oblique;
@@ -769,6 +778,9 @@ footer{
     
     nav{
         height:160px;
+    }
+    #body-txt-id{
+        grid-template-areas: "nav" "button" "sidebar""main" "footer";
     }
 }
 
