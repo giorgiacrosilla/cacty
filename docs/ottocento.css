@@ -46,10 +46,10 @@ footer{
 }
 
 /*MAIN CONTAINER*/
-#body-txt-id {
+.grid-normal {
     width: 100%;
     display: grid;
-    grid-template-columns:0.01fr 1fr;
+    grid-template-columns:10% 90%;
     grid-template-areas:
         "nav nav"
         "button main"
@@ -57,6 +57,18 @@ footer{
     background-color: #f5f5f5;
     
 }
+.grid-large {
+    width: 100%;
+    display: grid;
+    grid-template-columns:20% 10% 70%;
+    grid-template-areas:
+        "nav nav nav"
+        "sidebar button main"
+        "footer footer footer";
+    background-color: #f5f5f5;
+    
+}
+
 .nuovaClasse{
     background-color: pink;
 }
@@ -596,11 +608,11 @@ header{
     ul .dropdown-menu{
         border: 0px solid transparent !important;
     }
-    #body-txt-id{
+    /*#body-txt-id{
         width: 100%; 
         display: grid;
     grid-template-columns: auto;
-    }
+    }*/
     #body-main-id{
         width: 100%; 
         margin-bottom: 11.11%;
@@ -625,9 +637,9 @@ header{
         margin-left: 20px;
         margin-right:10px
     }
-    #body-txt-id{
+    /*#body-txt-id{
         grid-template-areas: "nav" "button" "sidebar""main" "footer";
-    }
+    }*/
     
    
 
@@ -656,7 +668,10 @@ h1{
     height: 60vh;
     text-transform: uppercase;
 }
-
+section:nth-of-type(2) .wrapper h2{
+    font-size: 14px;
+    text-transform: lowercase;
+}
 
 .wrapper1 h1{
     font-size: 300%;
@@ -776,8 +791,8 @@ footer{
     nav{
         height:160px;
     }
-    #body-txt-id{
+    /*#body-txt-id{
         grid-template-areas: "nav" "button" "sidebar""main" "footer";
-    }
+    }*/
 }
 
