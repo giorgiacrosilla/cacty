@@ -34,10 +34,7 @@
     background-color: #dab35a;
     margin-left: 30px;
 }
-.navbar-toggler.collapsed{
-    background-color: #dab35a;
-    margin-left: 10px;
-}   
+   
 .navbar-custom {
     background-color:  #3c0804;
 }
@@ -384,7 +381,27 @@ nav ul{
   }
   .accordion{
    margin: 10px;
+   text-transform: uppercase;
+   border: 4px double #dab35a !important;
+   color: #dab35a;
+   background-color: #3c0804;
   }
+  .accordion:hover{
+    background-color:rgba(82, 12, 7, 0.712);
+  }
+  .panel a{
+    text-decoration: none !important;
+    font-style: oblique;
+    color: #1b1a1a;
+    }
+    #metadata-txt-id .panel{
+        padding: 0 10px;
+    }
+
+.panel:first-of-type p{
+    margin: 0;
+}
+
 
 .sidebar {
     grid-area: sidebar;
@@ -395,8 +412,7 @@ nav ul{
 
 
 #map {                   /*Ricorda di rendere LA MAPPA RESPONSIVE*/
-    height: 100px;
-    width: 100px;
+    height: 200px;
     margin: 0 auto;
     filter: brightness(1) invert(20%) grayscale(1);
 }
@@ -442,8 +458,8 @@ figcaption{
 #introduction-txt-id h2{
     grid-area: "subtitle";
   }
-#introduction-txt-id  h1, h2, h3 {
-    text-transform: uppercase;
+#introduction-txt-id  h1, h2, h3, .diagonal h2 {
+    text-transform: uppercase !important;
     text-align: center;
   }
  .author{
@@ -668,10 +684,7 @@ h1{
     height: 60vh;
     text-transform: uppercase;
 }
-section:nth-of-type(2) .wrapper h2{
-    font-size: 14px;
-    text-transform: lowercase;
-}
+
 
 .wrapper1 h1{
     font-size: 300%;
