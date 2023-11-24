@@ -230,6 +230,8 @@ function stylechanger(newCSSFileName) {
             $('.imgcontainer img').unwrap();
             $("#aldinedelf").remove();
             $(".background-grid").remove();
+            $("#side-image").remove();
+            $("#right-image").remove();
             $(".uno").after('<img id ="aldinedelf" src="https://raw.githubusercontent.com/giorgiacrosilla/cacty/main/Sasy/delfinoaldine.jpg">');
             $(".block").remove();
             $("#destijlprint").remove();
