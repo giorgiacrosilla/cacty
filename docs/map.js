@@ -781,5 +781,547 @@ function main() {
         else
             $('.wallstreet').removeClass('ne');
     });
+    $('#showab').click(function () {
+        if (this.checked)
+            $('.Bush').addClass('ne');
+        else
+            $('.Bush').removeClass('ne');
+    });
+    $('#showbc').click(function () {
+        if (this.checked)
+            $('.Harriman').addClass('ne');
+        else
+            $('.Harriman').removeClass('ne');
+    });
+    $('#showcd').click(function () {
+        if (this.checked)
+            $('.Phelps').addClass('ne');
+        else
+            $('.Phelps').removeClass('ne');
+    });
+    $('#showde').click(function () {
+        if (this.checked)
+            $('.Rockfeller').addClass('ne');
+        else
+            $('.Rockfeller').removeClass('ne');
+    });
+    $('#showed').click(function () {
+        if (this.checked)
+            $('.Taft').addClass('ne');
+        else
+            $('.Taft').removeClass('ne');
+    });
+    $('#showfg').click(function () {
+        if (this.checked)
+            $('.Whitney').addClass('ne');
+        else
+            $('.Whitney').removeClass('ne');
+    });
+    $('#showgh').click(function () {
+        if (this.checked)
+            $('.Alexandra-Robbins').addClass('ne');
+        else
+            $('.Alexandra-Robbins').removeClass('ne');
+    });
+    $('#showhj').click(function () {
+        if (this.checked)
+            $('.William-H-Russel').addClass('ne');
+        else
+            $('.William-H-Russel').removeClass('ne');
+    });
+    $('#showik').click(function () {
+        if (this.checked)
+            $('.Alphonso-Taft').addClass('ne');
+        else
+            $('.Alphonso-Taft').removeClass('ne');
+    });
+    $('#showjl').click(function () {
+        if (this.checked)
+            $('.William-Howard-Taft').addClass('ne');
+        else
+            $('.William-Howard-Taft').removeClass('ne');
+    });
+    $('#showkm').click(function () {
+        if (this.checked)
+            $('.Lord').addClass('ne');
+        else
+            $('.Lord').removeClass('ne');
+    });
+    $('#showln').click(function () {
+        if (this.checked)
+            $('.Bundy').addClass('ne');
+        else
+            $('.Bundy').removeClass('ne');
+    });
+    $('#showmo').click(function () {
+        if (this.checked)
+            $('.Hitler').addClass('ne');
+        else
+            $('.Hitler').removeClass('ne');
+    });
+    $('#shownp').click(function () {
+        if (this.checked)
+            $('.Carnegie').addClass('ne');
+        else
+            $('.Carnegie').removeClass('ne');
+    });
+    $('#showoq').click(function () {
+        if (this.checked)
+            $('.Ford').addClass('ne');
+        else
+            $('.Ford').removeClass('ne');
+    });
+    $('#showpr').click(function () {
+        if (this.checked)
+            $('.Geronimo').addClass('ne');
+        else
+            $('.Geronimo').removeClass('ne');
+    });
+    $('#showqs').click(function () {
+        if (this.checked)
+            $('.Pancho-Villa').addClass('ne');
+        else
+            $('.Pancho-Villa').removeClass('ne');
+    });
+    $('#showet').click(function () {
+        if (this.checked)
+            $('.Martin-Van-Buren').addClass('ne');
+        else
+            $('.Martin-Van-Buren').removeClass('ne');
+    });
+    $('#showsu').click(function () {
+        if (this.checked)
+            $('.Ron-Rosenbaum').addClass('ne');
+        else
+            $('.Ron-Rosenbaum').removeClass('ne');
+    });
+    $('#showtv').click(function () {
+        if (this.checked)
+            $('.Pat-Buchanan').addClass('ne');
+        else
+            $('.Pat-Buchanan').removeClass('ne');
+    });
+    $('#showuw').click(function () {
+        if (this.checked)
+            $('.George-Bush').addClass('ne');
+        else
+            $('.George-Bush').removeClass('ne');
+    });
+    $('#showvx').click(function () {
+        if (this.checked)
+            $('.Jeb-Bush').addClass('ne');
+        else
+            $('.Jeb-Bush').removeClass('ne');
+    });
+    $('#showwy').click(function () {
+        if (this.checked)
+            $('.Maureen-Dowd').addClass('ne');
+        else
+            $('.Maureen-Dowd').removeClass('ne');
+    });
+    $('#showxz').click(function () {
+        if (this.checked)
+            $('.John-Ashcroft').addClass('ne');
+        else
+            $('.John-Ashcroft').removeClass('ne');
+    });
+    $('#showa7').click(function () {
+        if (this.checked)
+            $('.william-henry-welch').addClass('ne');
+        else
+            $('.william-henry-welch').removeClass('ne');
+    });
+    $('#showb7').click(function () {
+        if (this.checked)
+            $('.bush').addClass('ne');
+        else
+            $('.bush').removeClass('ne');
+    });
+    $('#showc7').click(function () {
+        if (this.checked)
+            $('.phelps').addClass('ne');
+        else
+            $('.phelps').removeClass('ne');
+    });
+    $('#showd7').click(function () {
+        if (this.checked)
+            $('.rockefellers').addClass('ne');
+        else
+            $('.rockefellers').removeClass('ne');
+    });
+    $('#showe7').click(function () {
+        if (this.checked)
+            $('.william-stewart-halsted').addClass('ne');
+        else
+            $('.william-stewart-halsted').removeClass('ne');
+    });
+    $('#showf7').click(function () {
+        if (this.checked)
+            $('.harvey-williams-cushing').addClass('ne');
+        else
+            $('.harvey-williams-cushing').removeClass('ne');
+    });
+    $('#showg7').click(function () {
+        if (this.checked)
+            $('.alexandra-robbins').addClass('ne');
+        else
+            $('.alexandra-robbins').removeClass('ne');
+    });
+    $('#showh7').click(function () {
+        if (this.checked)
+            $('.fabian-franklin').addClass('ne');
+        else
+            $('.fabian-franklin').removeClass('ne');
+    });
+    $('#showi7').click(function () {
+        if (this.checked)
+            $('.alphonso-taft').addClass('ne');
+        else
+            $('.alphonso-taft').removeClass('ne');
+    });
+    $('#showj7').click(function () {
+        if (this.checked)
+            $('.abraham-flexner').addClass('ne');
+        else
+            $('.abraham-flexner').removeClass('ne');
+    });
+    $('#showk7').click(function () {
+        if (this.checked)
+            $('.alan-chesney').addClass('ne');
+        else
+            $('.alan-chesney').removeClass('ne');
+    });
+    $('#showl7').click(function () {
+        if (this.checked)
+            $('.vanderbilt').addClass('ne');
+        else
+            $('.vanderbilt').removeClass('ne');
+    });
+    $('#showm7').click(function () {
+        if (this.checked)
+            $('.pillsbury').addClass('ne');
+        else
+            $('.pillsbury').removeClass('ne');
+    });
+    $('#shown7').click(function () {
+        if (this.checked)
+            $('.walkers').addClass('ne');
+        else
+            $('.walkers').removeClass('ne');
+    });
+    $('#showo7').click(function () {
+        if (this.checked)
+            $('.whitneys').addClass('ne');
+        else
+            $('.whitneys').removeClass('ne');
+    });
+    $('#showp7').click(function () {
+        if (this.checked)
+            $('.george-h-w-bush').addClass('ne');
+        else
+            $('.george-h-w-bush').removeClass('ne');
+    });
+    $('#showq7').click(function () {
+        if (this.checked)
+            $('.david-mccullough').addClass('ne');
+        else
+            $('.david-mccullough').removeClass('ne');
+    });
+    $('#showe78').click(function () {
+        if (this.checked)
+            $('.william-f-buckley').addClass('ne');
+        else
+            $('.william-f-buckley').removeClass('ne');
+    });
+    $('#shows7').click(function () {
+        if (this.checked)
+            $('.john-f-kerry').addClass('ne');
+        else
+            $('.john-f-kerry').removeClass('ne');
+    });
+    $('#showt7').click(function () {
+        if (this.checked)
+            $('.john-hersey').addClass('ne');
+        else
+            $('.john-hersey').removeClass('ne');
+    });
+    $('#showu7').click(function () {
+        if (this.checked)
+            $('.archibald-mcleish').addClass('ne');
+        else
+            $('.archibald-mcleish').removeClass('ne');
+    });
+    $('#showv7').click(function () {
+        if (this.checked)
+            $('.henry-luce').addClass('ne');
+        else
+            $('.henry-luce').removeClass('ne');
+    });
+    $('#showw7').click(function () {
+        if (this.checked)
+            $('.averill-harriman').addClass('ne');
+        else
+            $('.averill-harriman').removeClass('ne');
+    });
+    $('#showx7').click(function () {
+        if (this.checked)
+            $('.prescott-bush').addClass('ne');
+        else
+            $('.prescott-bush').removeClass('ne');
+    });
+    $('#showy7').click(function () {
+        if (this.checked)
+            $('.william-f-buckley-jr').addClass('ne');
+        else
+            $('.william-f-buckley-jr').removeClass('ne');
+    });
+    $('#showz7').click(function () {
+        if (this.checked)
+            $('.pierson').addClass('ne');
+        else
+            $('.pierson').removeClass('ne');
+    });
+    $('#showa1').click(function () {
+        if (this.checked)
+            $('.william-gilman').addClass('ne');
+        else
+            $('.william-gilman').removeClass('ne');
+    });
+    $('#showb1').click(function () {
+        if (this.checked)
+            $('.eliza-coit-gilman').addClass('ne');
+        else
+            $('.eliza-coit-gilman').removeClass('ne');
+    });
+    $('#showc1').click(function () {
+        if (this.checked)
+            $('.alice-gilman').addClass('ne');
+        else
+            $('.alice-gilman').removeClass('ne');
+    });
+    $('#showd1').click(function () {
+        if (this.checked)
+            $('.elizabeth-gilman').addClass('ne');
+        else
+            $('.elizabeth-gilman').removeClass('ne');
+    });
+    $('#showe1').click(function () {
+        if (this.checked)
+            $('.james-l-kingsley').addClass('ne');
+        else
+            $('.james-l-kingsley').removeClass('ne');
+    });
+    $('#showf1').click(function () {
+        if (this.checked)
+            $('.henry-coit-kingsley').addClass('ne');
+        else
+            $('.henry-coit-kingsley').removeClass('ne');
+    });
+    $('#showg1').click(function () {
+        if (this.checked)
+            $('.edward-w-gilman').addClass('ne');
+        else
+            $('.edward-w-gilman').removeClass('ne');
+    });
+    $('#showh1').click(function () {
+        if (this.checked)
+            $('.timothy-dwight').addClass('ne');
+        else
+            $('.timothy-dwight').removeClass('ne');
+    });
+    $('#showj1').click(function () {
+        if (this.checked)
+            $('.andrew-d-white').addClass('ne');
+        else
+            $('.andrew-d-white').removeClass('ne');
+    });
+    $('#showk1').click(function () {
+        if (this.checked)
+            $('.benjamin-silliman').addClass('ne');
+        else
+            $('.benjamin-silliman').removeClass('ne');
+    });
+    $('#showl1').click(function () {
+        if (this.checked)
+            $('.h-l-mencken').addClass('ne');
+        else
+            $('.h-l-mencken').removeClass('ne');
+    });
+    $('#showm1').click(function () {
+        if (this.checked)
+            $('.mary-ketcham').addClass('ne');
+        else
+            $('.mary-ketcham').removeClass('ne');
+    });
+    $('#shown1').click(function () {
+        if (this.checked)
+            $('.elizabeth-dwight-woolsey').addClass('ne');
+        else
+            $('.elizabeth-dwight-woolsey').removeClass('ne');
+    });
+    $('#showo1').click(function () {
+        if (this.checked)
+            $('.john-hopkins').addClass('ne');
+        else
+            $('.john-hopkins').removeClass('ne');
+    });
+    $('#showp1').click(function () {
+        if (this.checked)
+            $('.henry-hurd').addClass('ne');
+        else
+            $('.henry-hurd').removeClass('ne');
+    });
+    $('#showq1').click(function () {
+        if (this.checked)
+            $('.julius-cohnheim').addClass('ne');
+        else
+            $('.julius-cohnheim').removeClass('ne');
+    });
+    $('#showr1').click(function () {
+        if (this.checked)
+            $('.karl-ludwig').addClass('ne');
+        else
+            $('.karl-ludwig').removeClass('ne');
+    });
+    $('#shows1').click(function () {
+        if (this.checked)
+            $('.john-shaw-billings').addClass('ne');
+        else
+            $('.john-shaw-billings').removeClass('ne');
+    });
+    $('#showt1').click(function () {
+        if (this.checked)
+            $('.william-maccallum').addClass('ne');
+        else
+            $('.william-maccallum').removeClass('ne');
+    });
+    $('#showu1').click(function () {
+        if (this.checked)
+            $('.osler').addClass('ne');
+        else
+            $('.osler').removeClass('ne');
+    });
+    $('#showv1').click(function () {
+        if (this.checked)
+            $('.john-cameron').addClass('ne');
+        else
+            $('.john-cameron').removeClass('ne');
+    });
+    $('#shower2').click(function () {
+        if (this.checked)
+            $('.morrill-act').addClass('ne');
+        else
+            $('.morrill-act').removeClass('ne');
+    });
+    $('#showx11').click(function () {
+        if (this.checked)
+            $('.maureen-dowd').addClass('ne');
+        else
+            $('.maureen-dowd').removeClass('ne');
+    });
+    $('#showy11').click(function () {
+        if (this.checked)
+            $('.peggy-adler').addClass('ne');
+        else
+            $('.peggy-adler').removeClass('ne');
+    });
+    $('#showz11').click(function () {
+        if (this.checked)
+            $('.taft').addClass('ne');
+        else
+            $('.taft').removeClass('ne');
+    });
+    $('#showa11').click(function () {
+        if (this.checked)
+            $('.bundys').addClass('ne');
+        else
+            $('.bundys').removeClass('ne');
+    });
+    $('#showb11').click(function () {
+        if (this.checked)
+            $('.buckleys').addClass('ne');
+        else
+            $('.buckleys').removeClass('ne');
+    });
+    $('#showc11').click(function () {
+        if (this.checked)
+            $('.harrimans').addClass('ne');
+        else
+            $('.harrimans').removeClass('ne');
+    });
+    $('#showd11').click(function () {
+        if (this.checked)
+            $('.lovetts').addClass('ne');
+        else
+            $('.lovetts').removeClass('ne');
+    });
+    $('#showe11').click(function () {
+        if (this.checked)
+            $('.george-bush').addClass('ne');
+        else
+            $('.george-bush').removeClass('ne');
+    });
+    $('#showf11').click(function () {
+        if (this.checked)
+            $('.barbara-bush').addClass('ne');
+        else
+            $('.barbara-bush').removeClass('ne');
+    });
+    $('#showg11').click(function () {
+        if (this.checked)
+            $('.socrates').addClass('ne');
+        else
+            $('.socrates').removeClass('ne');
+    });
+    $('#showh11').click(function () {
+        if (this.checked)
+            $('.david-brooks').addClass('ne');
+        else
+            $('.david-brooks').removeClass('ne');
+    });
+    $('#showj11').click(function () {
+        if (this.checked)
+            $('.laurence-sterne').addClass('ne');
+        else
+            $('.laurence-sterne').removeClass('ne');
+    });
+    $('#showk11').click(function () {
+        if (this.checked)
+            $('.john-kerry').addClass('ne');
+        else
+            $('.john-kerry').removeClass('ne');
+    });
+    $('#showl11').click(function () {
+        if (this.checked)
+            $('.john-hersey').addClass('ne');
+        else
+            $('.john-hersey').removeClass('ne');
+    });
+    $('#showm11').click(function () {
+        if (this.checked)
+            $('.william-buckley').addClass('ne');
+        else
+            $('.william-buckley').removeClass('ne');
+    });
+    $('#shown11').click(function () {
+        if (this.checked)
+            $('.sammy-sosa').addClass('ne');
+        else
+            $('.sammy-sosa').removeClass('ne');
+    });
+    $('#showo11').click(function () {
+        if (this.checked)
+            $('.al-gire').addClass('ne');
+        else
+            $('.al-gire').removeClass('ne');
+    });
+    $('#showp11').click(function () {
+        if (this.checked)
+            $('.abner-louima').addClass('ne');
+        else
+            $('.abner-louima').removeClass('ne');
+    });
+
+
 }
 $(document).ready(main);
