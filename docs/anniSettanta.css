@@ -467,7 +467,7 @@ padding: 0;
     grid-template-columns: 20% 80%;
     padding: 6px 0;
 }
-#body-main-id #copyr{
+#body-main-id footer{
     height: fit-content;
     grid-area: str;
     display: block;
