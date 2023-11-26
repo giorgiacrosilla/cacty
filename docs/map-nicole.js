@@ -1,3 +1,28 @@
+$(document).ready(function() {
+    $('input[type="checkbox"]').on('change', function() {
+      var className = $(this).data('name');
+      if (this.classList.contains('person')) {
+            if ($(this).is(':checked')) {
+            $('.' + className).addClass('stylePerson');
+            console.log()
+        } else {
+            $('.' + className).removeClass('stylePerson');
+        }}
+        else if(this.classList.contains("event")) {
+                if ($(this).is(':checked')) {
+                $('.' + className).addClass('styleEvent');
+                console.log()
+            } else {
+                $('.' + className).removeClass('stylePerson');
+            }}
+        else if (this.classList.contains("date")) {
+                if ($(this).is(':checked')) {
+                $('.' + className).addClass('styleDate');
+                console.log()
+            } else {
+                $('.' + className).removeClass('styleDate');
+            }};
+        });})
 
 function openDiv(firstId, secondId) {
     var firstEl = document.getElementById(firstId);
