@@ -10,11 +10,6 @@
     src: url("telelower.ttf");
 }
 
-@font-face {
-    font-family: futura;
-    src: url("futura\ medium\ bt.ttf");
-}
-
 :root {
     --fuchsia: #e93f82;
     --rosa: rgb(245, 158, 194);
@@ -25,8 +20,6 @@
     --giallo: #f6ec59;
     --azzurro: rgb(113, 176, 197);
 }
-
-
 
 html {
     cursor: url(https://ani.cursors-4u.net/symbols/sym-8/sym752.cur), auto !important;
@@ -102,11 +95,6 @@ html {
     margin-left: 10%;
 }
 
-#titlecover {
-    margin-left: 10px;
-    margin-top: 10px;
-}
-
 /*firstpage*/
 
 .uno {
@@ -160,11 +148,14 @@ main h1 {
     z-index: -1;
 }
 
-.separator.t {
+.separator.t, .separator.left, .separator.right {
     position: absolute;
     width: 100%;
-    height: 19%;
     z-index: 0;
+}
+
+.separator.t {
+    height:19%;
 }
 
 .separator.t::before,
@@ -187,11 +178,9 @@ main h1 {
     -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
 }
 
-.separator.left {
-    width: 100%;
+.separator.left, .separator.right {
     height: 20%;
     position: absolute;
-    z-index: 0;
 }
 
 .separator.left::before,
@@ -214,13 +203,6 @@ main h1 {
     background-color: var(--azzurro);
     clip-path: polygon(100% 0, 0 100%, 100% 100%);
     -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
-}
-
-.separator.right {
-    width: 100%;
-    height: 20vh;
-    position: absolute;
-    z-index: 0;
 }
 
 .separator.right::before,
@@ -315,7 +297,6 @@ main h1 {
 .card:hover {
     transform: scale(1.05);
 }
-
 
 .card:hover .star {
     background-position: 0 0, 0 0;
@@ -422,6 +403,7 @@ main h1 {
 #body-d-id {
     font-family: coolvetica;
     display: grid;
+    font-size:1.1em;
     grid-template-areas: 'nav' 'main' 'footer';
     grid-template-rows: 0.01fr 1.5fr 0.01fr;
     grid-template-columns: 1fr;
@@ -525,13 +507,14 @@ button.accordion {
 
 }
 
-.accordion[id="dates"] {
+.accordion[id="places"] {
     background-color: var(--giallo);
-    transform: rotate(-5deg);
-    border-color: var(--bianco);
+    transform: rotate(5deg);
+    color: #111;
+    border-color: var(--giallo);
 }
 
-.accordion[id="places"] {
+.accordion[id="events"] {
     transform: rotate(5deg);
     background-color: var(--fuchsia);
     border-color: rgb(4, 4, 4);
@@ -543,11 +526,11 @@ button.accordion {
     transform: rotate(-5deg);
 }
 
-.accordion[id="events"] {
+.accordion[id="dates"] {
     background-color: transparent;
     color: black;
     border-color: var(--fuchsia);
-    transform: rotate(5deg);
+    transform: rotate(-5deg);
 }
 
 .panel {
@@ -575,7 +558,7 @@ button.accordion {
 #article-txt-id ul li::before, .wrapper2 ul li::before {
     content: '';
     display: inline-block;
-    width: 2vw;
+    width: 1.7vw;
     height: 3.5vh;
     background-color: var(--rosa);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
@@ -679,7 +662,7 @@ main h2,
 .description,
 .text,
 #introduction-txt-id {
-    font-family: futura;
+    font-family: 'Helvetica', sans-serif;
 }
 
 .text {
@@ -778,20 +761,19 @@ td {
     width: 100%;
     text-align: left;
     border-collapse: collapse;
-    border-radius: 5% !important;
-    border: 3px solid var(--viola) !important;
+    border: 3px solid var(--viola);
 }
 
 .table_section>p {
     text-align: center;
 }
 
-th:nth-child(odd) {
-    color: var(--fuchsia);
+th{
+    background-color: var(--blue);
 }
 
-th:nth-child(even) {
-    color: var(--blue);
+table tr td:first-child {
+    background-color: var(--fuchsia);
 }
 
 .footnotes {
@@ -924,15 +906,15 @@ footer {
 
 /*sidebartag*/
 
-.n {
+.StyleDate {
     background-color: rgb(7, 7, 241);
 }
 
-.nb {
+.stylePerson {
     background-color: rgb(196, 14, 14)
 }
 
-.ne {
+.styleEvent {
     background-color: rgb(2, 138, 25);
 }
 
@@ -969,7 +951,7 @@ footer {
 #main-d {
     z-index: 0;
     padding: 0;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     background-color: var(--bianco);
 }
 
@@ -1014,9 +996,13 @@ footer {
 }
 
 .img-d img {
-    height: 30vw;
+    height: 39vh;
+    width: auto;
 }
 
+.intro-container {
+    margin:3%;
+}
 
 @media only screen and (max-width: 900px) {
     #body-txt-id {
@@ -1026,7 +1012,7 @@ footer {
     #body-main-id,
     #body-d-id,
     .btn-primary {
-        font-size: 0.6rem !important;
+        font-size: 0.9rem !important;
     }
 
     .wrapper h2 {
@@ -1068,7 +1054,7 @@ footer {
         margin-right: 1vw;
     }
 
-    #article-txt-id ul li::before {
+    #article-txt-id ul li::before, .wrapper2 ul li::before {
         width: 2.5vw;
         height: 3.5vh;
 
@@ -1116,9 +1102,10 @@ footer {
     }
 
     .star {
-        width: 35%;
+        width: 25%;
+        height: 35%;
         margin-left: -10%;
-        margin-top: -17%;
+        margin-top: -12%;
     }
 
     #main-footer {
@@ -1201,9 +1188,9 @@ footer {
 
     .star {
         margin-left: -3%;
-        margin-top: -15%;
+        margin-top: -12%;
         width: 25%;
-        height: 50%;
+        height: 40%;
     }
 
     .wrapper1>h1 {
@@ -1244,16 +1231,11 @@ footer {
         font-size: 2rem;
     }
 
-    .wrapper p,
-    .wrapper1 p {
-        font-size: 1.3em;
-    }
-
     .star {
         margin-left: 17%;
-        margin-top: -11%;
+        margin-top: -10%;
         width: 25%;
-        height: 40%;
+        height: 45%;
     }
 
     .footnotes {
@@ -1274,5 +1256,13 @@ footer {
 
     .stroke-d:before {
         left: -0.3%;
+    }
+}
+
+@media only screen and (min-width: 901px) and (max-width: 1200px) {
+    .star {
+        width: 20%;
+        height: 40%;
+        margin-top: -6%;
     }
 }

@@ -249,6 +249,7 @@ main a:active {
   top: 45%;
   transform: translate(-50%, -50%);
 }
+
 .wrapper2 {
   text-align: left;
   margin: 10%;
@@ -271,7 +272,8 @@ h2 {
 }
 
 
-main h2, .wrapper2>h2{
+main h2,
+.wrapper2>h2 {
   color: var(--grigio) !important;
   font-family: Redoctober;
   text-transform: uppercase;
@@ -282,7 +284,6 @@ main h2, .wrapper2>h2{
 }
 
 #body-main-id {
-  font-family: rodchenkol;
   background: radial-gradient(circle at 100%, #070707, rgb(52, 22, 22) 50%, var(--rossoscuro) 75%, #070707 75%);
   color: var(--bianco);
 }
@@ -294,6 +295,7 @@ main h2, .wrapper2>h2{
   grid-template-rows: 0.01fr 1.5fr 0.01fr;
   grid-template-columns: 1fr;
   font-family: rodchenkol;
+  font-size: 1.1em;
 }
 
 .uno {
@@ -392,9 +394,9 @@ footer p {
 
 }
 
-.wrapper2 p{
-  padding-left:0;
-  padding-right:0;
+.wrapper2 p {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .diagonal h2,
@@ -587,7 +589,6 @@ footer h2 {
 
 .text h2 {
   margin-top: 5%;
-  margin-bottom: 2%;
 }
 
 .table_section {
@@ -610,7 +611,7 @@ td {
 }
 
 .text p::first-letter,
-#main-d p::first-letter{
+#main-d p::first-letter {
   color: var(--rossoscuro);
   float: left;
   font-weight: bold;
@@ -620,15 +621,16 @@ td {
   line-height: 1em;
 }
 
-.wrapper2 li {  list-style: none;
-  margin-bottom:2%;
+.wrapper2 li {
+  list-style: none;
+  margin-bottom: 2%;
 }
 
 .wrapper2 li::first-letter {
   font-weight: bold;
   font-family: propaganda;
   margin: 0 0 0 0;
-  font-size:1.5rem;
+  font-size: 1.5rem;
 }
 
 .censorship {
@@ -820,15 +822,15 @@ footer {
 }
 
 /*sidebartag*/
-.n {
+.styleDate {
   background-color: rgb(7, 7, 241);
 }
 
-.nb {
+.stylePerson {
   background-color: rgb(196, 14, 14)
 }
 
-.ne {
+.styleEvent {
   background-color: rgb(2, 138, 25);
 }
 
@@ -893,6 +895,7 @@ footer {
   position: relative;
   z-index: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   height: 100vh;
   width: 50vw;
   padding: 1%;
@@ -910,6 +913,19 @@ footer {
   margin-bottom: 1%;
 }
 
+.img-d {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.img-d img {
+  min-width: 19vw;
+}
+
+.img-d .imgcontainer::after {
+  background-image: none;
+}
+
 .container-doc .name-card>.imgcontainer img {
   width: 80%;
 }
@@ -917,6 +933,15 @@ footer {
 .container-doc .name-card>.imgcontainer::after {
   width: 80%;
   margin-left: -15%;
+}
+
+.intro-container {
+  margin: 2%;
+}
+
+.intro-container ol,
+.intro-container ul {
+  padding-left: 6rem;
 }
 
 @media only screen and (max-width: 900px) {
