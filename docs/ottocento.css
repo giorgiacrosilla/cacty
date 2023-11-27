@@ -28,7 +28,7 @@
     background-repeat: no-repeat;
     background-size: 26px;
     background-position-x: -3px;
-    background-position-y:-2px;
+    background-position-y:-8px;
 }
 .navbar-toggler{
     background-color: #dab35a;
@@ -87,15 +87,16 @@ footer{
 	text-decoration: none;
 	position: relative;
 	text-align: center;
+    
 	
 	&:hover {
-		.button-stroke:nth-child(1) {
+		.button-stroke {
 			stroke-dashoffset: 0;
 		}
 	}
 }
-.permanent-line{         
-    stroke-dashoffset: 0;
+.permanent-line{
+    stroke-dashoffset: 0 !important;
 }
 
 .button-stroke {
@@ -106,13 +107,10 @@ footer{
 	stroke: rgba(79, 77, 77, 0.571);
 	position: absolute;
 	stroke-width: 2;
-	
-	&:nth-child(1) {
 		stroke-dasharray: 350px;
 		stroke-dashoffset: 350px;
 		stroke-width: 3;
-		transition: stroke-dashoffset 800ms ease-out;
-	}
+		transition: stroke-dashoffset 800ms ease-out;    
 }
 
 .menu__link {
@@ -189,6 +187,7 @@ nav li {
     text-decoration: none;
     width: 100px;
   }
+  
 .decoration-sx, .decoration-dx{
     background-size: 100%;
     background-repeat: no-repeat;
@@ -210,7 +209,13 @@ nav li {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 3px solid #dab35a;
-
+}
+footer .decoration-dx, footer .decoration-sx{
+    height: 100px;
+}
+#body-txt-id footer{
+    display: grid;
+    grid-template-columns: 213px auto 213px;
 }
 
 
@@ -255,6 +260,9 @@ nav ul{
     transform: rotate(180deg);
     min-width: 0 !important;
 
+}
+.nav-link:visited{
+    color: #dab35a !important;
 }
 .dropdown-menu{
     background-color: #3c0804 !important;
@@ -348,9 +356,10 @@ nav ul{
 
 /*SIDEBAR NEI TESTI*/
 
-.metarticle-visible-txt {
-    display: block;
+.metarticle-vis-txt {
+    display: grid;
     grid-area: sidebar;
+    grid-template-columns: auto;
   }
   
   .metarticle-inv-txt {
@@ -371,20 +380,20 @@ nav ul{
     }
   }
   
-  .sidecont-txt {
-    animation: fadeIn 1s ease-in-out; /* Imposta la durata dell'animazione */
-    padding: 10px;
-    margin-left: 10px;
-  }
+
   .panel{
     margin-left: 0px;
+        display: none;
   }
+
   .accordion{
    margin: 10px;
    text-transform: uppercase;
    border: 4px double #dab35a !important;
    color: #dab35a;
    background-color: #3c0804;
+   width: 150px;
+
   }
   .accordion:hover{
     background-color:rgba(82, 12, 7, 0.712);
@@ -433,10 +442,11 @@ figure:nth-of-type(3n+1){
     float: left;
     margin-right: 30px;
      
-}
+}*/
 figcaption{
     text-align: center;
-}*/
+
+}
 .q-symbol{
     display: none;
 }
@@ -444,20 +454,11 @@ figcaption{
 #main-txt-id{
     padding: 11.11% 11.11% 22.22% 11.11%;
     display: grid;
-    grid-template-columns: "title" "subtitle""text""author";
-
-
 }
 #introduction-txt-id{
     margin: 0 auto;
 }
-#introduction-txt-id h1{
-        grid-area: "title";
 
-}
-#introduction-txt-id h2{
-    grid-area: "subtitle";
-  }
 #introduction-txt-id  h1, h2, h3, .diagonal h2 {
     text-transform: uppercase !important;
     text-align: center;
@@ -489,7 +490,10 @@ figcaption{
 .info, .description {
     text-align: center;
 }
-
+.openbtn{
+    padding: 0;
+    padding-bottom: 10px;
+}
 
 #bside {
     padding-top: 5%;
@@ -613,17 +617,58 @@ header{
         margin-left: 10px;
         
     }
+    .accordion{
+        width: 200px;
+    }
 
+    .collapsing .navbar-nav{
+        
+        border-radius: 10px;
+        width: 100% !important;
+      }
+    
+      .show .navbar-nav, .collapsing .navbar-nav{
+        background-color: #f5f5f5 !important;
+        filter: none !important;
+        border-radius: 10px;
+        width: 100%;
+        text-align: center !important;
+      }
+      .show .nav-link, .collapsing .nav-link{
+        text-align: center;
+        width: 100%;
+        font-size: 12px;
+      }
+      ul .show{
+        
+        margin: 0 auto !important;
+        align-content: center;
+      }
     
     .navbar{
         flex-wrap: wrap !important;
+        --bs-navbar-active-color: #dab35am !important;
+        --bs-navbar-brand-color: #dab35am !important;
+        --bs-navbar-brand-hover-color: #dab35am !important;
     }
     .nav-item{
         transform: rotate(0deg) !important; 
+        align-content: center !important;   
     }
     ul .dropdown-menu{
         border: 0px solid transparent !important;
+        background-color: #f5f5f5 !important;
+        filter: none !important;
+        box-shadow: none; 
+        align-content: center !important;   
     }
+    .navbar-collapse{
+        
+        filter: none;
+    }
+    
+    
+    
     /*#body-txt-id{
         width: 100%; 
         display: grid;
@@ -633,6 +678,10 @@ header{
         width: 100%; 
         margin-bottom: 11.11%;
         background-color: #f5f5f5;
+    }
+    #body-txt-id footer{
+        display: grid;
+        grid-template-columns: 213px auto;
     }
     
 }
@@ -648,6 +697,7 @@ header{
         
     }
     
+    
 
     .title{
         margin-left: 20px;
@@ -656,7 +706,10 @@ header{
     /*#body-txt-id{
         grid-template-areas: "nav" "button" "sidebar""main" "footer";
     }*/
-    
+    #body-txt-id footer{
+        display: grid;
+        grid-template-columns: auto 213px;
+    }
    
 
 }
@@ -713,6 +766,16 @@ footer{
    left: 0;
    bottom: 0;
    width: 100%;   
+}
+#body-txt-id footer{
+    width: 99%;
+}
+
+#copyr{
+    color: #dab35a;
+    padding: 10px;
+    font-size: 10px;
+    word-wrap: break-word;
 }
 #main-footer {
     grid-area: footer;
@@ -796,7 +859,7 @@ footer{
 }
 
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 350px) {
     .decoration-sx{
         display: none;
     }
@@ -804,8 +867,40 @@ footer{
     nav{
         height:160px;
     }
-    /*#body-txt-id{
-        grid-template-areas: "nav" "button" "sidebar""main" "footer";
-    }*/
+    #body-txt-id{
+        width: 100%;
+        grid-template-areas: "nav" "sidebar" "button""main" "footer";
+    }
+    #body-txt-id footer{
+        display: grid;
+        grid-template-columns: auto ;
+        height: fit-content;
+    }
+    
+    #body-txt-id main{
+        width: 100% !important;
+    }
+    .accordion{
+        word-break: break-all;
+        width: 100px;
+
+    }
+    .panel{
+        word-break: break-all;
+    }
+    #main-txt-id{
+        display: block;
+        padding: 0%;      
+       width: 100% !important;
+    }
+    #main-txt-id p:first-of-type{
+        display: block;
+        width: 100%;
+
+    }
+    #introduction-txt-id{
+        width: 100%;
+    }
+    
 }
 
