@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8" lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="De_Stijl.css" id="csstochange">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet" />
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZ2lvY3Jvc2kiLCJhIjoiY2xuNXQ1ZGV5MGQybjJqcDZ6YWFzMnByZCJ9.TWuwEi8RI7prLyZOAnx6ng';
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="body-txt-id" class="grid-normal">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="title" id="titlemainp">
+            <div class="inner-box">
+                <div class="circle"></div>
+            </div>
+            <a class="navbar-brand" href="#" data-file="index.html">
+                <h1 class="stroke-double" title="secretmag">secretmag
+                </h1>
+            </a>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-file="documentation.html">Documentation</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Themes
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('Aldine.css')">Aldine</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('ottocento.css')">1860</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('De_Stijl.css')">De Stijl</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('anniSettanta.css')">70s</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('90s.css')">90s</button></a></li>
+                        <li><a class="dropdown-item"><button class="style-button"
+                                    onclick="stylechanger('future.css')">Dystopian future</button></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="sidebar-txt-id">
+        <div class="sidecont-txt metarticle-inv-txt" id="metadata-txt-id">
+            <button class="accordion" id="data">Data</button>
+            <div class="panel">
+                <p>Creator: William H. Jarrett II</p>
+                <p>Title: Yale, Skull and Bones, and the Beginnings of Johns Hopkins</p>
+                <p>Journal:The peer-reviewed journal of Baylor Scott & White Health</p>
+                <p>Date: 2011</p>
+                <p>Source: <a
+                        href="https://doi.org/10.1080/08998280.2011.11928679">https://doi.org/10.1080/08998280.2011.11928679</a>
+                </p>
+            </div>
+            <button class="accordion" id="dates">Dates</button>
+            <div class="panel">
+                <form role="form">
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="show1700" class="show">1700</label></div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="show1800" class="show">1800</label>
+                    </div>
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="show1900" class="show">1900</label></div>
+                </form>
+            </div>
+            <button class="accordion" id="places">Places</button>
+            <div class="panel">
+                <div id="map"></div>
+            </div>
+            <button class="accordion" id="people">People</button>
+            <div class="panel">
+                <form role="form">
+                    <div class="checkbox"><label>
+                        <input type="checkbox" id="showa7" class="show">William Henry Welch</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showb7" class="show">Bush</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showc7" class="show">Phelps</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showd7" class="show">Rockfeller</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showe7" class="show">William Stewart Halsted</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showf7" class="show">Harvey Williams CUshing</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showg7" class="show">Alexandra Robbins</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showh7" class="show">Fabian Franklin</label></div>
+                    <div class="checkbox"><label>
+                        <input type="checkbox" id="showi7" class="show">Alphonso Taft</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showj7" class="show">Abraham Flexner</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showk7" class="show">Alan Chesney</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showl7" class="show">Vanderbilt</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showm7" class="show">Pillsbury</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="shown7" class="show">Walkers</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showo7" class="show"> Whitneys</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showp7" class="show">George H. W. Bush</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showq7" class="show">David MCculough</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showe78" class="show">William F. Buckley</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="shows7" class="show">John F. Kerry</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showt7" class="show">John Hersey</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showu7" class="show">Archibald Mc Leish</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showv7" class="show">Henry Luce</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showw7" class="show">Averill Harriman</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showx7" class="show">Prescott Bush</label></div>
+                    <div class="checkbox"><label>
+                        <input type="checkbox" id="showy7" class="show">William F. Buckley Jr</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showz7" class="show">Pierson</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showa1" class="show">William Gilman</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showb1" class="show">Eliza Coit Gilman</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showc1" class="show">Alice Gilman</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showd1" class="show">Elizabeth Gilman</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showe1" class="show">James L. Kingsley</label></div>
+                    <div class="checkbox"><label>
+                         <input type="checkbox" id="showf1" class="show">Henry Coit Kingsley</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showg1" class="show">Edward W. Gilman</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showh1" class="show">Timothy Dwight</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showj1" class="show">Andrew D. White</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showk1" class="show">Benjamin Silliman</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showl1" class="show">H. L. Mencken</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showm1" class="show">Mary Ketcham</label></div>
+                    <div class="checkbox"><label>
+                        <input type="checkbox" id="shown1" class="show">Elizabeth Dwight Woolsey</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showo1" class="show">John Hopkins</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showp1" class="show">Henry Hurd</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showq1" class="show">Julius Cohnheim</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showr1" class="show">Karl Ludwig</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="shows1" class="show">John Shaw Billings</label></div>
+                    <div class="checkbox"><label>
+                        <input type="checkbox" id="showt1" class="show">William MacCallum</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showu1" class="show">Osler</label></div>
+                <div class="checkbox"><label>
+                        <input type="checkbox" id="showv1" class="show">John Cameron</label></div>
+                </form>
+            </div>
+            <button class="accordion" id="events">Events</button>
+            <div class="panel">
+                <form role="form">
+                    <div class="checkbox"><label>
+                            <input type="checkbox" id="showe1" class="show">Reconstruction</label></div>
+                </form>
+            </div>
+        </div>
+        <div class="sidecont-txt metarticle-inv-txt" id="article-txt-id">
+            <button class="accordion" id="dates">Issue 1: KKK</button>
+            <div class="panel">
+                <ul>
+                    <li><a href="#" data-file="kkk1.html">The Terror is Born</a></li>
+                    <li><a href="#" data-file="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
+                    <li><a href="#" data-file="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the
+                            1920s</a></li>
+                </ul>
+            </div>
+            <button class="accordion" id="places">Issue 2: Freemasonry</button>
+            <div class="panel">
+                <ul>
+                    <li><a href="#" data-file="nico-testo1.html">Freemason and the American Revolution</a></li>
+                    <li><a href="#" data-file="nico-testo2.html">Voluntary Associations and Civil Religion: The Case of
+                            Freemasonry</a></li>
+                    <li><a href="#" data-file="nico-testo3.html">Freemasonry and Sir John Soane</a></li>
+                </ul>
+            </div>
+            <button class="accordion" id="people">Issue 3: Skull and Bones</button>
+            <div class="panel">
+                <ul>
+                    <li><a href=".html">Skull and
+                            Bones, the Ivy League, and
+                            the Hidden Paths of Power</a></li>
+                    <li><a href=".html"></a></li>
+                    <li><a href=".html"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="button-txt-id">
+        <button class="openbtn" onclick="toggleClass('metadata-txt-id', 'article-txt-id')">Metadata</button><br>
+        <button class="openbtn" onclick="toggleClass('article-txt-id', 'metadata-txt-id')">Articles</button>
+    </div>
+    <main id="main-txt-id">
+        <div id="introduction-txt-id">
+        <h1>YALE IN THE 19TH CENTURY</h1>
+        </div>
+        <div class="text" lang="en">
+            </lb>
+            <p>During the 19th century, Yale College was an academic
+            powerhouse. Having celebrated its centennial in the first year of the new</lb>
+            century, the college was transforming itself from a regional <span class="place new-england">New England</span><a
+                    href="https://it.wikipedia.org/wiki/Nuova_Inghilterra" target="_blank"><span class="material-symbols-outlined">link</span></a> school whose main function was the education of young</lb>
+            men for the Congregational Ministry to a dynamic national school</lb>
+            whose new function was to train the leaders of the expanding,</lb>
+            dynamic <span class="America">America</span><a
+                    href="https://it.wikipedia.org/wiki>/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a> that sprung into being
+            in that century.</lb>
+            Numbered among Yale graduates were inventors such as <span class="person eli-whitney">Eli Whitney</span><a
+                    href="https://it.wikipedia.org/wiki/Eli_Whitney" target="_blank"><span class="material-symbols-outlined">link</span></a> and <span class="person Samuel-F.-B.-Morse">Samuel
+                        F. B. Morse</span><a href="https://it.wikipedia.org/wiki/Samuel_Morse" target="_blank"><span class="material-symbols-outlined">link</span></a>; men of letters such as <span class="person Noah-Webster">Noah Webster</span><a
+                    href="https://it.wikipedia.org/wiki/Noah_Webster" target="_blank"><span class="material-symbols-outlined">link</span></a>; statesmen such as <span class="person John-C.-Calhoun">John C. Calhoun</span><a
+                    href="https://it.wikipedia.org/wiki/John_C._Calhoun" target="_blank"><span class="material-symbols-outlined">link</span></a>; scientists such</lb>
+            as <span class="person benjamin-silliman">Benjamin Silliman</span><a href="https://it.wikipedia.org/wiki/Benjamin_Silliman" target="_blank"><span class="material-symbols-outlined">link</span></a> and <span class="person J.-Willard-Gibbs">J. Willard Gibbs</span><a
+                    href="https://it.wikipedia.org/wiki/Josiah_Willard_Gibbs" target="_blank"><span class="material-symbols-outlined">link</span></a>; educators such as
+            </lb>
+            <span class="person timothy-dwight">Timothy Dwight</span><a href="https://en.wikipedia.org/w>iki/Timothy_Dwight_IV" target="_blank"><span class="material-symbols-outlined">link</span></a>, future Yalepresident, and <span
+                class="person andrew-d-white">Andrew D. White</span><a href="https://en.wikipedia.org/wiki/Andrew_Dickson_White" target="_blank"><span class="material-symbols-outlined">link</span></a>,</lb>
+            founding president of Cornell; and a future president of the United</lb>
+            States,<span class="person William-Howard-Taft">William Howard Taft</span><a
+            href="https://it.wikipedia.org/wiki/William_Howard_Taft" target="_blank"><span class="material-symbols-outlined">link</span></a>. Yale's
+            reputation was such that it even</lb>
+            spawned fictitious Yalies such as <span class="person Frank-Merriwell">Frank Merriwell</span><a
+                    href="https://en.wikipedia.org/wiki/Frank_Merriwell" target="_blank"><span class="material-symbols-outlined">link</span></a> and <span
+                class="person Dink-Stover">Dink Stover</span><a href="https://en.wikipedia.org/wiki/Stover_at_Yale" target="_blank"><span class="material-symbols-outlined">link</span></a>.</lb>
+            It is worth noting that every name I have mentioned, including the</lb>
+            fictitious ones, were members of Yale famous secret society, <span
+                class="skull-and-bones">Skull</lb>
+                and Bones</span>, except for those few who matriculated before Bones</lb>
+            was founded in <span class="date-1800">1832</span>. I will return to this topic shortly.</lb>
+            Yale was good
+            at what it did. The official history of the college puts it this way:</lb>
+            Yale was
+            exasperately and mysteriously successful, and the power of the place remains unmistakable. Yale was organized. Yale</lb>
+            inspired a loyalty in its sons that was conspicuous and impressive. Yale men made such records [in
+            their careers] that . . . to</lb>
+            rival institutions and academic reformers there was something</lb>
+            irritating and disquieting about old Yale<lb>
+            One <span class="role">Harvard alumnus</span> was quoted as saying that he intended to send his son to Yale because,
+            “in real life, all the Harvard</lb>
+            men are working for Yale men.”</lb>
+            In the second half of the 19th century, Yale college produced four men who
+            were to play pivotal roles in creating a</lb>
+            new and distinctly American kind of university and in the way</lb>
+            medicine was taught in this country:</lb></p>
+           <p> • <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>,
+            Yale College <span
+                class="date-1800">1852</span>, the <span class="role">founding president</span> of</lb>
+            The John Hopkins University and the guiding genius whose</lb>
+            ideas and spirit infused the new institution with a thirst for</lb>
+            knowledge and new truths acquired via scientific research.</lb></p>
+           <p> • <span class="person william-henry-welch">William Henry Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>, Yale <span
+                class="date-1800">1870</span>, the first appointment by</lb>
+                <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            to the medical faculty of the new university in <span class="date-1800">1884</span>.</p>
+            <p><span class="person william-henry-welch">William Henry Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> became the unquestioned leader
+            of the scientific revolution that fostered a new approach to medicine in <span class="place state America">America</span><a
+                    href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a>.</lb>
+            For 50 years he held the respect, awe, and admiration of</lb>
+            <span class="America">America's</Span><a href="https://it.wikipedia.org/wiki/Stati_Uniti_d>%27America" target="_blank"><span class="material-symbols-outlined">link</span></a> medical profession; there has never been another</lb>
+            like him.</lb></p><br>
+
+            <p>•<span class="person william-stewart-halsted">William Stewart Halsted</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a>,Yale <span
+                class="date-1800">1874</span>, the first <span class="role">professor of surgery</span></lb>
+            in the medical school at John Hopkins and
+            regarded as the</lb>
+            most important figure in the history of surgery in <span class="place state America">America</span><a
+            href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a></p>.<br></p>
+            <p>• <span class=" person harvey-williams-cushing">Harvey Williams Cushing</span><a href="https://it.wikipedia.org/wiki/Harvey_Williams_Cushing" target="_blank"><span class="material-symbols-outlined">link</span></a>, Yale <span
+                class="date-1800">1891</span>, <span class="person william-stewart-halsted">Halsted's</span><a
+                    href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a> <span
+                class="role">first resident</span></lb>
+            at Johns Hopkins and
+            acknowledged as the founder of neurosurgery in <span class="place state America">America</span><a
+            href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a>.</p></lb>
+            <h2>YALE'S SECRET
+            SOCIETIES</lb></h2>
+            <p>Running like a golden thread through this story are Yale</lb>
+            secret societies, dominated by the famous Skull and Bones. Both</lb>
+            <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            and <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            belonged to Skull and Bones, while <span class=" person harvey-williams-cushing">Harvey Cushing</span><a href="https://it.wikipedia.org/wiki/Harvey_Williams_Cushing" target="_blank"><span class="material-symbols-outlined">link</span></a> was a member of
+            Scroll and Key and may have turned</lb>
+            down a tap from Bones. <span class="person william-stewart-halsted">Halsted</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a>, despite being football
+                captain</lb>
+                and a talented player on the baseball team, was not tapped by</lb>
+                either one.</lb>
+                The interested reader will search in vain for any mention of</lb>
+                these organizations or their influence because they are, indeed,</lb>
+                secret. The two leading biographers of <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                    class="person fabian_franklin">Fabian Franklin</span><a href="https://en.wikipedia.org/wiki/Fabian_Franklin" target="_blank"><span class="material-symbols-outlined">link</span></a></lb>
+                and <span class="person abraham-flexner">Abraham Flexner</span><a href="https://en.wikipedia.org/wiki/Abraham_Flexner" target="_blank"><span class="material-symbols-outlined">link</span></a>, did not Skull and Bones in their</lb>
+                text or list it in the index. <span class="person alan-chesney">Alan Chesney</span><a
+                        href="https://medicalarchives.jhmi.edu/" target="_blank"><span class="material-symbols-outlined">link</span></a>, in his monumental</lb>
+                history of the early days at Hopkins , didn’t mention it either.</lb>
+                The biographers of <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span class="person william-stewart-halsted">Halsted's</span><a
+                    href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a>, and <span class=" person harvey-williams-cushing"> Cushing</span><a href="https://it.wikipedia.org/wiki/Harvey_Williams_Cushing" target="_blank"><span class="material-symbols-outlined">link</span></a> pay lip service</lb>
+                to the secret societies but quickly rush off to other subjects.</lb></p>
+            <p>There is ample</lb>
+            evidence that <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>, in particular, was a power to be reckoned</lb>
+            with in the inner sanctum of Skull and Bones.</lb>
+            What are the secret societies at Yale? What do they do? Who</lb>
+            belongs to them, and how do they exercise their power? There has</lb>
+            been a recent surge of interest in Skull and Bones in particular
+            </lb>
+            because both <span class="person bush">Presidents Bush</span><a
+                        href="https://en.wikipedia.org/wiki/Bush_family" target="_blank"><span class="material-symbols-outlined">link</span></a> have been
+            members. A recent Yale</lb>
+            alumna and journalist, <span class="cited-authors alexandra-robbins">Alexandra Robbins</span><a
+            href="https://en.wikipedia.org/wiki/Alexandra_Robbins" target="_blank"><span class="material-symbols-outlined">link</span></a>, has
+            succeeded in persuading over a hundred Bonesmen to break their vow of silence</lb>
+            and speak to her about the society. She has published a book</lb>
+            entitled Secrets of the Tomb: Skull and Bones, the Ivy League, and</lb>
+            the Hidden Paths of Power. In doing so, she experienced harassment and not-so-subtle threats; she related a
+            telephone call from</lb>
+            an irate <span class="role">Bonesman</span> who berated her for her work and warned her</lb>
+            that “there are a lot of us [Bonesmen] in journalism and political</lb>
+            institutions across the country—good luck with your career.”</lb>
+            The secret societies are institutions unique to Yale and are</lb>
+            found in no other academic institution either here or abroad.</lb>
+            They are privately owned and are not the property of Yale University. There are six
+            “above-ground” secret societies. Skull and Bones, founded in <span class="date-1800">1832</span>, is the oldest and the most important.</lb>
+            Scroll and Key was founded 10 years later, in <span class="date-1800">1842</span>, and is second
+            to “Bones” in prestige; in some years, the “better men” will</lb>
+            choose Keys over Bones, as apparently happened in <span class="person harvey-williams-cushing">Harvey's </span><a href="https://it.wikipedia.org/wiki/Harvey_Williams_Cushing" target="_blank"><span class="material-symbols-outlined">link</span></a>class. The others, of considerably less importance, are</lb>
+            Wolfshead, <span
+                class="ogranization book-and-snake">Book and Snake</span><a href="https://en.wikipedia.org/wiki/Book_and_Snake" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span class="ogranization berzelius">Berzelius</span><a
+                    href="https://en.wikipedia.org/wiki/Berzelius_(secret_society)" target="_blank"><span class="material-symbols-outlined">link</span></a>, and <span
+                class="ogranization elihu">Elihu</span><a href="https://en.wikipedia.org/wiki/Elihu_Club" target="_blank"><span class="material-symbols-outlined">link</span></a>.</lb>
+            Each society owns an impressive mausoleum-like “tomb”</lb>
+            in which meetings are held each Th ursday and Sunday evening</lb>
+            (Figure 1). These are massive, very impressive structures, foreboding and bearing an unmistakable message:
+            “Private; keep</lb>
+            out.” Although the activities of the society are secret, their</lb>
+            existence and membership are not. Rather than being hidden</lb>
+            away in some dark recess of the Yale Campus, Skull and Bones</lb>
+            lies directly across High Street from Yale Old Campus, where</lb>
+            1400 freshmen live, next door to the art gallery on one side</lb>
+            and to one of the residential colleges on the other. Wolfshead</lb>
+            is located on <span class="place york-street">York Street</span><a
+                    href="https://it.wikipedia.org/wiki/York_Street_(metropolitana_di_New_York)" target="_blank"><span class="material-symbols-outlined">link</span></a>, near two of the residential colleges,</lb>
+            the offices of the <span class="ogranization yale-daily-news">Yale Daily
+                News</span><a href="https://yaledailynews.com/" target="_blank"><span class="material-symbols-outlined">link</span></a>, and fraternity row. Book and Snake is located just a few yards from the freshman commons</lb>
+            dining hall. So in the course of a day, hundreds of <span class="role">Yale students</span></lb>
+            will pass by these tombs, all the while wondering what does</lb>
+            go on in there.</p>
+        </div>
+        </lb>
+        </br>
+    
+        <div class="img2-with-text">
+            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSMacpCVLGYy0YHMp9PPePZpprfMa0FKVDJGxXfyl9exqY3fu6T"
+                alt="secret scrolls building" />
+            <p>Building of the Scrolls and Keys</p>
+        </div>
+        <br>
+        <div class="two-columns"> <p>Each society consists of 15 members of the senior class, a total</lb>
+            of 90 members for all six societies—well less than 10% of the</lb>
+            class. In the spring, on “tap day,” each society elects 15 members</lb>
+            from the junior class as their successors. The names of the new</lb>
+            members are published in the <span class="ogranization yale-daily-news">Yale Daily
+                News</span><a href="https://yaledailynews.com/" target="_blank"><span class="material-symbols-outlined">link</span></a> and used to be</lb>
+            published in the <span class="ogranization new-york-times">New York
+                    Times</span><a href="https://www.nytimes.com/" target="_blank"><span class="material-symbols-outlined">link</span></a> The annual yearbook carries the</lb>
+            names of each member, along with a photograph of the “tomb,”</lb>
+            and today one can obtain, over the Internet, the membership</lb>
+            roster of Skull and Bones, dating all the
+            way back to <span class="date-1800">1832</span>.</lb>
+            Who gets “tapped”? Typically, Skull and Bones will elect the
+            </lb>
+            football captain and perhaps another star player or two, the editor of the <span class="ogranization yale-daily-news">Yale Daily
+                News</span><a href="https://yaledailynews.com/" target="_blank"><span class="material-symbols-outlined">link</span></a>,
+            a Whiff enpoof, a champion swimmer</lb>
+            or hockey player, one or two fraternity presidents, and campus</lb>
+            leaders of every description. Traditionally, the <span class="role">15th member</span></lb>
+            tapped by “Bones” is the outstanding man in the class. Sadly,</lb>
+            some aspirants to this title over the years have turned down other</lb>
+            societies while awaiting the tap that never came.</lb>
+            Skull and Bones has been considered the epitome of the Eastern</lb>
+            establishment, the confl uence of old money, power, and prestige.</lb>
+            The society’s membership roster includes some of <span class="place state America">America's</span><a
+            href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a> most</lb>
+            powerful families: <span class="person rockefellers">Rockfellers</span><a
+                    href="https://it.wikipedia.org/wiki/Rockefeller_(famiglia)" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="person vanderbilt">Vanderbilt</span><a href="https://it.wikipedia.org/wiki/Vanderbilt" target="_blank"><span class="material-symbols-outlined">link</span></a>,
+            <span class="person fords">Fords</span><a href="https://it.wikipedia.org/wiki/Ford" target="_blank"><span class="material-symbols-outlined">link</span></a> <span
+                class="person Phelps">Phelps</span><a href="https://en.wikipedia.org/wiki/Fred_Phelps" target="_blank"><span class="material-symbols-outlined">link</span></a>,</lb>
+            <span class="person pillsbury">Pillsbury</span><a href="http://www.pillsburyfamily.info/" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="person walkers">Walkers</span><a href="https://en.wikipedia.org/wiki/Walker_family" target="_blank"><span class="material-symbols-outlined">link</span></a>, and
+            <span class="person whitneys">Whitneys</span><a href="https://en.wikipedia.org/wiki/Whitney_family" target="_blank"><span class="material-symbols-outlined">link</span></a>.
+            Yale
+            graduates who were members of Skull and Bones include all three
+            Yale
+            undergraduates who</lb>
+            have been elected <span class="role">president</span> of the <span class="place united-states">United
+                    States</span><a href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a>>—<span class="person William-Howard-Taft">William Howard Taft</span><a
+                    href="https://it.wikipedia.org/wiki/William_Howard_Taft" target="_blank"><span class="material-symbols-outlined">link</span></a></lb>
+            <span class="person William-Howard-Taft">Taft</span><a
+            href="https://it.wikipedia.org/wiki/William_Howard_Taft" target="_blank"><span class="material-symbols-outlined">link</span></a>,<span
+                class="person george-h-w-bush">George H.W. Bush</span><a href="https://it.wikipedia.org/wiki/George_H._W._Bush" target="_blank"><span class="material-symbols-outlined">link</span></a>, and <span class="person george-w-bush">George W.</span><a href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span class="material-symbols-outlined"></span></a>—as well as <span
+                class="person david-mccullough">David McCullough</span><a href="https://it.wikipedia.org/wiki/David_McCullough" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span class="person william-f-buckley">William F.Buckley</span><a
+                    href="https://en.wikipedia.org/wiki/William_F._Buckley_Sr." target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="person john-f-kerry">John F Kerry</span><a href="https://it.wikipedia.org/wiki/John_Kerry" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span class="person john-hersey">John Hersey</span><a
+                    href="https://it.wikipedia.org/wiki/John_Hersey" target="_blank"><span class="material-symbols-outlined">link</span></a>,</lb>
+            <span class="person archibald-mcleish">Archibald Mcleish</span><a href="https://it.wikipedia.>org/wiki/Archibald_MacLeish" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span class="person henry-luce">Henry Luce</span><a
+                    href="https://it.wikipedia.org/wiki/Henry_Robinson_Luce" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="person averill-harriman">Averill Harriman</span><a href="https://it.wikipedia.org/wiki/W._Averell_Harriman" target="_blank"><span class="material-symbols-outlined">link</span></a>,<span class="person prescott-bush">Prescott Bush</span><a
+                    href="https://it.wikipedia.org/wiki/Prescott_Bush" target="_blank"><span class="material-symbols-outlined">link</span></a> . . . and the list goes on and on.</lb>
+            What power and influence does Skull and Bones wield? In</lb>
+            actuality, Yale over the years has attracted
+            talented and intellectually gifted students to the college, and Skull and Bones</lb>
+            has done a good job in identifying these unique individuals</lb>
+            and rewarded them with election to the society. Th us, with a</lb>
+            single exception, every <span class="role">Yale president</span> from the mid <span class="date">1800s</span> to
+            </lb>
+            <span class="date-1900">1950</span>, some 100 years, was a member of Skull and. Many</lb>
+            important administrative positions, deanships, and faculty posts</lb>
+            at Yale were
+            held by Bonesmen, and the governing Yale Corporation was liberally sprinkled
+            with members from <span class="role">Bones</span> and</lb>
+            <span class="role">Keys</span>. At times, it could be said that Yale college was a wholly</lb>
+            owned subsidiary of Skull and Bones!</lb>
+            In her book, <span class="cited-authors alexandra-robbins">Alexandra Robbins</span><a
+            href="https://en.wikipedia.org/wiki/Alexandra_Robbins" target="_blank"><span class="material-symbols-outlined">link</span></a> has
+            emphasized the power</lb>
+            and influence of the <span class="role">“patriarchs,”</span> the graduate members of the</lb>
+            society, over the affairs of Skull and Bones.</lb>
+            Thus, when the <span class="role">“knights,”</span> the undergraduate members of Bones, first voted to</lb>
+            admit women to the society in <span class="date-1900">1991</span>, <span class="event">20</span></lb>
+            years after women were first admitted to</lb>
+            Yale,
+            a number of older <span class="role">patriarchs</span>, led by</lb>
+            <span class="person william-f-buckley-jr">William F. Buckley Jr.</span><a href="https://it.wikipedia.org/wiki/William_Buckley" target="_blank"><span class="material-symbols-outlined">link</span></a>, changed the locks</lb>
+            on the tomb and suspended operations for</lb>
+            a year.</lb>
+            It is difficult to overestimate the subtle</lb>
+            influence exercised over the Yale experience</lb>
+            by these mysterious entities. Every Yale <span
+                class="role">student</span>, in his own mind, is Skull and Bones</lb>
+            potential, so it becomes important not to offend the “wrong people.” It is tempting to gawk, each Thursday evening, at the sight of
+            15 somber figures, clad in dark</lb>
+            grey flannel, filing into that huge foreboding mausoleum while</lb>
+            singing some obscure ancient secret tune; it wouldn’t do to be</lb>
+            found there 4 or 5 hours later when they emerge from their</lb>
+            secret doings or to stand on the sidewalk and heckle them on</lb>
+            their appointed rounds. To do so might invite a blackball. But</lb>
+            then again, some couldn’t care less, or so they say.</p>
+            <p>Yale historian</lb>
+            <span class="person pierson">Pierson</span><a
+                    href="https://en.wikipedia.org/wiki/George_Wilson_Pierson#:~:text=George%20Wilson%20Pierson%20(October%2022,official%20historian%20of%20the%20university." target="_blank"><span class="material-symbols-outlined">link</span></a> has commented that “the finality and exclusiveness of</lb>
+            the choosing [of members] has created an enduring fault line</lb>
+            in the Yale
+            brotherhood.”</lb>
+            The poem “A Freshman’s Prayer on Thursday Night,” published in the Harkness Hoot in <span
+                class="date-1900">1934</span>, sums up the ambivalence</lb>
+            felt by Yale
+            <span class="role">undergraduates</span> towards the societies:<br>
+            Hear the clumping of their feet<br>
+            As they go marching down the street.<br>
+            Perhaps some day, if I am good,<br>
+            I may be of that brotherhood.<br>
+            There is something grand about a club<br>
+            So few can join it, there’s the rub.<br>
+            And those outside are filled with awe;<br>
+            What prompts such awe can have no flaw.<br>
+            Oh, Lord, I pray Thee, let me be<br>
+            A God in that Society.<br>
+            For though I know not what they do<br>
+            I greatly want to do it, too.<br></p>
+            <h3>DANIEL COIT GILMAN (1831–1909)</lb></h3>
+            <p>Let us now examine the life of <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>(Figure 2),</lb>
+            the founding president of John Hopkins University  and</lb>
+            a prominent member of Skull and . <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> was born</lb>
+            on <span class="date-1800">July 6, 1831</span>, to <span class="person william-gilman">William Gilman</span><a
+                    href="https://www.wikidata.org/wiki/Q100490470" target="_blank"><span class="material-symbols-outlined">link</span></a> and <span
+                class="person eliza-coit-gilman">Eliza Coit Gilman</span><a
+                    href="https://www.ancestry.com/genealogy/records/eliza-coit-24-2dg4jj" target="_blank"><span class="material-symbols-outlined">link</span></a> in</lb>
+            <span class="place norwich">Norwich</span><a href="https://it.wikipedia.org/wiki/Norwich" target="_blank"><span class="material-symbols-outlined">link</span></a><span class="place Connecticut">Connecticut</span><a
+                            href="https://it.wikipedia.org/wiki/Connecticut" target="_blank"><span class="material-symbols-outlined">link</span></a></span></span></span>.
+            Through his mother’s family, there were</lb>
+            strong ties to Yale and to Skull and Bones. His uncle, <span class="person james-l-kingsley">James L. Kingsley</span><a
+                    href="https://en.wikipedia.org/wiki/James_Luce_Kingsley" target="_blank"><span class="material-symbols-outlined">link</span></a>, was a <span class="role">professor</span> at Yale, and <span
+                class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> lived with him</lb>
+            while in college. Another uncle, <span class="person henry-coit-kingsley">Henry Coit Kingsley</span><a
+                    href="https://en.wikipedia.org/wiki/Henry_Coit_Kingsley" target="_blank"><span class="material-symbols-outlined">link</span></a>, Yale and</lb>
+            <span class="role">Bones</span> <span class="date-1800">1834</span>, was the <span class="role">treasurer</span>
+            of Yale. A cousin, <span class="person william-l-kingsley">William L. Kingsley</span>, edited a literary periodical, New Englander, for</lb>
+            which <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> wrote scholarly articles during his faculty years at</lb>
+            Yale <span
+                class="person william-l-kingsley">William Kingsley</span> was an early member of Scroll and Key,</lb>
+            class of <span class="date-1800">1843</span>, and helped incorporate Scroll and Key in <span class="date-1800">1860</span>.</lb>
+            The Kingsley Trust is the
+            corporate identity of Scroll and Key .</lb>
+            <span class="person Daniel_Coit_Gilman">Gilman’s</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> older brother, <span class="person edward-w-gilman">Edward W. Gilman</span><a
+                    href="https://www.wikidata.org/wiki/Q94876191" target="_blank"><span class="material-symbols-outlined">link</span></a>, was also a member
+            </lb>
+            of Scroll and Key, class of <span class="date-1800">1843</span>.</lb>
+                    <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            attended Yale
+            from <span class="date-1800">1848 to 1852</span> and was elected</lb>
+            to Skull and Bonesin <span class="person">1851</span>. Among his close friends and lifelong
+            colleagues were <span class="person timothy-dwight">TImothy Dwight</span><a
+                    href="https://en.wikipedia.org/wiki/Timothy_Dwight_IV" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="date-1800">Yale 1849</span> and <span class="person">Skull and</lb>
+                Bones</span>, later to be <span class="role">’s president</span>, and <span class="person andrew-d-white">Andrew D. White</span><a href="https://en.wikipedia.org/wiki/Andrew_Dickson_White" target="_blank"><span class="material-symbols-outlined">link</span></a>, Yale</lb>
+            <span class="date-1800">1853</span> and <span class="role">Bones</span>, who was the <span class="role">founding
+                president of Cornell.</lb>
+            Following graduation, <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> was
+            undecided on a career, spent</lb>
+            some time at Harvard, and eventually
+            traveled to <span class="place state europe"><a href="https://en.wikipedia.org/wiki/Europe">Europe</a></span></span>
+            with</lb>
+            his friend <span class="person andrew-d-white">Andrew D. White</span><a href="https://en.wikipedia.org/wiki/Andrew_Dickson_White" target="_blank"><span class="material-symbols-outlined">link</span></a> as part of a
+            legation to <span class="place st-petersburg">St. Petersburg</span><a href="https://en.wikipedia.org/wiki/Saint_Petersburg" target="_blank"><span class="material-symbols-outlined">link</span></a>.</p>
+        </div>
+        </lb>
+        <div class="img2-with-text">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYKd78ULdZKusjUse6QRb-SxPZferoQigUq32KqbkcTg3fXJAA"
+                alt="daniel coit gilman" />
+            <p>. Daniel Coit Gilman, the founding president of Johns Hopkins University
+                and the incorporator of Skull and Bones. Reprinted with permission of the Alan
+                Mason Chesney Medical Archives of The Johns Hopkins Medical Institutions.</p>
+        </div>
+        <br>
+        <p>Later on, he studied in <span class="place berlin">Berlin</span><a
+                href="https://it.wikipedia.org/wiki/Berlino" target="_blank"><span class="material-symbols-outlined">link</span></a> during the <span
+                class="date-1800">winter of 1854 to 1855</span>.</lb>
+            While abroad, he read widely in the fields of education and</lb>
+            the history of learning and of science and became interested
+            in the achievements of the great scholars and scientists of the</lb>
+            past. Thus was born his lifelong interest in education and the</lb>
+            importance of scientific research.</lb>
+            He returned to <span class="place New-Haven">New Haven</span><a
+            href="https://it.wikipedia.org/wiki/New_Haven" target="_blank"><span class ="material-symbols-outlined"> link</span></a> and the Yale faculty 
+             in <span
+                class="date-1800">1855</span></lb>
+            and was to remain there for the next 17 years. He quickly immersed himself in the day-to-day activities of the
+            college and</lb>
+            soon became an indispensable man about campus. His first task</lb>
+            was that of fundraising for the newly created  Sheffield Scientific
+                School at Yale The leader of that school,
+            <span class="person benjamin-silliman">Professor Benjamin Silliman</span><a href="https://it.wikipedia.org/wiki/Benjamin_Silliman" target="_blank"><span class="material-symbols-outlined">link</span></a>, Yale
+                     <span
+                class="date-1800">1837</span> and Skull and Bones, was part of the
+            family; one of <span class="person Daniel_Coit_Gilman">Gilman's</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>brothers had married <span class="person benjamin-silliman">Silliman's</span><a href="https://it.wikipedia.org/wiki/Benjamin_Silliman" target="_blank"><span class="material-symbols-outlined">link</span></a>daughter.</lb>
+            <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> used his
+            abundant intellect to further the aims of the</lb>
+            school, preparing a pamphlet entitled A Plan for the Complete</lb>
+            Organization of a School of Science. He contributed articles on</lb>
+            the scientifi c schools in <span class="place state europe">Europe</span><a
+                    href="https://en.wikipedia.org/wiki/Europe" target="_blank"><span class="material-symbols-outlined">link</span></a> and decried the woeful lack</lb>
+            of opportunity for those in this country who wished to study</lb>
+            science for its own sake.</p>
+            <p> He rapidly became a skillful advocate</lb>
+            for education in <span class="place state America">America</span><a
+            href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a>.</lb>
+            It was in the role of <span class="role">fundraiser</span> that <span class="person Daniel_Coit_Gilman">Gilman's</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> creativity and insight
+            became manifest with the passage of the <span class="event morrill-act">Morrill Land Grand Act</span><a
+                    href="https://en.wikipedia.org/wiki/Morrill_Land-Grant_Acts" target="_blank"><span class="material-symbols-outlined">link</span></a> in <span class="date-1800">1862</span>. This famous and important bill was “an act
+            donating</lb>
+            public land to the states and territories which may provide colleges</lb>
+            to the benefi t of agriculture and the mechanical arts”—in other</lb>
+            words, the “A & M College Act.” Yet <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> was able to garner</lb>
+            every cent of the monies allocated to <span state class="place Connecticut">Connecticut</span><a
+            href="https://it.wikipedia.org/wiki/Connecticut" target="_blank"><span class="material-symbols-outlined">link</span></a> for the benefit</lb>
+            of the  Sheffield Scientific
+                School at Yale, hardly a model of an
+            agricultural</lb>
+            and mechanical school! <span state class="place Connecticut">Connecticut</span><a
+            href="https://it.wikipedia.org/wiki/Connecticut" target="_blank"><span class="material-symbols-outlined">link</span></a> portion of the A & M
+            </lb>
+            funds was too small to create a new school, but the state would have lost it all had not the <span class="place sheffield">Sheffield</span><a
+                    href="https://it.wikipedia.org/wiki/Sheffield" target="_blank"><span class="material-symbols-outlined">link</span></a> contracted with the state to
+            </lb>
+            provide courses of instruction that fulfilled the requirements of</lb>
+            the <span class="event morrill-act">Morrill Act</span><a
+            href="https://en.wikipedia.org/wiki/Morrill_Land-Grant_Acts" target="_blank"><span class="material-symbols-outlined">link</span></a>.<span class="person andrew-d-white">White</span><a href="https://en.wikipedia.org/wiki/Andrew_Dickson_White" target="_blank"><span class="material-symbols-outlined">link</span></a> managed to do the same
+            thing for Cornell</lb>
+            with the monies allocated to New York State.</lb>
+                    <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> also became,
+            in succession, the <span class="role">assistant librarian</span> and</lb>
+            then <span class="role">head librarian</span> for Yale college. The library at that
+            time was</lb>
+            woefully inadequate, had relatively few books, and was unheated</lb>
+            in the wintertime, hardly a place for serious scholarship. But <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> persevered and made the best
+            he could of a poor situation,</lb>
+            as there were no funds available to remedy the condition. He was</lb>
+            appointed school visitor for theNew Haven School district and</lb>
+            made important changes in the school curriculum. Later, when in</lb>
+            <span class="place baltimore">Baltimore</span><a
+                        href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a> as
+            <span class="role">the John Hopkins president</span>, he served on the local</lb>
+            school board as well, and a young <span class="person h-l-mencken">H. L. Mencken</span><a
+                    href="https://it.wikipedia.org/wiki/Henry_Louis_Mencken" target="blank"><span class="material-symbols-outlined">link</span></a> noted that
+            rather</lb>
+            than serving in a fi gurehead role, he took an active interest and</lb>
+            was in essence the “boss” of that board. He also served as <span class="role">secretary</span></lb>
+            of the newly created <span class="place state Connecticut">Connecticut</span> <a
+            href="https://portal.ct.gov/SDE/Board/State-Board-of-Education "target="_blank"><span class="material-symbols-outlined">link</span></a></a></span> State Board of
+            Education</span></a> and</lb>
+            served on the governing body of the  Sheffield Scientific
+                School Scientific
+            School</a></span></span>,</lb>
+            where he was also on the teaching faculty.</lb>
+            Such was his growing reputation that he was offered the</lb>
+            <span class="role">presidency</span> of the University of Wisconsin, which he
+            declined,</lb>
+            and he was being considered, while in his late 30s, as a possible</lb>
+            candidate for the <span class="role">Yale presidency</span>, which came open a few years</lb>
+            later.</p>
+            <p>In <span class="date-1800">1861</span> he married <span class="person mary-ketcham">Mary
+                Ketcham</span>, and two daughters</lb>
+            were born to this union, <span class="person alice-gilman">Alice</span> (later Mrs. Everett P. Wheeler)
+            </lb>
+            and <span class="person elizabeth-gilman">Elizabeth</span><a
+                    href="https://en.wikipedia.org/wiki/Elisabeth_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>; <span
+                class="person">Mrs. Gilman</span> died in <span class="date-1800">1869</span>, and her untimely</lb>
+            death probably led to his declining the initial offer of the <span class="role">presidency</span> of the University
+                of California in <span class="date-1800">1870</span>. Later, while in</lb>
+                    <span class="place baltimore">Baltimore</span><a
+                    href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a> he
+            married <span class="person elizabeth-dwight-woolsey">Elizabeth Dwight Woolsey</span><a
+                    href="https://it.findagrave.com/memorial/102153400/elizabeth-woolsey" target="_blank"><span class="material-symbols-outlined">link</span></a> in <span class="date-1800">1877</span>; she</lb>
+            survived his death in <span class="date-1900">1909</span>.</lb>
+            During his tenure at Yale, in <span
+                class="date-1800">1856</span>, <span class="person">Gilman</span> was instrumental</lb>
+            in incorporating Skull and Bones as the Russel Trust Association, which is the society’s legal operating entity. The founder of</lb>
+            Skull and Bones, <span class="person William-H-Russel">William H. Russell</span></span>, was
+            named <span class="role">president</span> and</lb>
+            <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> became the
+            <span class="role">treasurer</span>. It should be noted that <span class="person">Gilman</span></lb>
+            was active on the Yale scene during the 4 years when
+            <span class="person william-henry-welch">William Henry Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> was a student, <span class="date-1800">1866 to 1870</span>. Although most</lb>
+            biographers of the two men state that they did not know each</lb>
+            other prior to <span class="person william-henry-welch">Welch's</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> appointment to the The Johns
+                Hopkins University School of Medicine by <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>15 years later, it seems inconceivable to me</lb>
+            that this perceptive, knowledgeable individual steeped in the</lb>
+            Skull and Bones culture was unaware of <span class="person william-henry-welch">Welch's</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> prominence</lb>
+            in the Yale
+            student body and was not actively promulgating</lb>
+            <span class="william-henry-welch">Welch's</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            election to Skull and Bones.</lb>
+            <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> as <span
+                class="role">president</span> of the  University
+                of California </lb>
+            In <span class="date-1800">1872</span>, at age 41, <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> left Yale
+                 for the
+            <span class="role">presidency of</lb>
+                the  University
+                of California </span>.</p>
+            <p>This was a new school, chartered</lb>
+            in <span class="date-1800">1868</span>, and <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> was its second president. The organizational structure left much to be desired, with a board of regents
+            answerable to the California legislature</span>. They tended to
+            regard</lb>
+            the university president as an employee rather than as a teammate useful in solving the myriad of problems faced
+            by the new</lb>
+            school. Th ere were power struggles both within and without the</lb>
+            university, with the ever-present possibility that the legislature</lb>
+            could pull the plug on the university at any time. <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>tackled the problems with vigor and displayed previously untapped</lb>
+            reservoirs of diplomacy and tact, and the university benefi ted</lb>
+            greatly from his short tenure there. It proved an apt training</lb>
+            ground for the challenges he was to face in <span class="place baltimore">Baltimore</span><a
+            href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a>.</p></lb>
+            During <span class="person">Gilman’s</span> <span class="california">California</span><a
+                    href="https://it.wikipedia.org/wiki/California" target="_blank"><span class="material-symbols-outlined">link</span></a> years <span
+                class="date-1800">(1872–1874)</span>, momentous</lb>
+            events were occurring in <span class="place baltimore">Baltimore</span><a
+            href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a> and <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>great friend
+            </lb>
+            <span class="person andrew-d-white">Andrew D. White</span><a href="https://en.wikipedia.org/wiki/Andrew_Dickson_White" target="_blank"><span class="material-symbols-outlined">link</span></a> kept him apprised of these developments.</lb>
+            <span class="person john-hopkins">Johns
+                Hopkins</span><a href="https://it.wikipedia.org/wiki/Johns_Hopkins" target="_blank"><span class="material-symbols-outlined">link</span></a>, the wealthy <span class="place baltimore">Baltimore</span><a
+                    href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a> merchant who was nearing the
+            end of his life, had come to a fateful decision: he would</lb>
+            bequeath his vast fortune to the founding of a university and a</lb>
+            hospital that would eventually bear his name. The legal documents creating these two institutions were drawn up
+            in <span class="date-1800">1867</span>,</lb>
+            6 years before <span class="person john-hopkins">
+                Hopkins</span><a href="https://it.wikipedia.org/wiki/Johns_Hopkins" target="_blank"><span class="material-symbols-outlined">link</span></a> death. He carefully chose 12 trustees</lb>
+            for each institution, nine of whom overlapped, to serve on the</lb>
+            hospital and university boards. Th e hospital board busied itself</lb>
+            with the acquisition of the land on which the hospital would</lb>
+            eventually be built in <span class="date-1800">1889</span>, but the university board was necessarily idle until
+            their benefactor’s death, when it would receive</lb>
+            its inheritance.</lb>
+            <span class="person john-hopkins">
+                Hopkins</span><a href="https://it.wikipedia.org/wiki/Johns_Hopkins" target="_blank"><span class="material-symbols-outlined">link</span></a> died on <span class="date-1800">Christmas Eve, 1873</span>, in his 78th</lb>
+            year. Within months of his death, the university board took</lb>
+            in earnest their charge of developing a university. They requested advice from three eminent educators: <span
+                class="role">President</span> <span class="person">Eliot</span></lb>
+            of Harvard, <span
+                class="role">President <span class="person">Angell</span> of Michigan</span>, and the ubiquitous</lb>
+            <span class="role">President <span class="person andrew-d-white">Andrew D. White</span><a href="https://en.wikipedia.org/wiki/Andrew_Dickson_White" target="_blank"><span class="material-symbols-outlined">link</span></a> of Cornell. The advice they received was, in
+            </lb>
+            retrospect, rather pedestrian and plebian; what the eminent</lb>
+            consultants envisioned for <span class="place baltimore">Baltimore</span><a
+            href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a> was a mini-Harvard, not</lb>
+            at all what the trustees were to get under<span class="person Daniel_Coit_Gilman"> Gilman's</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> enlightened</lb>
+            vision.</p>
+            <p> The consultant’s major service, however, came when</lb>
+            each was asked, individually, for suggestions as to the future</lb>
+            <span class="role">president</span> of Hopkins. Each one, without consultation with the</lb>
+            other, submitted the name of <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>.</lb>
+            The trustees wrote to <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> in <span class="university-of-california">California</Span><a
+                    href="https://it.wikipedia.org/wiki/California" target="_blank"><span class="material-symbols-outlined">link</span></a> expressing their</lb>
+            interest in acquiring his services as <span class="role">president</span> of John Hopkins University.</lb>
+            He replied that he soon planned to resign his position at Berkeley and that he
+            would then be free to negotiate with them. In</lb>
+            <span class="date-1800">December 1874</span>, after resigning the <span class="role">presidency of the
+                University</lb>
+                of <span class="place state california">California</span><a
+                        href="https://it.wikipedia.org/wiki/California" target="_blank"><span class="material-symbols-outlined">link</span></a></span>, <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> journeyed to
+                        <span class="place baltimore">Baltimore</span><a
+                        href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a> for
+            an interview</lb>
+            with the Hopkins trustees. The following day, he was offered</lb>
+            the job and immediately accepted.</lb>
+            No other candidate was even considered for the position,</lb>
+            let alone interviewed, and from the beginning the trustees of</lb>
+            <span class="person john-hopkins">Johns
+                Hopkins</span><a href="https://it.wikipedia.org/wiki/Johns_Hopkins" target="_blank"><span class="material-symbols-outlined">link</span></a> expressed their
+            total confidence in <span class="person Daniel_Coit_Gilman">Dr. Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>.</lb>
+            Their trust was to be well rewarded over the next 25 years. For</lb>
+            his part, the Hopkins post was a dream come true for an educator. Here was a brand new university, well endowed,
+            with no</lb>
+            prior traditions to defy, no vested interests to combat, and no</lb>
+            opposition to overcome.</p>
+            <p> To his friend <span class="person andrew-d-white">Andrew D. White</span><a href="https://en.wikipedia.org/wiki/Andrew_Dickson_White" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> wrote,</lb>
+            “Is not this [educational] opportunity without parallel in the</lb>
+            history of our country?” It was, indeed, and <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> was to</lb>
+            prove equal to the task, and then some.</lb></p>
+            <h4><span class="person">Gilman</span> at <span class="person john-hopkins">Johns
+                Hopkins</span><a href="https://it.wikipedia.org/wiki/Johns_Hopkins" target="_blank"><span class="material-symbols-outlined">link</span></a> <span
+                class="date-1800">1875–1901</span></h4>
+            <p>In the beginning, The John Hopkins University consisted of</lb>
+                    <span class="person Daniel_Coit_Gilman">Daniel Coit Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            and a board of trustees. Th ere was neither</lb>
+            faculty, nor students, nor buildings. Making the decision
+    
+            <hr>
+            <h2>Table. The initial “faculty of philosophy” at Johns Hopkins</h2>
+            <table><span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Country of origin</th>
+                    <th>Subject</th>
+                </tr>
+                <tr>
+                    <td>Basil L. Gildersleeve</td>
+                    <td>46</td>
+                    <td>USA</td>
+                    <td>Greek</td>
+                </tr>
+                <tr>
+                    <td>J. J. Sylvester</td>
+                    <td>62</td>
+                    <td>England</td>
+                    <td>Mathematics</td>
+                </tr>
+                <tr>
+                    <td>Henry A. Rowland</td>
+                    <td>28</td>
+                    <td> USA </td>
+                    <td>Physics</td>
+                </tr>
+                <tr>
+                    <td>Ira Remsen, MD</td>
+                    <td>30</td>
+                    <td>USA</td>
+                    <td>Chemistry</td>
+                </tr>
+                <tr>
+                    <td>H. Newell Martin, MD </td>
+                    <td>28</td>
+                    <td>England</td>
+                    <td>Biology</td>
+                </tr>
+                <tr>
+                    <td>Charles D. Morris</td>
+                    <td>49</td>
+                    <td>England</td>
+                    <td>Latin and Greek</td>
+                </tr>
+            </table>
+            <hr>
+            </lb>
+            </br>
+            to postpone for several years the creation of the medical school</lb>
+            called for in <span class="person john-hopkins">Johns
+                Hopkins</span><a href="https://it.wikipedia.org/wiki/Johns_Hopkins" target="_blank"><span class="material-symbols-outlined">link</span></a> will. The hospital
+            wasn’t built until</lb>
+            <span class="date-1800">1889</span>, and the medical school opened in <span class="date-1800">1893</span>. His
+            first task was</lb>
+            to create a first-class “faculty of philosophy,” as he called it, and</lb>
+            to people it with students of the highest caliber. From the very</lb>
+            first, the graduate students far outnumbered the undergraduates,</lb>
+            and thus <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> set
+            about the creation of a totally new type of</lb>
+            research-based university in <span class="place state America">America</span><a
+            href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a>.</lb>
+            <span class="role">President</span> <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> went about the job of
+            recruiting faculty
+            for Johns Hopkins by calling on his vast contacts in the world</lb>
+            of higher education, both in this country and in <span class="place state europe">Europe</span><a
+                    href="https://en.wikipedia.org/wiki/Europe" target="_blank"><span class="material-symbols-outlined">link</span></a>.</p>
+            <p>His</lb>
+            travels took him to <span class="place oxford">Oxford</span><a
+                    href="https://it.wikipedia.org/wiki/Oxford" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span class="place cambridge">Cambridge</span><a
+                    href="https://it.wikipedia.org/wiki/Cambridge" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="place glasgow">Glasgow</span><a href="https://it.wikipedia.org/wiki/Glasgow"target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="place london">London</span><a href="https://it.wikipedia.org/wiki/Londra"target="_blank"><span class="material-symbols-outlined">link</span></a>,</lb>
+            <span class="place paris">Paris</span><a href="https://it.wikipedia.org/wiki/Parigi"target="_blank"><span class="material-symbols-outlined">link</span></a>, <span class="place berlin">Berlin</span><a
+            href="https://it.wikipedia.org/wiki/Berlino" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="place heidelberg">Heidelberg</span><a href="https://it.wikipedia.org/wiki/Heidelberg"target="_blank"><span class="material-symbols-outlined">link</span></a>,
+            <span class="place vienna">Vienna</span><a href="https://it.wikipedia.org/wiki/Vienna" target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="place frieberg">Frieberg</Span><a
+                    href="https://it.wikipedia.org/wiki/Friburgo_in_Brisgovia"target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="place leipzig">Leipzig</span><a href="https://it.wikipedia.org/wiki/Lipsia"target="_blank"><span class="material-symbols-outlined">link</span></a>, <span
+                class="place munich">Munich</span><a href="https://it.wikipedia.org/wiki/Monaco_di_Baviera"target="_blank"><span class="material-symbols-outlined">link</span></a>,
+            </lb>
+            and <span class="place strasbourg">Strasbourg</span><a
+                    href="https://it.wikipedia.org/wiki/Strasburgo"target="_blank"><span class="material-symbols-outlined">link</span></a> abroad, as well as to the
+            strongholds of education</lb>
+            in this country. Th e result: a sterling collection of scholars who</lb>
+            would make any university in the world proud (Table).</lb>
+            It was this group of scholars, now largely forgotten, who forged</lb>
+            the sterling reputation of the new John Hopkins University and</lb>
+            within the decade propelled it into the top rank of American</lb>
+            schools. It is noteworthy that three of the six were 30 years or</lb>
+            younger at the time of their appointment; this pattern would repeat</lb>
+            itself 15 years later when the medical faculty was formed. In that</lb>
+            instance, all four of the founding doctors were under age 40.</p>
+            <p>On <span class="date-1800">February 22, 1876</span>, <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> delivered his inaugural
+            address as <span class="role">president of John Hopkins </span>. The date was chosen with</lb>
+            care; it was the birthday of the nation’s first president, in the</lb>
+            centennial year of the republic. At the time of this address,</lb>
+            <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> had not
+            completed his faculty search and the first students would not appear for another 7 months. In a remarkable</lb>
+            address, well worth pondering some 125 years later, <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a></lb>
+            laid out his vision for the new university:</lb>
+            An enduring foundation; a slow development, first local, then</lb>
+            regional, then national influence; the liberal promotion of all</lb>
+            useful knowledge; the special provision of departments as are</lb>
+            elsewhere neglected in this country; a generous affiliation with</lb>
+            all other institutions, avoiding interferences and engaging in</lb>
+            no rivalry; the encouragement of research; the promotion of</lb>
+            young men; and the advancement of individual scholars, who</lb>
+            by their excellence will advance the sciences they pursue, and</lb>
+            the society where they dwell.</lb></p>
+            <p><span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> succeeded
+            beyond his wildest dreams. <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> was</lb>
+            the visionary, the encourager, the seeker of bright students and faculty with fresh ideas. He encouraged the publication of the</lb>
+            research results from the fledgling school, and at his backing</lb>
+            the Johns Hopkins Press became the first publication agency of</lb>
+            a university. It was established in <span class="date-1800">1878</span> to publish the
+                American</lb>
+                Journal of Mathematics</span>; soon to follow were specialty journals</lb>
+            in chemistry, philology, biology, history, and political science,</lb>
+            all edited and supported by the Hopkins faculty. He built up</lb>
+            the intellectual atmosphere of the school by inviting prominent</lb>
+            men of learning to deliver public lectures at the John Hopkins, a common</lb>
+            practice in our day but a bold innovation at the time.</lb>
+            Some measure of his infl uence and importance in American</lb>
+            education can be gleaned from the accolades accorded by his</lb>
+            biographers:</lb>
+            <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> greatest
+            achievement, and the one with which his</lb>
+            name will always be associated, was the introduction of the idea</lb>
+            of a true university to <span class="place state America">America</span><a
+            href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a>.</p>
+            <p>It would be
+            difficult, if not impossible, to point to any other instance in which a fundamental</lb>
+            advance in the aims of higher education has been so closely</lb>
+            identified with the work of one man. — <span
+            class="person fabian_franklin">Fabian Franklin</span><a href="https://en.wikipedia.org/wiki/Fabian_Franklin" target="_blank"><span class="material-symbols-outlined">link</span></a></</lb>
+            It was <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>, and
+            <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> alone, who
+            created the pattern of</lb>
+            the modern university which has since been widely adopted</lb>
+            in the <span class="place state America">United States</span><a
+            href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a>. His concept made original research the</lb>
+            distinguishing and central feature of the American university.</lb>
+            —<span class="person abraham-flexner">Abraham Flexner</span><a href="https://en.wikipedia.org/wiki/Abraham_Flexner" target="_blank"><span class="material-symbols-outlined">link</span></a></lb>
+            On the occasion of the 25th anniversary of the John Hopkins,</lb>
+            <span class="person">Woodrow Wilson</span>, himself a product of the school, had this to</lb>
+            say to <span class="role">Professor</span> <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>:</lb>
+            You were the first to create and organize in <span class="place state America">America</span><a
+            href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a> a university</lb>
+            in which the discovery and dissemination of new truths were</lb>
+            conceded a rank superior to mere instruction. . . . In this, your</lb>
+            greatest achievement, you established in <span class="place America">America</span><a
+            href="https://it.wikipedia.org/wiki>/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a> a new and</lb>
+            higher university ideal, the education of trained and vigorous</lb>
+            young minds through the search for truth under the guidance
+            and with the cooperation of master investigators.</p>
+            <h5><span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> and the
+            medical institutions</lb></h5>
+            <br>
+            <p>Although <span class="person Daniel_Coit_Gilman">Gilman's</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            greatest fame rests with his <span class="role">presidency</lb>
+                of The John Hopkins </span>, he made significant contributions to the formation of The Johns Hopkins Hospital as</lb>
+            well. As the date for the opening of the hospital approached,</lb>
+            scheduled for <span class="date-1800">May 1889</span>, the trustees had not yet settled on</lb>
+            a superintendent for the hospital, and they asked that <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> temporarily assume that
+            position. He agreed to do so</lb>
+            and for a time maintained two offi ces, one at the hospital</lb>
+            where he spent his mornings and a second across town at</lb>
+            the university.</lb>
+            In typical <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            style, he versed himself in the pertinent</lb>
+            literature about hospital administration, corresponded with</lb>
+            experts in the fi eld both here and abroad, and took it upon</lb>
+            himself to visit large successful hospitals and hotels in this</lb>
+            country, studying kitchens, linen supply, and the minutiae</lb>
+            of laundry facilities. It was <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> who appointed the principal for the school of nursing and the head nurses for the various departments. He suggested the publication of reports</lb>
+            from the hospital, eventuating in the Bulletin of John Hopkins University and The Johns Hopkins Hospital Reports.
+            </lb>
+            His successor as head of the hospital, <span class="person henry-hurd">Henry Hurd</span><a
+                    href="https://en.wikipedia.org/wiki/Henry_Mills_Hurd" target="_blank"><span class="material-symbols-outlined">link</span></a>, credited</lb>
+                    <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> with
+            establishing a simple but effective system of</lb>
+            governance for the medical institutions, consisting of the</lb>
+            heads of the various medical departments and the superintendent of the hospital, with <span
+                class="role">President Gilman</span> presiding</lb>
+            over the meetings.</lb>
+            <span class="person Daniel_Coit_Gilman">Gilman's</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> involvement
+            with the medical school was not</lb>
+            perfunctory; it was real, it was vital to success, and it was continuously maintained. Indeed, his efforts
+            constituted <span class="person Daniel_Coit_Gilman">Gilman's</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            </lb>
+            second great contribution to the educational development of</lb>
+            this country. <span class="person abraham-flexner">Flexner</span><a href="https://en.wikipedia.org/wiki/Abraham_Flexner" target="_blank"><span class="material-symbols-outlined">link</span></a> summed it up as follows:</lb>
+            No other educator, American or foreign, ever wrought such</lb>
+            miracles as <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> performed, first in the faculty of Arts and</lb>
+            Sciences, and later in the medical school. Both were eminent</lb>
+            from the start; both started a movement which revolutionized graduate education and research; had the university
+            and</lb>
+            its medical department never been started, or had they been</lb>
+            otherwise started, university education and medical education</lb>
+            in <span class="place America">America</span><a
+            href="https://it.wikipedia.org/wiki>/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            would in all probability never have attained their</lb>
+            present eminence.</p>
+            <h5><span class="person william-henry-welch">William Henry Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>(1850–1934)</span></h5>
+            <p><span class="person william-henry-welch">William Henry Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>(Figure 3) descended from a distinguished line of physicians in <span
+                class="place Connecticut">Connecticut</span><a
+                href="https://it.wikipedia.org/wiki/Connecticut" target="_blank"><span class="material-symbols-outlined">link</span></a>.
+            While a student at</lb>
+            Yale, he was
+            more interested in a career in teaching the classics</lb>
+            than in medicine, but only one faculty position in the classics</lb>
+            was available, and it went to an individual who finished ahead of</lb>
+            <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            scholastically. On such a slender thread hung the future</lb>
+            of American medicine.</lb>
+            <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> was
+            elected to Skull and Bones in <span
+                class="date-1800">1869–1870</span>. He</lb>
+            wrote his father, “The honor is more agreeable to me than any</lb>
+            other in college could have been.” Later, in writing to a relative</lb>
+            whose son was considering another college, <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> wrote: “If</lb>
+            a man has no chance at Bones it makes little diff erence to him</lb>
+            whether he goes to <span class="place">Yale</span> or someplace else, but if he is the right</lb>
+            sort of man for <span class="role">Bones</span>, then I say Yale over any other college or</lb>
+            university in the world.” I think it is safe to say that Skull and</lb>
+                Bones was important to <span class="person william-henry-welch">Dr. Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>.</lb>
+            Thwarted at his career choice of the classics, <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> reluctantly turned to medicine
+            and matriculated at theCollege of</lb>
+                Physicians and Surgeons in <span class=" new-york-state">New York city</span><a
+                href="https://it.wikipedia.org/wiki/New_York_(stato)" target="_blank"><span class="material-symbols-outlined">link</span></a>, graduating in <span
+                class="date-1800">1875</span>.</lb>
+            In <span class="date-1800">April 1876</span>, shortly after his graduation, <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> set out for</lb>
+            <span class="place state europe">Europe</span><a href="https://en.wikipedia.org/wiki/Europe" target="_blank"><span class="material-symbols-outlined">link</span></a> on a “voyage
+            of exploration that was perhaps the most</lb>
+            important ever taken by an American doctor” <span class="person abraham-flexner">(Flexner)</span><a href="https://en.wikipedia.org/wiki/Abraham_Flexner" target="_blank"><span class="material-symbols-outlined">link</span></a>. While</lb>
+            abroad, the scales fell from his eyes as he became aware of the</lb>
+            great superiority of the European, and especially the German,</lb>
+            medical faculties. For the first time, he saw the scientific principles of research and investigation being
+            applied to problems</lb>
+            in medicine. By that time, news had gotten out about the new</lb>
+            university planned in <span class="place baltimore">Baltimore</span><a
+            href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a>.<span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>hoped
+            that this new</lb>
+            medical school would be based on the German model, writing,</lb>
+            “I believe there are a great number of young men in <span class="place America">America</span><a
+            href="https://it.wikipedia.org/wiki>/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a> who are eager for such opportunities of practical study and</lb>
+            investigation . . . which are at present found only in foreign</lb>
+            universities.”
+        <br>
+        <div class="img2-with-text">
+            <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRuPSUs8dO0dGK7Vpoj9_w-9-b6lcQRflKN4ccXHNbDcvV1dmvQ"
+                alt="william henry welch" />
+            <p>.William Henry Welch, the founding dean of the Johns Hopkins
+                School of Medicine. Reprinted with permission of the Alan Mason
+                Chesney Medical Archives of The Johns Hopkins Medical Institutions.</p>
+        </div>
+    
+            <p>It was <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> who would provide those
+            opportunities for American students, in <span class="place state America">America</span><a
+            href="https://it.wikipedia.org/wiki/Stati_Uniti_d%27America" target="_blank"><span class="material-symbols-outlined">link</span></a>, in the very near</lb>
+            future.</lb>
+            <span class="william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> immersed himself in the study of histology, pathology, and bacteriology. He had the opportunity to work with
+            </lb>
+            the famous physiologist <span class="person karl-ludwig">Karl Ludwig</span><a
+                    href="https://en.wikipedia.org/wiki/Carl_Ludwig" target="_blank"><span class="material-symbols-outlined">link</span></a> in <span
+                class="place">Leipzig</span> and the experimental pathologist <span class="person julius-cohnheim">Julius Cohnheim</span><a
+                    href="https://it.wikipedia.org/wiki/Julius_Friedrich_Cohnheim" target="_blank"><span class="material-symbols-outlined">link</span></a> in
+            <span class="place breslau">Breslau</span><a href="https://it.wikipedia.org/wiki/Breslavia" target="_blank"><span class="material-symbols-outlined">link</span></a>, working
+            at</lb>
+            their side and absorbing the lessons these early experimentalists</lb>
+            had to teach. They, in turn, were impressed with their young</lb>
+            American colleague.</p>
+            <p>Upon his return to <span class="new-york-state">New York State</span><a
+            href="https://it.wikipedia.org/wiki/New_York_(stato)" target="_blank"><span class="material-symbols-outlined">link</span></a> in <span
+                class="date-1800">1878,</span><span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>sought a venue</lb>
+            for employing the skills he had learned abroad, but opportunity</lb>
+            was sparse. He eventually found space at Bellevue and immediately began a course in histology and pathology,
+            gradually building a reputation as an emerging medical scientist. At this point,</lb>
+            <span class="role">President</span> <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> engaged <span
+                class="person john-shaw-billings">John Shaw
+                Billings</span><a href="https://en.wikipedia.org/wiki/John_Shaw_Billings" target="_blank"><span class="material-symbols-outlined">link</span></a> to travel to <span class="place">New York</span></lb>
+            to observe <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> at work as both teacher and
+            researcher.</p>
+            <p><span
+            class="person john-shaw-billings">John Shaw
+            Billings</span><a href="https://en.wikipedia.org/wiki/John_Shaw_Billings" target="_blank"><span class="material-symbols-outlined">link</span></a></lb>
+            wrote <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a>, “I
+            think <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> is the best man in the country for</lb>
+            the Hopkins.” <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> had independently contacted <span class="person julius-cohnheim">Cohnheim</span><a
+            href="https://it.wikipedia.org/wiki/Julius_Friedrich_Cohnheim" target="_blank"><span class="material-symbols-outlined">link</span></a></lb>
+            in <span class="place state Germany">Germany</span>, who also gave <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> his highest recommendation.</p>
+            <p>And so, in <span class="date-1800">1884</span>, at age 33, <span class="person william-henry-welch">William H. Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> was offered the first
+            </lb>
+            chair in the new Johns
+                Hopkins University School of Medicines.</lb>
+            As was the case with <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> and the <span class="role">presidency</span> of John Hopkins, there is no record of any other candidate being considered for the post. In retrospect,
+            it is safe to say that both</lb>
+            choices proved to be spectacular successes. <span class="person abraham-flexner">Flexner</span><a href="https://en.wikipedia.org/wiki/Abraham_Flexner" target="_blank"><span class="material-symbols-outlined">link</span></a> commented as follows:
+            For the first time in the history of American medicine, an able</lb>
+            and highly trained young man had exchanged a brilliant future</lb>
+            in practice for an academic professorship. Thus was the decisive</lb>
+            step taken, a step as decisive for medicine as was the choice of</lb>
+            <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> to become
+            president of the university.</p>
+            <h4><span class="person william-stewart-halsted">William Stewart Halsted</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            <span class="date-1800">(1872–1922)</span></h4>
+            <p><span class="person william-stewart-halsted">Halsted</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a>(Figure 4) was
+            born to a wealthy <span class="new-york-state">New York State</span><a
+            href="https://it.wikipedia.org/wiki/New_York_(stato)" target="_blank"><span class="material-symbols-outlined">link</span></a> family.</lb>
+            Prior to attending Yale, he spent 6 years at <span
+                class="andover">Andover</span><a
+                    href="https://en.wikipedia.org/wiki/Andover_Newton_Theological_School"target="_blank"><span class="material-symbols-outlined">link</span></a>, the
+            famous</lb>
+            <span class="place new-england">New England</span><a
+            href="https://it.wikipedia.org/wiki/Nuova_Inghilterra" target="_blank"><span class="material-symbols-outlined">link</span></a> prep school with ties to Skull and Bones. An old</lb>
+            Yale adage
+            suggests the following steps in a successful Yale career: >Andover bred,
+           Fence polished, and Bones</lb>
+            tapped.” (The Fence Club is an elite fraternity at Yale.)</p>
+            <p>At Yale,<span class="person william-stewart-halsted">Halsted</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a> was popular with his classmates and a</lb>
+            talented athlete, playing on the baseball team and serving</lb>
+            as captain of the fl edgling football team, and yet he was not</lb>
+            tapped for either Bones or Keys. His
+            biographer,<span class="person william-maccallum"> William</lb>
+                MacCallum</span></span>, attributed this to “a caustic wit which sometimes</lb>
+            left a sting” and suggested that this led several upperclassmen</lb>
+            to block his election to the senior societies. His classmates,</lb>
+            however, “considered him most deserving of election because</lb>
+            of his general popularity, his prominence in athletics and class</lb>
+            functions, and the appreciation of his talents by those who</lb>
+            knew him well.”</p>
+            <div class="img2-with-text">
+            <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRcNRZMaLxbmVP0NZOvvx-DX5OGqG53F_d6ZkMsxOEIhB6iubXpUbbYD6ZhWN-yYUYeF2w"
+                alt="william halsted" />
+            <p>. William Halsted, the first professor of surgery at Johns Hopkins and
+                widely regarded as America’s foremost academic surgeon. Reprinted with permission of the Alan Mason Chesney
+                Medical Archives of The Johns Hopkins
+                Medical Institutions.</p>
+        </div>
+    
+            <p> <span class="cited-authors">MacCallum</span> recounted that <span class="person william-stewart-halsted">Halsted's</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a> was disappointed and embittered by this rejection but suggested that</lb>
+            he was not the chief loser!</lb></p>
+            <p>Although a mediocre student at Yale, <span class="person william-stewart-halsted">Halsted's</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a> caught fire</lb>
+            in medical school at the College of Physicians and
+                Surgeons,</lb>
+            secured a coveted internship at Bellevue even before graduation, and became a house physician at
+                New York Hospital.</p>
+            <p>As</lb>
+            did so many American medical graduates, he spent time at the</lb>
+            great European clinics, returning to <span class="place new-york-state">New York State</span><a
+            href="https://it.wikipedia.org/wiki/New_York_(stato)" target="_blank"><span class="material-symbols-outlined">link</span></a> in 1880, where</lb>
+            he rapidly became one of <span class="place new-york-state">New York State</span><a
+            href="https://it.wikipedia.org/wiki/New_York_(stato)" target="_blank"><span class="material-symbols-outlined">link</span></a> finest surgeons, as well</lb>
+            as a popular man about town. But his rapid rise to success was</lb>
+            derailed by his inadvertent addiction to cocaine, acquired in the</lb>
+            course of self-experimentation on the anaesthetic properties of</lb>
+            this drug. It was while in the throes of this addiction that his</lb>
+            friend <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>, whom he had met in New York State, invited him to</lb>
+            come live with him in <span class="place baltimore">Baltimore</span><a
+            href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a> and work in his labs while
+            </lb>
+            trying to throw off the addiction. We now know that he failed</lb>
+            in this endeavor and that the drug addiction was to be lifelong.</p>
+           <p> What courage it took for both <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a> and <span class="person Daniel_Coit_Gilman">Gilman</span><a href="https://en.wikipedia.org/wiki/Daniel_Coit_Gilman" target="_blank"><span class="material-symbols-outlined">link</span></a> to off er him</lb>
+            a responsible position in the medical school, first as associate</lb>
+            <span class="role">professor of surgery and acting surgeon to the hospital</span>. Later, on</lb>
+            <span class="person osler">Osler's</span><a href="https://it.wikipedia.org/wiki/William_Osler" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            recommendation, he was appointed surgeon-in-chief to</lb>
+            the hospital and later professor of surgery in The Johns
+                Hopkins University School of Medicine</lb>
+            One of <span class="person william-stewart-halsted">Halsted's</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a> successors in the <span
+                class="role">chair of surgery at</lb>
+                Hopkins</span>, <span class="person john-cameron">Dr. John Cameron</span><a
+                    href="https://en.wikipedia.org/wiki/John_L._Cameron" target="_blank"><span class="material-symbols-outlined">link</span></a>, offered a
+            fascinating commentary on <span class="person william-stewart-halsted">Halsted's</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a> cocaine
+            addiction. He suggested that had</lb>
+            not <span class="person william-stewart-halsted">Halsted's</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a> suffered his
+            cocaine addiction, he would never</lb>
+            have left <span class="place new-york-state">New York State</span><a
+            href="https://it.wikipedia.org/wiki/New_York_(stato)" target="_blank"><span class="material-symbols-outlined">link</span></a>, and the world would have been deprived</lb>
+            of <span class="person william-stewart-halsted">Halsted's</span><a
+                href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a> immense
+            contributions to surgery. Rather, he</lb>
+            would have become a popular, socially prominent, extremely</lb>
+            successful surgeon in his hometown. As it was, the addiction completely changed his personality, turning him
+            into a</lb>
+            reclusive, extremely private man with few close friends and</lb>
+            an unpleasant personality. The opportunity to do academic</lb>
+            work at John Hopkins  afforded
+            him the opportunity to channel</lb>
+            his energies and his intellect toward teaching and research,</lb>
+            resulting in the single most productive and infl uential career</lb>
+            in the history of American surgery.</p>
+            <h4><span class="person harvey-williams-cushing">HARVEY WILLIAM CUSHING'S</span><a
+                    href="https://it.wikipedia.org/wiki/Harvey_Williams_Cushing" target="_blank"><span class="material-symbols-outlined">link</span></a> <span class="date-1800">(1869–1939)</span></h4>
+            <p><span class="person harvey-williams-cushing">Harvey Cushing's</span><a
+                    href="https://it.wikipedia.org/wiki/Harvey_Williams_Cushing" target="_blank"><span class="material-symbols-outlined">link</span></a> (Figure
+            5), like <span class="person william-henry-welch">Welch</span><a href="https://en.wikipedia.org/wiki/William_H._Welch" target="_blank"><span class="material-symbols-outlined">link</span></a>, was born into a</lb>
+            family of physicians in <span class="place cleveland">Cleveland</span><a
+                    href="https://it.wikipedia.org/wiki/Cleveland" target="_blank"><span class="material-symbols-outlined">link</span></a>. He attended Yale from</lb>
+            <span class="date-1800">1887 to 1891</span>, where he played on both the freshman and varsity
+            </lb>
+            baseball teams, was an excellent student, and was popular with</lb>
+            his classmates. After graduating from Yale, he attended Harvard Medical School. In <span class="date-1800">1896</span>, he received an appointment to</lb>
+                <span class="person william-stewart-halsted">Dr. Halsted's</span><a
+                    href="https://it.wikipedia.org/wiki/William_Stewart_Halsted" target="_blank"><span class="material-symbols-outlined">link</span></a> service at the John Hopkins, and he remained in</lb>
+                    <span class="place baltimore">Baltimore</span><a
+                    href="https://it.wikipedia.org/wiki/Baltimora" target="_blank"><span class="material-symbols-outlined">link</span></a>
+            until <span class="date-1900">1912</span>, when he was appointed <span class="role">professor of</lb>
+                surgery</span> in the Harvard Medical School and <span
+                class="role">surgeon-in-chief</span></lb>
+            at the new +Peter Bent Brigham Hospital. While at 
+                Hopkins,</lb>
+            he gained renown for his surgical skill and for his work with</lb>
+            brain tumors. He also produced an important monograph</lb>
+            on disorders of the pituitary gland, which elucidated for the</lb>
+            first time the various endocrine abnormalities associated with</lb>
+            pituitary dysfunction.</p>
+        </div>
+        </lb>
+        <br>
+        <div class="img2-with-text">
+            <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRNqzWPNAKxejCDm1mK0c9mOzJvMwY8382uMLinQuoi5nfYaG5E"
+                alt="harvey williams cushing" />
+            <p>.Harvey Williams Cushing, Halsted’s first resident at Johns Hopkins
+                and the founder of neurosurgery in America. Oil on canvas, by American artist Edmund Tarbell. Reprinted
+                courtesy of Dittrick Medical History Center, Case
+                Western Reserve University.</p>
+        </div>
+    
+        <p>As one of the leaders of his class at Yale, <span
+                class="person harvey-williams-cushing">Harvey Cushing's</S/br><a
+                    href="https://it.wikipedia.org/wiki/Harvey_Williams_Cushing" target="_blank"><span class="material-symbols-outlined">link</span></a> knew
+            that he</lb>
+            stood an excellent chance of being “tapped” by one of the senior</lb>
+            societies. In a letter to his father, he wrote: “I have about made up</lb>
+            my mind to go with Scroll and Key if I am a good
+            enough man</lb>
+            to get an election, as much the better men are going that way in</lb>
+            our class. I think that my chances of going to Bones are better,</lb>
+            and that if I should I would perhaps meet better men when I</lb>
+            get out of College.” His comments are certainly a backhanded</lb>
+            compliment to Skull and Bones; it is uncertain
+            if he turned down a tap for Bones, but he did join Scroll and Key. And, of course,</lb>
+            once he was initiated, all further comments ceased.</p>
+            <br>
+            <br>
+            SELECTED REFERENCES<br>
+            <br>
+            1. Pierson GW. Yale College: An Educational History, 1871–1921. New</br>
+            Haven, CT: Yale University Press, 1952.</br>
+            2. Fabian F. Th e Life of Daniel Coit Gilman. New York: Dodd Mead Company, 1910.</br>
+            3. Flexner A. Daniel Coit Gilman: Creator of the American Type of University.</br>
+            New York: Harcourt Brace and Company, 1946.</br>
+            4. Flexner S, Flexner JT. William Henry Welch and the Heroic Age of American</br>
+            Medicine. Baltimore, MD: Johns Hopkins University Press, 1941.</br>
+            5. MacCallum WG. William Stewart Halsted: Surgeon. Baltimore, MD: Johns</br>
+            Hopkins Press, 1930.</br>
+            6. Fulton JF. Harvey Cushing: A Biography. Springfi eld, IL: Charles C. Th omas, 1946.</br>
+            7. Chesney AM. Th e Johns Hopkins Hospital and the Johns Hopkins University</br>
+            School of Medicine: A Chronicle. Volume 1, 1867–1893. Baltimore, MD:</br>
+            Johns Hopkins Press, 1943.</br>
+            8. Robbins A. Secrets of the Tomb: Skull and Bones, the Ivy League, and the</br>
+            Hidden Paths of Power. Boston: Little, Brown and Company, 2002.</br>
+            9. Havemeyer L. Go to Your Room. New Haven, CT: Yale University, 1960.
+        </div>
+        </main>
+        <footer id="copyr">
+            <p>All copyrights and related rights on the content remain with their original owners.<br>
+    
+                All copyright on the typographic and layout choices are 2023 © Giorgia Crosilla, Salvatore Di Marzo
+                and
+                Nicole Liggeri.</p>
+        </footer>
+        <script src="map.js"></script>
+    
+    </body>
+    
+    </html>
