@@ -287,6 +287,8 @@ function stylechanger(newCSSFileName) {
             containerfuture();
         }
         else if (newCSSFileName === "ottocento.css") {
+            $("#side-image").remove();
+            $("#right-image").remove();
             $('.title').before('<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>');
             $('#navbarSupportedContent').after('<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>');
             $('.left-side').remove();
@@ -296,6 +298,8 @@ function stylechanger(newCSSFileName) {
 
         }
         else if (newCSSFileName === "anniSettanta.css") {
+            $("#side-image").remove();
+            $("#right-image").remove();
             $('.decoration-dx').remove();
             $('.decoration-sx').remove();
             $('.left-side').remove();

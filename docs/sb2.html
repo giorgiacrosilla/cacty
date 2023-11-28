@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+<head>
+	<meta charset="UTF-8" lang="en">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="De_Stijl.css" id="csstochange">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+		integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+		crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+		integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+		integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+	<link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet" />
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoiZ2lvY3Jvc2kiLCJhIjoiY2xuNXQ1ZGV5MGQybjJqcDZ6YWFzMnByZCJ9.TWuwEi8RI7prLyZOAnx6ng';
+	</script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body id="body-txt-id" class="grid-normal">
+	<nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+		<div class="title" id="titlemainp">
+			<div class="inner-box">
+				<div class="circle"></div>
+			</div>
+			<a class="navbar-brand" href="#" data-file="index.html">
+				<h1 class="stroke-double" title="secretmag">secretmag
+				</h1>
+			</a>
+		</div>
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="#" data-file="documentation.html">Documentation</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+						aria-expanded="false">
+						Themes
+					</a>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item"><button class="style-button"
+									onclick="stylechanger('Aldine.css')">Aldine</button></a></li>
+						<li><a class="dropdown-item"><button class="style-button"
+									onclick="stylechanger('ottocento.css')">1860</button></a></li>
+						<li><a class="dropdown-item"><button class="style-button"
+									onclick="stylechanger('De_Stijl.css')">De Stijl</button></a></li>
+						<li><a class="dropdown-item"><button class="style-button"
+									onclick="stylechanger('anniSettanta.css')">70s</button></a></li>
+						<li><a class="dropdown-item"><button class="style-button"
+									onclick="stylechanger('90s.css')">90s</button></a></li>
+						<li><a class="dropdown-item"><button class="style-button"
+									onclick="stylechanger('future.css')">Dystopian future</button></a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<div id="sidebar-txt-id">
+		<div class="sidecont-txt metarticle-inv-txt" id="metadata-txt-id">
+			<button class="accordion" id="data">Data</button>
+			<div class="panel">
+				<p>Creator: Ron Rosenbaum</p>
+				<p>Title: At Skull and Bones, Bush’s Secret Club Initiates Ream Gore</p>
+				<p>Journal:Observer</p>
+				<p>Date: 04/02/01</p>
+				<p>Source: <a
+						href="https://observer.com/2001/04/at-skull-and-bones-bushs-secret-club-initiates-ream-gore/">https://observer.com/2001/04/at-skull-and-bones-bushs-secret-club-initiates-ream-gore/</a>
+				</p>
+			</div>
+			<button class="accordion" id="dates">Dates</button>
+			<div class="panel">
+				<form role="form">
+					<div class="checkbox"><label>
+							<input type="checkbox" id="show1700" class="show">1700</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="show1800" class="show">1800</label>
+					</div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="show1900" class="show">1900</label></div>
+				</form>
+			</div>
+			<button class="accordion" id="places">Places</button>
+			<div class="panel">
+				<div id="map"></div>
+			</div>
+			<button class="accordion" id="people">People</button>
+			<div class="panel">
+				<form role="form">
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showx11" class="show">Maureen Dowd</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showy11" class="show">Peggy Adler</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showz11" class="show">Taft</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showa11" class="show">Bundy</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showb11" class="show">Buckleys</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showc11" class="show">Harrimans</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showd11" class="show">Lovetts</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showe11" class="show">George Bush</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showf11" class="show">Barbara Bush</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showg11" class="show">Socrates</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showh11" class="show">David Brooks</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showj11" class="show">Laurence Sterne</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showk11" class="show">John Kerry</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showl11" class="show">John Hersey</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showm11" class="show">William Buckley</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="shown11" class="show">Sammy Sosa</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showo11" class="show">Al Gore</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="showp11" class="show">Abner Louima</label></div>
+				</form>
+			</div>
+			<button class="accordion" id="events">Events</button>
+			<div class="panel">
+				<form role="form">
+					<div class="checkbox"><label>
+							<input type="checkbox" id="show1700" class="show">1700</label></div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="show1800" class="show">1800</label>
+					</div>
+					<div class="checkbox"><label>
+							<input type="checkbox" id="show1900" class="show">1900</label></div>
+				</form>
+			</div>
+		</div>
+		<div class="sidecont-txt metarticle-inv-txt" id="article-txt-id">
+			<button class="accordion" id="dates">Issue 1: KKK</button>
+			<div class="panel">
+				<ul>
+					<li><a href="#" data-file="kkk1.html">The Terror is Born</a></li>
+					<li><a href="#" data-file="kkk2.html">The Ku Klux Klan: Continuity and Change</a></li>
+					<li><a href="#" data-file="kkk3.html">The Rhetoric of Hiram Wesley Evans and the Klan of the
+							1920s</a></li>
+				</ul>
+			</div>
+			<button class="accordion" id="places">Issue 2: Freemasonry</button>
+			<div class="panel">
+				<ul>
+					<li><a href="#" data-file="nico-testo1.html">Freemason and the American Revolution</a></li>
+					<li><a href="#" data-file="nico-testo2.html">Voluntary Associations and Civil Religion: The Case of
+							Freemasonry</a></li>
+					<li><a href="#" data-file="nico-testo3.html">Freemasonry and Sir John Soane</a></li>
+				</ul>
+			</div>
+			<button class="accordion" id="people">Issue 3: Skull and Bones</button>
+			<div class="panel">
+				<ul>
+					<li><a href=".html">Skull and
+							Bones, the Ivy League, and
+							the Hidden Paths of Power</a></li>
+					<li><a href=".html"></a></li>
+					<li><a href=".html"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="button-txt-id">
+		<button class="openbtn" onclick="toggleClass('metadata-txt-id', 'article-txt-id')">Metadata</button><br>
+		<button class="openbtn" onclick="toggleClass('article-txt-id', 'metadata-txt-id')">Articles</button>
+	</div>
+	<main id="main-txt-id">
+		At <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>, <span class="person george-bush">Bush</span><a
+			href="https://en.wikipedia.org/wiki/Bush_family" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>Secret Club Initiates Ream <span
+			class="person al-gore">Al Gore</span><a href="https://it.wikipedia.org/wiki/Al_Gore" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>
+		It’s the primal scene of American power, of <span class="person george-bush">Bush</span><a
+			href="https://en.wikipedia.org/wiki/Bush_family" target="_blank"><span class="material-symbols-outlined">
+				link </span></a> family values. For two
+		centuries, the initiation rite of <span class="organization skull-and-bones"><a
+				href="https://it.wikipedia.org/wiki/Skull_and_Bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>
+		By <span class="person Ron-Rosenbaum">Ron Rosenbaum</span>
+
+
+
+		It’s the primal scene of American power, of <span class="person george-bush">Bush</span><a
+			href="https://en.wikipedia.org/wiki/Bush_family" target="_blank"><span class="material-symbols-outlined">
+				link</span></a> family values. For two centuries,
+		the initiation rite of <span class="organization skull-and-bones"><a
+				href="https://it.wikipedia.org/wiki/Skull_and_Bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> has shaped the
+		character of the men who have shaped the American character, including two <span class="role">Presidents</span>
+		named <span class="person george-bush"><a href="https://en.wikipedia.org/wiki/Bush_family"><span
+					class="material-symbols-outlined">link Bush</span></a></span>.
+
+		And last <span class="date">Saturday, April 14</span>–for the first time ever–that long-secret rite was
+		witnessed by
+		a team of outsiders, including this writer.
+
+		Using high-tech night-vision video equipment able to peer through the gloom into the inner courtyard of the
+		<span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> “Tomb” in <span clas="place new-haven">New
+			Haven</span><a href="https://it.wikipedia.org/wiki/New_Haven" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> The Observer team witnessed:
+
+		· The <span class="person george-bush">George W.</span><a href="https://it.wikipedia.org/wiki/George_W._Bush"
+			target="_blank"><span class="material-symbols-outlined"></span></a> effect: intoxicated by renewed proximity
+		to
+		Presidential power, a robed Bonesman posing as <span class="person george-bush">George W.</span></span>
+		harangued
+		initiates in an eerily accurate <span class="place state texas">Texas</span><a
+			href="https://it.wikipedia.org/wiki/Texas" target="_blank"><span class="material-symbols-outlined">
+				link</span></a> drawl: “I’m gonna ream you like I reamed
+		<span class="person al-gore">Al Gore</span><a href="https://it.wikipedia.org/wiki/Al_Gore" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> and “I’m gonna
+		kill you like I killed <span class="person al-gore">Al Gore</span><a
+			href="https://it.wikipedia.org/wiki/Al_Gore" target="_blank"><span class="material-symbols-outlined">
+				link</span></a>.”
+
+		· Privileged <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> members mocked the
+		<span class="event"><a href="https://newsone.com/2029939/abner-louima-case/">assault on <span
+					class="person abner-louima">Abner Louima</span><a href="https://en.wikipedia.org/wiki/Abner_Louima"
+					target="_blank"><span class="material-symbols-outlined">link </span></a></a></span>by crying out
+		repeatedly, “Take that plunger out of my ass!”
+
+		· <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a></span> members hurled obscene sexual insults (“lick
+		my bumhole”) at initiates as they were
+		forced to kneel and kiss a skull at the feet of the initiators.
+
+		· Other members acted out the tableau of a throat-cutting ritual murder.
+
+		It’s important to remember this is not some fraternity initiation. It is an initiation far more secret–and far
+		more
+		significant, in terms of real power in the <span class="place state united-states">United States</span><a
+			href="https://en.wikipedia.org/wiki/United_States" target="_blank"></span
+				class="material-symbols-outlined"></span></a> –than that of the <span
+			class="organization cosa-nostra">Cosa Nostra</span><a href="https://it.wikipedia.org/wiki/Cosa_nostra"
+			target="_blank"><span class="material-symbols-outlined"> link</span></a>. If
+		the <span class="person">Bushes</span><a href="https://en.wikipedia.org/wiki/Bush_family" target="_blank"><span
+				class="material-symbols-outlined">link </span></a>are “the WASP <span
+			class="organization corleones">Corleones"</span><a href="https://it.wikipedia.org/wiki/Famiglia_di_Corleone"
+			target="_blank"><span class="material-symbols-outlined">link</span></a>–as the ever more stingingly
+		waspish <span class="cited-authors maureen-dowd">Maureen Dowd</span><a
+			href="https://it.wikipedia.org/wiki/Maureen_Dowd" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>has suggested–this is how their “made men” (and women)
+		are made.* It’s an initiation
+		ceremony that has bonded diplomats, media moguls, bankers and spies into a lifelong, multi-generational
+		fellowship
+		far more influential than any fraternity. It was–and still remains–the heart of the heart of the American
+		establishment.
+
+		Further revelations turned up by the Observer Bones Investigation Unit include:
+
+		· The words to the secret <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>“death mantra.”
+
+		· Copies of the <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> tax returns, obtained
+		through Freedom of Information Act requests, raise questions about the legitimacy of the secret society’s claim
+		to
+		charitable tax-exempt deduction status–particularly relevant considering recent criticism of the <span
+			class="person george-bush">George W.</span><a href="https://it.wikipedia.org/wiki/George_W._Bush"
+			target="_blank"><span class="material-symbols-outlined"></span></a> tax plan for favoring the privileged
+		few.
+
+		· A possible explanation emerged in the course of the initiation ceremony for <span
+			class="person george-bush">George W.’s</span><a href="https://it.wikipedia.org/wiki/George_W._Bush"
+			target="_blank"><span class="material-symbols-outlined">link</span></a> decision to run for <span
+			class="role">President</span> in
+		the first place.
+
+		‘The Devil Equals Death’
+
+		The Observer Mission Impossible expedition had its inception several months ago with a phone call from <span
+			class="person peggy-adler">Peggy Adler</span><a href="https://en.wikipedia.org/wiki/Peggy_Adler"
+			target="_blank"><span class="material-symbols-outlined">link</span></a>, the <span class="role">research
+			associate</span> on my previous <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>piece in The Observer
+		(July 17, 2000). She is the demon investigator and former Iran-contra committee staffer who, among other coups,
+		cross-referenced corporate boards to crack the “<span class="person george-bush">George W.</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span
+				class="material-symbols-outlined"></span></a><span
+			class="organization russell-trust-association">RTA</span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined"></span></a> code,” the corporate
+		shell game by which the corporate shell of the <span class="organization skull-and-bones"> Skull and
+			Bones</span><a href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> society, the <span
+			class="organization russell-trust-association">Russel Trust Association</span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined"></span></a>,
+		shielded its paper trail from prying eyes by changing its name to <span
+			class="organization russell-trust-association">RTA INC</span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined"></span></a>
+
+		<span class="cited-authors">Ms. Adler</span> said she had been approached by a member of the <span
+			class="organization yale">Yale</span><a href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale"
+			target="_blank"><span class="material-symbols-outlined">link</span></a> community who wanted to share
+		with us a remarkable coup of his own: He had found a way last year, in<span class="date"> April of 2000</span>,
+		to
+		audiotape the <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> initiation ceremony.
+		And he wanted to know if we’d be interested in an attempt to videotape it this time.
+
+		And so one afternoon last December, shortly after the <span class="event"><span
+				class="person george-bush">George W.</span><a href="https://it.wikipedia.org/wiki/George_W._Bush"
+				target="_blank"><span class="material-symbols-outlined"></span></a>electoral
+			victory</span> had been certified, I met with the intrepid fellow; he booted up his laptop and let me listen
+		to the
+		sounds of a ceremony that had been the subject of fevered speculation for nearly two centuries now.
+
+		Of course, there is more to <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>> than the mystical
+		mumbo-jumbo of its rituals. The rituals are less important than the relationships–the bonds of power and
+		influence
+		that develop between <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> initiates after they
+		graduate. But the relationships are first forged by the rituals and fact that the founders of <span
+			class="organization Times">Times Inc.</span><a href="https://www.nytimes.com/" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> and the <span
+			class="organization C.I.A">C.I.A</span><a href="https://it.wikipedia.org/wiki/CIA" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>, as well as several
+		<span class="role">Secretaries of State</span> and <span class="role">National Security Advisors</span>–the men
+		who
+		made the decision to drop the <span class="event">Hiroshima Bomb</span><a
+			href="https://it.wikipedia.org/wiki/Bombardamenti_atomici_di_Hiroshima_e_Nagasaki" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>, <span class="event">invade the bay of pigs</span><a
+			href="https://it.wikipedia.org/wiki/Invasione_della_baia_dei_Porci" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> and
+		<span class="event">plunge us into Vietnam</span><a href="https://en.wikipedia.org/wiki/Vietnam_War"
+			target="_blank"><span class="material-symbols-outlined">link</span></a>, the <span
+			class="person Taft">Tafts</span><a href="https://en.wikipedia.org/wiki/Taft_family" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>, the <span class="person bundys">Bundys</span>, the
+		<span class="person buckleys">Buckleys</span>, the <span class="person harrimans">Harrimans</span><a
+			href="https://en.wikipedia.org/wiki/Category:Harriman_family" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>, the <span class="person"><span
+				class="lovetts">Lovetts</span></span>–all took part in this initiation ritual may have
+		something to do with the real world power of those bonds. The unspoken understanding, the comfort level with the
+		clandestine, the nods and winks with which power is exercised.
+
+		The initiation ceremony begins the process of inculcating into the elect of the elite (just 15 out of 1,300 in
+		every
+		<span class="organization yale">Yale</span><a href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale"
+			target="_blank"><span class="material-symbols-outlined">link</span></a> class) the same
+		mystical sense of mission that allowed the <span class="organization Old-boy-network">British Old Boy
+			Network</span><a href="https://en.wikipedia.org/wiki/Old_boy_network" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> to rule a worldwide
+		empire.
+
+		The whole phenomenon is rarely looked into beyond the exotic ritual trappings (although <span
+			class="cited-authors">Evan Thomas</span> and <span class="cited-authors">Walter Isaacson</span> talk about
+		the
+		world-wide web of Bones foreign policy mandarins in <span class="organization">The Wise Men</span> ). But it’s
+		something I’ve been investigating off and on for a quarter of a century now. I am the Ahab of <span
+			class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>, pursuing the white whale (or white male) leviathan
+		to the utmost depths. As an
+		undergraduate at <span class="organization yale">Yale</span><a
+			href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> I lived next door to
+		the <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a></span> Tomb, and back in <span
+			class="date-1900">1977</span> I published the first
+		outsider’s investigation into <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>, its rituals and its
+		influence on American political culture (an updated version of that piece, revised to include my chilly exchange
+		with <span class="person george-bush">George</span> and <span class="person barbara-bush">Barbara Bush</span><a
+			href="https://it.wikipedia.org/wiki/Barbara_Bush" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> on Air Force Two, can
+		be found in my recent nonfiction collection, The Secret Parts of Fortune ).
+
+		And so it was momentous for me to actually hear the sounds of the <span class="organization skull-and-bones">
+			Skull and Bones</span><a href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> initiation on that
+		laptop. But in listening to it, awe gave way to a mixture of puzzlement and embarrassment–and an even deeper,
+		unsatisfied curiosity.
+
+		In part it was the fact that the ritual was heard but not seen. My <span class="organization yale">Yale</span><a
+			href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> source had found a
+		previously unexploited perch from which to record the sounds of the ceremonies, but could glimpse them only
+		incompletely. He reported a figure dressed like the devil, another one in a hooded-skeleton costume and others
+		in
+		robes. The thing that stood out for me, listening to it, was what I’ve come to think of as “the death mantra.”
+
+		Yes, the death mantra–here it is, the three-line <span class="organization skull-and-bones"> Skull and
+			Bones</span><a href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> initiation-ritual
+		theme that has bound three <span class="role">Presidents</span> (including the present one) to their secret
+		society:
+
+		‘THE HANGMAN EQUALS DEATH!
+
+		THE DEVIL EQUALS DEATH!
+
+		DEATH EQUALS DEATH!’
+
+		Most of the speculative lore about the <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> ritual has centered
+		on its death fixation. Beyond the obvious skull-and-crossbones insignia, of course, the most persistent story is
+		that initiates spend their senior year in the basement crypt of the Bones Tomb taking turns lying in a coffin
+		and,
+		in two long, intense, psycho-drama autobiographical sessions in said coffins, recount their personal and sexual
+		history to the other 14 chosen ones. The better to bond for life with those they know best and prepare for their
+		destiny as stewards of the ruling class.
+
+		The death-centered imagery, the injunction to initiates that they must “die to the barbarian world” and be
+		reborn in
+		the Elysian company of the elect of “The Order,” as they call it, is what makes<span
+			class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> as radically different from a college fraternity as
+		the <span class="person">Gambino</span> family is from the “hunting and fishing club” that was their nominal
+		headquarters.
+
+		The hangman equals death. The devil equals death. Death equals death ….
+
+		What the hell is going on there? Is it a puzzle in logic, like “All men are mortal. <span
+			class="person socrates">Socrates</span><a href="https://it.wikipedia.org/wiki/Socrate" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> is mortal …”?
+		Does it solve out to “The hangman equals the devil?”
+
+		Could one detect a capital-punishment theme here–the hangman as executioner presaging <span
+			class="person george-bush">George W.</span><a href="https://it.wikipedia.org/wiki/George_W._Bush"
+			target="_blank"><span class="material-symbols-outlined">link</span></a>prolific execution rate as <span
+			class="place state texas">Texas</span><a href="https://it.wikipedia.org/wiki/Texas" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> <span class="role">governor</span>? <span
+			class="person george-bush">George W.</span><a href="https://it.wikipedia.org/wiki/George_W._Bush"
+			target="_blank"><span class="material-symbols-outlined">link</span></a> equals death,” you might say.
+
+		And what about the devil? (Well, the figure dressed like the devil.) Is that the secret they’ve been covering up
+		ever since the society was founded in <span class="date-1800">1832</span>, the offshoot of a German secret
+		society:
+		devil worship? A fulfillment of the paranoid fantasies of the fundamentalist right, who believe the Eastern
+		establishment is a front for Satanic conspiracy.
+
+		Probably not, but it made me more eager to participate in this year’s caper: the attempt to see as well as hear
+		it,
+		to capture it all on video–for educational, historical and journalistic purposes to document a defining rite of
+		passage of the American ruling class.
+
+		Oh, yes–before we get to the night-vision videotape, there was one more thing, the embarrassing part of the
+		audiotape, the OOGA-BOOGA part. Part of the ceremony on the tape involved an initiation master ordering the
+		neophytes to fetch bones and uttering the (I guess) fake Tarzan-movie “native” chant “OOGA BOOGA.” It left me
+		feeling embarrassed for <span class="organization skull-and-bones">Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>. Hard to ever take seriously again anyone whose
+		defining life-mission moment includes an OOGA BOOGA.
+
+		But as it turned out, “OOGA BOOGA” was not evident in this year’s ceremony, as far as we were able to tell.
+		Perhaps
+		it was an improvisation, like this year’s impersonation of <span class="person george-bush">George W.</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>
+		(“I’ll ream you like I reamed <span class="person al-gore">Al Gore</span><a
+			href="https://it.wikipedia.org/wiki/Al_Gore" target="_blank"><span class="material-symbols-outlined">
+				link</span></a>”) was.
+
+		The Observer Mission Impossible Force met to plot strategy an hour before sunset on initiation night,<span
+			class="date"> Saturday, April 12</span>. It is not widely known, but Tap Night, which occurs on Thursday, is
+		not
+		generally the same as initiation night. The good stuff happens on Saturday night, and already limos are cruising
+		the
+		quiet streets that crisscross the <span class="organization yale">Yale</span><a
+			href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>campus, conveying
+		initiates of other secret societies to their rituals. Bones initiates come on foot, knock on the massive
+		triple-locked wooden door of the Tomb and are conveyed to the first stage of the ritual. But we are getting
+		ahead of
+		ourselves.
+
+		Let me just mention how much I admired the intrepid <span class="organization yale">Yale</span><a
+			href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> members of the Observer
+		Bones Task Force for displaying the kind of curiosity, initiative and heretical, skeptical impulse apparently
+		absent
+		on most Ivy campuses, if you believe <span class="person david-brooks">David Brooks</span><a
+			href="https://www.nytimes.com/column/david-brooks" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> recent <span
+			class="organization atlantic-journal">Atlantic</span><a href="https://www.theatlantic.com/"
+			target="_blank"><span class="material-symbols-outlined">link</span></a> Monthly cover story on
+		get-along-go-along
+		premature careerists. The guys on my team will make more of a real contribution than any of the smug
+		secret-society
+		types.
+
+		First on the agenda was a quick examination of the Bones income-tax filings, which an outside consultant to the
+		team
+		had obtained through Freedom of Information Act requests. He and <span class="person peggy-adler">Peggy
+			Adler</span></span> pointed out to me a couple of dubious assertions on the Form 990’s (Return of
+		Organization
+		Exempt from Income Tax), which called into question certain of the grounds for charitable exemption. In
+		particular,
+		there was the assertion in the <span class="date">1997 </span><span
+			class="russell-trust-association">RTA</span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> Incorporated filing (Part VI,
+		line 80b) that the organization was not “related … through common membership, governing bodies, trustees,
+		officers
+		etc. to any other exempt or non-exempt organization.”
+
+		Contradicting that assertion is information on the filing of the <span class="place deer-island">Deer
+			Island</span><a href="https://en.wikipedia.org/wiki/Deer_Island_(Massachusetts)" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> <span
+			class="organization deer-island-club-corportation">Club Corporation<a href="https://www.deerislandcc.com/"
+				target="_blank"><span class="material-symbols-outlined">link</span></a> . <span class="deer-island">Deer
+				Island</span><a href="https://en.wikipedia.org/wiki/Deer_Island_(Massachusetts)" target="_blank"><span
+					class="material-symbols-outlined">link</span></a> is the private island
+			of the <span class="organization skull-and-bones"> Skull and Bones</span><a
+				href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+					class="material-symbols-outlined"> link</span></a></span> Society, located in the <span
+			class="place">St. Lawrence River</span>. It is the
+		place where Bones members bring their families for summer get-togethers. It is wholly owned and run by <span
+			class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> members, apparently contradicting Bones’ claim of “no
+		relationship” to another
+		exempt organization, and appearing to contradict the strictly educational and charitable mission for which <span
+			class="organization russel-trust-association">RTA</span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined"></span></a> gets
+		its exemption for <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>.
+
+		The consultant argues in a memo that the purpose of the 80b question on the Bones deduction claim form “is to
+		prevent tax exempt charities from undertaking non-charitable activities by hiding them in another corporation.
+		This
+		is of course precisely what <span class="russell-trust-association">RTA INC</span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>. is accomplishing through
+		the <span class="deer-island">Deer Island</span><a
+			href="https://en.wikipedia.org/wiki/Deer_Island_(Massachusetts)" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> <span class="deer-island-club-corportation">Club
+			Corporation</span><a href="https://www.deerislandcc.com/" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>. In order to conceal this arrangement however <span
+			class="organization russell-trust-association">RTA</span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>. denies its connection
+		to the DICC.”
+
+		In fact, he goes on, “<span class="organization russell-trust-association">RTA</span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>and the<span
+			class="organization deer-island-club-corportation"><a
+				href="https://en.wikipedia.org/wiki/Deer_Island_(Massachusetts)"> DICC</a></span> are so closely linked
+		that
+		for all intents and purposes <span class="russell-trust-association">RTA</span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>. does own <span class="place deer-island">Deer Island
+			<a href="https://en.wikipedia.org/wiki/Deer_Island_(Massachusetts)" target="_blank"><span
+					class="material-symbols-outlined">link</span></a> </span>despite
+		its claims to the contrary.”
+
+		I’m not going to go into the whole tax issue here. Perhaps the Bones shell corporation has a good and valid
+		reason
+		for claiming that it has no connection to the Bones private-island country club.** Perhaps this sort of thing
+		goes
+		on all the time among the private charities of the privileged. I don’t think <span class="place">Deer
+			Island</span><a href="https://en.wikipedia.org/wiki/Deer_Island_(Massachusetts)" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>will become <span class="person george-bush">George
+			W.</span><a href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span
+				class="material-symbols-outlined"></span></a><span class="event">Whitewater</span>. But one might think
+		that a scrupulous <span class="place white-house">White House</span><a
+			href="https://en.wikipedia.org/wiki/White_House" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> counsel would want to look at the kind of tax
+		information <span class="person george-bush">George W.</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span
+				class="material-symbols-outlined"></span></a> secret society is filing on his behalf. Particularly since
+		he’s promising enormous
+		windfalls for the privileged, the tax breaks his secret society takes should be utterly beyond suspicion. Does
+		the
+		<span class="role">President</span>, I’d like to know, claim his <span class="organization skull-and-bones">
+			Skull and Bones</span><a href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>dues as a charitable
+		deduction, when the only charity seems to be providing a club house and country house for the privileged? The
+		<span class="organization russell-trust-association">RTA </span><a
+			href="https://en.wikipedia.org/wiki/Russell_Trust_Association" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>filing claims <span
+			class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> exists “for the benefit of <span
+			class="organization yale">Yale</span><a href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale"
+			target="_blank"><span class="material-symbols-outlined">link</span></a> But <span
+			class="place yale">Yale</span>–which celebrates three centuries of luminous atainments this weekend–ought to
+		question what “benefit” it gets from chants of “lick my bumhole” and the mockery of <span
+			class="person abner-louima">Abner Louima</span><a href="https://en.wikipedia.org/wiki/Abner_Louima"
+			target="_blank"><span class="material-symbols-outlined">link </span></a>.
+
+		Anyway, as night came falling and we choreographed the evening’s caper, I felt that we were carrying on an
+		old-fashioned, longstanding tradition: the natural reaction of the democratic (small D) tradition to elitist
+		power
+		that conceals itself within the cloak of privilege and secrecy. And for me, it was a culmination of my own
+		quarter-century quest, one that had become personalized lately by the fact that our <span
+			class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> <span class="role">President</span> had been a
+		classmate of mine at <span class="organization yale">Yale</span><a
+			href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>.
+
+		‘Run, Neophyte, Run!’
+
+		At last, zero hour approached. For two centuries, the outside world had wondered and fantasized about what was
+		about
+		to happen, what actually went on in the fabled <span class="organization skull-and-bones"> Skull and
+			Bones</span><a href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> initiation. There’s a
+		long tradition of <span class="yale">Yale</span><a href="https://it.wikipedia.org/wiki/Universit%C3%A0_Yale"
+			target="_blank"><span class="material-symbols-outlined">link</span></a> secret societies (including
+		Bones) raiding other secret societies to capture their ritual artifacts. In the 1970’s, an all-woman break-in
+		team
+		published photographs of the Bone’s Tomb’s interior. But tonight, for the first time ever, we would attempt to
+		capture the actual secret initiation ritual and bring it to light for anthropological study. Our team’s
+		equipment
+		included three night-vision-capable digital-video cameras, one tape recorder, a stepladder and two
+		walkie-talkies.
+		(I could never get mine to work.) Because of a recent injury which limits my mobility, I was stationed at a
+		listening post with my tape recorder while the video-cam team proceeded to their more perilous perch at the
+		forward
+		base (as those of us in special ops call it). We planned to rendezvous afterward for me to view the tape.
+
+		We split up just as the whoops and groans, the screams and moans began to emanate from inside the Tomb and the
+		masters of the <span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> initiation began
+		establishing the posts they’d man for the occult psycho-drama to come.
+
+		From my post, I could see through an open window shadowy figures walking very close above my head. Later I’ll
+		put my
+		audio impressions together with the video-cam record the other team obtained for a more complete picture, but
+		first
+		let me transcribe some of the notes I made from listening in. Fragmentary as they are, they capture some of the
+		strangeness, and perhaps the kind of disorientation the initiates themselves experienced there in the courtyard
+		of
+		<span class="organization skull-and-bones"> Skull and Bones</span><a
+			href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a></span>.
+
+		First, there was the guy posing as <span class="person george-bush">George W.</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span
+				class="material-symbols-outlined"></span></a>He seemed to be a bit
+		disgruntled at being given this role–a feeling he expressed by calling out in his George W. drawl to another
+		“Patriarch” (as they’re called): “I got the power to bomb the crap out of <span class="place state china"><a
+				href="https://it.wikipedia.org/wiki/China">China</a></span></span> and they give me this station.”
+
+		Then someone–one of the initiates?–called out “Uncle Toby!” (Many Bone ritual personae are taken from <span
+			class="person laurence-sterne">Laurence Sterne </span><a
+			href="https://it.wikipedia.org/wiki/Laurence_Sterne" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> Tristram Shandy – you gotta give them credit there for
+		good taste.)
+
+		“Uncle Toby!” the cry repeated.
+
+		“Shut up, neophyte.”
+
+		“Take that plunger out of my ass, Uncle Toby.”
+
+		Presumably, this mocking Louima reference was a ploy to scare initiates into thinking Uncle Toby was going to
+		give
+		them the plunger treatment.
+
+		That cheerful rectal theme was followed up by:
+
+		“I’m gonna ream you like I reamed <span class="person al-gore">Al Gore</span><a
+			href="https://it.wikipedia.org/wiki/Al_Gore" target="_blank"><span class="material-symbols-outlined">
+				link</span></a>” from the <span class="person">George W.</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span
+				class="material-symbols-outlined"></span></a>imitator.
+
+		Followed by “Help me! It’s the devil!”
+
+		And then “<span class="person george-bush"> George W. Bush</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span class="material-symbols-outlined">
+				link</span></a>really getting into it: “I’m gonna kill you like I killed <span class="person al-gore">Al
+			Gore</span><a href="https://it.wikipedia.org/wiki/Al_Gore" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>”
+
+		Silence. Then a door opened. Voices–half of them, it seemed, women–were screaming: “Run! Neophyte! Run,
+		neophyte!”
+
+		(The neophytes are, of course, the new initiates.)
+
+		From my post, I could only see hooded figures racing about in the darkness above my head, accompanied by cries
+		of:
+
+		“Run, neophyte!”
+
+		“Find the femur!”
+
+		And (again): “Take that plunger out of my ass, Uncle Toby!”
+
+		Then silence for awhile. The neophyte seemed to have gone back inside the Tomb. After which one of the
+		Patriarchs
+		complained, “We ought to get better blood than this fuckin’ syrup, man.”
+
+		It was only later that I learned what the blood was for: the whole throat-slitting “barbarian” tableau after the
+		skull-kissing.
+
+		But first there was a different kind of kissing being referred to. There were cries of “Lick my bumhole,
+		neophyte!”
+		“Lick my ass, neophyte!” “Do you like my bum, neophyte?” (Despite these heartfelt pleas, we did not witness any
+		of
+		those acts being consummated.)
+
+		The bumhole tribute was followed by more cries of “Get the femur!” and at least part of the death mantra I’d
+		heard
+		before: “DEATH EQUALS DEATH.”
+
+		Following which, “<span class="person george-bush"> George W. Bush</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span class="material-symbols-outlined">
+				link</span></a>chimed in with “I’m the <span class="role">President</span> of the motha-fuckin’ <span
+			class="place united-states">U.S.A.”</span><a href="https://en.wikipedia.org/wiki/United_States"
+			target="_blank"><span class="material-symbols-outlined">link</span></a>–apparently just for the sheer
+		pleasure of saying it. (He was sounding more like the
+		real <span class="person george-bush"> George W. Bush</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span class="material-symbols-outlined">
+				link</span></a>. all the time.)
+
+		It began to be clear that what was going on outside in the courtyard was the climax of an initiation ceremony
+		that
+		began inside the Tomb. There, it’s reputed, the initiates must first enter into a coffin and “die to the
+		barbarian
+		world,” to the world of “savages” (all but the <span class="organization skull-and-bones"> Skull and
+			Bones</span><a href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a> elect), in order to
+		be reborn as a member of “The Order.” Then comes the skull-kissing and the throat-slashing.
+
+		Two hours later, after all 15 of the initiates had burst out to be harangued and scared, I approached the
+		rendezvous
+		point with the night-vision camera team. This was the moment of truth: The night-vision team wasn’t sure what
+		their
+		digicams had picked up. With their own eyes they’d gotten evocative glimpses, but the playback on the camera’s
+		swing-out view screens would be the first time, so far as we knew, any outsider had really seen the legendary
+		ritual. A ritual three<span class="role"> Presidents</span>, a few <span class="role">Supreme Court
+			justices</span>,
+		maybe a dozen <span class="role">Senators</span> (including <span class="date-2000">2004</span> <span
+			class="role">Democratic Presidential contender</span> <span class="person john-kerry">John Kerry</span><a
+			href="https://it.wikipedia.org/wiki/John_Kerry" target="_blank"><span
+				class="material-symbols-outlined"></span></a>–which would mean a
+		head-to-head, Skull-to-Skull smackdown with <span class="person george-bush">George W.</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span
+				class="material-symbols-outlined"></span></a>), several <span class="role">Secretaries of State</span>,
+		literary and <span class="role">cultural luminaries</span> including
+		<span class="person john-hersey">John Hersey</span><a href="https://it.wikipedia.org/wiki/John_Hersey"
+			target="_blank"><span class="material-symbols-outlined">link</span></a>
+		and <span class="person william-buckley">William F. Buckley</span><a
+			href="https://en.wikipedia.org/wiki/William_F._Buckley_Sr.#:~:text=William%20Frank%20Buckley%20Sr.&text=He%20became%20influential%20in%20Mexican,ten%20children%2C%20including%20William%20F."
+			target="_blank"><span class="material-symbols-outlined">link</span></a>, had all undergone.
+
+		The footage was ghostly, it was grainy–but from the angles of the night-vision cams, we were able to piece
+		together
+		a narrative of what happened when the initiates emerged one at a time from the preliminaries inside the Tomb.
+
+		First they were led forward by a figure in a devil costume. Not really a sinister, Satanic-looking figure but,
+		as
+		one of the team put it, “More like Satan’s Little Helper.”
+
+		A shrill, menacing and sometimes blood-curdling chorus of cries and screams and imprecations accompanied the
+		emergence:
+
+		” Hurry, neophyte!” ” Run, neophyte!”
+
+		“Find the femur, neophyte!” Along with the occasional “Lick my bumhole!” “Remove the plunger!”-type outcries.
+
+		The devil figure pulled them into a white tent in the courtyard where, we think, they found their femurs and
+		emerged
+		with what looked like a thigh bone, although it was impossible to tell whether it once belonged to a human or
+		not.
+
+		When they reemerged from the tent, they were led to the centerpiece of this part of the ritual.
+
+		They were forced face-to-face with a shocking tableau: a guy holding what seemed like a butcher knife, wearing a
+		kind of animal-skin “barbarian” look, stood over what seemed to be a woman covered in fake blood and not much
+		else.
+		The neophyte then approached a skull a few feet away from the knife-wielder-and-victim tableau. The neophyte
+		knelt
+		and kissed the skull, at which point the guy with the knife knelt and cut the throat of the prone figure. (Well,
+		pretended to cut the throat.)
+
+		I’m not sure what it all means. I’ve yet to decode the mystical significance of this, although I do love to
+		think of
+		former <span class="role">President</span> <span class="person george-bush">George W.</span><a
+			href="https://it.wikipedia.org/wiki/George_W._Bush" target="_blank"><span
+				class="material-symbols-outlined"></span></a>kissing the skull.
+		Obviously, it has something to do with subservience. Kiss the skull of power. Bow down to The Order. But what
+		about
+		the “barbarian” cutting the throat of his victim?
+
+		Does it mean “One dies to the barbarian world”? Does it mean “Death to the barbarians”? Does it endorse
+		cutthroat
+		tactics? Is that how they enforce silence and secrecy?
+
+		I plan to continue my relentless study of the hermeneutics of the Bones rituals, myths and symbolism based on
+		these
+		new revelations, and perhaps with the help of a Bones graduate who feels the time has come to lift the veil on
+		the
+		silly (and no longer even secret) symbolism of their society. (Contact me privately c/o The Edgy Alliance, 577
+		Second Avenue, Box 105, N.Y., N.Y. 10016.)
+
+		All that death imagery, though: Maybe it’s meant to be a first ritualistic confrontation with Mortality, the
+		skull
+		as a memento mori designed to instill in the “neophyte” a sense of the gravity of one’s mission in life.
+
+		In that regard, consider the direct relevance of at least one aspect of the ritual to<span
+			class="person george-bush">George W.</span><a href="https://it.wikipedia.org/wiki/George_W._Bush"
+			target="_blank"><span class="material-symbols-outlined"></span></a>That recurrent phrase: “Run, neophyte,
+		run!”
+
+		Think about it. When <span class="person george-bush">George W.</span></span> was first considering the fairly
+		serious shift from baseball-team owner (whose major achievement was trading away <span
+			class="person sammy-sosa">Sammy Sosa</span><a href="https://it.wikipedia.org/wiki/Sammy_Sosa"
+			target="_blank"><span class="material-symbols-outlined">link</span></a>) to <span
+			class="role">governor</span> of <span class="place state texas">Texas</span><a
+			href="https://it.wikipedia.org/wiki/Texas" target="_blank"><span
+				class="material-symbols-outlined">link</span></a>, or when he was considering the shift
+		from one-term <span class="role">governor</span> of <span class="place state texas">Texas</span><a
+			href="https://it.wikipedia.org/wiki/Texas" target="_blank"><span
+				class="material-symbols-outlined">link</span></a> to <span class="role">President</span> of
+		the <span class="place state united-states">United States</span><a
+			href="https://en.wikipedia.org/wiki/United_States" target="_blank"></span
+				class="material-symbols-outlined"></span></a>, what decided him–what made him think he could pull it
+		off, despite years as a
+		semi-permanent neophyte? Could it be that what he heard, echoing in his brain, down the corridors of the years,
+		was
+		the injunction from that long-ago April night when he was a <span class="organization skull-and-bones"> Skull
+			and Bones</span><a href="https://it.wikipedia.org/wiki/Skull_and_Bones" target="_blank"><span
+				class="material-symbols-outlined"> link</span></a>initiate? When he bent
+		down to kiss the skull and heard, resounding in his ears, the command: ” Run, neophyte, run !”
+	</main>
+	<footer id="copyr">
+		<p>All copyrights and related rights on the content remain with their original owners.<br>
+
+			All copyright on the typographic and layout choices are 2023 © Giorgia Crosilla, Salvatore Di Marzo
+			and
+			Nicole Liggeri.</p>
+	</footer>
+	<script src="map.js"></script>
+
+</body>
+
+</html>
