@@ -613,3 +613,39 @@ $(document).ready(function () {
         };
     });
 })
+
+// Select all elements with the class 'openbtn'
+var buttons = document.querySelectorAll('.openbtn');
+
+// Variable to store the currently open button
+var currentlyOpenButton = null;
+
+// Loop through each button and add the click event listener
+buttons.forEach(function (btn) {
+  btn.addEventListener('click', function handleClick() {
+    // Check if the clicked button is the currently open button
+    if (btn === currentlyOpenButton) {
+      // If it is, close it and set currentlyOpenButton to null
+      btn.innerHTML = btn.getAttribute('data-original-html');
+      currentlyOpenButton = null;
+    } else {
+      // If it's either 'Original text A' or 'Original text B', perform action for A or B
+      btn.innerHTML = '<svg class="custom-svg" xmlns="http://www.w3.org/2000/svg" width="17.828" height="17.828"><path d="m2.828 17.828 6.086-6.086L15 17.828 17.828 15l-6.086-6.086 6.086-6.086L15 0 8.914 6.086 2.828 0 0 2.828l6.085 6.086L0 15l2.828 2.828z"/></svg>';
+      
+      // If there's a button already open, close it
+      if (currentlyOpenButton && currentlyOpenButton !== btn) {
+        currentlyOpenButton.innerHTML = currentlyOpenButton.getAttribute('data-original-html');
+      }
+
+      // Set the currently open button to the clicked button
+      currentlyOpenButton = btn;
+    }
+  });
+
+  // Store the original text as a data attribute
+  btn.setAttribute('data-original-html', btn.innerHTML);
+});
+
+
+
+
