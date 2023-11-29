@@ -80,6 +80,9 @@ footer{
 #button-txt-id{                /*questa è la div con i pulsanti*/
     grid-area: button;
     padding: 30px;
+    top: 0;
+    height: 100%;
+    
 }
 
 
@@ -87,6 +90,7 @@ footer{
 	text-decoration: none;
 	position: relative;
 	text-align: center;
+    
     
 	
 	&:hover {
@@ -361,6 +365,7 @@ nav ul{
     grid-area: sidebar;
     grid-template-columns: auto;
   }
+
   
   .metarticle-inv-txt {
     display: none;
@@ -393,6 +398,7 @@ nav ul{
    color: #dab35a;
    background-color: #3c0804;
    width: 150px;
+   
 
   }
   .accordion:hover{
@@ -411,9 +417,19 @@ nav ul{
     margin: 0;
 }
 
-
+#metadata-txt-id{
+    position: sticky;
+   top: 0;
+}
+#article-txt-id{
+    position: sticky;
+   top: 0;
+}
 .sidebar {
     grid-area: sidebar;
+}
+#sidebar-txt-id{
+    height: 100%;
 }
 
 
@@ -493,11 +509,17 @@ figcaption{
 .openbtn{
     padding: 0;
     padding-bottom: 10px;
+    position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
 }
-
+#button-art{
+    top: 65px;
+}
 #bside {
     padding-top: 5%;
 }
+
 
 #bside>button {
     width: fit-content;
