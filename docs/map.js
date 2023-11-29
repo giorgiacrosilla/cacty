@@ -47,6 +47,8 @@ $(document).ready(function () {
                 if (isOttocentoloaded) {
                     $('.title').before('<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>');
                     $('#navbarSupportedContent').after('<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>');
+                    $('#copyr').before('<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>');
+                    $('#copyr').after('<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>');
                 }
             },
             error: function (error) {
@@ -94,6 +96,9 @@ $(document).ready(function () {
                 if (isOttocentoloaded) {
                     $('.title').before('<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>');
                     $('#navbarSupportedContent').after('<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>');
+                    $('#copyr').before('<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>');
+                    $('#copyr').after('<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>');
+               
                 }
             },
             error: function (error) {
@@ -143,6 +148,7 @@ $(document).ready(function () {
                 if (isOttocentoloaded) {
                     $('.title').before('<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>');
                     $('#navbarSupportedContent').after('<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>');
+                    
                 }
             },
             error: function (error) {
@@ -645,7 +651,3 @@ buttons.forEach(function (btn) {
   // Store the original text as a data attribute
   btn.setAttribute('data-original-html', btn.innerHTML);
 });
-
-
-
-
