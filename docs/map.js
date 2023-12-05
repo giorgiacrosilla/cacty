@@ -213,34 +213,20 @@ function stylechanger(newCSSFileName) {
 
         if (newCSSFileName === "De_Stijl.css") {
             $('.imgcontainer img').unwrap();
-            $("#destijlprint").remove();
+            $(".background-grid").css("display", "none");
+            $(".block").css("display", "none")
             $('.left-side').remove();
             $("#aldinedelf").css("display", "none");
-            if (!(document.getElementById("provauno")) && (!(document.getElementById("body-d-id")))) {
-                // $("body").after('<div class="main-container"></div>');
-                $("body").after('<div class="background-grid"></div>');
-                $(".background-grid").after('<div class="block", id="square"></div>');
-                $(".background-grid").after('<div class="block", id="gold-square"></div>');
-                $(".background-grid").after('<div class="block", id="square-3"></div>');
-                $(".background-grid").after('<div class="block", id="yellow-square"></div>');
-                $(".background-grid").after('<div class="block", id="mini-white-square"></div>');
-                $(".background-grid").after('<div class="block", id="blue-square-2"></div>');
-                $(".background-grid").after('<div class="block", id="white-square5"></div>');
-                $(".background-grid").after('<div class="block", id="place-square2"></div>');
-                $(".background-grid").after('<div class="block", id="place-square1"></div>');
-            }
         }
         else if (newCSSFileName === "Aldine.css") {
             $('.imgcontainer img').unwrap();
             $("#aldinedelf").css("display", "block");
-            $(".background-grid").remove();
-            $(".block").remove();
+            $(".background-grid").css("display", "none");
+            $(".block").css("display", "none")
             $('.left-side').remove();
-            $("#destijlprint").remove();
             }
         }
         else if (newCSSFileName === "90s.css") {
-            $(".block").remove();
             $("#content-card > div").addClass("card");
             $("#content-card >div").prepend('<div class="star"></div>');
             $('.diagonal').before('<div class="separator left"></div>');
@@ -252,15 +238,16 @@ function stylechanger(newCSSFileName) {
             $('.decoration-sx').remove();
             $('.left-side').remove();
             $("#aldinedelf").css("display", "none");
-            $("#destijlprint").remove();
+            $(".background-grid").css("display", "none");
+            $(".block").css("display", "none")
             sections90s();
 
         }
         else if (newCSSFileName === "future.css") {
             $('.imgcontainer img').unwrap();
             $("#aldinedelf").css("display", "none");
-            $("#destijlprint").remove();
-            $(".block").remove();
+            $(".background-grid").css("display", "none");
+            $(".block").css("display", "none")
             $(".star").remove();
             $(".card").removeClass("card");
             $(".separator.t").remove();
@@ -285,7 +272,8 @@ function stylechanger(newCSSFileName) {
             $('.left-side').remove();
             $('.imgcontainer img').unwrap();
             $("#aldinedelf").css("display", "none");
-            $("#destijlprint").remove();
+            $(".background-grid").css("display", "none");
+            $(".block").css("display", "none")
 
         }
         else if (newCSSFileName === "anniSettanta.css") {
@@ -294,7 +282,8 @@ function stylechanger(newCSSFileName) {
             $('.left-side').remove();
             $('.imgcontainer img').unwrap();
             $("#aldinedelf").css("display", "none");
-            $("#destijlprint").remove();
+            $(".background-grid").css("display", "none");
+            $(".block").css("display", "none")
         }
     }
 }
