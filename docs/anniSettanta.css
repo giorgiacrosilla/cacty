@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Hind+Madurai:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Hind+Madurai:wght@400;600;700&family=Palanquin+Dark:wght@600&display=swap');
+@font-face {
+    font-family: popupFont;
+    src: url(Rushfordclean-rgz89.otf);
+  }
 * {
     font-weight: 400;
     font-family: 'Hind Madurai', sans-serif;
@@ -831,6 +835,126 @@ footer{
         " footer";
     background-color: #f5f5f5;         
     }
+
+
+
+/*DOCUMENTATION*/
+
+#main-d{
+    padding: 10px 20px !important;
+
+}
+#main-d h1{
+    text-transform: uppercase;
+    font-family:'popupFont', sans-serif !important;
+    font-size: 70px;
+    border-bottom: #141414 20px solid;
+    border-top: #141414 20px solid;
+    border-right: #141414 5px solid;
+    border-left: #141414 5px solid;
+    line-height: 50px;
+    word-break: break-all; 
+    padding: 30px 0 0 20px;
+    margin-bottom: 0px;
+}
+#main-d h1::after{
+    content: "!!!";   
+}
+#main-d .intro-container{
+    border: #141414 5px solid;
+    padding: 10px 20px;
+    text-align: justify;
+    word-wrap: break-word;
+    hyphens: auto;
+}
+#main-d .intro-container p{
+    margin: 0px;
+}
+#main-d .intro-container ol{
+    list-style-type: none;
+}
+#main-d .intro-container ol li:nth-of-type(2)::before, #main-d .intro-container ol li:nth-of-type(3)::before{
+    content: "PLUSS ";
+    font-family:'popupFont', sans-serif !important;
+    
+}
+#roles{
+    border: 30px solid;
+    margin: 0 !important;
+    text-transform: uppercase;
+    font-size: smaller;
+    border: #ffffff 10px inset;
+    border-radius: 30px; /* Rounded corners */
+    width: 80%;
+    padding: 20px; 
+}
+.container1:nth-child(odd){
+    background-color: #141414;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    padding: 0 7px 7px 7px;
+    margin-top: 10px;
+    text-align: center1;
+}
+.container1:nth-child(odd) h2, .container1:nth-child(odd) h3{
+    color: #f5f5f5;
+    text-align: center;
+}
+.style-70-doc{
+    background-color: #F5F5F5;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: auto;
+}
+.style-70-doc p{
+    text-align: left;
+    padding:0  20px;
+}
+.style-70-doc h4{
+    font-weight: 700;
+    text-transform: capitalize;
+ 
+}
+
+.container1:nth-child(odd) h4::before, .container1:nth-child(odd) h2::before{
+    content: '\2605'; 
+    display: inline-block;
+    margin: 3px;
+}
+.container1 img{
+    filter: none;
+    height: auto;
+}
+
+.img-d{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto !important;
+    align-items: center;
+    height: auto !important;    
+}
+#main-d .card-name{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    height: auto;
+    padding: 30px;
+}
+#main-d .card-name .name-card img{
+    min-height: 50px;
+    min-width: 50px;  
+}
+.name-card figure{
+    width: 70%;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+}
+
 
 
 @media screen and (max-width: 600px) {
