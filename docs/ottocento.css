@@ -5,7 +5,9 @@
     line-height: 1.5;
     
   }
-
+  .block, #aldinedelf, .background-grid{
+    display:none;
+    }
 
 /*SCROLL BAR*/
 :root {
@@ -530,18 +532,30 @@ figcaption{
     margin-bottom: 2vh;
 }
 
-#introduction-txt-id {
-    width: calc(100% - 13%);
-    padding: 3% 3% 3% 3%;
-    float: right;
-}
+
 
 .maiuscoletto {
     font-variant: small-caps;
 }
 
 
+#main-txt-id{
+    padding: 11.11% 11.11% 22.22% 11.11%;
+    display: grid;
+    grid-template-columns: "title" "subtitle""text""author";
 
+
+}
+#introduction-txt-id{
+    margin: 0 auto;
+}
+#introduction-txt-id h1{
+        grid-area: "title";
+
+}
+#introduction-txt-id h2{
+    grid-area: "subtitle";
+  }
 
 
 
