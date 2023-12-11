@@ -246,7 +246,7 @@ html {
 .due,
 .diagonal {
   margin-top: 19vh;
-  min-height: 85vh;
+  height: 85vh;
 }
 
 .diagonal {
@@ -580,7 +580,7 @@ button.accordion {
 }
 
 #article-txt-id a:link,
-#article-txt-id a:visited {
+#article-txt-id a:visited, #metadata-txt-id a:link, #metadata-txt-id a:visited {
   color: black;
 }
 
@@ -598,28 +598,9 @@ button.accordion {
   height: 3.5vh;
   background-color: var(--rosa);
   clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
+    50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%
   );
-  -webkit-clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
+  -webkit-clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%
   );
 }
 
@@ -640,8 +621,8 @@ main {
   grid-area: main;
   overflow: auto;
   z-index: 0;
-  border: 15px solid var(--fuchsia);
-  padding: 15px;
+  padding: 1%;
+  border: 1vw solid transparent;
 }
 
 main::-webkit-scrollbar {
@@ -849,7 +830,7 @@ footer {
   background-color: var(--verde);
 }
 #copyr {
-    margin: 1% 5%;
+  margin: 1% 5%;
 }
 #main-footer {
   margin-top: 20vh;
@@ -1025,33 +1006,9 @@ footer {
   width: 80vh;
   position: relative;
   height: 100vh;
-  shape-outside: polygon(
-    30% 0,
-    100% 0,
-    100% 60%,
-    100% 100%,
-    33% 87%,
-    32% 87%,
-    0 11%
-  );
-  clip-path: polygon(
-    30% 0,
-    100% 0,
-    100% 60%,
-    100% 100%,
-    33% 87%,
-    32% 87%,
-    0 11%
-  );
-  -webkit-clip-path: polygon(
-    30% 0,
-    100% 0,
-    100% 60%,
-    100% 100%,
-    33% 87%,
-    32% 87%,
-    0 11%
-  );
+  shape-outside: polygon(30% 0,100% 0,100% 60%,100% 100%,33% 87%,32% 87%,0 11%);
+  clip-path: polygon(30% 0,100% 0,100% 60%,100% 100%,33% 87%,32% 87%,0 11%);
+  -webkit-clip-path: polygon(30% 0,100% 0,100% 60%,100% 100%,33% 87%,32% 87%,0 11%);
 }
 
 #shape-right {
@@ -1096,6 +1053,12 @@ footer {
 }
 
 @media only screen and (max-width: 900px) {
+  .title {
+    width: fit-content;
+    padding-left: 1%;
+    height: fit-content;
+    padding-right: 1%;
+  }
   #body-txt-id {
     font-size: 0.8em;
   }
@@ -1112,6 +1075,7 @@ footer {
 
   #button-txt-id {
     display: flex;
+    padding-top: 5%;
     justify-content: center;
   }
 
@@ -1162,11 +1126,6 @@ footer {
 @media only screen and (max-width: 550px) {
   .uno {
     height: 110vh;
-  }
-
-  .title {
-    width: 30vw;
-    padding-left: 2%;
   }
 
   .stroke-double {
@@ -1252,10 +1211,13 @@ footer {
   }
 }
 
-@media only screen and (min-width: 551px) and (max-width: 660px) {
-  .title {
-    width: 23vw;
+@media only screen and (min-width: 444px) and (max-width: 554px) {
+  .stroke-d::before {
+    left: -0.3%;
   }
+}
+
+@media only screen and (min-width: 551px) and (max-width: 660px) {
 
   .stroke-double {
     font-size: 4.5vw;
@@ -1305,9 +1267,6 @@ footer {
 }
 
 @media only screen and (min-width: 661px) and (max-width: 900px) {
-  .title {
-    width: 23vw;
-  }
 
   .stroke-double {
     font-size: 4.5vw;
@@ -1329,13 +1288,6 @@ footer {
     font-size: 0.8em;
   }
 }
-
-@media only screen and (min-width: 500px) and (max-width: 550px) {
-  .title {
-    width: 23vw;
-  }
-}
-
 @media only screen and (max-width: 444px) {
   .wrapper1 > h1 {
     font-size: 2rem;
@@ -1353,3 +1305,11 @@ footer {
     margin-top: -6%;
   }
 }
+
+@media (min-width:1100px) {
+  .wrapper p {
+    line-height: 2rem;
+  }
+}
+
+

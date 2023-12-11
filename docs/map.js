@@ -45,13 +45,13 @@ function handlePageLoad() {
 
     if ($(".left-side").length === 0) {
       $(".container-doc:eq(0)").before(
-        '<div class="left-side"><img src=""></div>'
+        '<div class="left-side"><img src="https://lavitafelice.mediabiblos.it/copertine/lavitafelice/lettere-e-documenti-565941.jpg"></div>'
       );
       $(".container-doc:eq(1)").before(
         '<div class="left-side"><img src=""></div>'
       );
       $(".container-doc:eq(2)").before(
-        '<div class="left-side"><img src=""></div>'
+        '<div class="left-side"><img src="https://miro.medium.com/v2/resize:fit:420/1*wQf7Ujt6rsg8tR5b4Uc1_Q.jpeg"></div>'
       );
       $(".container-doc:eq(3)").before(
         '<div class="left-side"><img src=""></div>'
@@ -125,8 +125,7 @@ function handlePageLoad() {
       $(".background-grid").after(
         '<div class="block" id="place-square1"></div>'
       );
-    }
-    else{
+    } else {
       // $(".block").css("display", "none");
       // $(".background-grid").css("display", "none");
       $(".background-grid").remove();
@@ -187,7 +186,6 @@ $(document).ready(function () {
           .addClass("metarticle-inv-txt");
         adjustGridStructure();
         loadMap();
-        handlePageLoad();
       },
       error: function (error) {
         console.log("Error loading file: " + error.statusText);
@@ -417,34 +415,40 @@ function loadMap() {
           if (data.features.length > 0) {
             var coordinates = data.features[0].geometry.coordinates;
             var marker = L.marker([coordinates[1], coordinates[0]]).addTo(map);
-
+    
             marker.bindPopup('<a href="#' + content + '">' + content + "</a>");
-
+    
             var textToChangeColor = document.querySelectorAll(
               "span.place[id='" + content + "']"
             );
-
-            // Add a click event listener to the marker rivedereeeeeee non va
+    
+            var currentOccurrence = 0;
+    
+            // Add a click event listener to the marker
             marker.addEventListener("click", function () {
               textToChangeColor.forEach(function (element) {
                 element.classList.add("nmap");
-                var clickCount = marker.options.clickCount || 0;
-
-                // Remove the previously assigned ID
-                $(element).removeAttr("id");
-
-                // Set the ID for the current element
-                // Find the element at the specified index
-                var elementToAssignId =
-                  Array.from(textToChangeColor)[clickCount];
-                if (elementToAssignId) {
-                  elementToAssignId.setAttribute("id", content);
-                }
-
-                // Increment the click count for the next click
-                marker.options.clickCount = clickCount + 1;
+              });
+    
+              // Scroll to the corresponding anchor element
+              scrollToOccurrence(content, currentOccurrence);
+              currentOccurrence = (currentOccurrence + 1) % textToChangeColor.length;
+            });
+    
+            // Add a click event listener to the anchor element
+            textToChangeColor.forEach(function (element) {
+              element.addEventListener("click", function () {
+                textToChangeColor.forEach(function (element) {
+                  element.classList.add("nmap");
+                });
+    
+                // Scroll to the corresponding marker on the map
+                marker.openPopup();
+                scrollToOccurrence(content, currentOccurrence);
+                currentOccurrence = (currentOccurrence + 1) % textToChangeColor.length;
               });
             });
+    
             marker.getPopup().on("remove", function () {
               textToChangeColor.forEach(function (element) {
                 element.classList.remove("nmap");
@@ -454,6 +458,14 @@ function loadMap() {
         })
         .catch((error) => console.error(error));
     });
+    
+    function scrollToOccurrence(id, occurrence) {
+      var elements = document.querySelectorAll("span.place[id='" + id + "']");
+      if (occurrence < elements.length) {
+        elements[occurrence].scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    
     function loadGeoJSON(spanId, geoJSONUrl) {
       fetch(geoJSONUrl)
         .then((res) => res.json())
@@ -629,45 +641,70 @@ function initializeAccordion() {
 initializeAccordion();
 
 $(document).ready(function () {
-    $("div[data-name]").on("click", function () {
-      var className = $(this).data("name");
-      var container = $(this).find("a");
-      container.attr("href", "#" + className);
-  
-      var dataclass = $("." + className);
-      var clickCount = container.data("click-count") || 0;
-  
-      // Remove the previously assigned ID
-      $("." + className).removeAttr("id");
-  
-      // Set the ID for the current element
-      var elementToAssignId = dataclass.eq(clickCount);
-      elementToAssignId.attr("id", className);
-  
-      // Increment the click count for the next click
-      container.data("click-count", clickCount + 1);
-  
-      // Rest of your code for handling classes
-      if (elementToAssignId.hasClass("person")) {
-        elementToAssignId.addClass("stylePerson");
-        
-            if (clickCount > 0) {
-              // Remove 'stylePerson' from the previously clicked element of the same data class rivedereeeeee
-              dataclass.eq(clickCount - 1).removeClass('stylePerson');
-            } else {
-              // Remove 'stylePerson' if a different "div[data-name]" is clicked
-              $("div[data-name]").not(this).find("." + className).removeClass('stylePerson');
-            }
-          
-        }
-       else if (elementToAssignId.hasClass("event")) {
-        // ... (rest of your code for handling events)
-      } else if (elementToAssignId.hasClass("date")) {
-        // ... (rest of your code for handling dates)
+  $("div[data-name]").on("click", function () {
+    var className = $(this).data("name");
+    var container = $(this).find("a");
+    container.attr("href", "#" + className);
+
+    var dataclass = $("." + className);
+    var length = dataclass.length;
+    console.log("Length of dataclass:", length);
+    var clickCount = container.data("click-count") || 0;
+
+    $('.person').removeClass("stylePerson");
+    $('.event').removeClass('styleEvent');
+    $('.date').removeClass('styleDate')
+
+    // Remove the previously assigned ID
+    $("." + className).removeAttr("id");
+
+    // Set the ID for the current element
+    var elementToAssignId = dataclass.eq(clickCount);
+    elementToAssignId.attr("id", className);
+
+    // Rest of your code for handling classes
+    if (elementToAssignId.hasClass("person")) {
+      if (clickCount > length - 1) {
+        clickCount = 0;
+        dataclass.removeClass("stylePerson");
+      } else {
+        dataclass.addClass("stylePerson");
+        clickCount++;
       }
-    });
+      if (clickCount === length) {
+        clickCount = 0; // Reset clickCount when it reaches the end
+      }
+      container.data("click-count", clickCount); // Update the clickCount data
+      console.log(clickCount);
+    } else if (elementToAssignId.hasClass("event")) {
+      if (clickCount > length - 1) {
+        clickCount = 0;
+        dataclass.removeClass("styleEvent");
+      } else {
+        dataclass.addClass("styleEvent");
+        clickCount++;
+      }
+      if (clickCount === length) {
+        clickCount = 0; // Reset clickCount when it reaches the end
+      }
+      container.data("click-count", clickCount); // Update the clickCount data
+      console.log(clickCount);
+    } else if (elementToAssignId.hasClass("date")) {
+      if (clickCount > length - 1) {
+        clickCount = 0;
+        dataclass.removeClass("styleDate");
+      } else {
+        dataclass.addClass("styleDate");
+        clickCount++;
+      }
+      if (clickCount === length) {
+        clickCount = 0; // Reset clickCount when it reaches the end
+      }
+      container.data("click-count", clickCount); // Update the clickCount data
+      console.log(clickCount);
+    }
   });
-  
+});
 
 // Select all elements with the class 'openbtn'
 var buttons = document.querySelectorAll(".openbtn");
