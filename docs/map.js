@@ -12,9 +12,8 @@ function handlePageLoad() {
   var is90sLoaded = isCssLoaded("90s.css");
 
   if (is90sLoaded) {
-    $("#side-image").remove();
-    $("#right-image").remove();
-    $(".block").remove();
+    $(".block").css("display", "none");
+    $(".background-grid").css("display", "none");
     $("#content-card > div").addClass("card");
     $("#content-card > div").prepend('<div class="star"></div>');
     $(".diagonal").before('<div class="separator left"></div>');
@@ -26,18 +25,16 @@ function handlePageLoad() {
     $(".decoration-sx").remove();
     $(".left-side").remove();
     $("#aldinedelf").css("display", "none");
-    $("#destijlprint").remove();
     sections90s();
   }
 
   var isfutureloaded = isCssLoaded("future.css");
 
   if (isfutureloaded) {
-    $("#aldinedelf").css("display", "none");
     $(".imgcontainer img").unwrap();
     $("#aldinedelf").css("display", "none");
-    $("#destijlprint").remove();
-    $(".block").remove();
+    $(".block").css("display", "none");
+    $(".background-grid").css("display", "none");
     $(".star").remove();
     $(".card").removeClass("card");
     $(".separator.t").remove();
@@ -74,8 +71,9 @@ function handlePageLoad() {
   if (isOttocentoloaded) {
     $(".left-side").remove();
     $(".imgcontainer img").unwrap();
-    $("#destijlprint").remove();
     $("#aldinedelf").css("display", "none");
+    $(".block").css("display", "none");
+    $(".background-grid").css("display", "none");
     $(".star").remove();
     $(".card").removeClass("card");
     $(".title").before(
@@ -97,9 +95,8 @@ function handlePageLoad() {
     $(".imgcontainer img").unwrap();
     $(".star").remove();
     $(".card").removeClass("card");
-    $("#destijlprint").remove();
     $(".left-side").remove();
-    $("#aldinedelf").remove();
+    $("#aldinedelf").css("display", "none");
 
     if (
       !document.getElementById("provauno") &&
@@ -128,6 +125,10 @@ function handlePageLoad() {
         '<div class="block" id="place-square1"></div>'
       );
     }
+    else{
+      $(".block").css("display", "none");
+      $(".background-grid").css("display", "none");
+    }
   }
 
   var isaldineloaded = isCssLoaded("Aldine.css");
@@ -135,11 +136,10 @@ function handlePageLoad() {
     $(".imgcontainer img").unwrap();
     $(".star").remove();
     $(".card").removeClass("card");
-    $(".background-grid").remove();
-    $(".block").remove();
+    $(".block").css("display", "none");
+    $(".background-grid").css("display", "none");
     $("#aldinedelf").css("display", "block");
     $(".left-side").remove();
-    $("#destijlprint").remove();
   }
 
   var issettantaloaded = isCssLoaded("anniSettanta.css");
@@ -151,7 +151,8 @@ function handlePageLoad() {
     $(".left-side").remove();
     $(".imgcontainer img").unwrap();
     $("#aldinedelf").css("display", "none");
-    $("#destijlprint").remove();
+    $(".block").css("display", "none");
+    $(".background-grid").css("display", "none");
   }
 }
 
