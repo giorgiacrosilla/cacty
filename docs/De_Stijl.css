@@ -51,6 +51,7 @@ html {
 .block {
   cursor: pointer;
   border: none;
+  display: block;
 }
 
 
@@ -596,13 +597,13 @@ a.dropdown-toggle {
   border-left: 1.25rem solid rgb(0, 0, 0);
 }
 
-#firstdiagonal {
+#first-diagonal {
   position: relative;
   left: 5%;
   padding: 1%;
   width: 90%;
-  border-right: 1.25rem solid rgb(0, 0, 0);
-  border-left: 1.25rem solid rgb(0, 0, 0);
+  border-right: 1.25rem solid rgb(0, 0, 0) !important;
+  border-left: 1.25rem solid rgb(0, 0, 0) !important;
 }
 
 #secondiagonal {
@@ -736,7 +737,7 @@ a.dropdown-toggle {
   justify-content: space-evenly;
 }
 
-#blacksquare1 {
+.blacksquare1 {
   position: relative;
   width: 40vh;
   height: 40vh;
@@ -744,7 +745,7 @@ a.dropdown-toggle {
   background-color: rgb(0, 0, 0);
 }
 
-#blacksquare2 {
+.blacksquare2 {
   position: relative;
   width: 46vh;
   height: 46vh;
@@ -753,7 +754,7 @@ a.dropdown-toggle {
   border: 1.25rem solid rgb(255, 255, 255);
 }
 
-#welcome {
+.welcome {
   position: absolute;
   top: 38%;
   left: 36%;
@@ -766,7 +767,7 @@ a.dropdown-toggle {
 }
 
 
-#to {
+.to {
   position: absolute;
   text-transform: uppercase;
   font-size: 4.06rem;
@@ -779,7 +780,7 @@ a.dropdown-toggle {
   mix-blend-mode: difference;
 }
 
-#secretmag {
+.secretmag {
   position: absolute;
   text-transform: uppercase;
   font-size: 4.06rem;
@@ -791,16 +792,16 @@ a.dropdown-toggle {
   right: 33%;
 }
 
-#theonlymagazine {
+.theonlymagazine {
   font-size: 1.75rem;
   text-transform: uppercase;
   border-bottom: 1.25rem solid black;
   font-family: "theo";
 }
 
-#welcome,
-#to,
-#secretmag {
+.welcome,
+.to,
+.secretmag {
   font-size: 5rem;
   font-family: "theo";
 }
@@ -908,9 +909,9 @@ tr:nth-child(odd):hover {
   padding: 0.5%;
 }
 
-#aldinedelf {
+/* #aldinedelf {
   display: none;
-}
+} */
 
 
 .n {
@@ -1139,7 +1140,7 @@ figure img {
 
 @media only screen and (max-width: 1440px) and (min-width: 1024px) {
   #main-txt-id {
-    max-height: 82%;
+    max-height: 83%;
     padding-top: 3%;
   }
 }
@@ -1176,7 +1177,7 @@ figure img {
 
 
 
-@media only screen and (max-width: 768px) and (min-width: 425px) {
+@media only screen and (max-width: 769px) and (min-width: 425px) {
   #main-txt-id {
     /* position: fixed;
     height: 82.75%;
@@ -1185,7 +1186,7 @@ figure img {
     max-width: 58%; */
     top: 7%;
     padding-top: 3%;
-    max-height: 82%;
+    height: 81.75%;
     font-size: 0.8rem;
   }
 
@@ -1243,57 +1244,88 @@ figure img {
     'sidebar footer';
 }
 
+.grid-small {
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.1fr 0.05fr 0.6fr 1fr 0.1fr;
+  grid-template-areas: 'nav' 'button' 'sidebar' 'main' 'footer';
+}
+
 
 @media only screen and (max-width: 426px) {
-  /* .grid-s-normal {
-    grid-template-areas: 'nav' 'button' 'main' 'footer';
-    grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.2fr 1fr 0.1fr;
-  } */
-  .block{
-    display:none;
+  .block {
+    display: none;
   }
 
 
-  .block{
-    display:none;
+  #body-txt-id{
+    width:100vw;
+    height:100vh;
   }
 
-  nav{
-    grid-area:nav;
-  }
-
-
-  main{
+  #main-txt-id {
+    position:relative;
     grid-area:main;
+    max-width: 100%;
+    right:0%;
+    top:0;
+    height:100%;
+    max-height:95%;
   }
 
-  #main-txt-id{
-    padding-top: 5%;
-  }
-
-     .grid-s-normal {
+  .grid-s-normal {
     grid-template-areas: 'nav' 'button' 'main' 'footer';
     grid-template-columns: 1fr;
-    grid-template-rows: 0.1fr 0.2fr 1fr 0.06fr;
-  } 
-
-  .grid-small {
-    grid-template-columns: 0.33fr 1fr;
-    grid-template-rows: 0.05fr 0.01fr 0.6fr 1fr 0.06fr;
-    grid-template-areas:
-      'nav nav'
-      'button main'
-      'sidebar main'
-      'sidebar main'
-      'sidebar footer';
+    grid-template-rows: 0.1fr 0.01fr 1fr 0.1fr;
   }
+
   
 
+
+  nav {
+    grid-area: nav;
+  }
+
+
+  #button-txt-id {
+    grid-area: button;
+    z-index: 2;
+  }
+
+  #copyr {
+    grid-area: footer;
+    font-size: 0.6rem;
+    width: 100%;
+    right: 0;
+  }
+
+  /* .metarticle-visible-txt {
+    grid-area: sidebar;
+  } */
+
+  #sidebar-txt-id {
+    grid-area: sidebar;
+  }
+
+  #metadata-txt-id {
+    overflow-y: scroll;
+    max-height: 100%;
+  }
+  
+  #article-txt-id {
+    overflow-y: scroll;
+    max-height: 100%;
+  }
 
   .openbtn {
     font-size: 1rem;
     background-color: rgb(0, 0, 0);
     color: #f1f1f1;
+  }
+}
+
+@media only screen and (width < 376px){
+  #main-txt-id{
+    font-size: 0.8rem;
+    max-height:98%;
   }
 }
