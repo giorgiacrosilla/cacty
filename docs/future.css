@@ -693,7 +693,7 @@ figure figcaption {
   float: none;
   font-family: rodchenkol;
   font-weight: normal;
-  font-size: 0.9rem;
+  font-size: inherit;
   margin: 0 0 0 0;
 }
 

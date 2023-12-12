@@ -264,7 +264,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   // On click of a link in the list
-  $(".nav-item a").click(function (e) {
+  $("#navdoc a").click(function (e) {
     e.preventDefault();
     // Retrieve the URL of the file associated with the link
     var fileDaCaricare = $(this).data("file");
