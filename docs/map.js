@@ -264,37 +264,6 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   // On click of a link in the list
-  $("#navdoc a").click(function (e) {
-    e.preventDefault();
-    // Retrieve the URL of the file associated with the link
-    var fileDaCaricare = $(this).data("file");
-    // Call the function to load the content
-    caricaf(fileDaCaricare);
-  });
-  function caricaf(url) {
-    $.ajax({
-      url: url,
-      type: "GET",
-      dataType: "html",
-      success: function (data) {
-        var newDoc = document.implementation.createHTMLDocument();
-        newDoc.documentElement.innerHTML = data;
-        // Replace the <body> content
-        $("body").html(newDoc.body.innerHTML);
-        $("body").removeAttr("id").attr("id", "body-d-id");
-        $("body").removeClass();
-        adjustGridStructure();
-        loadMap();
-      },
-      error: function (error) {
-        console.log("Error loading file: " + error.statusText);
-      },
-    });
-  }
-});
-
-$(document).ready(function () {
-  // On click of a link in the list
   $("#docs a").click(function (e) {
     e.preventDefault();
     // Retrieve the URL of the file associated with the link
