@@ -477,14 +477,10 @@ footer h2 {
 }
 
 .element a:link,
-.element a:visited {
-  color: var(--bianco);
-  background-color: transparent;
-}
-
-.element a:hover,
+.element a:visited,.element a:hover,
 .element a:active {
   color: var(--bianco);
+  background-color: transparent;
 }
 
 .element:hover {
@@ -709,7 +705,8 @@ footer {
 }
 
 #copyr {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  margin-bottom: 0;
 }
 
 .layoutfooter {
@@ -836,7 +833,6 @@ footer {
   transform: scale(1, 1);
 }
 
-/*sidebartag* da cambiare in base allo stile*/
 .styleDate {
   background-color: rgb(7, 7, 241);
 }
@@ -850,7 +846,7 @@ footer {
 }
 
 .nmap {
-  background-color: rgb(118, 8, 128);
+  background-color: rgb(234, 0, 255);
 }
 
 /*documentation*/

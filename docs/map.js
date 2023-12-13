@@ -168,8 +168,9 @@ $(document).ready(function () {
     caricaContenuto(fileDaCaricare);
   });
   function caricaContenuto(url) {
+    var fragment = url.split('#')[1] || '';
     $.ajax({
-      url: url,
+      url: url.split('#')[0],
       type: "GET",
       dataType: "html",
       success: function (data) {
@@ -186,6 +187,7 @@ $(document).ready(function () {
           .addClass("metarticle-inv-txt");
         adjustGridStructure();
         loadMap();
+        window.location.hash = fragment;
       },
       error: function (error) {
         console.log("Error loading file: " + error.statusText);
@@ -204,8 +206,9 @@ $(document).ready(function () {
     carica(fileDaCaricare);
   });
   function carica(url) {
+    var fragment = url.split('#')[1] || '';
     $.ajax({
-      url: url,
+      url: url.split('#')[0],
       type: "GET",
       dataType: "html",
       success: function (data) {
@@ -224,6 +227,7 @@ $(document).ready(function () {
         $("body").removeAttr("id").attr("id", "body-txt-id");
         adjustGridStructure();
         loadMap();
+        window.location.hash = fragment;
       },
       error: function (error) {
         console.log("Error loading file: " + error.statusText);
@@ -240,9 +244,11 @@ $(document).ready(function () {
     // Call the function to load the content
     caricaf(fileDaCaricare);
   });
+  
   function caricaf(url) {
+    var fragment = url.split('#')[1] || '';
     $.ajax({
-      url: url,
+      url: url.split('#')[0],
       type: "GET",
       dataType: "html",
       success: function (data) {
@@ -254,6 +260,7 @@ $(document).ready(function () {
         $("body").removeClass();
         adjustGridStructure();
         loadMap();
+        window.location.hash = fragment;
       },
       error: function (error) {
         console.log("Error loading file: " + error.statusText);
@@ -272,8 +279,9 @@ $(document).ready(function () {
     caricaf(fileDaCaricare);
   });
   function caricaf(url) {
+    var fragment = url.split('#')[1] || '';
     $.ajax({
-      url: url,
+      url: url.split('#')[0],
       type: "GET",
       dataType: "html",
       success: function (data) {
@@ -285,6 +293,7 @@ $(document).ready(function () {
         $("body").removeClass();
         adjustGridStructure();
         loadMap();
+        window.location.hash = fragment;
       },
       error: function (error) {
         console.log("Error loading file: " + error.statusText);
