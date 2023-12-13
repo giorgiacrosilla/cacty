@@ -17,6 +17,11 @@ html {
   font-size: 16px;
 }
 
+a:link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
 #body-main-id {
   background: rgb(255, 255, 255);
   overflow-y: scroll;
