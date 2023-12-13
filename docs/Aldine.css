@@ -254,15 +254,15 @@ td {
 
 /* .accordion:hover {
   color: #f1f1f1;
-}
+}*/
 
 
 #map {
   /*Ricorda di rendere LA MAPPA RESPONSIVE*/
-/* height: 200px;
+  height: 200px;
   width: 200px;
   margin: 0 auto;
-} */
+} 
 
 .openbtn {
   font-size: 1.2rem;
