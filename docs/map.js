@@ -334,9 +334,9 @@ document.onmousemove = function (event) {
   y = Math.min(Math.max(parseInt(y, 10), minY), maxY) + "%";
 
   // Set the position and transform properties of the circle
-  circle[0].style.left = x;
-  circle[0].style.top = y;
-  circle[0].style.transform = "translate(-" + x + ",-" + y + ")";
+  circle.style.left = x;
+  circle.style.top = y;
+  circle.style.transform = "translate(-" + x + ",-" + y + ")";
 };
 
 var alertShown = false;
@@ -370,7 +370,7 @@ function sections90s() {
           paragraphs[i].parentNode.className !== "footnotes" &&
           paragraphs[i].parentNode.className !== "table_section"
         ) {
-          if (i % 4 === 0 && paragraphs[i].textContent.trim() !== "") {
+          if (i % 4 === 0 && paragraphs[i].textContent !== "") {
             paragraphs[i].classList.add("frontier");
           }
         }
@@ -425,7 +425,7 @@ function loadMap() {
             var coordinates = data.features[0].geometry.coordinates;
             var marker = L.marker([coordinates[1], coordinates[0]]).addTo(map);
     
-            marker.bindPopup('<a href="#' + content + '">' + content + "</a>");
+            marker.bindPopup(content);
     
             var textToChangeColor = document.querySelectorAll(
               "span.place[id='" + content + "']"
@@ -442,20 +442,6 @@ function loadMap() {
               // Scroll to the corresponding anchor element
               scrollToOccurrence(content, currentOccurrence);
               currentOccurrence = (currentOccurrence + 1) % textToChangeColor.length;
-            });
-    
-            // Add a click event listener to the anchor element
-            textToChangeColor.forEach(function (element) {
-              element.addEventListener("click", function () {
-                textToChangeColor.forEach(function (element) {
-                  element.classList.add("nmap");
-                });
-    
-                // Scroll to the corresponding marker on the map
-                marker.openPopup();
-                scrollToOccurrence(content, currentOccurrence);
-                currentOccurrence = (currentOccurrence + 1) % textToChangeColor.length;
-              });
             });
     
             marker.getPopup().on("remove", function () {
