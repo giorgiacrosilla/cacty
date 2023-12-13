@@ -13,6 +13,11 @@ html {
   font-size: 16px;
 }
 
+a:link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
 html::-webkit-scrollbar {
   display: none;
 }
