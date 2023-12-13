@@ -329,17 +329,14 @@ document.onmousemove = function (event) {
   var minY = 0;
   var maxY = innerBox.clientHeight - circle[0].clientHeight;
 
-  for (var i = 0; i < 2; i++) {
-    if (circle[i]) {
-      // Constrain x and y within the inner box boundaries
-      x = Math.min(Math.max(parseInt(x, 10), minX), maxX) + "%";
-      y = Math.min(Math.max(parseInt(y, 10), minY), maxY) + "%";
+  // Ensure x and y stay within the inner box boundaries
+  x = Math.min(Math.max(parseInt(x, 10), minX), maxX) + "%";
+  y = Math.min(Math.max(parseInt(y, 10), minY), maxY) + "%";
 
-      circle[i].style.left = x;
-      circle[i].style.top = y;
-      circle[i].style.transform = "translate(-" + x + ",-" + y + ")";
-    }
-  }
+  // Set the position and transform properties of the circle
+  circle[0].style.left = x;
+  circle[0].style.top = y;
+  circle[0].style.transform = "translate(-" + x + ",-" + y + ")";
 };
 
 var alertShown = false;
