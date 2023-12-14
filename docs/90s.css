@@ -797,8 +797,10 @@ footer {
 }
 #copyr {
   font-size: 0.8rem;
-  margin: 1% 5%;
+  padding-left:5%;
 }
+
+
 #main-footer {
   margin-top: 20vh;
   height: 100%;
