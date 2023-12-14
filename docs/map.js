@@ -323,7 +323,6 @@ document.onmousemove = function (event) {
   var x = (event.clientX * 100) / innerBox.clientWidth + "%";
   var y = (event.clientY * 100) / innerBox.clientHeight + "%";
 
-  // Define the boundaries of the inner box
   var minX = 0;
   var maxX = innerBox.clientWidth - circle[0].clientWidth;
   var minY = 0;
@@ -334,9 +333,9 @@ document.onmousemove = function (event) {
   y = Math.min(Math.max(parseInt(y, 10), minY), maxY) + "%";
 
   // Set the position and transform properties of the circle
-  circle.style.left = x;
-  circle.style.top = y;
-  circle.style.transform = "translate(-" + x + ",-" + y + ")";
+  circle[0].style.left = x;
+  circle[0].style.top = y;
+  circle[0].style.transform = "translate(-" + x + ",-" + y + ")";
 };
 
 var alertShown = false;
@@ -643,21 +642,17 @@ $(document).ready(function () {
 
     var dataclass = $("." + className);
     var length = dataclass.length;
-    console.log("Length of dataclass:", length);
     var clickCount = container.data("click-count") || 0;
 
     $('.person').removeClass("stylePerson");
     $('.event').removeClass('styleEvent');
     $('.date').removeClass('styleDate')
 
-    // Remove the previously assigned ID
     $("." + className).removeAttr("id");
 
-    // Set the ID for the current element
     var elementToAssignId = dataclass.eq(clickCount);
     elementToAssignId.attr("id", className);
 
-    // Rest of your code for handling classes
     if (elementToAssignId.hasClass("person")) {
       if (clickCount > length - 1) {
         clickCount = 0;
@@ -667,9 +662,9 @@ $(document).ready(function () {
         clickCount++;
       }
       if (clickCount === length) {
-        clickCount = 0; // Reset clickCount when it reaches the end
+        clickCount = 0; 
       }
-      container.data("click-count", clickCount); // Update the clickCount data
+      container.data("click-count", clickCount); 
       console.log(clickCount);
     } else if (elementToAssignId.hasClass("event")) {
       if (clickCount > length - 1) {
@@ -680,9 +675,9 @@ $(document).ready(function () {
         clickCount++;
       }
       if (clickCount === length) {
-        clickCount = 0; // Reset clickCount when it reaches the end
+        clickCount = 0;
       }
-      container.data("click-count", clickCount); // Update the clickCount data
+      container.data("click-count", clickCount); 
       console.log(clickCount);
     } else if (elementToAssignId.hasClass("date")) {
       if (clickCount > length - 1) {
@@ -693,10 +688,9 @@ $(document).ready(function () {
         clickCount++;
       }
       if (clickCount === length) {
-        clickCount = 0; // Reset clickCount when it reaches the end
+        clickCount = 0;
       }
-      container.data("click-count", clickCount); // Update the clickCount data
-      console.log(clickCount);
+      container.data("click-count", clickCount); 
     }
   });
 });
