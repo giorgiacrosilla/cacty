@@ -17,11 +17,6 @@ html {
   font-size: 16px;
 }
 
-a:link {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-
 #body-main-id {
   background: rgb(255, 255, 255);
   overflow-y: scroll;
@@ -62,14 +57,6 @@ a:link {
 
 
 
-/* #yellow-square:hover,
-#blue-square-2:hover,
-#place-square1:hover,
-#place-square2:hover,
-#mini-white-square:hover,
-#gold-square:hover,
-#square-3:hover,
-#white-square5:hover, */
 .layoutfooter>button:hover,
 .block:hover {
   animation: 3s multicolor;
@@ -337,8 +324,9 @@ margin: 0 auto;
 font-family: 'Josefin Sans', sans-serif;
 right: 6%;
 } */
-a {
+a:link {
   color: rgb(0, 0, 0);
+  text-decoration: none;
 }
 
 .circle {
@@ -366,7 +354,7 @@ nav li {
 
 
 nav li a {
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
 
 .circle {
@@ -386,11 +374,11 @@ nav li a {
 }
 
 li.nav-item {
-  background-color: red;
+  background-color: rgb(255,0,0);
 }
 
 li.nav-item.dropdown {
-  background-color: black;
+  background-color: rgb(0,0,0);
   margin-left: 27px;
 }
 
@@ -412,6 +400,14 @@ a.dropdown-toggle {
   background-color: rgb(0, 0, 0);
 }
 
+.panel ul li a{
+  color:rgb(255,255,255);
+}
+
+.panel form div a{
+  color:rgb(255,255,255);
+}
+
 /* nav .nav-link:first-child{
   color: white;
     text-transform: uppercase;
@@ -429,7 +425,7 @@ a.dropdown-toggle {
 #sidebar-txt-id {
   grid-area: sidebar;
   overflow-y: scroll;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   word-wrap: break-word;
   background-color: rgba(0, 0, 0, 0.6);
@@ -478,23 +474,37 @@ a.dropdown-toggle {
   }
 }
 
+/* #sidebar-txt-id::-webkit-scrollbar {
+  display: none;
+}
+
+.sidecont-txt{
+  overflow-y:scroll;
+}
+
 #metadata-txt-id {
   overflow-y: scroll;
-  max-height: 100%;
 }
 
 #metadata-txt-id::-webkit-scrollbar {
   display: none;
 }
 
-#article-txt-id {
+
+*/
+
+
+#article-txt-id,
+#metadata-txt-id {
+  max-height:100vh;
   overflow-y: scroll;
-  max-height:100%;
 }
 
-#article-txt-id::-webkit-scrollbar {
+#article-txt-id::-webkit-scrollbar,
+#metadata-txt-id::-webkit-scrollbar {
   display: none;
-}
+} 
+
 
 .sidecont-txt {
   animation: fadeIn 1s ease-in-out;
@@ -755,7 +765,7 @@ a.dropdown-toggle {
   width: 46vh;
   height: 46vh;
   left: 32.7%;
-  background-color: black;
+  background-color: rgb(0,0,0);
   border: 1.25rem solid rgb(255, 255, 255);
 }
 
@@ -1094,7 +1104,7 @@ figure img {
   border: none;
   outline: none;
   background-color: rgb(0, 0, 0);
-  color: white;
+  color: rgb(255,255,255);
   cursor: pointer;
   padding: 15px;
   font-size: 1rem;
