@@ -1176,17 +1176,17 @@ figure img {
     height: 27.5%;
   }
 
-  #welcome {
+  .welcome {
     font-size: 3.8rem;
     top: 42%;
   }
 
-  #to {
+  .to {
     font-size: 3.8rem;
     top: 65.8%;
   }
 
-  #secretmag {
+  .secretmag {
     font-size: 3.8rem;
     top: 85.8%;
     left: 43%;
@@ -1229,20 +1229,20 @@ figure img {
     height: 41vh;
   }
 
-  #blacksquare2 {
+  .blacksquare2 {
     left: 20%;
   }
 
-  #blacksquare1 {
+  .blacksquare1 {
     left: 33%;
   }
 
-  #welcome {
+  .welcome {
     top: 41%;
     left: 28%;
   }
 
-  #to {
+  .to {
     top: 61%;
   }
 }
@@ -1300,7 +1300,10 @@ figure img {
     grid-template-rows: 0.1fr 0.01fr 1fr 0.1fr;
   }
 
-  
+  #body-d-id footer{
+    font-size: 0.8rem;
+    max-height: 13vh;
+  }
 
 
   nav {
@@ -1343,6 +1346,67 @@ figure img {
     background-color: rgb(0, 0, 0);
     color: #f1f1f1;
   }
+
+  .blacksquare1{
+    display:none;
+  }
+
+  .blacksquare2{
+    display:none;
+  }
+
+  .welcome {
+    font-size: 3.8rem;
+    position:relative;
+    left:0%;
+  }
+
+  .to {
+    font-size: 3.8rem;
+    position:relative;
+    left:0%;
+  }
+
+  .secretmag {
+    font-size: 3.8rem;
+    position: relative;
+    left:0%;
+  }
+
+ 
+
+  .element{
+    font-size: 0.8rem;
+  }
+
+  .card-name{
+    border:none;
+  }
+
+  #body-main-id{
+    width:100vh;
+    height:100vh;
+  }
+
+  #firstdue{
+    left:18.5%;
+  }
+
+  #first-diagonal{
+    padding-top:3%;
+  }
+
+  #main-footer .card-name{
+    border-top:0px;
+    border-bottom: 0px;
+  }
+
+  #main-footer .card-name .name-card{
+    border-right:0;
+    border-left:0;
+    font-size: 0.8rem;
+  }
+ 
 }
 
 @media only screen and (width < 376px){
