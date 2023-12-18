@@ -439,8 +439,15 @@ a.dropdown-toggle {
   display: none;
 }
 
+
+
+.panel {
+  display: none;
+  background-color: transparent;
+}
 .metarticle-visible-txt {
-  display: block;
+  display: flex;
+  flex-direction: column;
   grid-area: sidebar;
 }
 
