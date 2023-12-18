@@ -571,6 +571,18 @@ nav .nav-link {
   display: none;
 }
 
+.person a{
+  color:rgb(255,255,255);
+}
+
+.event a{
+  color:rgb(255,255,255);
+}
+
+.panel ul li a{
+  color: rgb(255,255,255);
+}
+
 #sidebar-txt-id {
   grid-area: sidebar;
   overflow-y: scroll;
