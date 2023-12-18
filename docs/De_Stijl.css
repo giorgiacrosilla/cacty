@@ -445,6 +445,13 @@ a.dropdown-toggle {
   display: none;
   background-color: transparent;
 }
+
+.person a{
+  color:rgb(255,255,255);
+}
+
+.event a{
+  
 .metarticle-visible-txt {
   display: flex;
   flex-direction: column;
