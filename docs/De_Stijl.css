@@ -451,6 +451,8 @@ a.dropdown-toggle {
 }
 
 .event a{
+  color:rgb(255,255,255);
+}
   
 .metarticle-visible-txt {
   display: flex;
