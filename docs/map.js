@@ -293,6 +293,7 @@ $(document).ready(function () {
         $("body").removeClass();
         adjustGridStructure();
         loadMap();
+        handlePageLoad();
         window.location.hash = fragment;
       },
       error: function (error) {
