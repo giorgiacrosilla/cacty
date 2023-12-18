@@ -506,15 +506,15 @@ footer {
   background-color: rgb(220, 220, 220)
 }
 
-.n {
+.styleDate {
   text-decoration: underline;
 }
 
-.nb {
+.stylePerson {
   text-decoration: underline;
 }
 
-.ne {
+.styleEvent {
   text-decoration: underline;
 }
 
