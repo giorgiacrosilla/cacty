@@ -929,20 +929,20 @@ tr:nth-child(odd):hover {
 } */
 
 
-.n {
+.styleDate {
   background-color: rgb(0, 0, 255);
 }
 
-.nb {
-  background-color: rgb(204, 0, 0)
+.stylePerson {
+  background-color: rgb(255, 0, 0);
 }
 
-.ne {
-  background-color: rgb(76, 153, 0);
+.styleEvent {
+  background-color: rgb(255, 255, 0);
 }
 
 .nmap {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(255, 0, 0);
 }
 
 .fi {
