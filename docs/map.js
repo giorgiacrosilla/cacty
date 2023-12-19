@@ -82,10 +82,10 @@ function handlePageLoad() {
     $("#navbarSupportedContent").after(
       '<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>'
     );
-    $("#copyr").before(
+    $("#cop").before(
       '<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>'
     );
-    $("#copyr").after(
+    $("#cop").after(
       '<div class="decoration-dx"><p class="p-dec">Decorazione</p></div>'
     );
   }
