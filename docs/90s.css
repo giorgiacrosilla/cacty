@@ -679,7 +679,7 @@ main h2,
   text-align: justify;
 }
 
-.text > h2 {
+.text  h2 {
   margin-top: 7%;
   margin-bottom: 2%;
   text-align: left;
@@ -694,8 +694,8 @@ main h2,
   float: left;
   font-weight: bold;
   font-size: 4.2rem;
-  margin: 0.16em 0.1em 0 0;
-  line-height: 0.65;
+  margin: 0.12em 0.1em 0 0;
+  line-height: 0.75em;
 }
 
 .frontier {
@@ -935,8 +935,17 @@ footer {
   background-size: cover;
 }
 
+#ottoc {
+  background-image: url('https://books.google.it/books/content?id=anIpAAAAYAAJ&hl=it&pg=PP3&img=1&zoom=3&sig=ACfU3U3wnvWAsVPy--JFRQHiHV6x-1t7Jg&ci=12%2C230%2C983%2C563&edge=0');
+}
+
 #cioe {
   background-image: url("https://i0.wp.com/www.thegiornale.it/wp-content/uploads/2018/05/cioe-riviste.jpeg?resize=800%2C445&ssl=1");
+}
+
+#seventies {
+  background-position: top;
+  background-image: url('https://ia800203.us.archive.org/BookReader/BookReaderImages.php?zip=/8/items/bub_gb_tE0idc3G364C/bub_gb_tE0idc3G364C_jp2.zip&file=bub_gb_tE0idc3G364C_jp2/bub_gb_tE0idc3G364C_0000.jp2&id=bub_gb_tE0idc3G364C&scale=4&rotate=0');
 }
 
 #dystopia {
