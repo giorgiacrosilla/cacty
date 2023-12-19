@@ -134,14 +134,14 @@ html {
 #txt-main-id h1 {
   font-family: telelower;
   text-transform: uppercase;
-  font-size: 2.5rem;
+  font-size: 2.7rem;
 }
 
 .wrapper > h2,
 .wrapper2 > h2 {
   font-family: telelower;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .stroke-d {
@@ -1036,7 +1036,7 @@ footer {
   }
 
   .wrapper h2 {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
   }
 
   #button-txt-id {
