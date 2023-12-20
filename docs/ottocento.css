@@ -1,6 +1,11 @@
+@font-face {
+    font-family: drukarnia;
+    src: url(zai_DrukarniaWydawnicza1870.ttf);
+  }
+
 @import url('https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Hind+Madurai:wght@400;600;700&display=swap');
 * {
-    font-family: 'Bona Nova', serif;
+    font-family: 'drukarnia','Bona Nova', serif;
     color: #1b1a1a;
     line-height: 1.5;
     
@@ -8,7 +13,7 @@
   .block, #aldinedelf, .background-grid, #imgcolumn, #imgcolumn1{
     display:none;
     }
-
+   
 /*SCROLL BAR*/
 
 :root {
@@ -68,10 +73,6 @@ footer{
         "footer footer footer";
     background-color: #f5f5f5;
     
-}
-
-.nuovaClasse{
-    background-color: pink;
 }
 
 
@@ -203,7 +204,7 @@ nav li {
     border-bottom: 3px solid #dab35a; 
     transform: rotate(-90deg);
     text-align: center;
-    font-size: 9px;
+    font-size: 11px;
 
   }
 
@@ -352,7 +353,9 @@ nav ul{
     filter: brightness(1) invert(5);
     filter: grayscale(100%);
 }
-
+#body-txt-id{
+    font-size: 20px;
+}
 
 .card:hover {
     content: " ";
@@ -589,6 +592,7 @@ figcaption{
     padding: 11.11% 11.11% 22.22% 11.11%;
     display: grid;
     grid-template-columns: "title" "subtitle""text""author";
+    
 
 
 }
@@ -764,6 +768,8 @@ header{
         width: 100%; 
         margin-bottom: 11.11%;
         background-color: #f5f5f5;
+        
+        
     }
     #body-txt-id footer{
         display: grid;
@@ -872,6 +878,7 @@ header{
 #body-d-id{
     display: grid;
    grid-template-areas: "nav""main""footer";
+   font-size: 20px;
    & footer{
         display: grid;
         grid-template-columns: 213px auto 213px;
@@ -893,6 +900,7 @@ header{
     padding: 11.11%;
     text-align:center;
     hyphens: auto;
+    font-size: 20px !important;
     
 }
 h1{
@@ -950,15 +958,18 @@ footer{
         box-shadow: -1px 0 15px transparent, 1px 3px 15px transparent, inset 5px 5px 10px transparent, inset -5px -5px 10px transparent;
     text-align: center;
 	background-color: transparent;
+    font-size: 20px;
 }
 #main-footer p{
     max-width: 80vw;
-    margin: auto
+    margin: auto;
+    font-size: 20px;
 }
 
 .layoutfooter {
     display: grid;
     grid-template-columns: auto;
+    
 }
 
 .layoutfooter>button {

@@ -77,14 +77,29 @@
     margin: 10px;
     padding: 0 !important;  
     position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
+    position: sticky !important;
+    top: 10px;
 }
 #button-art{
     top: 50px;
 }
-
-
+.menu__link .custom-svg{
+    fill: #141414 !important;
+    stroke-linecap: round;
+    position: relative;
+    transform: none;
+    z-index: 2;
+    opacity: 1;
+    background-color: #F5F5F5;
+}
+.custom-svg{
+    fill: #141414 !important;
+    width: 50px;
+    border: none;
+    & path{
+        stroke: none;
+    }
+}
 #button-txt-id{                /*questa è la div con i pulsanti*/
     grid-area: button;
 
@@ -108,9 +123,9 @@
 
 .button-stroke {
 	display: block;
-    width: 90%;
+    width: 100%;
 	height: 10px;
-    margin-left: -10px;
+    margin-left: 0;
 	stroke: rgba(79, 77, 77, 0.571);
 	position: absolute;
 	stroke-width: 2;
@@ -149,30 +164,19 @@
     transition: stroke-dashoffset 0s 0.2s, opacity 0.2s;
     z-index: -1;
   }
-  .custom-svg{
-    
-        fill: #2a0502;
-        stroke: none;
-        stroke-width: 2;
-        stroke-miterlimit: none;
-        stroke-dasharray: none;
-        stroke-dashoffset: none;
-        stroke-linecap: round;
-        position: relative;
-        top: 100%;
-        left: 100%;
-        width: none;
-        transform: none;
-        z-index: 0;
-        opacity: 1;
-    
+ 
+  .theonlymagazine{
+    font-size: 16px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+    text-transform: capitalize;
+  }
+  #roles a{
+    color: #111;
+    text-decoration-color: rgb(35, 35, 240) !important;
   }
   
 
-  
-  .menu__link:hover svg{
-   display: none;
- }
+
 
 path{
     stroke: rgb(11, 87, 163);
@@ -190,17 +194,11 @@ path{
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
   }
-  .ciao{
-    border-radius: 0.8em 0.3em;
-    background: transparent;
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 225, 0, 0.1),
-      rgba(255, 225, 0, 0.7) 4%,
-      rgba(255, 225, 0, 0.3)
-    );
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
+  #button-meta{
+    max-width: min-content;
+  }
+  #button-art{
+    max-width: min-content !important;
   }
   
 
@@ -835,20 +833,26 @@ h3::first-letter{
 /*sidebartag*/
 
 .styleDate {
-    
-    background-color: #ffeb3b; 
-      padding: 2px; 
+    border-radius: 0.8em 0.3em;
+    background: transparent;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 225, 0, 0.1),
+      rgba(255, 225, 0, 0.7) 4%,
+      rgba(255, 225, 0, 0.3)
+    );
+    padding: 2px;
   }
 
 .stylePerson {
-border: 3px solid #4b4a4ae1; 
+border: 3px solid #0508cf; 
   border-radius: 10px;
   padding: 3px 5px;
 }
 
 .styleEvent {
 
-border-bottom: 4px solid #4b4a4ae1;
+border-bottom: 4px solid #0508cf;
 display: inline;
 padding-bottom: 1px; 
 }
