@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300&display=swap');
+@font-face{
+  font-family: Josefin;
+  src:url('docs/JosefinSans-Light.ttf');
 
 @font-face {
   font-family: theo;
@@ -11,21 +13,21 @@
   display: block !important;
 }
 body {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin";
   display: grid;
   line-height: 1.4;
   justify-content: center;
 }
 
 html {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin";
   font-size: 16px;
 }
 
 h1, h2, h3, h4,
 li, .accordion,
 .openbtn, a, p{
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin";
 }
 
 #body-main-id {
@@ -273,7 +275,7 @@ li, .accordion,
     padding: 20px;
     background: rgba(255, 255, 255, 1);
     margin: 0 auto; 
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin'
     right: 25%;
     left:25%;
     top: 80px; */
@@ -310,7 +312,7 @@ overflow-y:scroll; */
   background: rgba(255, 255, 255, 1);
   max-width: 45.5%;
   margin: 0 auto;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin";
   right: 29.6%;
   top: 10%;
   overflow-y: scroll;
@@ -332,7 +334,7 @@ color: #333;
 padding: 20px;
 background: rgba(255, 255, 255, 1);
 margin: 0 auto; 
-font-family: 'Josefin Sans', sans-serif;
+font-family: 'Josefin'
 right: 6%;
 } */
 a:link {
