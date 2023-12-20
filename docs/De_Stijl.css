@@ -13,8 +13,14 @@ body {
 }
 
 html {
-  font-family: theo;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
+}
+
+h1, h2, h3, h4,
+li, .accordion,
+.openbtn, a{
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 #body-main-id {
