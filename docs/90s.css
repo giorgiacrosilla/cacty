@@ -35,6 +35,7 @@ html {
 
 .custom-svg {
   fill: white;
+  display: block !important;
 }
 
 ::-webkit-scrollbar {
