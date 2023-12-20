@@ -37,7 +37,12 @@ a {
   color: rgb(255,255,255);
   font-family:'flanker';
 }
-
+#button-txt-id svg{
+  display: none;
+}
+.custom-svg {
+  display: block !important;
+}
 
 #body-main-id::-webkit-scrollbar {
   display: none;
