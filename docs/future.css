@@ -581,8 +581,13 @@ footer h2 {
   float: right;
 }
 
+#introduction-txt-id {
+  margin-bottom: 4%;
+}
+
 .text h2 {
-  margin-top: 5%;
+  margin-top:3%;
+  padding-bottom: 2%;
 }
 
 .table_section {
