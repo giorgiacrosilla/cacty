@@ -94,9 +94,7 @@ footer{
 	text-decoration: none;
 	position: relative;
 	text-align: center;
-    
-    
-	
+
 	&:hover {
 		.button-stroke {
 			stroke-dashoffset: 0;
@@ -109,9 +107,9 @@ footer{
 
 .button-stroke {
 	display: block;
-    width: 90%;
+    width: 100%;
 	height: 10px;
-    margin-left: -10px;
+    margin-left: 0;
 	stroke: rgba(79, 77, 77, 0.571);
 	position: absolute;
 	stroke-width: 2;
@@ -422,7 +420,6 @@ nav ul{
    color: #dab35a;
    background-color: #3c0804;
    width: 150px;
-   
 
   }
   .accordion:hover{
@@ -458,6 +455,26 @@ nav ul{
 #sidebar-txt-id{
     height: 100%;
 }
+.styleDate {
+    
+        border-bottom: 5px double #4b4a4ae1;
+        display: inline;
+        padding-bottom: 2px; 
+      }
+  
+  .stylePerson {
+    border: 3px solid #4b4a4ae1; 
+      border-radius: 10px;
+      padding: 3px 5px;
+  }
+  
+  .styleEvent {
+    
+    border-bottom: 4px solid #4b4a4ae1;
+    display: inline;
+    padding-bottom: 1px; 
+  }
+
 
 
 
@@ -497,6 +514,7 @@ figcaption{
 #main-txt-id{
     padding: 11.11% 11.11% 22.22% 11.11%;
     display: grid;
+    
 }
 #introduction-txt-id{
     margin: 0 auto;
@@ -506,6 +524,7 @@ figcaption{
     text-transform: uppercase !important;
     text-align: center;
   }
+
  .author{
     grid-area: "author";
 }
@@ -514,6 +533,11 @@ figcaption{
     text-align: justify;
     word-wrap: break-word;
     hyphens: auto;
+    & h2{
+        font-style: oblique;
+        text-transform: capitalize !important;
+        font-size: 30px;
+    }
   }
 
   .text::before {
@@ -537,11 +561,12 @@ figcaption{
     padding: 0;
     padding-bottom: 10px;
     position: -webkit-sticky;
-  position: sticky;
+  position: sticky !important;
   top: 20px;
 }
-.openbtn:nth-of-type(2){
-    top: 65px;
+#button-art{
+    position: sticky !important;
+    top: 50px;
 }
 #bside {
     padding-top: 5%;
