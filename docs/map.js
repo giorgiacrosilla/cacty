@@ -128,8 +128,6 @@ function handlePageLoad() {
         '<div class="block" id="place-square1"></div>'
       );
     } else {
-      // $(".block").css("display", "none");
-      // $(".background-grid").css("display", "none");
       $(".background-grid").remove();
       $(".block").remove();
     }
@@ -159,11 +157,9 @@ function handlePageLoad() {
     $(".block").remove();
   }
 }
-// Call the function on initial page load
 handlePageLoad();
 
 $(document).ready(function () {
-  // On click of a link in the list
   $("#article-txt-id a").click(function (e) {
     e.preventDefault();
     var fileDaCaricare = $(this).data("file");
@@ -176,10 +172,8 @@ $(document).ready(function () {
       type: "GET",
       dataType: "html",
       success: function (data) {
-        // Create a new HTML document
         var newDoc = document.implementation.createHTMLDocument();
         newDoc.documentElement.innerHTML = data;
-        // Replace the <body> content
         $("body").html(newDoc.body.innerHTML);
         $("#metadata-txt-id")
           .removeClass("metarticle-inv-txt")
@@ -200,12 +194,9 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  // On click of a link in the list
   $("#content-card a").click(function (e) {
     e.preventDefault();
-    // Retrieve the URL of the file associated with the link
     var fileDaCaricare = $(this).data("file");
-    // Call the function to load the content
     carica(fileDaCaricare);
   });
   function carica(url) {
@@ -215,12 +206,9 @@ $(document).ready(function () {
       type: "GET",
       dataType: "html",
       success: function (data) {
-        // Create a new HTML document
         var newDoc = document.implementation.createHTMLDocument();
         newDoc.documentElement.innerHTML = data;
-        // Replace the <body> content
         $("body").html(newDoc.body.innerHTML);
-        // Add or remove classes from the elements
         $("#metadata-txt-id")
           .removeClass("metarticle-vis-txt")
           .addClass("metarticle-inv-txt");
@@ -275,12 +263,9 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-  // On click of a link in the list
   $("#docs a").click(function (e) {
     e.preventDefault();
-    // Retrieve the URL of the file associated with the link
     var fileDaCaricare = $(this).data("file");
-    // Call the function to load the content
     caricaf(fileDaCaricare);
   });
   function caricaf(url) {
@@ -292,7 +277,6 @@ $(document).ready(function () {
       success: function (data) {
         var newDoc = document.implementation.createHTMLDocument();
         newDoc.documentElement.innerHTML = data;
-        // Replace the <body> content
         $("body").html(newDoc.body.innerHTML);
         $("body").removeAttr("id").attr("id", "body-d-id");
         $("body").removeClass();
