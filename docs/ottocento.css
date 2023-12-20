@@ -90,7 +90,7 @@ footer{
 }
 
 
-.btn {
+#button-txt-id .openbtn:nth-of-type(2) {
 	text-decoration: none;
 	position: relative;
 	text-align: center;
@@ -128,8 +128,27 @@ footer{
     line-height: 1;
     border: none;
     background-color: transparent;
+    & .custom-svg{
+        fill: #2a0502;
+        stroke: none;
+        stroke-width: 2;
+        stroke-miterlimit: none;
+        stroke-dasharray: none;
+        stroke-dashoffset: none;
+        stroke-linecap: round;
+        position: relative;
+        top: 100%;
+        left: 100%;
+        width: none;
+        transform: none;
+        z-index: 0;
+        opacity: 1;
+    }
   }
-  
+  .custom-svg{
+    fill: #2a0502;
+}
+
   .menu__link svg {
     fill: none;
     stroke: rgba(79, 77, 77, 0.571);
@@ -444,7 +463,7 @@ nav ul{
 
 
 
-#map {                   /*Ricorda di rendere LA MAPPA RESPONSIVE*/
+#map {                  
     height: 200px;
     margin: 0 auto;
     filter: brightness(1) invert(20%) grayscale(1);
@@ -762,7 +781,7 @@ header{
         & h1{
             text-align: center;
         }
-        & h1::after, h2::after{
+        & h1::after, .first-d-paragraph::before{
                 content: "";
                 border-top: 2px solid #111;
                 width: 40%;
@@ -776,13 +795,21 @@ header{
             margin-top: 70px;
             
         }
+        & .container1{
+            margin-top: 120px;
+        }
         & .img-d{
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: space-evenly;
             & img{
-                max-height:500px;
-                overflow: hidden;
+                    width:220px !important;
+                    max-height: 300px;
+                    max-width: none;
+                 /*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
+                     object-fit:scale-down;
+                 
                 
             }
         }
@@ -802,11 +829,18 @@ header{
         }
         & a{
             color: #1b1a1a;
+            text-decoration: none !important;
+            font-style: oblique;
+
 
         }
         & a:visited{
             color: #1b1a1a;
 
+        }
+        & h4{
+            text-align: center;
+            font-style: oblique;
         }
 
 }
