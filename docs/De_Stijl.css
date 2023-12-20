@@ -1108,6 +1108,7 @@ figure img {
 #body-d-id {
   width: 100vw;
   height: 100vh;
+  background-color: rgb(245,245,245);
 }
 
 #body-d-id #copyr {
