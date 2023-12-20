@@ -76,8 +76,6 @@ function handlePageLoad() {
     $(".block").remove();
     $(".star").remove();
     $(".card").removeClass("card");
-    $(".decoration-dx").remove();
-    $(".decoration-sx").remove();
     $(".title").before(
       '<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>'
     );
@@ -102,8 +100,7 @@ function handlePageLoad() {
     $(".background-grid").remove();
     $(".block").remove();
     if (
-      !document.getElementById("provauno") &&
-      !document.getElementById("body-d-id")
+      document.getElementById("body-txt-id")
     ) {
       $("body").after('<div class="background-grid"></div>');
       $(".background-grid").after('<div class="block" id="square"></div>');
@@ -183,7 +180,6 @@ $(document).ready(function () {
           .addClass("metarticle-inv-txt");
         adjustGridStructure();
         loadMap();
-        handlePageLoad();
         window.location.hash = fragment;
       },
       error: function (error) {
@@ -218,7 +214,6 @@ $(document).ready(function () {
         $("body").removeAttr("id").attr("id", "body-txt-id");
         adjustGridStructure();
         loadMap();
-        handlePageLoad();
         window.location.hash = fragment;
       },
       error: function (error) {
@@ -252,7 +247,6 @@ $(document).ready(function () {
         $("body").removeClass();
         adjustGridStructure();
         loadMap();
-        handlePageLoad();
         window.location.hash = fragment;
       },
       error: function (error) {
@@ -282,7 +276,6 @@ $(document).ready(function () {
         $("body").removeClass();
         adjustGridStructure();
         loadMap();
-        handlePageLoad();
         window.location.hash = fragment;
       },
       error: function (error) {
