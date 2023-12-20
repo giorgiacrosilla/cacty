@@ -6,7 +6,7 @@
 }
 
 html {
-  /* cursor: url('icons8-pen-32.png'), auto; */
+  font-family: 'flanker';
   background: rgb(220, 220, 220);
   line-height: 0.8;
   overflow-y: scroll;
@@ -34,8 +34,10 @@ p {
 }
 
 a {
-  color: antiquewhite;
+  color: rgb(255,255,255);
+  font-family:'flanker';
 }
+
 
 #body-main-id::-webkit-scrollbar {
   display: none;
@@ -270,10 +272,23 @@ td {
 } 
 
 .openbtn {
+  font-family:'flanker';
   font-size: 1.2rem;
   background-color: #333;
   color: #f1f1f1;
   z-index: 2;
+}
+
+.accordion{
+  font-family:'flanker';
+}
+
+h2{
+  font-family:'flanker';
+}
+
+li{
+  font-family:'flanker';
 }
 
 .openbtn:hover {
