@@ -283,16 +283,13 @@ td {
   font-family:'flanker';
 }
 
-h2{
+h2, h3, h4, li{
   font-family:'flanker';
 }
 
-li{
-  font-family:'flanker';
-}
 
 .openbtn:hover {
-  background-color: pink;
+  background-color: rgb(255,255,0);
 }
 
 
