@@ -40,6 +40,10 @@ a {
 #button-txt-id svg{
   display: none;
 }
+
+li a{
+  color:rgb(0,0,0)
+}
 .custom-svg {
   display: block !important;
 }
