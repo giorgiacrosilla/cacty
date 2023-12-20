@@ -1054,6 +1054,21 @@ footer{
     align-self: center;
 }
 
+.card-name{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    
+    & .name-card{
+        width: 10%;
+         
+    }
+    & img{
+        border: 1px solid #1b1a1a;
+    }
+}
+
 
 
 

@@ -10,7 +10,7 @@
     }
 
 /*SCROLL BAR*/
-/*
+
 :root {
     --shadow:#0577E5;
     --scrollbarBG:  transparent !important;
@@ -778,20 +778,26 @@ header{
         }
         & .img-d{
             display: flex;
-            flex-wrap: wrap;
             flex-direction: row;
             justify-content: space-evenly;
             & img{
-                max-height: 300px;
+                max-height:500px;
+                overflow: hidden;
+                
             }
         }
         .card-name{
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
-                justify-content: space-evenly;
+                justify-content: center;
+                
                 & .name-card{
                     width: 10%;
+                     
+                }
+                & img{
+                    border: 1px solid #1b1a1a;
                 }
         }
         & a{
@@ -804,6 +810,15 @@ header{
         }
 
 }
+#body-d-id{
+    display: grid;
+   grid-template-areas: "nav""main""footer";
+   & footer{
+        display: grid;
+        grid-template-columns: 213px auto 213px;
+    }
+}
+
 
 /*MAIN PAGE INDEX*/
 #body-main-id {
@@ -858,11 +873,11 @@ footer{
    bottom: 0;
    width: 100%;   
 }
-#body-txt-id footer{
+#body-txt-id footer, #body-d-id footer{
     width: 99%;
 }
 
-#copyr{
+#cop{
     color: #dab35a;
     padding: 10px;
     font-size: 10px;
