@@ -100,6 +100,7 @@ function handlePageLoad() {
     $(".background-grid").remove();
     $(".block").remove();
     if (
+      !document.getElementById("provauno") &&
       document.getElementById("body-txt-id")
     ) {
       $("body").after('<div class="background-grid"></div>');
