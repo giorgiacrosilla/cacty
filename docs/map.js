@@ -100,8 +100,8 @@ function handlePageLoad() {
     $(".background-grid").remove();
     $(".block").remove();
     if (
-      !document.getElementById("provauno") &&
-      !document.getElementById("body-d-id")
+      
+      document.getElementById("sidebar-txt-id")
     ) {
       $("body").after('<div class="background-grid"></div>');
       $(".background-grid").after('<div class="block" id="square"></div>');
@@ -125,10 +125,7 @@ function handlePageLoad() {
       $(".background-grid").after(
         '<div class="block" id="place-square1"></div>'
       );
-    } else {
-      $(".background-grid").remove();
-      $(".block").remove();
-    }
+    } 
   }
 
   var isaldineloaded = isCssLoaded("Aldine.css");
@@ -164,9 +161,9 @@ $(document).ready(function () {
     caricaContenuto(fileDaCaricare);
   });
   function caricaContenuto(url) {
-    var fragment = url.split('#')[1] || '';
+    var fragment = url.split("#")[1] || "";
     $.ajax({
-      url: url.split('#')[0],
+      url: url.split("#")[0],
       type: "GET",
       dataType: "html",
       success: function (data) {
@@ -197,9 +194,9 @@ $(document).ready(function () {
     carica(fileDaCaricare);
   });
   function carica(url) {
-    var fragment = url.split('#')[1] || '';
+    var fragment = url.split("#")[1] || "";
     $.ajax({
-      url: url.split('#')[0],
+      url: url.split("#")[0],
       type: "GET",
       dataType: "html",
       success: function (data) {
@@ -232,11 +229,11 @@ $(document).ready(function () {
     // Call the function to load the content
     caricaf(fileDaCaricare);
   });
-  
+
   function caricaf(url) {
-    var fragment = url.split('#')[1] || '';
+    var fragment = url.split("#")[1] || "";
     $.ajax({
-      url: url.split('#')[0],
+      url: url.split("#")[0],
       type: "GET",
       dataType: "html",
       success: function (data) {
@@ -264,9 +261,9 @@ $(document).ready(function () {
     caricaf(fileDaCaricare);
   });
   function caricaf(url) {
-    var fragment = url.split('#')[1] || '';
+    var fragment = url.split("#")[1] || "";
     $.ajax({
-      url: url.split('#')[0],
+      url: url.split("#")[0],
       type: "GET",
       dataType: "html",
       success: function (data) {
@@ -285,7 +282,6 @@ $(document).ready(function () {
     });
   }
 });
-
 
 function stylechanger(newCSSFileName) {
   var linkElement = document.getElementById("csstochange");
@@ -407,26 +403,27 @@ function loadMap() {
           if (data.features.length > 0) {
             var coordinates = data.features[0].geometry.coordinates;
             var marker = L.marker([coordinates[1], coordinates[0]]).addTo(map);
-    
+
             marker.bindPopup(content);
-    
+
             var textToChangeColor = document.querySelectorAll(
               "span.place[id='" + content + "']"
             );
-    
+
             var currentOccurrence = 0;
-    
+
             // Add a click event listener to the marker
             marker.addEventListener("click", function () {
               textToChangeColor.forEach(function (element) {
                 element.classList.add("nmap");
               });
-    
+
               // Scroll to the corresponding anchor element
               scrollToOccurrence(content, currentOccurrence);
-              currentOccurrence = (currentOccurrence + 1) % textToChangeColor.length;
+              currentOccurrence =
+                (currentOccurrence + 1) % textToChangeColor.length;
             });
-    
+
             marker.getPopup().on("remove", function () {
               textToChangeColor.forEach(function (element) {
                 element.classList.remove("nmap");
@@ -436,14 +433,14 @@ function loadMap() {
         })
         .catch((error) => console.error(error));
     });
-    
+
     function scrollToOccurrence(id, occurrence) {
       var elements = document.querySelectorAll("span.place[id='" + id + "']");
       if (occurrence < elements.length) {
         elements[occurrence].scrollIntoView({ behavior: "smooth" });
       }
     }
-    
+
     function loadGeoJSON(spanId, geoJSONUrl) {
       fetch(geoJSONUrl)
         .then((res) => res.json())
@@ -628,9 +625,9 @@ $(document).ready(function () {
     var length = dataclass.length;
     var clickCount = container.data("click-count") || 0;
 
-    $('.person').removeClass("stylePerson");
-    $('.event').removeClass('styleEvent');
-    $('.date').removeClass('styleDate')
+    $(".person").removeClass("stylePerson");
+    $(".event").removeClass("styleEvent");
+    $(".date").removeClass("styleDate");
 
     $("." + className).removeAttr("id");
 
@@ -646,9 +643,9 @@ $(document).ready(function () {
         clickCount++;
       }
       if (clickCount === length) {
-        clickCount = 0; 
+        clickCount = 0;
       }
-      container.data("click-count", clickCount); 
+      container.data("click-count", clickCount);
       console.log(clickCount);
     } else if (elementToAssignId.hasClass("event")) {
       if (clickCount > length - 1) {
@@ -661,7 +658,7 @@ $(document).ready(function () {
       if (clickCount === length) {
         clickCount = 0;
       }
-      container.data("click-count", clickCount); 
+      container.data("click-count", clickCount);
       console.log(clickCount);
     } else if (elementToAssignId.hasClass("date")) {
       if (clickCount > length - 1) {
@@ -674,7 +671,7 @@ $(document).ready(function () {
       if (clickCount === length) {
         clickCount = 0;
       }
-      container.data("click-count", clickCount); 
+      container.data("click-count", clickCount);
     }
   });
 });
