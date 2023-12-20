@@ -19,6 +19,9 @@
   --bianco: #fffdfd;
   --grigio: #808080;
 }
+#button-txt-id svg{
+  display: none;
+}
 
 .custom-svg {
   fill: white;

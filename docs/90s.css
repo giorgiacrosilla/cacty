@@ -14,7 +14,9 @@
   font-family: wildwords;
   src: url("wildwords.ttf");
 }
-
+#button-txt-id svg{
+  display: none;
+}
 :root {
   --fuchsia: #e93f82;
   --rosa: rgb(245, 158, 194);

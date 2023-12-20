@@ -146,8 +146,29 @@
         </div>
     </div>
     <div id="button-txt-id">
-        <button class="openbtn" onclick="toggleClass('metadata-txt-id', 'article-txt-id') ">Metadata</button><br>
-        <button class="openbtn" onclick="toggleClass('article-txt-id', 'metadata-txt-id')">Articles</button>
+        <button class="openbtn menu__link" onclick="toggleClass('metadata-txt-id', 'article-txt-id')"
+            id="button-meta">
+            Metadata
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                y="0px" viewBox="0 0 152.9 43.4" style="enable-background:new 0 0 152.9 43.4;" xml:space="preserve"
+                id="pencil-circle-id">
+                <path
+                    d="M151.9,13.6c0,0,3.3-9.5-85-8.3c-97,1.3-58.3,29-58.3,29s9.7,8.1,69.7,8.1c68.3,0,69.3-23.1,69.3-23.1 s1.7-10.5-14.7-18.4" />
+            </svg>
+
+        </button><br>
+        <svg id="stroke" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+            <defs>
+                <path id="line" d="M2 2c49.7 2.6 100 3.1 150 1.7-46.5 2-93 4.4-139.2 7.3 45.2-1.5 90.6-1.8 135.8-.6"
+                    fill="none" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke" />
+            </defs>
+        </svg>
+        <button class="openbtn" onclick="toggleClass('article-txt-id', 'metadata-txt-id')"
+            id="button-art">Articles
+            <svg class="button-stroke" viewBox="0 0 154 13">
+                <use href="#line" id="underline"></use>
+            </svg>
+        </button>
     </div>
     <div id="imgcolumn"></div>
     <main id="main-txt-id">
