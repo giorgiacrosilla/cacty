@@ -4,7 +4,12 @@
   font-family: theo;
   src: url("DeStijl\ Regular.ttf");
 }
-
+#button-txt-id svg{
+  display: none;
+}
+.custom-svg {
+  display: block !important;
+}
 body {
   font-family: 'Josefin Sans', sans-serif;
   display: grid;
