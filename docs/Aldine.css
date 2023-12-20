@@ -220,8 +220,6 @@ nav .nav-link {
 
 table {
   width: 100%;
-  border-collapse: collapse;
-  border: 0.125rem solid black;
 }
 
 tr,
