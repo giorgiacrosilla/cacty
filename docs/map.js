@@ -37,13 +37,13 @@ function handlePageLoad() {
         '<div class="left-side"><img src="https://lavitafelice.mediabiblos.it/copertine/lavitafelice/lettere-e-documenti-565941.jpg"></div>'
       );
       $(".container-doc:eq(1)").before(
-        '<div class="left-side"><img src="https://ia800203.us.archive.org/BookReader/BookReaderImages.php?zip=/8/items/bub_gb_tE0idc3G364C/bub_gb_tE0idc3G364C_jp2.zip&file=bub_gb_tE0idc3G364C_jp2/bub_gb_tE0idc3G364C_0000.jp2&id=bub_gb_tE0idc3G364C&scale=4&rotate=0"></div>'
+        '<div class="left-side"><img src="https://books.google.it/books/content?id=YpaDq0QaQu8C&hl=it&pg=PA1&img=1&zoom=3&bul=1&sig=ACfU3U1FOuGsG_Yr-oKD5CkBQ0dFOeD0Vw&ci=10%2C7%2C981%2C1556&edge=0"></div>'
       );
       $(".container-doc:eq(2)").before(
         '<div class="left-side"><img src="https://miro.medium.com/v2/resize:fit:420/1*wQf7Ujt6rsg8tR5b4Uc1_Q.jpeg"></div>'
       );
       $(".container-doc:eq(3)").before(
-        '<div class="left-side"><img src="https://books.google.it/books/content?id=YpaDq0QaQu8C&hl=it&pg=PA1&img=1&zoom=3&bul=1&sig=ACfU3U1FOuGsG_Yr-oKD5CkBQ0dFOeD0Vw&ci=10%2C7%2C981%2C1556&edge=0"></div>'
+        '<div class="left-side"><img src="https://ia800203.us.archive.org/BookReader/BookReaderImages.php?zip=/8/items/bub_gb_tE0idc3G364C/bub_gb_tE0idc3G364C_jp2.zip&file=bub_gb_tE0idc3G364C_jp2/bub_gb_tE0idc3G364C_0000.jp2&id=bub_gb_tE0idc3G364C&scale=4&rotate=0"></div>'
       );
       $(".container-doc:eq(4)").before(
         '<div class="left-side"><img src="https://i0.wp.com/www.futurevintagefestival.com/wp-content/uploads/2017/07/cioe-future-vintage-cover-verticale.png?fit=628%2C1024&ssl=1"></div>'
