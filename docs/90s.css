@@ -569,13 +569,13 @@ button.accordion {
 }
 
 #article-txt-id ul,
-.wrapper2 ul {
+.wrapper2 ul, .text ul {
   list-style-type: none;
   list-style: none;
 }
 
 #article-txt-id ul li::before,
-.wrapper2 ul li::before {
+.wrapper2 ul li::before, .text ul li::before {
   content: "";
   display: inline-block;
   width: 1.7vw;
