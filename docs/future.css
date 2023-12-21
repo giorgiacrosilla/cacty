@@ -264,8 +264,6 @@ main a:active {
   transform: translate(-50%, -50%);
 }
 
-
-
 .wrapper2 {
   text-align: left;
   margin: 10%;
@@ -384,8 +382,6 @@ main h2,
 }
 
 .section {
-  margin-inline: auto;
-  padding-block: 5rem;
   height: fit-content;
 }
 
@@ -796,45 +792,6 @@ footer {
   background-color: var(--rossoscuro) !important;
   border-color: #710b0b !important;
   width: fit-content !important;
-  transition: all 0.5s;
-}
-
-.btn-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 5%;
-  transition: all 0.3s;
-}
-
-.btn-primary:hover::before {
-  opacity: 0;
-  transform: scale(0.5, 0.5);
-}
-
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: all 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5%;
-  transform: scale(1.2, 1.2);
-}
-
-.btn-primary:hover::after {
-  opacity: 1;
-  transform: scale(1, 1);
 }
 
 .styleDate {
