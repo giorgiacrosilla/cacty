@@ -273,7 +273,7 @@ html {
   justify-content: space-evenly;
 }
 
-.card {
+.carta {
   filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
   width: 30vw;
   background-color: transparent !important;
@@ -310,11 +310,11 @@ html {
   transition: background-position 0s ease;
 }
 
-.card:hover {
+.carta:hover {
   transform: scale(1.05);
 }
 
-.card:hover .star {
+.carta:hover .star {
   background-position: 0 0, 0 0;
   -webkit-transition-duration: 0.5s;
   transition-duration: 0.5s;

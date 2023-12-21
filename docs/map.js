@@ -14,12 +14,6 @@ function handlePageLoad() {
   if (is90sLoaded) {
     $(".background-grid").remove();
     $(".block").remove();
-    $("#content-card > div").addClass("card");
-    $("#content-card > div").prepend('<div class="star"></div>');
-    $(".diagonal").before('<div class="separator left"></div>');
-    $(".due:eq(1)").before('<div class="separator right"></div>');
-    $("#txt-main-id").append('<div class="separator right"></div>');
-    $(".due:eq(0)").before('<div class="separator t"></div>');
     $(".imgcontainer img").unwrap();
     $(".decoration-dx").remove();
     $(".decoration-sx").remove();
@@ -35,11 +29,6 @@ function handlePageLoad() {
     $("#aldinedelf").css("display", "none");
     $(".background-grid").remove();
     $(".block").remove();
-    $(".star").remove();
-    $(".card").removeClass("card");
-    $(".separator.t").remove();
-    $(".separator.right").remove();
-    $(".separator.left").remove();
     $(".decoration-dx").remove();
     $(".decoration-sx").remove();
 
@@ -74,8 +63,6 @@ function handlePageLoad() {
     $("#aldinedelf").css("display", "none");
     $(".background-grid").remove();
     $(".block").remove();
-    $(".star").remove();
-    $(".card").removeClass("card");
     $(".title").before(
       '<div class="decoration-sx"><p class="p-dec">Decorazione</p></div>'
     );
@@ -93,7 +80,7 @@ function handlePageLoad() {
   var isdestijlloaded = isCssLoaded("De_Stijl.css");
   if (isdestijlloaded) {
     $(".imgcontainer img").unwrap();
-    $(".star").remove();
+
     $(".card").removeClass("card");
      $(".decoration-dx").remove();
     $(".decoration-sx").remove();
@@ -133,8 +120,6 @@ function handlePageLoad() {
   var isaldineloaded = isCssLoaded("Aldine.css");
   if (isaldineloaded) {
     $(".imgcontainer img").unwrap();
-    $(".star").remove();
-    $(".card").removeClass("card");
     $(".background-grid").remove();
     $(".block").remove();
     $("#aldinedelf").css("display", "block");
@@ -146,8 +131,6 @@ function handlePageLoad() {
   var issettantaloaded = isCssLoaded("anniSettanta.css");
   if (issettantaloaded) {
     $(".decoration-dx").remove();
-    $(".star").remove();
-    $(".card").removeClass("card");
     $(".decoration-sx").remove();
     $(".left-side").remove();
     $(".imgcontainer img").unwrap();
