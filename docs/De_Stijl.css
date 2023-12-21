@@ -374,6 +374,10 @@ nav li a {
   display: none;
 }
 
+#aldinedelf{
+  display: none;
+}
+
 .stroke-double {
   border-left: 10px solid rgb(0, 0, 0);
   margin-left: 2em;
