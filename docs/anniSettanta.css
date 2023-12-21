@@ -640,7 +640,7 @@ grid-area: dis;
     
   }
 
-.notes{
+.footnotes{
     font-size: smaller;
 }
 
@@ -1215,7 +1215,7 @@ footer{
     #main-footer{
         padding: 0;
     }
-
+    
 }
 
 @media screen and (max-width: 800px) {
@@ -1239,6 +1239,16 @@ footer{
     .text{
         columns: 1 !important;
       }
-    
+      #main-d{
+        grid-template-areas: "doc" "sev""des" "dis" "ald""otto"" nove" !important;
+    }
+    #main-d h1{
+        font-size:40px;
+    }
 
+}
+@media screen and (max-width: 1200px){
+    #main-d{
+        grid-template-areas: "doc doc" "sev des" "dis dis""ald ald""otto nove";
+    }
 }
