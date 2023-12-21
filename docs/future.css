@@ -186,6 +186,10 @@ button.style-button {
   background-color: transparent;
 }
 
+#aldinedelf{
+  display: none;
+}
+
 button.accordion {
   width: 13vw;
   background-color: transparent;
@@ -260,9 +264,7 @@ main a:active {
   transform: translate(-50%, -50%);
 }
 
-#aldinedelf{
-  display: none;
-}
+
 
 .wrapper2 {
   text-align: left;
