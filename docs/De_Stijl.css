@@ -1114,7 +1114,7 @@ figure img {
 #body-d-id {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(245,245,245);
+  background-color: rgb(240,240,240);
   grid-template-areas: 'nav' 'button' 'main' 'footer';
   grid-template-columns: 1fr;
   grid-template-rows: 0.1fr 0.2fr 1fr 0.1fr;
