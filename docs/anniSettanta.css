@@ -334,6 +334,9 @@ h2.stoke-d{
     text-align: left;
 }
 
+#aldinedelf{
+  display: none;
+}
 
 .due:nth-child(n+1)::before, .due:nth-of-type(n+3)::after, #first-diagonal::before {
     content: "";
