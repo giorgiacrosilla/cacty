@@ -652,7 +652,7 @@ main h2,
   font-weight: bold;
 }
 
-#introduction-txt-id {
+#introduction-txt-id, .author {
   padding: 3%;
   font-family: wildwords;
   font-weight: bold;
