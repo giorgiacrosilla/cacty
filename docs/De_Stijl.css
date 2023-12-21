@@ -877,6 +877,9 @@ td {
   text-align: left;
   border: 0.125rem solid rgb(0, 0, 0);
 }
+th, td, tr{
+  font-family: "Josefin";
+}
 
 tr:nth-child(even):hover {
   background-color: rgb(255, 0, 0);
