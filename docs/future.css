@@ -260,6 +260,10 @@ main a:active {
   transform: translate(-50%, -50%);
 }
 
+#aldinedelf{
+  display: none;
+}
+
 .wrapper2 {
   text-align: left;
   margin: 10%;
