@@ -175,6 +175,40 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+  $("#roles a").click(function (e) {
+    e.preventDefault();
+    var fileDaCaricare = $(this).data("file");
+    carica(fileDaCaricare);
+  });
+  function carica(url) {
+    var fragment = url.split("#")[1] || "";
+    $.ajax({
+      url: url.split("#")[0],
+      type: "GET",
+      dataType: "html",
+      success: function (data) {
+        var newDoc = document.implementation.createHTMLDocument();
+        newDoc.documentElement.innerHTML = data;
+        $("body").html(newDoc.body.innerHTML);
+        $("#metadata-txt-id")
+          .removeClass("metarticle-vis-txt")
+          .addClass("metarticle-inv-txt");
+        $("#article-txt-id")
+          .removeClass("metarticle-vis-txt")
+          .addClass("metarticle-inv-txt");
+        $("body").removeAttr("id").attr("id", "body-txt-id");
+        adjustGridStructure();
+        loadMap();
+        window.location.hash = fragment;
+      },
+      error: function (error) {
+        console.log("Error loading file: " + error.statusText);
+      },
+    });
+  }
+});
+
+$(document).ready(function () {
   $("#content-card a").click(function (e) {
     e.preventDefault();
     var fileDaCaricare = $(this).data("file");
