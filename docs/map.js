@@ -347,7 +347,7 @@ function sections90s() {
           paragraphs[i].parentNode.className !== "footnotes" &&
           paragraphs[i].parentNode.className !== "table_section"
         ) {
-          if (i % 4 === 0 && paragraphs[i].textContent !== "") {
+          if (i === 0  && paragraphs[i].textContent !== "") {
             paragraphs[i].classList.add("frontier");
           }
         }
