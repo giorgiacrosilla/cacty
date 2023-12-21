@@ -1014,6 +1014,9 @@ footer {
     height: unset;
   }
 
+  #doc {
+    z-index:1;
+  }
   .container-doc .name-card .imgcontainer {
     width: 70%;
   }
