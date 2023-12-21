@@ -1118,7 +1118,7 @@ figure img {
   background-color: rgb(240,240,240);
   grid-template-areas: 'nav' 'main' 'footer';
   grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 0.2fr 1fr 0.1fr;
+  grid-template-rows: 0.1fr 1fr 0.1fr;
 }
 
 #body-d-id #copyr {
