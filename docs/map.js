@@ -95,6 +95,8 @@ function handlePageLoad() {
     $(".imgcontainer img").unwrap();
     $(".star").remove();
     $(".card").removeClass("card");
+     $(".decoration-dx").remove();
+    $(".decoration-sx").remove();
     $(".left-side").remove();
     $("#aldinedelf").css("display", "none");
     $(".background-grid").remove();
@@ -136,6 +138,8 @@ function handlePageLoad() {
     $(".background-grid").remove();
     $(".block").remove();
     $("#aldinedelf").css("display", "block");
+     $(".decoration-dx").remove();
+    $(".decoration-sx").remove();
     $(".left-side").remove();
   }
 
