@@ -186,6 +186,10 @@ button.style-button {
   background-color: transparent;
 }
 
+#aldinedelf{
+  display: none;
+}
+
 button.accordion {
   width: 13vw;
   background-color: transparent;
