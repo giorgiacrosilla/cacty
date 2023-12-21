@@ -584,6 +584,7 @@ nav .nav-link {
   left: 15%;
   display: block;
   overflow-y: scroll;
+  grid-area: main;
 }
 
 #main-d h1,
@@ -726,6 +727,7 @@ figure img {
     position: absolute;
     bottom: 0%;
     font-size: 0.5rem;
+    grid-area: footer;
   }
 }
 
