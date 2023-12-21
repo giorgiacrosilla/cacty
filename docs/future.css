@@ -954,6 +954,10 @@ footer {
   margin: 2%;
 }
 
+#doc {
+  z-index:1;
+}
+
 .intro-container ol,
 .intro-container ul {
   padding-left: 6rem;
@@ -1014,9 +1018,6 @@ footer {
     height: unset;
   }
 
-  #doc {
-    z-index:1;
-  }
   .container-doc .name-card .imgcontainer {
     width: 70%;
   }
