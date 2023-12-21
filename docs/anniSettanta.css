@@ -669,18 +669,27 @@ img {
     
 
 #main-txt-id{
-    padding: 5% 1% 3% 8%;    
+    padding: 5% 1% 3% 8%; 
+    display: grid;
+    grid-template-areas: "title""text";   
 
 
 }
+#introduction-txt-id{
+    grid-area: title;
+            display: grid;
+            grid-template-areas: "tl" "author";
+          
+        
+        }
 
 #introduction-txt-id h1{
-        grid-area: "title";
         border-bottom: 2px solid #262626;
             border-top: 2px solid #262626;
             font-weight: 400;
             padding: 5px 0;
             text-transform: uppercase;
+            ;
             }
 
 span .material-symbols-outlined{
@@ -692,6 +701,7 @@ main a:link, main a:visited{
 
 .author:first-of-type {
     text-transform: uppercase;
+    grid-area: author;
 
   }
 .author:first-of-type:before{
@@ -715,6 +725,7 @@ main a:link, main a:visited{
     columns: 3 100px;
     overflow-wrap: break-word;
     font-weight: 400;
+    grid-area: text;
   }
 
 .q-symbol{
