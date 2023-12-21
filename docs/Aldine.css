@@ -176,6 +176,10 @@ td {
   padding: 0.5em;
 }
 
+th, tr, td{
+  font-family: "flanker";
+}
+
 
 
 
